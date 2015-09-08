@@ -1,0 +1,2998 @@
+Title:    The Bodega Incident
+Author:   Filip Hracek
+UniqueID: net.filiph.bodega.1 
+
+<import 'package:bodega/libraries/timeline.dart'/>
+<import 'package:bodega/libraries/randomly.dart'/>
+<import 'package:bodega/libraries/spaceship.dart'/>
+<import 'package:bodega/libraries/storyline.dart'/>
+<import 'package:bodega/libraries/spaceship_mock.dart'/>
+<import 'package:bodega/libraries/footnotes.dart'/>
+
+<import 'package:bodega/bodega_barbrawl.dart'/>
+<import 'package:bodega/bodega_shipcombat.dart'/>
+<import 'package:bodega/bodega_zil.dart'/>
+
+<declare>
+  BarBrawl barbrawl;
+
+  SpaceshipMock bodega = new SpaceshipMock();
+  
+  // Bits to be re-written into BodegaPlayer class?
+  bool isEngineer = false;
+  bool isMedic = false;
+  bool isSpaceman = false;
+  
+  // Points
+  int maxPhysicalPoints = 2;
+  int maxMentalPoints = 2;
+
+  Stat<int> physicalPoints = new Stat<int>("Physical pool", (int value) =>
+      "$value P", description: "Spare physical energy", show: false);
+  Stat<int> mentalPoints = new Stat<int>("Mental pool", (int value) =>
+      "$value M", description: "Spare mental energy", show: false);
+
+  // Traits
+  bool isHawkeyed = false;  // Searching takes less time. More details are revealed.
+  bool isStrong = false;  // Good in hand to hand combat, too. Can lift stuff without Gorilla.
+  bool knowsJapanese = false;  // Needed? Lingua franca of tech research, robotics, many stations.
+  bool understandsAnimals = false;  // Needed?
+  bool understandsAI = false;  // See behind their motivation, diplomacy, more details.
+  bool hasScienceEducation = false;  // Had rudimentary science education. Medic default.
+  bool understandsElectronics = false;  // Understands basic electronics. Engineer default.
+  bool isHandy = false;  // Knows his/her way around the ship. Spaceman default.
+
+  // Curable defects
+  bool isLimping = false;
+  bool hasLameHand = false;
+
+  // Global bits.
+  bool pulledLever = false;
+  bool pickedUpIntercom = false;
+  bool snappedAtGorilla = false;
+  bool corridorLeftDoorRepaired = false;
+  bool miseryPoursPhrase = false;
+  bool firstShutUp = false;
+  bool secondShutUp = false;
+  bool stoleOfficersBanana = false;
+  bool hullBreachRepaired = false;
+  bool scannerRepaired = false;
+  bool hasCaptainGun = false;
+  bool junctionExplained = false;
+  bool cargoBayExplained = false;
+  bool hasSteelRod = false;
+  bool currentlyInJump = false;
+  bool jumpedToUnity = false;
+  bool justArrivedAtUnity = false;
+  bool knowsAboutEleanor = false;
+  bool siftedThroughLockers = false;
+  bool currentlyHighOnShabu = false;
+  
+  String roomBeforeOvercameBySleepiness;
+
+  // Global counters
+  int gorillaAttitude = 0;  // TODO: attitude to gorilla. Can receive banana for better attitude. Can get very friendly, or very antagonistic. TODO: gorillaAttitude is an IntScale!
+  int unityOperatorAttitude = 0;
+
+  // Global gotos (for returning to the right place).
+  String afterEleanorFirstChatGoto = null;
+</declare>
+
+# The Bodega Incident
+
+The dream has failed. Hundreds of star systems have been colonized in the past few hundred years, the human race is spreading through space like ivy on a wall, but the old ways of Earth still remain. Despite what many believed, there is no unified society. There is no universal government. Countries have not come together into a peaceful federation.
+
+Quite the opposite: the expansion has lead to fierce competition between the few nations that can afford it. Nationalism is on the rise. War is imminent.
+
+And among all those things, we have the case of a stranded spaceship, the Bodega. At first sight, a simple incident that might hardly make it into the local news. Instead, the things that happen on the Bodega might very well take humankind by storm.
+
+// Earth-like planets are rare, far between and expensive to settle on. Most people live and work where the resources are — in asteroid belts, on barren worlds and on close orbits around lonely suns — and few have ever breathed any planet's atmosphere. Still, these spaceborn, as they are called, have been experiencing a strange homesickness. A longing for a place they have never even visited and that they only know from dreams. And although the first child that was born and raised in space died over 150 years ago, this yearning is only getting stronger.
+
+
+// ---
+
+// You are the last living person on the Bodega, a large cargo ship stranded in the middle of an interstellar flight. You are alone and dying. The only person who seemed to know what he was doing just passed away. The hyperdrive doesn't work. The ship hates you. And things are only going to get worse.
+
+// This egamebook is completely free. (The next ones are likely to be paid.)
+
+
+---
+start
+
+- [Brawl: Start]
+
+---
+DEBUG: Start
+
+<p class="meta">This lets you play the combat.</p>
+
+- From beginning [Start: Funeral]
+- Spaceship combat [DEBUG: CombatSetup]
+
+---
+DEBUG: CombatSetup
+
+- [Dogfight: FirstCombatStart]
+
+
+---
+Brawl: Start
+
+<init>
+  barbrawl = new BarBrawl(echo, choice);
+  barbrawl.init();
+  barbrawl.onFinishedGoto = "Brawl: Finished";
+</init>
+
+## The Brawl
+
+Let's start in the middle of it: a bar fight at Space Station Clara, two years ago. A short but muscular zero-g farmer just hit you in the face. 
+
+- [Loop]
+
+---
+Brawl: Loop
+
+<script>
+  barbrawl.run();
+</script>
+
+- [Brawl: Loop]
+
+---
+Brawl: Finished
+
+<script>
+  if (barbrawl.wasSuccessful) {
+    goto("Win");
+  } else {
+    goto("Lose");
+  }
+</script>
+
+---
+Brawl: Win
+
+With that out of the way, you looked around. The bar was a mess — everyone fighting, ... XXX START HERE
+
+// You don't need this. You start making your way to the exit. Then you see ..... Captain Kay!
+
+- [Start: Funeral]
+
+---
+Brawl: Lose
+
+That ended the story before it even started. You survived, of course, but you didn't get to meet Captain Kay and you didn't get to board the Bodega. Still an interesting life story, I'm sure, but not the one we want to tell here.
+
+<p class="meta">Restart and keep trying. The key to winning a fist fight is ferocity.</p>
+
+--- 
+Start: Funeral
+
+<script>
+  /*
+
+A "Star Wars" intro?
+
+//In the year 2593, 
+
+// The first child born and raised in space, Tara Ahluwalia, died 150 years ago. As most spaceborn that came after her, she has never been on the surface of any planet.
+
+  */
+</script>
+
+## The Funeral
+
+This story both begins and ends with a death, on a spaceship.
+
+<script>
+// TODO(put somewhere else): Death. Isn't it strange how when you're trying to get away from something, you inevitably only get more of it?
+</script>
+
+The first death is that of the captain, whose body you just finished dragging through the empty ship and laid down in the airlock. When he died a couple of minutes ago, he left you as the last survivor on board of the Bodega.
+
+<declare>
+  // When he died a couple of minutes ago, he left you as the last survivor on board of the _Bodega_, the 25 thousand ton cargo ship that is currently stuck helpless in the middle of nowhere.
+  // It's strange how quickly things change. Two weeks ago, the Bodega and its crew were doing just fine. The ship was midflight between the Russian space station _Golitsyn_ and the Indian factory cluster at _Groombridge 12_. It was business as usual.
+  // TODO: make footnotes for Sentaco-5 and Groombridge 12.
+  // TODO: dialog? less exposition, more conflict?
+</declare>
+
+<declare>
+  Function getInformalRole;
+  Function getRoleAdjective;
+</declare>
+
+<init>
+  getInformalRole = (String article) {
+    var str;
+    if (isEngineer) str = "machinist";
+    if (isMedic) str = "medic";
+    if (isSpaceman) str = "{spaceman|sailor}";
+    return Randomly.parse("$article $str");
+  };
+
+  getRoleAdjective = () {
+    if (isEngineer) return "engineering";
+    if (isMedic) return "medical";
+    if (isSpaceman) return "maintenance";
+    throw new Exception("Role not defined for getRoleAdjective.");
+  };
+</init>
+
+You are the ship's:
+- Assistant Engineer, skilled in electronics and machines [{isEngineer = true; maxPhysicalPoints = 3; maxMentalPoints = 3;}]
+- Assistant Medic, skilled in biology and health [{maxMentalPoints = 4; isMedic = true;}]
+- Ablebodied Spaceman, skilled in space travel and spaceship maintenance [{isSpaceman = true; maxPhysicalPoints = 4;}]
+
+Before the incident changed everything, you were nearing two years in your ${getRoleAdjective()} service on the Bodega. Everything had become familiar. The smell of polyplastics, human sweat and detergent. The bleak dimness of the interiors. The color-coded ducts and cables on every wall. The way sound carries in a huge, 25 thousand ton cargo ship. Conversations, laughter, and swearing were echoing through the corridors almost constantly.
+
+Now, the ship is silent and the whole crew is dead. Since the explosion in the cargo bay, the men and women had been taking turns in screaming in pain, then getting uncanilly stiff, then dying. The captain held a memorial service for every one of them, each funeral – of course – a little shorter and simpler than the previous. Now it's your turn to be the master of ceremony.
+
+<declare>
+  //strength = 2;
+  //charisma = 2;
+  //knowledge = 2;
+  String manOrWoman = "man";
+
+  Function isMan;
+  Function isWoman;
+
+  // TODO: revert back to defining normally when resolved: https://code.google.com/p/dart/issues/detail?id=19191
+  //badToTerrible = (int i) => i <= 2;
+  //badToAverage = (int i) => i >= 2 && i <= 3;
+  //decentToGood = (int i) => i >= 4 && i <= 5;
+
+  var isStuttering = () => false;// charisma < 3;
+  // isLimping = () => true;// charisma < 3;
+  //isLimping = () => strength < 3;
+  //isNoob = () => knowledge < 3;
+</declare>
+
+<init>
+  isMan = () => manOrWoman == "man";
+  isWoman = () => manOrWoman == "woman";
+</init>
+
+Two weeks ago, you were little more than a lowly ${getInformalRole("")}. Now, you're the acting captain. The last one standing. (Well, almost. But we'll get to that later.)
+
+<declare>
+  // addFootnote("strength", "Strength is the physical strength and agility of your character. Stronger characters can do more with their body. They are faster, they can move heavier objects, and they can endure more pain.");
+  // addFootnote("charisma", "Charisma is the ability of your character to communicate clearly and effectively. More charismatic characters are better at making a good impression on others and at persuasion. They are better talkers, and liars.");
+  // addFootnote("knowledge", "Knowledge is the amount of exprience and information your character has managed to accumulate during his or her life. Knowledgeable characters can draw on what they already know from the past. The know more about how things work, who is who and where is what.");
+</declare>
+
+<script>
+//  KEEPING THIS FOR FURTHER REFERENCE
+// 
+//   final int maxPointsToDistribute = 8;
+//   pointsToDistribute = maxPointsToDistribute;
+//   var remainingPoints = new TextOutput();
+// 
+//   var stringify = (int value) {
+//     String evaluation;
+//     switch (value) {
+//       case 1: evaluation = "terrible"; break;
+//       case 2: evaluation = "bad"; break;
+//       case 3: evaluation = "average"; break;
+//       case 4: evaluation = "decent"; break;
+//       case 5: evaluation = "good"; break;
+//       default: evaluation = "excellent"; break;
+//     }
+//     return "$value ($evaluation)";
+//   };
+// 
+//   var strengthRange = new RangeInput("Strength ${fn('strength')}", (int value) => // strength = value, value: strength, min: 1, max: 5, stringifyFunction: stringify);
+//   var charismaRange = new RangeInput("Charisma ${fn('charisma')}", (int value) => // charisma = value, value: charisma, min: 1, max: 5, stringifyFunction: stringify)// ;
+//   var knowledgeRange = new RangeInput("Knowledge ${fn('knowledge')}", (int value) =// > knowledge = value, value: knowledge, min: 1, max: 5, stringifyFunction: // stringify);
+// 
+//   var form = new Form();
+//   form.children.add(remainingPoints);
+//   form.children.add(strengthRange);
+//   form.children.add(charismaRange);
+//   form.children.add(knowledgeRange);
+// 
+//   var updateForm = (_) {
+//     pointsToDistribute = maxPointsToDistribute - strength - charisma - knowledge;
+//     remainingPoints.html = """<p>You can personalize your initial talents here (i.e. // what your character focused on up until now). You have <strong>$// pointsToDistribute</strong> point${pointsToDistribute != 1 ? 's' : ''} to // assign to ${pointsToDistribute != 1 ? 'the different attributes below' : 'one // of the attributes below'}. You can also take away points from talents to // distribute them to other talents.</p>""";
+//     /*
+//     strengthRange.minEnabled = isSpaceman ? 2 : 1;
+//     charismaRange.minEnabled = isMedic ? 2 : 1;
+//     knowledgeRange.minEnabled = isEngineer ? 2 : 1;
+//     */
+//     strengthRange.maxEnabled = strength + pointsToDistribute;
+//     charismaRange.maxEnabled = charisma + pointsToDistribute;
+//     knowledgeRange.maxEnabled = knowledge + pointsToDistribute;
+//   };
+//   form.onInput = updateForm;
+//   updateForm(null);  // Initial recalculation update.
+// 
+//   manOrWoman = "man"; // TODO: choice
+//   
+//   showForm(form);
+</script>
+
+<script>
+  b.createTraitsForm();
+</script>
+
+<declare>
+  int pointsToDistribute = 0;
+</declare>
+
+<script>
+  b.echoTraits();
+
+  if (pointsToDistribute > 0) {
+    points.add(pointsToDistribute * 10, "not using all the talent points");
+  }
+</script>
+
+The funeral looks like this: You are standing in front of one of the ship's two airlocks. Through the porthole window, you can see the captain's body lying on the floor, naked and reddish and stiff. Just like all the others before him. When you had put him down there a minute ago, you made sure he's lying reasonably straight, like one would do in a coffin. You even put a blanket under him so he doesn't lie on the cold steel of the airlock.
+
+Not that the dead care much about cold. But that's what you did.
+
+![Dead captain Kay](img/airlock.jpg)
+
+<init>
+  addFootnote("funeralInSpace", """This is common practice when a spaceship is stranded and there are casaulties on board. Unless there's a good chance that the bodies can be preserved until a rescue ship comes, bodies are ejected into space. This minimizes the risk of infection and allows the crew to focus on their own survival instead of on ways to preserve bodies.""");
+</init>
+
+Your hand is on the lever that will open the airlock's outside door. Through that door, once open, the captain's body will be sucked out into outer space. This is how funerals work here on the Bodega.${fn("funeralInSpace")}
+
+The inner door, through which you're watching, is safely closed and sealed. The only thing that remains is to pull the lever.
+
+- [Start: Funeral.choice]
+
+---
+Start: Funeral.choice
+
+- Say a few words first [SaySomethingNice]
+- Pull the lever [Pull]
+- Leave the body in the airlock [LeaveBody]
+
+---
+Start: SaySomethingNice
+[[ visitOnce ]]
+
+You clear your throat. 
+
+"C${isStuttering() ? '-c' : ''}aptain Kay." Your voice sounds awkward in the silence of the empty corridor${isStuttering() ? ", and your stutter doesn't help" : ""}.
+
+For some reason, the only things that come to mind right now are _far_ from nice. Your head is full of images of the captain being drunk to the point he couldn't stand up. 
+
+<declare>
+  bool madeFunOfDrunkednessOnFuneral = false;
+</declare>
+
+- "Let's just say this is not the first time I see you lying on the floor, naked and reddish and stiff." [
+    It might not be the best topic for anyone's funeral — but it's true. You are the kind of person who says it how it is.
+  {madeFunOfDrunkednessOnFuneral = true; points.add(1, "honesty");}]
+- Let it go. [
+    You decide this is probably not the best topic for anyone's funeral.
+  {points.add(1, "sensitivity");}]
+
+<p class="meta">Note: Decisions like these help define your character.</p>
+
+You are silent for a few moments, and then you end up saying: "Captain Kay, you were a great captain." And that is definitely true.
+
+- [Funeral.choice]
+
+---
+Start: Pull
+
+${isStrong ? 'You' : 'With great effort, you'} pull the lever, and as the outer door opens, all the air in the airlock shoots out – with a loud hiss – into the vacuum of space. The body is now moving in that direction, too, though much slower. It's no longer pulled towards the floor with artificial gravity – that was automatically turned off when you pulled that lever – so the body kind of tumbles towards the door.
+
+<script>
+  if (Randomly.tossCoin()) {
+    <echo>
+      It hits the doorsill on its way out, goes through the door, and starts receding into space while slowly rotating.
+    </echo>
+  } else {
+    <echo>
+      It hits the doorsill on its way out and almost stops, hanging midway between the inside and outside. For a while, it almost looks like you'll have to close that outside door and reopen it again, which would cut the captain's body in half. But fortunately, the movement never stops completely, and the body goes through the door and starts slowly receding into space.
+    </echo>
+  }
+</script>
+
+<script>
+  points.add(5, "observing the protocol");
+  pulledLever = true;
+</script>
+
+- [Recollections]
+
+---
+Start: LeaveBody
+
+You withdraw your hand from the lever.
+
+<script>
+  points.add(2, "respect to the dead");
+</script>
+
+- [Recollections]
+
+---
+Start: Recollections
+
+<init>
+  addFootnote("stationClara", """Clara is a German station orbiting the Epaphus red dwarf. The port is well known for high-quality industrial products and a good shipyard. Once in about 200 earth days (the station's orbital period) they also hold the 'Oktoberfest' – a beer drinking festival. (This was not the time, though.)""");
+</init>
+
+You remember the first time you saw the captain – in a bar on Space Station Clara${fn("stationClara")}. Both of you were drunk beyond belief, both for different reasons. Come to think of it, _everybody_ in that bar was drunk beyond belief, and probably for different reasons, too. It was like a group therapy session.
+
+You sat alone. Not because of shyness or anything. No, you have just always found it tiring to talk about things that don't matter. And when you talk about things that _do_ matter to you, it's kind of a pain for everyone involved. "Nobody wants to talk about that, $name," your psychiatrist had always said. "The only reason we two talk about it is that I get paid for it." (He wasn't a very good psychiatrist.)
+
+So you sat alone. And so did the captain, a few tables away – just another bar patron in a dirty jacket and a glass of German zero-G-hops beer on the table.
+
+Of course, it didn't take long before someone started a fight that night. You don't really remember who it was but it wasn't captain Kay, and it definitely wasn't you. You stood up and started making your way out, avoiding the epicenters of the brawl. You ${isStrong ? "decided a long time ago that using your pretty decent fighting skills in bar fights is a waste of time and perfectly good teeth" : "were never a good fighter and had no intention of getting the hell beaten out of you for no reason whatsoever"}. After a few steps, you had to dodge a ginger guy who was thrown by two others across the room and right into another part of the melee. What followed was a surge of yells and roars and a loud clamor of furniture.
+
+That's when you really noticed the captain for the first time. 
+
+He wasn't fighting. He was standing in the middle of the whole mess, laughing his head off. (You would later learn that this was not at all unusual for him – he would laugh maniacally at the least opportune of times, even if he was in danger. Especially if he was in danger.) You were ready to go on but then you heard, "What's so funny, shitface," and you noticed a huge, furious warehouseman running straight at the captain with a chair above his head. The chair had a mock-wood finish, like almost everything in the bar, but you knew it was actually metal.
+
+The captain laughed on, standing with his back to the quickly approaching warehouseman.
+
+For some reason, in spite of all the good reasons not to, you decided to run towards the captain to defend him against the warehouseman and his crippling blow. You knew full well you'd regret this. 
+
+"This is bullshit," you said to yourself when you broke into a sprint across the room. 
+
+- You ran at the warehouseman trying to kick him off balance, exposing your leg [
+    A few paces away from the captain, you jumped, putting both your legs forward in a kind of an improvized jump kick. The warehouseman saw you coming, though, and he brought the chair down and on your right leg. You heard the muffled scrunch of breaking bone and you flew past the guy into some furniture. 
+  {isLimping = true}]
+- You tried to parry the chair with your arm [
+    You made it to where the captain was standing just in time to try to block the warehouseman's blow. The chair landed with full force on your left hand and you heard the muffled scrunch of breaking bone. The impact sent you sliding under a table nearby.
+  {hasLameHand = true}]
+
+In shock and still oblivious to the scope of your injury, you watched the captain receive blow after brutal blow from the looming warehouseman (at least it was fists and not a metal chair) and you tried to stand up – almost managed to pull it off, too – but then everything went dark and you just plain fainted.
+
+<declare>
+  // You remember trying to slip through the crowd to get out, as you ${isStrong ? "decided a long time ago that using your fighting skills in bar fights is a waste of time and perfectly good teeth" : "are not a good fighter and had no intention of getting the hell beaten out of you for no reason whatsoever"}, and when you were next to the laughing captain, a huge furry with arms the size of your thighs leaped in front of you two, said (to the captain): "What's so funny, shitface?",${isWoman() ? ' then (to you): "Sorry, lady.", and finally ' : ""} grabbed both of your heads, and smashed them together.
+
+</declare>
+
+The next thing you knew, the bar was empty and captain Kay was helping you on your feet. There was blood in his hair. He was laughing again.
+
+"What's your name, kid?" He grinned.
+
+<declare>
+  String name = "Slim";  // Unisex name: http://www.behindthename.com/names/gender/unisex
+
+  // We are not asking for the name here because we want to create a memorable name (such as Harry Potter or Ash or Master Chief).
+</declare>
+
+"$name," you said.
+
+"So, uh, $name, that was really stupid of you. You know that, right?"
+
+You kept looking at him but didn't say anything.
+
+"Idiotic, really. I mean, ${isLimping ? 'jumping' : 'running'} right into the path of a _steel chair_ like that?" He looked you into the eyes, still smiling. Still dripping with blood. "But thanks, anyway. You probably saved my life or whatever."
+
+You nodded.
+
+He stood there for a while. "How's your ${isLimping ? 'leg' : 'arm'}?"
+
+"Broken, I think. It's fine if I don't move it but–" You screamed when you touched it. The pain was horrific.
+
+"Alright." He stopped grinning. "$name, right? Let me do one thing. I have a ship with a medbay, docked at D-14. I'll take you there and my doc will treat that for you. For free."
+
+You nodded, carefully got up,${isLimping ? ' grabbed his shoulder for support,' : ''} and let him lead the way. Later in the day, on board of the Bodega, he offered you the ${getRoleAdjective()} job that you kept for the past 2 years.
+
+Now, you watch his dead body ${pulledLever ? "recede into darkness" : "lie on the floor in front of you"}.
+
+<script>
+  if (isStrong) {
+    <echo>
+      You think about it again. There really is no reason why you should outlive the captain. You are a strong $manOrWoman, but your tenacity is nothing compared to the captain's. The contagion, or whatever it is, should have killed you long before him. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthiest, most vigorous crewmember – Cooper – died second. 
+    </echo>
+  } else {
+    <echo>
+      You think about it again. There is no reason why _you_ should outlive the captain. Or why you should outlive _any other_ crew member, for that matter. You were one of the weakest, least hardened individuals on board. The contagion, or whatever it is, should have killed you long before everyone else. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthies, most vigorous crewmember – Cooper – died second. 
+    </echo>
+  }
+</script> 
+
+
+<script>
+  if (isMedic) {
+    <echo>
+      You don't remember ever treating Cooper or seeing him in the medbay. Not even with the common cold.
+    </echo>
+  } else {
+    <echo>
+      That guy had never even _sneezed_ before.
+    </echo>
+  }
+</script>
+
+<script>
+  // TODO: frame ("you have that strange feeling again") move to a separate event
+
+  // In the last few days, you couldn't help wondering whether all this is, maybe, _somehow_, your fault. You've always preferred being alone, there is no question about that. It's been the only time you don't feel out of place. But being alone is a luxury in the confined inner space of freighter ships and space stations. There's always someone just around the corner or in the next room. Unless, of course, everybody else is dead.
+
+  // Rationally you know this can't be true. You don't remember doing anything to the others, and twelve people won't die by themselves just because the thirteenth wants to be alone. But with each death, you felt this strange and repulsive _relief_, like there is one less _thing_ to worry about, like there is more space to breathe, and that has been the scariest feeling you have ever had in your life.
+</script>
+
+[IMG of intercom]
+
+The intercom on the wall starts ringing loudly and blinking with a red light. The ringtone and the color-coding means "to all crew" – in other words: "everyone in their ability should pick this up".
+
+The intercom, in this case, is an old school handset wired to the wall with a spiral cable. It's easier to maintain, less faulty, and it only picks up one person's voice, so it's easier to understand the other end. It also makes it possible to have conversations that are meant for a limited audience, as opposed to everyone in the room. Sometimes, it's needed to break news that are not intended for the whole crew.
+
+The cable is there mostly so that the handset stays put where it belongs (but it does conduct the audio signal to and from the handset).
+
+- Ignore it [Ignore]
+- Pick it up [PickItUp]
+
+<declare>
+  int bodegaAttitude = 0;  // TODO: the bodega has 'zaujala' a dismissive/angry/... tone towards you
+</declare>
+
+---
+Start: Ignore
+
+<script>
+  pickedUpIntercom = false;
+  bodegaAttitude -= 1;
+</script>
+
+After a while, the intercom goes silent. Instead, PA speakers along the corridor turn on with a crackle. It's the ship computer. She sounds irritated.
+
+- [ShipSays]
+
+---
+Start: PickItUp
+
+<script>
+  pickedUpIntercom = true;
+  bodegaAttitude += 0;
+</script>
+
+You pick the handset up. It's the ship computer.
+
+- [ShipSays]
+
+---
+Start: ShipSays
+
+"To all whom it may concern," she says, although she knows there's only you. "There is a gorilla on the bridge. I repeat, a gorilla. _On the bridge._"
+
+- "I'm coming." [Coming]
+- "The funeral hasn't ended yet." [CantThisWait]
+
+---
+Start: CantThisWait
+
+"Oh, I'm sorry," the ship says. "I didn't want to ruin the moment by, you know, _trying to stop yet another disaster from happening!_ The bridge, you might recall, is a place with lots of electronics and, interestingly, also the control panels to _the whole goddamned ship._ In summary, this is no place for a stupid gorilla."
+
+<script>
+  /*
+- "Okay, okay, I'm coming." []
+- Continue with the funeral [
+    You ignore the ship and look through the porthole window again at the captain's body. You try to reminisce some more, but soon, the ship speaks again. "What exactly are you doing?" she asks. "Did you not hear what I just said? About the gorilla?"
+    
+    There is no way you can focus after this. A few moments pass before you give up and agree to come to the bridge.
+  {}]
+  */
+</script>
+
+
+<script>
+  if (!pickedUpIntercom) {
+    <echo>
+      The speakers turn off, then turn on again.
+      
+      "And by the way," the ship adds, "I know you're not very bright and all, but by now you should be familiar with the intercom system. A hint: when the red light goes blink, you pick it up." The speakers turn off again.
+    </echo>
+  }
+</script>
+
+- [Coming]
+
+---
+Start: Coming
+
+You give captain Kay's ${pulledLever ? "receding" : ""} body the last glance${pulledLever ? ", put the airlock lever back to the close position" : ""}, and set off in the direction of the bridge.
+
+<script>
+  if (isLimping) {
+    <echo>
+      The pain in your right leg is back almost immediately, and you automatically start limping so that it doesn't come back in full force. The leg has been a problem since the incident on Space Station Clara, but – once in a while – you still have the capacity to forget about how much it hurts to stand on it. The funeral provided one such distraction.
+    </echo>
+  }
+</script>
+
+You follow Corridor Right – a badly lit tube of dusty cables and fluorescent lamps running along the right side of the Bodega, from the huge cargo bay at the back of the ship all the way to the bridge in the front. The stark white light of the lamps is supplemented by the red bulbs of the ship alarm which have been pulsating since the beginning of the disease 14 days ago. 
+
+In a few moments, you pass the door to the computer room on your right, and shortly after, you are at your destination.
+
+- [Bridge: GorillaIncident]
+
+---
+Bridge: GorillaIncident
+
+## The Gorilla
+
+There really is a gorilla on the ship's bridge. But it isn't touching any of the electronics, let alone the control panel. It just sits there on the floor, full of melancholy, looking out the window at the distant stars. When you enter, it slowly turns to you and pushes out its huge lower lip.
+
+![Gorilla](img/gorilla.jpg)
+
+<init>
+  addFootnote("gorillaCargoMove", """Everything in the cargo bay is in containers, but often, parts from containers further from the bay doors need to be offloaded before those closer to the bay doors. And so instead of offloading the whole lot and then re-loading it again, it's more efficient to swap the cargo between containers during the flight. That's where strong – but sensitive – arms like those of a gorilla come in handy.""");
+</init>
+
+It's the ship's Enhanced Gorilla. These species are used throughout the universe for hard manual labor: in construction, in the military, and on big tankers and cargo ships like the Bodega. Their intelligence is somewhat improved over what nature has given them -- they can understand basic spoken commands and they have the ability to communicate back via sign language. The vocabulary is very limited, and even then they use mostly just the words "food", "sleep" and "want". But people don't need Enhanced Gorillas to be eloquent or nuanced or poetic. They need them to lift and push and sometimes smash. _This_ gorilla mostly manipulates with heavy objects in the cargo bay.${fn("gorillaCargoMove")}
+
+The gorilla doesn't have a name. The crew just calls him 'Gorilla', which is a common name for these creatures on most ships. Nobody wants to get too attached to them. They die a lot.
+
+Right now, Gorilla raises his arms to sign. First, he makes the sign for "me" and then he makes the sign for "sleep". _Is he trying to say he wants to go to sleep?_ Probably not (although he does look tired). More likely, he's trying to use his limited vocabulary to communicate that he is sad. But you can never be sure.
+
+What do you say to him?
+- "It's okay." [ItsOkay]
+- "What the hell do you think you are doing here, Gorilla?" [WhatTheHellGorilla]
+
+---
+Bridge: ItsOkay
+
+"It's okay."
+
+Gorilla slowly turns his head back to the stars, visibly alleviated. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational – Gorilla could squash you or any other human any time – but the animal can't help it. The fear is in his DNA.
+
+The fact that you didn't scold him means the world to him. You know he will remember this.
+
+"The ${isStuttering() ? 'g-g-' : ''}gorilla stays," you say to the ship computer. "He just sits there. And he definitely won't touch anything while I'm here." The Gorilla nods solemnly.
+
+<script>
+  gorillaAttitude += 1;
+  points.add(1, "being kind to animals");
+</script>
+
+- [HateToUnnerveYou]
+
+---
+Bridge: WhatTheHellGorilla
+
+"What the hell ${isStuttering() ? 'd-' : ''}do you think you are ${isStuttering() ? 'd-' : ''}doing here, Gorilla?"
+
+Gorilla doesn't answer, he only looks at you in sudden terror. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational – Gorilla could squash you or any other human any time – but the animals can't help it. It's in their DNA.
+
+After a while, Gorilla leaves the bridge with pure horror in its eyes. He goes through the door to Corridor Left, probably heading way back to the cargo bay. You know he will remember this.
+
+<script>
+  gorillaAttitude -= 1; 
+  snappedAtGorilla = true; 
+  points.add(1, "setting boundaries"); 
+  gorilla.location = Randomly.choose([b.cargoBayLeft,b.gorillasDen]);
+</script>
+
+- [HateToUnnerveYou]
+
+---
+Bridge: HateToUnnerveYou
+
+The ship is silent for a while.
+
+"I would just _hate_ to unnerve you," she finally says, "but considering that there is no reason to believe you are _not_ contaminated with the same illness as everyone else, and that we have no reliable data on the incubation period, I propose we make the jump to Space Station Unity as soon as possible.
+
+<init>
+  addFootnote("oathFirstExpl", """Under the so-called 'Oath Law' – which has been adopted by all space-faring nations – no artificial intelligence beyond a certain level can exist without a human superior. In other words, as a safeguard against a machine rebellion (an entirely plausible scenario), there cannot be a completely autonomous artificial intelligence, and all machines must have a human master, to which they are – by design – utterly loyal. The Oath can be transfered, like in this case, but never dropped entirely.""");
+</init>
+
+"You are the acting captain of the ship now," the Bodega continues matter-of-factly. "Probably not for long, of course. But to follow the protocol, I will henceforth call you Captain $name. It is understood that my Oath${fn("oathFirstExpl")} now transfers to you."
+
+<declare>
+  String title = "Captain";
+  int conceitedness = 0;  // The more conceited the player is, the less Bodega respects him. It may also modify his choices later in the game.
+</declare>
+
+- "Yes, call me Captain $name." [{title = "Acting Captain"; conceitedness += 1;} CrewOfOne]
+- "Just call me $name, no need for formalities." [{title = ""} CrewOfOne]
+
+---
+Bridge: CrewOfOne
+
+## The crew of one
+
+You are dog-tired. You spent the last couple of days slaving away – together with Gorilla and the late Captain Kay – to finish the repairs of the hyperdrive. It had broken down in the middle of nowhere after one of the containers in the cargo bay exploded. (Apparently, the explosion was due to some inapt handling by none other than – Gorilla.) It wasn't a particularly big blast, but the shockwave rippled through the whole ship, and -- among other things -- put the hyperdrive into an invalid state. As it turned out, though, the malfunctioning drive was to be the lesser of your worries.
+
+While the captain${isEngineer ? ", the senior engineer and you" : " and the engineers"} were starting to patch up the drive, the rest of the crew were busy getting sick. One by one. The ship's medic${isMedic ? ", your boss," : ""} was one of the first to go. (${isMedic ? "Although he was much more experienced than you were, he also" : "Although he was an experienced medic, he"} didn't appear to have any idea about what was going on anyway. He was as scared and angry and clueless as anyone else.)
+
+"It's not like I _wasn't_ expecting to die out in space one day," he said to you from behind glass (back then, the crew still tried to mantain some kind of quarantine). "It kind of goes with the occupation. But I sure as hell didn't expect it to come _this_ soon." He was forty-five, one of the oldest. He died the next day.
+
+[IMG of a sick, sad medic behind a glass]
+
+The only thing that has kept you from worrying about your own death so far was work. Anything else leaves too much brain capacity to imagination. Going to sleep has been particularly difficult because of the strange dreams, because of the ambiguous feelings about the whole thing, and because there is always the possibility you'd never. Wake. Up.
+
+This time, though, you are so unbelievably tired you will probably fall asleep the minute you close your eyes.
+
+<script>
+  physicalPoints.value = maxPhysicalPoints - 2;
+  physicalPoints.show = true;
+  mentalPoints.value = maxMentalPoints - 2;
+  mentalPoints.show = true;
+</script>
+
+<p class="meta">You still have <em>some</em> spare energy in you, represented by your <strong>physical pool</strong> (currently <em>${physicalPoints.string}</em>) and your <strong>mental pool</strong> (currently <em>${mentalPoints.string}</em>). Spending these points will let you put in an extra effort to increase your chances at different tasks. Both points are normally replenished by sleep and their maximum value varies based on your role.</p>
+
+The thing is: you have a feeling that the disease – and the consequent high probability that you will die alone, in space, and in horrible pain – is not your only worry. There is something else. Something bigger. One of Captain Kay's favorite phrases was: "When misery rains, it pours." Also: "We're in _space_, idiots, what did you expect?"
+
+You can't help but fear that space isn't done with you just yet, and that what is happening right now is just the beginning.
+
+- [TimeZero]
+
+---
+Bridge: TimeZero
+
+[IMG watch with 0:00]
+
+<init>
+  addFootnote("computeUnityJump", """ Every hyperjump needs to be precisely computed, which is no small task. (Even military ships with dedicated computing nodes take hours to prepare.) Fortunately for interstellar travel, though, parameters for jumps between known points in space do not change, and so ships normally work with precomputed data. The problem here is that Bodega is now at a point in deep space for which the data simply doesn't exist. The only option is to compute it. """);
+</init>
+
+The captain was able to finish the repairs of the hyperdrive (with your ${isEngineer ? "" : "modest"} help) a few hours before he died, but now that it's back online, Bodega needs to compute the jump.${fn("computeUnityJump")} Before that's done, you, Gorilla and the whole ship are sitting ducks.
+
+You reset your watch to 0:00. In space, with the absence of meaningful days, it's common practice to pick memorable events as milestones and then count hours and days from these. The death of the captain strikes you as one such memorable event.
+
+<declare>
+  Stat<int> clock = new Stat<int>("Time", (value) {
+      int hours = (value/60).floor();
+      int minutes = value % 60;
+      return "$hours:${minutes < 10 ? '0' : ''}$minutes";
+    }, description: "Time since captain's funeral", show: false);
+</declare>
+
+<script>
+  clock.show = true;
+</script>
+
+It's up to you what you do with the time at hand. You look around the bridge.
+
+- [Explore: Bridge]
+
+---
+Bridge: OvercomeBySleepiness
+
+You come back to the bridge, determined to do some more work, but at that exact time, your body just refuses to continue. You can't imagine _walking_ somewhere, let alone trying to _work_.
+
+- [Nap]
+
+---
+Bridge: WaitForJump
+[[ visitOnce ]]
+
+There's only ${getHoursToHyperdrive()} before the hyperjump parameters are ready, so you decide to wait on the bridge. You sit down and contemplate trying to sleep but soon realize the adrenaline from the Messenger encounter won't let you.
+
+You spend the time gazing blankly at the distant stars.
+
+<script>
+  zil.update(MAX_TIME_BEFORE_HYPERDRIVE_READY - zil.timeline.time, describe: false,
+    whileString: "you are gazing");
+</script>
+
+You stand up excitedly.
+
+- [Explore: Bridge]
+
+---
+Bridge: Nap
+
+You slouch into the captain's seat and check the time. You should be ready for the jump in ${getHoursToHyperdrive()}. Your eye lids get heavy and you realize that – by now – there is no way you can fight this. Soon, the captain's seat feels like the most comfortable bed ever. You drift off to sleep.
+
+<script>
+  // TODO: dream from the parent's 
+</script>
+
+
+You have that strange dream again. You are planetside, standing in a _forest_, no less, on the edge of a meadow at night. This is Earth, somehow you know it, and you breathe in slowly and deeply, smelling the moist air as if it was something familiar to you. (You have never been planetside in your entire life. Not on Earth, not anywhere else.) You try to watch the meadow for as long as you can. This is the good part of the dream.
+
+You hear a twig crack quietly just behind you, and you turn around. It's the worst sight you can imagine. Your parents.
+
+<init>
+  addFootnote("vitamin", """ 'Vitamin' is an addictive, easy to manufacture drug that makes you feel invincible. It also makes you crave blood and violence. Users engage in gory rituals, sadistic orgies and murders.""");
+</init>
+
+Father, with blood on his hands and upper torso, and a huge grin. Mother, with crazy eyes and lipstick all over her face. Her expression a horrid struggle between paternal love and the effects of Vitamin.${fn("vitamin")}
+
+But of course the drug wins. Vitamin always wins. Father has ${isMedic ? "a scalpel" : isEngineer ? "an electrical wire" : "a wire cutter"} in hand. Mother holds a knife. A strange rhytmic sound resonates throughout the forest. That's new. Bwang. Father eyes your neck. Bwang. Mother's hand is shaking. Bwang. They burst forth. 
+
+<script>
+  bool wentToSleepBeforeForcedNap = zil.timeline.time < MAX_TIME_BEFORE_NAP;
+  physicalPoints.value = maxPhysicalPoints + (wentToSleepBeforeForcedNap ? 1 : 0);
+  mentalPoints.value = maxMentalPoints + (wentToSleepBeforeForcedNap ? 1 : 0);
+
+  // OLD VERSION: dream about how you wake up and you're already on Station Unity and a person in a white lab coat tells you that you're just fine – _fine_ – healthier than ever, actually – and now that same person is a captain of a very nice ship and he is on the bridge – in that lab coat, but for some reason it's not weird at all – and he still says it's _fine_, and you have a job on this new ship, too, and it's clear that you're comfortable and happy, and you're actually _laughing_, laughing while working, because the feeling of not needing to worry about stuff is just so uplifting and downright _euphoric_ right now. It's a very nice dream and when you feel you're starting to wake up from it, you genuinely don't want to.
+</script>
+
+- [Dogfight: Start]
+
+---------------
+Dogfight: Start
+
+## The Encounter
+
+<script>
+  exploration.time = MESSENGER_CONTACT_TIME;  // TODO: use something like .jump() to be explicit
+  clock.value = exploration.time;
+</script>
+
+You wake up to regular bleeps of the radar. That's what the rhytmic sound in the dream was.
+
+"I repeat," the ship says, quite urgently. "We have a radar contact."
+
+You look at the radar screen. It seems some smaller vessel is nearing rapidly. It doesn't seem like a pirate (those tend to be bigger or more numerous), but the behaviour is highly unusual. Who would want to get this close to another ship in deep space, without any previous communication? How did they even find you here?
+
+Shortly afterwards, the vessel is in visual range. It's a Messenger class ship, a fast clipper about tenth of the size of the Bodega. If it's hostile, it could still pose a serious threat, but would probably run a big risk itself.
+
+[IMG: Bodega and Messenger face-to-face]
+
+The ship glides to a halt in front of the bridge, face to face with The Bodega. After a while, the communications panel lights up. There is an incoming call from the Messenger. 
+
+- [Encounter]
+
+---
+Dogfight: Encounter
+
+The main screen fills with a large, bored face of a pilot with a large jaw and short hair. He's not even looking at the console, being busy with some controls to his lower left. 
+
+"Calling the crew of the Bodega," he starts reciting, absently. "This is..."
+
+Then he looks up, sees you on the screen, and stops abruptly.
+
+"Oh!" he says. "Oh _fuck!_"
+
+<script>
+  if (gorilla.isIn(b.bridge)) {
+    <echo>
+      Gorilla, which has been silently sitting on the ground to your left until now, starts hissing through clenched teeth, eyes wide open. It rocks back and forth, visibly disturbed. 
+    </echo>
+  }
+</script>
+
+The pilot begins to frantically push some buttons on the panel in front of him. "Oh fuck oh fuck oh _fuck!_" he keeps repeating.
+
+<script>
+  choice("\"What are you doing? What is happening here?\"")
+    .then(() => echo("He doesn't respond."));
+  choice("Watch what he's doing with the controls")
+    .then(() => echo("It takes a while, but you realize he's probably putting his ship into combat mode."));
+  if (scannerRepaired) {
+      choice("Use the repaired scanner")
+      .then(() => echo("You perform a quick scan of the Messenger. Its energy output is increasing rapidly and a variety of systems are coming alive. Chief among those are the two nose-mounted laser guns. It's beyond doubt that the Messenger is going into full combat mode."));
+    }
+  if (!bodega.shield.isCharged) {
+    choice("Shields up")
+    .then(() {
+      bodega.shield.charge.percentage = 0.78;
+    });
+  }
+  if (true /* let player charge beforehand? */) {
+    choice("Fire")
+    .then(() {
+      <echo>
+        You take the laser controls, quickly aim at the Messanger and fire. 
+      </echo>
+      if (Randomly.saveAgainst(0.6)) {
+        messengerShip.hull.hp.percentage = 0.5;
+        <echo>
+          Boom! It's a hit! The stream of energy hits the Messenger, right in the middle of its belly, and leaves a sizeable hole there. It looks like some serious damage has been dealt.
+        </echo>
+        points.add(7, "hitting early and hard");
+      } else {
+        <echo>
+          The stream of energy misses the Messenger by a couple of meters. That was unlucky.
+        </echo>
+        points.add(5, "not wasting any time");
+      }
+    });
+  }
+
+</script>
+
+The communications panel goes blank as the pilot closes the connection. The Messenger starts moving to the side. He knows that his best bet is to be moving all over the place.
+
+You try to remember something about spaceship combat, but there's not much you ever knew about the topic in the first place. You never had any ambition to go the the military, not even as a teenager, and you spent the last ten years of your life on cargo ships like the Bodega. Those normally don't get into combat, and if they do, it tends to be over quickly, and not in the cargo ship's favor. Plus, only those on the bridge get involved, whereas you practically live in ${isEngineer ? "the engine room" : (isMedic ? "the medbay" : "the cargo bay")}.
+
+It's not _all_ bad, though. The Messenger is clearly not a combat vessel. You can only see 2 guns in the front, and those seem pretty weak. The hull is slender. Moreover, according to the markings on the side, the ship is a Sentaco corporate runner. Sentaco – although one of the biggest corporations out there – is not one of the militarized ones. It deals in food and consumer goods. 
+
+The frail Messenger clearly wasn't sent here to fight the huge pile of steel that is the Bodega. But it _is_ fighting it now, for whatever reason, and it's bound to be ugly for both sides.
+
+- [FirstCombatStart]
+
+---
+Dogfight: FirstCombatStart
+
+<p class="meta"><strong>Note:</strong> HERE BE DRAGONS. As much as the previous part of the gamebook is rough, the next parts are <em>plain work-in-progress</em>. You will likely encounter errors and will most definitely run into a dead end. <strong>Continue at your own peril.</strong></p>
+
+<declare>
+  // setup ships
+  BodegaShip bodegaShip = new BodegaShip();
+  MessengerShip messengerShip = new MessengerShip();
+  
+  // setup combat
+  FirstCombat firstCombat;
+</declare>
+
+<init>
+  firstCombat = new FirstCombat(bodegaShip, messengerShip, "Dogfight: Resolution");
+</init>
+
+<script>
+  firstCombat.setup();
+</script>
+
+- Fight [Dogfight: CombatLoop]
+- Win [Win]
+
+---
+Dogfight: CombatLoop
+
+<script>
+  firstCombat.run();
+</script>
+
+- [Dogfight: CombatLoop]
+
+---
+Dogfight: Resolution
+
+<script>
+  if (bodegaShip.isAlive) {
+    goto("Win");
+  } else {
+    goto("Lose");
+  }
+</script>
+
+
+---
+Dogfight: Lose
+
+The Bodega goes completely silent in the dead of space. Then there's an extremely loud, metalic noise, as the Bodega gets torn apart. There are explosion on different parts of the ship, loud white noise of inner atmosphere shooting out into space. The computer screams. You know you are going to die soon, but maybe that's for the better. You glance at the Messenger for the last time, and then there's nothing.
+
+---
+Dogfight: Win
+
+This time, the beam must have drilled through to the core, because there is a violent explosion on the Messenger. Only the skeleton of the ship stays put, the rest is blown away from the inside, in all directions.
+
+[IMG of messenger exploding]
+
+<script>
+  points.add(10, "winning your first spaceship battle");
+
+  zil.update(1, describe: false, interactive: false);
+</script>
+
+<script>
+  if (!firstCombat.spybotManagedToCrashIntoBodega) {
+    if (!firstCombat.messengerManagedToLaunchSpyBot) {
+      <echo>
+        You suddenly realize that one of those pieces of debris is not like the others. It seems to quickly change directions. At first, those vector changes are negligible, but then the object comes around in a neat arch and plunges right into the Bodega's right side hull. Somewhere in the cargo bay.
+
+        "Hull breach," the Bodega says.
+      </echo>
+    } else {
+      // Messenger launched, but was destroyed before spybot was able to hit.
+      <echo>
+        The Messenger's unidentified object goes straight for the Bodega's hull and crashes itself somewhere into the right side of the cargo bay. 
+
+        "Hull breach," the Bodega says.
+      </echo>
+    }
+  }
+  b.lookAtHullBreachFromBridge.isActive = true;
+</script>
+
+You look at the readings around you. The hull is at ${(bodegaShip.hull.hp.percentage * 100).round()}% structural integrity. The Bodega is holding together, but it did take _some_ damage.
+
+On the plus side, though, you _are_ still alive.
+
+- [Why?]
+
+---
+Dogfight: Why?
+
+You try to imagine why the Messenger came here and why the pilot acted the way he acted. Was he just so stupid to try to pick a fight with a much sturdier ship? Was he expecting to find something else here? Or someone else? Did he know about the disease? Was he acting on his own, or was this an official Sentaco run? Is Sentaco a pirate company now? Why would it be interested in the Bodega, of all the ships?
+
+- [AfterMessengerDogfight]
+
+---
+Dogfight: AfterMessengerDogfight
+
+## Enemies
+
+The Bodega is now running a full system check, all the monitors flicker with information so fast only a computer could make anything of it. "What the _hell_ is happening?" the ship says, her voice glitching. "How does one go from a fully manned, well-preserved, licensed cargo ship to a _ghost_ ship piloted by an untrained ${getInformalRole("")} _while_ being attacked by a corporate runner for no apparent reason whatsoever – all of that in just two weeks!?"
+
+- "We survived, didn't we?" [
+    "Well," she replies. "That's rich coming from someone who is probably going to die in a couple of hours." You wish you had something to reply to that, but you don't.
+  {}]
+- "When misery rains, it pours." [{miseryPoursPhrase = true}]
+- "Shut up." [{firstShutUp = true}]
+
+<init>
+  addFootnote("khwarizmi", """The al-Khwārizmī is an African League star system beyond Groombridge 12 (Bodega's destination before the incident). Its largest station, the KHW-1, is an important interstellar trading hub.""");
+</init>
+
+"Okay, this is all so totally outside the protocol," the Bodega continues. "We'd be full speed somewhere long past al-Khwārizmī${fn("khwarizmi")} if it wasn't for the idiot Gorilla in the cargo bay. Nobody would be dead. The disease would be someone else's problem. And there would be someone _actually capable_ on the bridge."
+
+The flow of information on the monitors stop, and they all go to their default view. "Umm, look, ${b.getInformalSalutation()}, I have to say you managed the situation very well, given that you don't have any bridge experience whatsoever."
+
+<init>
+  addFootnote("shipGraveyard", """The Ship Graveyard is a place in the otherwise uninhabited Theta Cru star system, where decomissioned ships are left for salvage. Sometimes, as a way of punishment, the ship AI is left alive, but all its means of communication and movement are taken a way from it. Such an AI is effectively excommunicated for as long as its power input lasts, which can be hundreds or thousands of years.""");
+</init>
+
+"That doesn't change the fact that we are even more screwed than before," she continues. "We attacked a Sentaco corporate ship, for crying out loud. You are dying anyway, but what about me? If I'm lucky, I get wiped. If not, I am about to spend the next few hundred years in the Graveyard.${fn("shipGraveyard")} And I know what I'm talking about when I say that's _worse_ than dying."
+
+- "It attacked us first!" [{}]
+- "Shut up." [{secondShutUp = true}]
+
+<script>
+  if (secondShutUp) {
+    echo(""" "You know what? You shut up.""");
+    if (firstShutUp) {
+      echo(""" Can you say anything else?" """);
+      bodegaAttitude -= 1;
+    } else {
+      echo('" ');
+    }
+  } else {
+    echo(""" "I know that. But I don't think anyone will care. It's Sentaco." """);
+  }
+</script>
+
+It looks like the Bodega stopped talking, at least for a while. You still have ${getHoursToHyperdrive()} before the parameters for the jump to Station Unity are ready, and – although you're still tired – at least now you can stand on your feet.
+
+- [Explore: Bridge]
+
+---
+BodegaQuestions: Start
+
+You lean on one of the chairs and think about questions to ask. The ship computer listens (as always).
+
+- [Choice]
+
+---
+BodegaQuestions: Choice
+
+<declare>
+  // Initial set of topics available to player.
+  List<String> bodegaTopics = [
+      "Unity",
+      "Explosion"
+  ];
+</declare>
+
+<script>
+  if (bodegaTopics.isEmpty) {
+    <echo>
+      There are no more questions to ask right now.
+    </echo>
+    goto("Explore: Bridge");
+  }
+</script>
+
+<script>
+  // A Map of topic questions to show as a choice.
+  var bodegaQuestions = {
+    "Unity": "\"Tell me about Space Station Unity.\"",
+    "UNSA": "\"What's UNSA?\"",
+    "Explosion": "\"What do you know about the explosion?\""
+  };
+
+  bodegaTopics.forEach((String pageName) {
+    choice(bodegaQuestions[pageName], goto: pageName);
+  });
+  
+  choice("Stop asking", script: () {
+    <echo>
+      There's nothing else you deem worth asking right now.
+    </echo>
+    goto("Explore: Bridge");
+  });
+</script>
+
+---
+BodegaQuestions: Unity
+
+The Bodega pulls off the kind of a synthetic-sounding sigh that she likes to do whenever something annoys her. Which is very often. She says: "Look, I know you're just a ${getInformalRole("")}, but this is _basic_ astronomy. Space Station Unity is one of the big five. It also happens to be the closest hub with a major medical facility."
+
+You were familiar with the name Unity, and you do remember the captain talking about _'Nitty_ the last few days, but that wasn't something you'd try to process. You focused solely on your own work and on not thinking too much about anything else.
+
+The station's 3D model appears on the main window and starts slowly rotating. You've never been to Unity, but you can tell from the visualization that it is huge. There's a giant spherical fishery – an aquarium with fish that serves as a renewable source of high quality food – at its center. The station itself is a thick band slowly rotating around it.
+
+In a condescending monotone, the Bodega starts explaining: "Space Station Unity was established by UNSA 74 years ago, in deep space, 0.21 lightyears away from the Groombridge star system. It serves as a trading and international administration hub for the surrounding sector, notably for the Japanese Shisuteki station (Gl 83.1, _ light years away), the German stations Bollwerk and Struve (Kruger 60, 24Eta Cas, _ and _ light years away, respectively) and the Russian station Golitsyn (Gl 873, _ light years away)."
+
+"It currently houses a population of about 60,000. Facilities include a cargo port, four different warehouses, a dry dock, a medical center, an arboretum, and a communication beacon. A task force of about 20 UNSA ships is stationed at Space Station Unity."
+
+Bodega pauses. "I hope that clears things up." The visualization disappears.
+
+<script>
+  bodegaTopics.remove("Unity");
+  bodegaTopics.insert(0, "UNSA");  // Insert at the top.
+  
+  zil.update(2);
+</script>
+
+- [Choice]
+
+---
+BodegaQuestions: UNSA
+
+You stop yourself from asking – you realize that what Bodega pronounces as "oonzah" is in fact U.N.S.A. The actronym stands for _United Nations Space Administration_.
+
+U.N.S.A. is the ancient intergovernmental organization that was behind much of the early interstellar space exploration, and still holds quite some influence in deep space. With the recent expansion-fed rebirth of nationalism, its role is both more needed and less accepted by the governments of space.
+
+U.N.S.A. means neutrality, and – more often than not – relative safety. It also means lower taxes and a little more corporate influence than what is usual on government worlds and stations.
+
+<script>
+  bodegaTopics.remove("UNSA");
+
+  zil.update(1);
+</script>
+
+- [Choice]
+
+---
+BodegaQuestions: Explosion
+
+"There's not much data about the explosion," the Bodega says. "It happened deep on the left side of the cargo bay during the jump from Space Station Golitsyn, exactly ${clock.value + 20736} minutes ago. The jump was immediatelly interrupted because of the shockwave."
+
+A visualization of the cargo bay appears on the monitor. "There is no camera coverage of the location. We know Gorilla was in the general area at that time, but since he wasn't injured, he couldn't have been very close when the explosion happened. The blast was not big, but sizeable. It nearly destroyed the container of its origin and damaged several others around it."
+
+"Yes, I know all this."
+
+"So, why are you asking, I wonder?"
+
+"The investigation. I know Mitsuyo was running around getting information. He made notes and everything."
+
+"Officer Mitsuyo _and_ the captain. _And_ me. We worked as a team on this. I provided the necessary contextual data and I analyzed–"
+
+- Let the Bodega tell you all she had done [~5m] [
+    The Bodega goes on for about 5 minutes, describing the different analyses she did for the investigation. You wait patiently until she gets to the results.
+  {zil.update(5, describe: false, interactive: false, whileString: "she is talking");}]
+- "Great. Are you going to tell me what they found out?" [
+    "Good grief! You _are_ a pain in the ass. No wonder people avoided you."
+    
+    "It's the other way around. I avoided people."
+
+    "Whatever you say."
+  {bodegaAttitude -= 1;}]
+
+The Bodega lists some tabular data on the main window. 
+
+"Before we could arrive at a final conclusion, the first symptoms of the contagion arrived, and repairing the hyperdrive became the top priority. The consensus between captain Kay and officer Mitsuyo seemed to be that this wasn't any of the usual suspects. No badly secured gas tank, no illicit mining explosives, no chemical batteries. It was something else."
+
+"So, a sabotage? A terrorist attack? In a freighter's _cargo bay?_ That doesn't make sense."
+
+"As I already said, the investigation was inconclusive. I can display the whole report, including the chemistry drill-down of the collected samples, but I doubt you will understand any of that."
+
+<script>
+  bodegaTopics.remove("Explosion");
+
+  zil.update(1);
+</script>
+
+- [Choice]
+
+---
+Explore: ONLY_VARIABLES (PAGE NOT USED)
+
+<declare>
+  BodegaZil b;
+
+  var zil;
+  var exploration;
+  var gorilla;
+
+  Function printSleepiness;
+  Function getHoursToHyperdrive;
+</declare>
+
+<init>
+  // Create the Bodega Zil (everything _inside_ ship), initialize values, setup.
+  b = new BodegaZil(goto, echo, choice, showForm, this);
+
+  // Assign the variables used throughout .egb to top level functions (for save to work, too).
+  zil = b.zil;
+  exploration = b.exploration;
+  gorilla = b.gorilla;
+
+  printSleepiness = b.printSleepiness;
+  getHoursToHyperdrive = b.getHoursToHyperdrive;
+</init>
+
+---
+Explore: Bridge
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Bridge.description
+
+The bridge is a large room at the front of the ship with two rows of computer terminals and controls – and a big window in the front. The window is, of course, fake. Having such a big window on a spaceship would not only be expensive, but also extremely dangerous. What you're actually looking at is a big monitor which is nevertheless _designed_ to look exactly like a window, and which usually shows what you would see if there _was_ a window. Even depth is simulated. It makes navigating the ship a little more intuitive, and prevents claustrophobia. And since it looks so much like a window, most people just call it 'the main window' instead of the more accurate 'the main monitor'.
+
+[IMG bridge]
+
+The bridge is where the captain spent most of his days, which is evidenced by the fact that there are several rows of empty bottles laid down below one of the walls. There is still an half empty bottle of Ishtar Nook vodka sitting next to the captain's seat. To be fair, though, the captain wasn't the only one drinking here: three other crew members had their posts on the bridge, and they were drinking with him.
+
+The bridge is connected with the rest of the ship via two main corridors: Corridor Left and Corridor Right (which ${isSpaceman ? "you were used to call" : "some of the more pretentious crewmembers called"} 'Port Corridor' and 'Starboard Corridor', respectivelly, but ${isSpaceman ? "most crewmembers on the Bodega didn't, so you gave up and started using 'Left' and 'Right', too" : "that fortunately never caught on"}). Both corridors lead along their respective side of the ship all the way to the cargo area in the back. There is also a short and very narrow utility corridor leading from under the main window to the nose of the ship.
+
+- [Bridge]
+
+---
+Explore: LookAtHullBreachFromBridge
+
+The object from the Messenger crashed into the right side of the cargo bay. It seems it managed to drill through the hull, sealing the breach behind itself – there is almost no drop of air pressure in the cargo bay. This device, whatever it is, was clearly designed to get into a ship while keeping its atmosphere more or less intact.
+
+One of the automatic hull-repair bots is already crawling on the outside of the cargo bay to reinforce the device's seal. You let it do its job because there is no way of telling how strong or permanent the device's own seal is made to be.
+
+<script>
+  zil.update(1, describe: false);
+</script>
+
+- [Bridge]
+
+---
+Explore: Nose
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Nose.description
+
+The utility corridor is so narrow and low that you have to walk crouched and a little bit sideways. The walls and the ceiling are packed with cables, pipes, gauges, valves. There are little nooks here and there that allow physical maintenance of some of the subsystems present in this part of the ship.
+
+- [Nose]
+
+---
+Explore: Nose.ScannerLook
+
+The scanner has been shaky for several weeks now, but nobody gave it much attention. A cargo ship such as the Bodega doesn't have much use of it most of the time – it travels between known space stations via relatively safe routes. Nothing needs to be scanned when everything is business as usual. And when the scanner went completely down after the explosion in the cargo bay, there were much more pressing issues than that.
+
+<script>
+  if (isEngineer) {
+    <echo>
+      As an engineer, you have some idea what could be wrong. You estimate the time needed to repair the scanner to about one hour.
+    </echo>
+  } else {
+    <echo>
+      You're not an expert, so it'll take you some time (maybe 1-2 hours), but you expect you'll be able to fix the scanner yourself.
+    </echo>
+  }
+  
+  b.scannerRepair.isActive = true;
+</script>
+
+- [Nose]
+
+---
+Explore: Nose.ScannerRepair
+
+<script>
+if (isEngineer) {
+    <echo>
+      Even as you set out to repair the scanner, you can already guess the problem will have something to do with energy input. You remember the captain telling you something in that vein a few weeks ago – the feed from the scanner was up and down, intermittently.
+      
+      Your knowledge of power networks (you're a machinist after all) should allow you to find the culprit sooner or later. But maybe there's a shortcut that could save you some time.
+    </echo>
+  } else {
+    <echo>
+      After a little bit of poking around and looking at the feed from the scanner, you realize  the scanner itself probably works fine, but it doesn't get enough energy from the network. Or it does, but only intermittently.
+      
+      What probably follows is a lot of trial and error. But maybe there's a shortcut that could save you some time.
+    </echo>
+  }
+
+  b.createExtraEffortChoiceList(
+    "Try things one after another (slow but proven way)",
+    () {
+      zil.update(b.computeTimeRequired(92, isEngineer), describe: false, interactive: false, whileString: "you are trying out one thing after another");
+      <echo>
+        It takes time, but you find the culprit: it's the transformer. It's completely finished.
+      </echo>
+    },
+    "Think hard first", 0, 1,
+    () {
+      <echo>
+        You decide you could find the faulty component by the amount of ozone you can smell in different parts of the system. If there's an electrical arc somewhere (and, judging by the intermittent power, there is), it should be relatively easy to find it by smell.
+      </echo>
+      zil.update(b.computeTimeRequired(32, isEngineer), describe: false, interactive: false, whileString: "you are carefully putting your nose to different parts of the system");
+      <echo>
+        The approach bears fruit quickly. A faulty transformer is given away by the pungent smell of ozone.
+      </echo>
+      
+    }
+  );
+</script>
+
+After you find a spare transformer in the engine room and install it, the scanner comes back online, fully operational.
+
+<script>
+  scannerRepaired = true;
+  points.add(2, "expecting the worst");
+</script>
+
+<script>
+  b.printSleepiness();
+</script>
+- [Nose]
+
+---
+Explore: CorridorLeftNextToCaptainsCabin
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftNextToCaptainsCabin.description
+
+Not so long ago, you were dragging the captain's body through here. You had found him dead inside, in front of his computer.
+
+- [CorridorLeftNextToCaptainsCabin]
+
+---
+Explore: CaptainsCabin
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CaptainsCabin.description
+
+[IMG captain's cabin]
+
+It's quite spacious – for a cabin on a spaceship, that is. It's not luxurious, but the bunks everyone else is living in definitely don't compare to this. The walls are paneled with faux wood and the room's light source is – instead of the ubiquitous fluroscent lamps – a round, dimmed chandelier.
+
+The bed doubles as a sofa, with a little coffee table that opens from one of the walls. On the other end of the room, there is the workstation. The computer screen is still on.
+
+Of course, this wouldn't be captain Kay's room if there wasn't alcohol around. Bottles are all over the place – empty ones on the floor and half empty ones everywhere else. The places that aren't covered with bottles are covered with crumpled clothes, empty cardboard boxes, and general garbage.
+
+It's not that the captain was more of a pig than everyone else on board. It's just that there was nobody who would yell at him to clean up. It was _his_ ship, after all.
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsCabinLookAround
+
+You start sifting through all the garbage in the room. The plastiglass bottles clank as you accidentaly kick them around, and you move, methodically, from the bed-sofa to the door. Apart from the alcohol, there are tossed clothes, lowbrow magazines, memory sticks, cardboard boxes, used handkerchiefs, and lots of cheap entertainment gadgets. Mostly game consoles and video players. Anything that can keep a person's mind occupied. During the long hauls, boredom is the biggest enemy.
+
+<script>
+  // TODO: createExtraEffortChoiceList + say isHawkeyed
+
+  zil.update(b.computeTimeRequired(15, isHawkeyed), describe: false, interactive: false, whileString: "you are searching");
+  b.secondLookAround.isActive = true;
+</script>
+
+You take a break after some fifteen minutes of searching. You haven't found anything interesting. You've covered about one third of the room, but you've also become quite efficient in making your way through the garbage now.
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsCabinLookAroundContinue
+
+You get back to work. The items get familiar. Issues of Space Slam magazine. Cheap plastic game controllers of different kinds. Dirty sweatshirts of the same cut and color. You're throwing everything towards one corner of the room so you don't need to go through one thing twice.
+
+<script>
+  zil.update(b.computeTimeRequired(15, isHawkeyed), describe: false, interactive: false, whileString: "you are searching");
+</script>
+
+Then, you pick up yet another plastic device from under a pair of trousers, and as you are ready to throw it, you realize it's much heavier than the others, and that it's not plastic at all. It's black steel and it's a gun.
+
+[IMG of gun laid in hand]
+
+The captain had a gun? Why? You stand there for a while, looking at the weapon in your hand.
+
+<script>
+  b.captainsGun.isActive = true;
+  b.thirdLookAround.isActive = true;
+</script>
+
+You realize another 15 minutes passed and there is still around a quarter of the room left. You lay the gun back on the ground.
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsCabinLookAroundTheRest
+
+You search the rest of the room, but there's nothing interesting left, nor nothing that would explain the gun.
+
+<script>
+  zil.update(b.computeTimeRequired(3, isHawkeyed), describe: false, interactive: false, whileString: "you are searching");
+</script>
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsComputerFirst
+
+"There's no doubt this is the best thing that has ever happened to me – death." The computer screen is filled with text, and this is the sentence at the top. You realize you are reading the last paragraph of a log record that is dated a couple of hours ago. 
+
+It continues: "I want to be dying forever. It makes me happy. Happier than anything. It hurts like hell, yes, but I am hooked. Truly. I never had any idea! It's ecstatic. So focused and discrete and full of memories and _hope_ it makes me laugh. I loathe my recent stupid, stupid fear of death and my clinging on something as worthless and _selfish_ as life. I was living a lie – and now I am dying the truth. Why did I never allow myself to see this before? What the hell was I afraid of?"
+
+That's the end of the log entry. You can see there are some paragraphs before this one, but you know that touching the computer – after such a long time of inactivity – would cause it to ask for the captain's password. Which you don't know and have no way of guessing.
+
+<script>
+  zil.update(1, describe: false);
+</script>
+
+- [CaptainsCabin]
+
+---
+Explore: CorridorLeftNextToAirlock
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftNextToAirlock.description
+
+There is a door on each side of the corridor here. The bulkier one is the Airlock Left. It's identical to the airlock ${pulledLever ? "from where you let the captain's body out" : "where you left the captain's body"}, except this one is facing the other way, out the left side of the ship.
+
+The second door, oposite the airlock, leads to the staff room.
+
+Corridor Left stretches to the distance in both directions.
+
+- [CorridorLeftNextToAirlock]
+
+---
+Explore: LeftAirlock.Look
+
+This is the airlock that is always used when the Bodega is moored at a space station or when another ship is docked with the Bodega. All personnel come and go through it. This is probably why the captain chose the other, Corridor Right, airlock for funerals. That one is less worn out, less _everyday_. It seemed more proper for a memorial service.
+
+It would appear that this airlock is for the living, and the other one is for the dead.
+
+There is a little rack next to the airlock with little information flyers. These are standard and mandatory on every bigger ship – for the police, for rescue workers, and for visitors. They contain the basic data about the ship as well as a schematic plan. But the police almost never take them, as they have their own maps that are projected right onto their visors; rescue workers almost always know exactly where to go in advance; and visitors are rare and mostly content with being shown around. This is why the topmost flyer on the rack is covered in dust.
+
+<script>
+  b.infoFlyer.isActive = true;
+</script>
+
+- [CorridorLeftNextToAirlock]
+
+---
+Explore: StaffRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: StaffRoom.description
+
+This is where the architects of the ship imagined the crew would spend most of their free time.
+
+The staff room is painted white and green. There's a kitchenette, a white oval table, and a large video screen. The usual plumbing and electric wiring that protrudes from the walls everywhere else on the ship is notably missing here. Everything is smooth and secure, and there is almost no wear and tear here. It's like a room from another ship.
+
+The crew almost never came here, except to pick up instant food, to get coffee, or to fill a bottle from the drinking fountain. Nobody felt comfortable here. The one room on the ship _designed_ for social interactions – was usually as empty as it is now. And whenever someone seeked solitude from the others, they went to the staff room. That's what _you_ did, anyway (this was one of your two favorite hiding places). The others didn't seem to mind each other's company that much.
+
+Just opposite the entrance, there's a little door that you know leads to the medical bay (and through it, to the opposite side of the ship, to Corridor Right).
+
+- [StaffRoom]
+
+---
+Explore: StaffRoom.findFood
+
+The kitchenette has a cabinet with foodstuff. Most of its contents are packs of long-life gingerbread and cups of instant noodles. A freezer next to the cabinet contains heaps of fish fillets (fish being the only generally available meat source in deep space - there are zero gravity fish-farms on every bigger space station). None of this whets your appetite.
+
+Then you remember the officers' locker. There's a small refridgerated box above the freezer that contains high quality food for officers and for special occasions. It isn't locked, but it's also understood that when you're not one of the officers, you don't touch its contents.
+
+You open it. There's a half-eaten turkey sandwitch on the lowest rack, and a single banana on the highest one.
+
+<script>
+  b.banana.isActive = true;
+</script>
+
+- [StaffRoom]
+
+---
+Explore: CorridorLeftNextToBunks
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftNextToBunks.description
+
+This is one of those places where you can really appreciate the true length of the corridor. On both directions, the passageway subtly fades in mist.
+
+The entrance to the bunks (or "Living Quarters" as they are labeled here) is to the side.
+
+- [CorridorLeftNextToBunks]
+
+---
+Explore: Bunks
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Bunks.description
+
+The bunks is a large, smelly, dark room with many bunk beds scattered around and not much else. Each bunk bed comes with tall personal lockers on each side. The only crewmember not housed here was the captain (and of course Gorilla, who has his den in the cargo bay).
+
+In the last few days – after it was clear it's too late for quarantine – at least three or four crewmembers died here on their beds. ${isMedic ? "As the assistant medic, you personally moved each one from here to the airlock." : "You remember helping the medic move one of them from here to the airlock."}
+
+- [Bunks]
+
+---
+Explore: Bunks.SiftThroughLockers
+
+You come up to the first of the personal lockers on your left. It's open. (Several of them are – there is little need to lock up your stuff on a long-haul freighter like this, especially when you don't _have_ that much stuff, and even less so when everybody on the ship faces imminent death.)
+
+It's Mwenye's locker. He was an ablebodied spaceman${isSpaceman ? " like you" : ""} and spent most of his time in the cargo bay. There was always a lot of work in the cargo bay.
+
+<init>
+  addFootnote("creditsRing", """ The credits rings are worn by their owners on the little finger or the ring finger. They are the standard means of payment on spaceports and almost anywhere else in the universe. Most credit rings are set up with a security measure that prevents anyone other than the original owner from using them. This freeze can usually be lifted on space stations through the financial institution that issued the ring.""");
+</init>
+
+The whole inside of Mwenye's locker's door is covered with the African League flag. He was born on Ejeta, an African League space station, and was an avid citizen until his death. This shows even from his abandoned locker – there are African League pins, an ornamental League calendar with important dates and holidays, some clothes in national colors, and on the top shelf, his passport is propped against the locker's back wall, on display. You sift through the rest of late Mwenye's belongings, and there is nothing of immediate value. You find Mwenye's credits ring,${fn("creditsRing")} but there's no way of getting the money out of it without contacting the issuing bank about his death. So you just make a mental note of its existence and move on.
+
+XXX actually give money
+
+<script>
+  zil.update(b.computeTimeRequired(15, false), describe: false, whileString: "you are searching for another locker to open");
+</script>
+
+Next, you open Cooper's locker. Cooper was another ablebodied spaceman – the most experienced of all. His clothes are neatly stacked and there are dozens of tools and a couple of dumbbells here. In contrast to Mwenye's locker, Cooper's doesn't show any sign of his origin or citizenship. (Which is not surprising because most people on independent trading ships such as the Bodega are not very attached to their origins. If they were, they probably wouldn't be living a life on the constant move.) You find Cooper's credits ring and place it on top of a stack of clothes so it'll be easier for you to find it later.
+
+You move on. You skip two bigger lockers belonging to Michael Irwin (senior medic) and Par Nabiyeva (senior engineer) – they are locked. You have better luck with a couple of other lockers, and again you mostly find clothes and little of value, save for the occassional credits ring. You don't expect any of them to be loaded with lots of money. But it's good to know they're there – on the off chance you survive all this.
+
+<script>
+  zil.update(b.computeTimeRequired(15, false), describe: false, interactive: false, whileString: "you are checking the few remaining lockers");
+</script>
+
+The last locker you open is Mitsuyo's. As the first officer, she had a double-sized locker but despite the extra space it seems to have _less_ stuff in it than the others. It's strange. Yes, there are the very neatly stacked clothes, sorted by color, on one of the shelves. The neatness seems typical to the methodical Mitsuyo – if the whole locker was like this, you wouldn't be surprised. But then there are the other shelves. They are full of junk and empty booze bottles. Many of the shelves are damaged, as if Mitsuyo had been hitting them. A rotten piece of food is decaying on the top shelf.
+
+This is where you also find her Japanese passport. It's damp from the mush it's been sitting in, so you wipe it on the clothes and open it. It says there that she was born on Shitsuteki station. You have to check twice, but it really does say Shitsuteki, and the date of birth is 35 years ago (which is 10 years more than you would say from Mitsuyo's face). This means she must have been 7 years old when the drugged and delirious spacemen of the San Lorenzo Martir came and razed the station in one of the most brutal mass murders in the history of space exploration. Mitsuyo had either moved to another station by then or she was one of the very few Japanese survivors.
+
+<init>
+  addFootnote("shabu", """ Shabu is a Japanese variant of thinned methamphetamine – an old, potent and relatively cheap psychostimulant used all over the universe. It enhances mood, alertness, awareness, wakefulness, endurance, productivity, and motivation, increases arousal, locomotion, heart rate, and blood pressure, and it gives the perception of a diminished requirement for food and sleep. It is also neurotoxic, damaging both dopamine and serotonin neurons, causes brain damage after long-term use, and can induce psychosis and cerebral hemorrhage. Shabu is distributed in bullet-shaped vials and snorted directly from them. The vials are completely sealed before use, which makes them hard to detect by trace sensors. """);
+</init>
+
+On the bottom-most shelf, you find 2 vials of white crystal powder, hidden under a piece of textile. The bullet-like shape of the vials is unmistakable – this is shabu.${fn("shabu")} Mitsuyo is _the_ last person on the ship that anyone would suspect of using drugs. But, looking back, this might  explain the merciless pace of work that she was known for, and the occasional episodes of being completely withdrawn. You always thought she's just recharging by being alone – which you could completely understand – but it turns out it most probably was withdrawal symptom. This also explains why you have never seen Mitsuyo drunk, although her personal locker is full of empty bottles.
+
+The rest of the personal lockers are locked.
+
+<script>
+  b.shabuVials.isActive = true;
+  points.add(5, "getting to know your assets");
+  siftedThroughLockers = true;
+</script>
+
+- [Bunks]
+
+---
+Explore: Bunks.BreakIntoLockedBoxes
+
+// TODO: needed?
+ 
+- [Bunks]
+
+---
+Explore: CorridorLeftJunction
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftJunction.description
+
+<script>
+  if (!junctionExplained) {
+    <echo>
+      The corridor curves here, and at the point of the bend there are two doors. The smaller one leads to the 'guts' of the ship – a noisy maze of passageways and ducts winding between many of the ship's smaller internal systems. The bigger one leads to the engine room, and, through that, also the hyperdrive.
+      
+      This is the final stretch of Corridor Left – you can almost see the door to the cargo bay from here.
+
+      Because of the two doors to important parts of the ship, and the proximity to the cargo bay, this place has been called 'left junction' by the crew.
+    </echo>
+    junctionExplained = true;  // junction can be explained only once (it's the same on both sides)
+  } else {
+    <echo>
+      The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here – the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.
+    </echo>
+  }
+</script>
+
+- [CorridorLeftJunction]
+
+---
+Explore: Guts
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Guts.description
+
+The guts is an intricate maze of little passageways between most of the ship's internal systems. When everything works, there is no reason for anyone to come here, and so the area is not particularly comfortable or even well lit. Many passageways are too narrow even for a body as thin as yours, and most are too low for any person to stand straight.
+
+After the explosion, this place is even less welcoming. The negative effects of the shockwave are more visible here than anywhere else – each few steps you can see a loosened cable, a leaking pipe or an awry rack. You hear the crackle and smell the pungent scent of the occasional electrical discharge. It's amazing that the Bodega is still mostly functional even with all those little malfunctions.
+
+[IMG]
+
+You quickly make your way to what the crew had called 'the heart' of the guts. A hub of several passageways with lots of gauges, valves and pipes, it sits more or less in the center of the habitable part of the ship. 
+
+There's a simple sitting bench here on which you have spent quite some time. Not that you have had any practical reason to be here, but as someone who prefers being alone to the awkwardness of social interactions, this was your best bet when you wanted to keep out of everyone's way and out of sight. Not even Bodega sees here.
+
+From this place, you can easily make your way to both corridors and to the different systems housed in the guts.
+
+- [Guts]
+
+---
+Explore: Guts.TurretLook
+
+Climbing up the ladder from the 'heart', you get to the base of the defensive turret. It's the oldest weapon system the Bodega has, and it most probably dates the few decades to when the ship left the docks for the first time. (In contrast, the front utility laser was installed quite recently, and mostly for the occasional asteroid mining – not so much for self-defense.) 
+
+But despite its age and limited firepower, the turret is still the best insurance against small-time gangsters and opportunist criminals. It's fully automatic – it will track a given target and shoot at it until told otherwise – so it doesn't require a trained weapons man to be effective. 
+
+What it requires now, though, is repair. The turret itself was obviously made quite resilient, but its age combined with the recent shockwave (and the fact it happened during a hyper jump) have done considerable damage. One of the components is buzzing so loudly you could hear it back from the 'heart'. There's a flicker of sparks coming from the inside and a red pilot light is blinking on the wall nearby.
+
+You can't see the turret from the outside, but you don't expect any damage there.
+
+<script>
+  zil.update(1, describe: false, interactive: false);
+  b.repairTurret.isActive = true;
+</script>
+
+- [Guts]
+
+---
+Explore: Guts.TurretRepair
+
+You cautiously open the turret's panel: the inside is a mess. A pair of loose, sparkling cables has burned through a few others and they now seem to be short-circuiting into ${isEngineer ? "the control unit" : "one of the components"}. This will be fun.
+
+You ${isEngineer ? "" : "manage to "}kill the power and start going methodically through the inside of the turret's base, system by system, component by component. The turret was unlucky – almost everything has been dealt _some_ damage. Fortunately, though, the weapon was made with maintainability in mind: the components are either easy to repair or standard enough that you are able to find spare ones on the ship.
+
+
+
+<script>
+  b.createExtraEffortChoiceList(
+    "Work in a normal pace and walk for spare parts",
+    () {
+      zil.update(b.computeTimeRequired(47, isEngineer), 
+          describe: false, interactive: false, whileString: "you are repairing");
+    },
+    "Work hard and run for spare parts", 1, 0,
+    () {
+      zil.update(b.computeTimeRequired(27, isEngineer), 
+          describe: false, interactive: false, whileString: "you are frantically repairing");
+    }
+  );
+
+  
+</script>
+
+After a tiring and seemingly never-ending stretch of work, you look at the electronics and realize all the faulty components have been repaired or replaced. You link them together with new cables and turn the turret's power input back on, half-expecting another failure. But the turret just whirls to life, performing a quick self-test and switching on a green pilot light afterwards.
+
+The turret is back online.
+
+<script>
+  bodegaShip.turret.isActive = false;
+</script>
+
+- [Guts]
+
+---
+Explore: EngineRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: EngineRoom.description
+
+[IMG of room and big window to the machine area]
+
+No matter how filthy the rest of the ship could get, this room was always perfectly clean. That's because officer Par Nabiyeva, the Senior Engineer${isEngineer ? " and your boss" : ""}, insisted on it. She would force ${isEngineer ? "you" : "her assistant"} and Gorilla to brush the whole room, _including the ceiling_, almost every single day.
+
+Even apart from the cleanliness, the engine room is a remarkable sight. Clusters of glistening, color-coded cables and pipes are running everywhere. There are four sturdy, functional terminals in different parts of the room. And at the head of the room, there is a huge window through which you can see both the generators and the hyperdrive in one spacious machine room. It's where you spent the last few days ${isEngineer ? "finalizing repairs to the hyperdrive with Captain Kay" : "helping Captain Kay finalize repairs to the hyperdrive"}.
+
+[IMG]
+
+<declare>
+  int powerCellsTotal = 8;
+  Stat<int> energyReserve = new Stat<int>("Energy reserve", (value) => "$value E", description: "The number of charged power cells", show: false, initialValue: 8);
+</declare>
+
+The generators take up the left part of the machine room. They are where the power cells (or, 'the fuel' as ${isEngineer ? "you engineers call it" : "the engineers call it"}) are consumed. It's a long line of 8 half-spheres, each of them as tall as a man. The power cells are inserted into them from above by enormous robotic arms, and when their capacity has been depleted, and their energy transfered to different parts of the ship, the robotic arms remove them again and put them into a receptacle at the center of the machine room. There are $powerCellsTotal power cells available, and it looks like ${energyReserve.value == powerCellsTotal ? "all" : energyReserve.value} of them are currently charged.
+
+<script>
+  energyReserve.show = true;
+</script>
+
+The whole area is pulsating and strobing with lights and diodes.
+
+The right part of the room is a lot less busy. In the center of an almost empty space, there is a large cigar-shaped device: the hyperdrive. From this far, the only indication that it's doing something is a few blinking status lights.
+
+<script>
+  // TODO: describe what's currently happening with the hyperdrive and the status of the subsystem
+
+  if (isEngineer) {
+    // TODO: reminisce the 'good old times' (as in Pixar's "Every day he ____")  
+  }
+</script>
+
+- [EngineRoom]
+
+
+---
+Explore: EngineRoom.RepairEngine
+
+The engine is your domain, so even though there is nothing apparently wrong with the engine, you are quite confident you'll be able to bring it to 100% in a couple of hours. After working so long on the hyperdrive, you are actually somewhat looking forward to it.
+
+<script>
+  if (zil.timeline.time ~/ 60 > 3 && zil.timeline.time <= MAX_TIME_BEFORE_NAP) {
+    <echo>
+      You start going through the usual output optimization routines, but you can't focus on any of it. After trying for a couple of minutes, you realize you could do more damage than good, and return back to the bridge.
+    </echo>
+    goto("Bridge: Nap");
+  }
+</script>
+
+You go through the usual output optimization routines. The shockwave from the explosion hit this part of the ship quite strongly. Some of the fission cores went off axis and shut down automatically. You start going through them, one by one, resetting them, making sure they're stable and manually turning them on again.
+
+<script>
+  zil.update(b.computeTimeRequired(3*60, true), describe: false, interactive: false,
+    whileString: "you are checking the third core");
+</script>
+
+Two of the cores are considerably harder to set right, but you succeed in the end. By all this, you bring the engine output to 96%. The last 4% turns out to be a matter of precisely syncing the cores' output phases.
+
+The engine is now 100% operational and working like clockwork.
+
+<script>
+  bodegaShip.engine.hp.setMax();
+  points.add(2, "doing what you know best");
+  if (zil.timeline.time <= MAX_TIME_BEFORE_NAP) {
+    printSleepiness();
+  }
+</script>
+
+- [Explore: EngineRoom]
+
+---
+Explore: CorridorRightNextToComputerRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightNextToComputerRoom.description
+
+On the side, a modest door is labeled "Computer Room". It's where the Bodega's hardware is. The fact that it is placed on the exact same place as the captain's cabin, only on the opposite corridor, is very probably not a coincidence. Captain is the human brain of the ship. The machine brain is behind this door.
+
+- [CorridorRightNextToComputerRoom]
+
+---
+Explore: ComputerRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: ComputerRoom.description
+
+The Computer Room is a grid of narrow alleys between 25 black, humming cuboids. Pipes of coolant are running from the ceiling to the floor, intertwining with the electronics like veins in muscles. 
+
+The 25 blocks are the different modules of Bodega's brain, almost each of which is inspired by a part of the human brain. The big difference is that these are neatly organized by function and imbedded in separate blocks. The one closest to the door is labeled 'Visual Perception'. Another one has 'Sensors Perception' written on it. From previous visits to this room, you remember a couple of 'Speech' modules, something called 'Hierarchy', and the 'Mother', sitting in the center of the room, perfectly surrounded by all the other modules.  
+
+One of the outer walls is studded with rade drawers – the memory modules. Some of them are blinking red, indicating the inevitable data corruption. It is the honorary, almost ceremonial role of the captain to swap these with new modules, and when this is being done, the officers, and sometimes the whole crew, is watching. A long time ago, you saw captain Kay do this – and it was one of the few times he was sober and solemn.
+
+The rade drawers ceremony is said to be a symbolic way for thanking the ship for its service (while also hinting on the power the human crew has over it). It's something like scratching a pet on its belly. Apparently, from the point of view of the pet, this is supposed to feel both pleasant and dangerous at the same time.
+
+Next to the rade drawer wall, there's a large locker with spare parts. Only the captain and the first officer have the key to that one.
+
+- [ComputerRoom]
+
+---
+Explore: CorridorRightNextToAirlock
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightNextToAirlock.description
+
+You are at Airlock Right, which has been serving as the place of funerals lately. ${pulledLever ? "Not long ago, you ejected captain's body from here to outers space." : "This is where you left the captain's body."}
+
+Directly opposite the airlock, there is also a second door which leads to the Medical Bay.
+
+Corridor Right stretches to the distance in both directions.
+
+- [CorridorRightNextToAirlock]
+
+---
+Explore: CorridorRightNextToAirlock.Look
+
+You approach the airlock and look through the porthole window.
+
+<script>
+  if (pulledLever) {
+    if (currentlyInJump) {
+      <echo>
+        The weird visual effect of the hyperjump makes it look like it's blindingly bright outside, but you know these are photons from stars light years ahead. The space around the ship is completely empty, looking almost sinister. As if it's waiting for you to fill it.
+      </echo>
+    } else {
+      <echo>
+        The space around the ship is completely empty, looking almost sinister. As if it's waiting for you to fill it.
+      </echo>
+    }
+  } else {
+    <echo>
+      The captain's body is still lying there on a blanket. It looks like the weird red rash is continuing to spread across the naked skin.
+    </echo>
+    b.pullLever.isActive = true;
+  }
+
+  // TODO: recollections of past funerals
+</script>
+
+The outer door is sealed shut.
+
+- [CorridorRightNextToAirlock]
+
+---
+Explore: CorridorRightNextToAirlock.PullLever
+
+You pull the lever, and as the outer door opens, all the air in the airlock shoots out – with a loud hiss – into the vacuum of space. The body is now moving in that direction, too, though much slower. It's no longer pulled towards the floor with artificial gravity – that was automatically turned off when you pulled that lever – so the body kind of tumbles towards the door.
+
+<script>
+  if (Randomly.tossCoin()) {
+    <echo>
+      It hits the doorsill on its way out, goes through the door, and starts receding into space while slowly rotating.
+    </echo>
+  } else {
+    <echo>
+      It hits the doorsill on its way out and almost stops, hanging midway between the inside and outside. For a while, it almost looks like you'll have to close that outside door and reopen it again, which would cut the captain's body in half. But fortunately, the movement never stops completely, and the body goes through the door and starts slowly receding into space.
+    </echo>
+  }
+</script>
+
+<script>
+  pulledLever = true;
+</script>
+
+You close the outside door again by putting the lever back into the original position.
+
+- [CorridorRightNextToAirlock]
+
+---
+Explore: MedicalBay
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: MedicalBay.description
+
+${isMedic ? "This is the place where you had been spending most of your waking hours on this ship. " : ""}The room is white and green. There are mobile beds in the middle with an infusion stand next to each of them. A third bed is behind glass in a small quarantine cell in the corner. That is where the first few crewmembers died, including ${isMedic ? "your boss, " : ""}the Senior Medic. After that it was clear the the quarantine doesn't do any good, and that everyone is already sick anyway.
+
+One of the walls is lined with cabinets, drawers and a long counter with equipment. There are surgical tools, forceps, needles, weaves, flasks, pillboxes, petri dishes, various measuring instruments and a microscope. 
+
+<init>
+  addFootnote("planetborn", """ Planetborns are people who were born and raised on planets. They are a rare sight in space. Mostly welcome sight, too, since they bring money, although some spacers can't stand them for their snobbery and self-importance. """);
+</init>
+
+You remember a visitor – some kind of a rich planetborn${fn("planetborn")} who was apparently interested in buying the Bodega from captain Kay – wondering about the size of the med bay. "Seems so me that a medical establishment of this size," he said, "is a little bit of a, hmm, overkill? For a ship with a crew of a dozen, I mean." His name was Trukhin. Roman Trukhin. He was a Russian with large eyebrows and very traditional clothing. His blue tie was a subject of jokes for weeks to come.
+
+"What Mr. Trukhin might not realize," ${isMedic ? "your boss" : "the Senior Medic"} answered with as much politeness as he could muster, "is that space is a dangerous place, and that humans aren't particularly well-adapted to live in it. Especially not for long periods of time. There are many illnesses that space dwellers suffer that people on planets don't." And he wasn't talking only about physical illnesses, neither. A ship's medic needs to be also trained in psychology. "The medbay is exactly as big as most nations' regulations require it to be," he added.
+
+With an amused smile on his face, Trukhin nodded and carried on with his tour of the ship.
+
+- [MedicalBay]
+
+---
+Explore: MedicalBay.LookAtCounter
+
+
+
+- [MedicalBay]
+
+---
+Explore: CorridorRightNextToBunks
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightNextToBunks.description
+
+On the side here, you see the entrance to the bunks.
+
+- [CorridorRightNextToBunks]
+
+---
+Explore: CorridorRightJunction
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightJunction.description
+
+<script>
+  if (!junctionExplained) {
+    <echo>
+      The corridor curves here, and at the point of the bend there are two doors. The smaller one leads to the 'guts' of the ship – a noisy maze of passageways and ducts winding between many of the ship's smaller internal systems. The bigger one leads to the engine room, and, through that, also the hyperdrive.
+      
+      This is the final stretch of Corridor Right – you can almost see the door to the cargo bay from here.
+
+      Because of the two doors to important parts of the ship, and the proximity to the cargo bay, this place has been called 'right junction' by the crew.
+    </echo>
+    junctionExplained = true;  // junction can be explained only once (it's the same on both sides)
+  } else {
+    <echo>
+      The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here – the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.
+    </echo>
+  }
+</script>
+
+- [CorridorRightJunction]
+
+---
+Explore: CargoBayLeft
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+
+---
+Explore: CargoBayLeft.description
+
+<script>
+  if (!cargoBayExplained) {
+    <echo>
+      You are standing in a corner of a huge, _huge_ space filled with hundreds of freight containers. Each of them is exactly the same size (6 meters long, 2½ meters high and 2½ meters wide), but they do differ greatly in color, signage, age – and contents. They are stacked inside long parallel racks that go all the way to the backside of the cargo bay, and all the way down to the bottom of the space.
+      
+      There are long, narrow corridors between the racks – so that the crew can access each container to help with unloading, check on a container's status, contain leaks. The corridors' floors are nothing more than sheets of perforated steel fixed in between the racks. They are sturdy, replacable, and see-through. 
+      
+      [IMG of cargo bay]
+      
+      Two things hit you every time you enter the cargo bay. First, the cold and damp air. The cargo bay is heated _just_ enough so that people can work here for hours – but not even a degree more. Second, and more profoundly, the artificial gravity here is set to a very low value: only 20% of the standard. The moment you pass the threshold of the cargo bay door, you feel your stomach jump and you have to fight a brief sensation of falling. It's like the whole ship went into an instant dive. Luckily, your brain has learnt to deal with this and in a few seconds, you feel okay. The next step is to start walking and moving in a way that doesn't launch you to the ceiling, but again - you've had enough experience that it comes naturally now.
+      
+      You remember a brief stint a few years back at a cargo ship called the Bleeding Edge. Her captain insisted on having _no_ artificial gravity in the cargo bay at all. So the ship saved a little more energy, but the work in the cargo bay was hell. Nothing stayed in place, and every simple thing required much more planning and energy. The spacemen that served on the Bleeding Edge's cargo bay for more than a few years were going mad and sickly. They couldn't even stand straight in normal gravity, and their bones broke too easily. It was evil – not to mention against regulations. Luckily, you left the Bleeding Edge a few months after joining.
+      
+      Having that experience makes the 20% gravity here feel almost like a luxury, especially since anyone working in the cargo bay could directly change the gravity setting himself – on the console right here in the bay. On the other hand, almost nobody ever took advantage of that. They knew how expensive – energy wise – it can get, and they were mostly used to the idea of low gravity by the time they joined the Bodega.
+    </echo>
+    cargoBayExplained = true;  // cargo bay only needs to be explained once
+  } else {
+    <echo>
+      You are on the left side of the cargo bay, near the door to Corridor Left.
+    </echo>
+  }
+
+  /// TODO: If Jet not repaired then "the malfunctioning jet is accessible from here"
+
+</script>
+
+- [CargoBayLeft]
+
+---
+Explore: ExplodedContainer
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: ExplodedContainer.description
+
+// TODO
+
+- [ExplodedContainer]
+
+---
+Explore: ExplodedContainer.search
+
+// TODO
+
+<script>
+  zil.update(30, describe: false, interactive: false,
+    whileString: "you are searching");
+</script>
+
+// ...
+
+- [ExplodedContainer]
+
+---
+Explore: CargoCenter
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CargoCenter.description
+
+It's a sturdy computer interface with huge buttons and a reinforced screen. It's designed to be used by big hulks${isSpaceman ? " like you" : ""} with clumsy, gloved fingers, or even by enhanced gorillas.
+
+The console is located exactly half way between the two entrances to the cargo bay.
+
+- [CargoCenter]
+
+---
+Explore: CargoCenter.console
+
+<script>
+  if (!currentPage.visited) {
+    <echo>
+      Although theoretically, the console allows the user to access any function of the Bodega's internal network, its main focus is on the operation of the cargo bay. There are big buttons for changing the artificial gravity of the whole space. There's a master-lock that fixes all the containers in the racks once they're in place. And there's a guarded switch that opens the cargo bay's outside doors which is only supposed to be used when everyone is either outside the bay or in a space suit.
+    </echo>
+  }
+</script>
+
+<declare>
+  int cargoBayGravity = 20;
+</declare>
+
+The gravity is currently at $cargoBayGravity%.
+
+<script>
+  if (cargoBayGravity != 0) {
+    choice("Switch off artificial gravity", script:() {
+      cargoBayGravity = 0;
+      // TODO describe
+      zil.update(1);
+    });
+  }
+  if (cargoBayGravity != 20) {
+    choice("""Set artificial gravity to the ordinary (20%)""", script:() {
+      cargoBayGravity = 20;
+      zil.update(1);
+    });
+  }
+  if (cargoBayGravity != 60) {
+    choice("""Set artificial gravity to the max (60%)""", script:() {
+      cargoBayGravity = 60;
+      zil.update(1);
+    });
+  }
+  // TODO: open, master-lock
+  choice("Leave it be.", script:() {
+    <echo>
+      You back away from the console.
+    </echo>
+  });
+</script>
+
+- [CargoCenter]
+
+---
+Explore: CargoBayRight
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+
+---
+Explore: CargoBayRight.description
+
+<script>
+  if (!cargoBayExplained) {
+    <echo>
+      You are standing in a corner of a huge, _huge_ space filled with hundreds of freight containers. Each of them is exactly the same size (6 meters long, 2½ meters high and 2½ meters wide), but they do differ greatly in color, signage, age – and contents. They are stacked inside long parallel racks that go all the way to the backside of the cargo bay, and all the way down to the bottom of the space.
+      
+      There are long, narrow corridors between the racks – so that the crew can access each container to help with unloading, check on a container's status, contain leaks. The corridors' floors are nothing more than sheets of perforated steel fixed in between the racks. They are sturdy, replacable, and see-through. 
+      
+      [IMG of cargo bay]
+      
+      Two things hit you every time you enter the cargo bay. First, the cold and damp air. The cargo bay is heated _just_ enough so that people can work here for hours. Second, and more profoundly, the artificial gravity here is set to a very low value: only 20% of the standard. The moment you pass the threshold of the cargo bay door, you feel your stomach jump and you have to fight a brief sensation of falling. It's like the whole ship went into an instant dive. Luckily, your brain has learnt to deal with this and in a few seconds, you feel okay. The next step is to start walking and moving in a way that doesn't launch you to the ceiling, but again - you've had enough experience that it comes naturally now.
+      
+      You remember a brief stint a few years back at a cargo ship called the Bleeding Edge. Her captain insisted on having _no_ artificial gravity in the cargo bay at all. So the ship saved a little more energy, but the work in the cargo bay was hell. Nothing stayed in place, and every simple thing required much more planning and energy. The spacemen that served on the Bleeding Edge's cargo bay for more than a few years were going mad and sickly. They couldn't even stand straight in normal gravity, and their bones broke too easily. It was evil – not to mention against regulations. You left the Bleeding Edge a few months after joining.
+      
+      Having that experience makes the 20% gravity here feel almost like a luxury, especially since anyone working in the cargo bay could directly change the gravity setting himself – on the console right here in the bay. On the other hand, almost nobody ever took advantage of that. They knew how expensive – energy wise – it can get, and they were mostly used to the idea of low gravity by the time they joined the Bodega.
+    </echo>
+    // TODO: mention graviception? http://www.springerreference.com/docs/html/chapterdbid/115631.html
+    cargoBayExplained = true;  // cargo bay only needs to be explained once
+  } else {
+    <echo>
+      You are on the right side of the cargo bay, near the door to Corridor Right.
+    </echo>
+  }
+</script>
+
+- [CargoBayRight]
+
+---
+Explore: PlaceOfBreach
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: PlaceOfBreach.description
+
+// TODO
+
+- [PlaceOfBreach]
+
+---
+Explore: GorillasDen
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: GorillasDen.description
+
+TODO
+
+- [GorillasDen]
+
+---
+Unity: Jump
+
+You take the captain's seat and buckle up. With hyperdrive jumps, there's a slight chance of glitches in the ship's artificial gravity (among other things) – so buckling up is standard procedure.
+
+"Is our course set for Space Station Unity?" you ask.
+
+"Affirmative. We are ready to initiate the sequence." The ship computer draws a circle in the middle of the main window. Unity is somewhere that way.
+
+- "Initiate jump sequence." [{conceitedness += 1;}]
+- "Do it." []
+
+<init>
+  addFootnote("superchargeHyperdrive", """ """);
+</init>
+
+"I assume we want to supercharge${fn("superchargeHyperdrive")} the jump," the Bodega continues. "We do have the excess energy cells to spare, and we _are_ in a hurry, aren't we?"
+
+"Yes." There really is no reason to conserve energy at this point. A few more reserve energy cells will not do you any good if you're dead by the time you reach Unity. Supercharging saves 36% of the jump time (and takes twice the energy). "Yes, let's supercharge."
+
+<script>
+  <echo>
+    The alert signal goes off throughout the ship.
+  </echo>
+  if (gorilla.isIn(b.bridge)) {
+    <echo>
+      Gorilla quickly runs up to a pair of straps on the wall behind you. You hear a metallic click and a whoosh as he fastens it.
+    </echo>
+  } else {
+    <echo>
+      Somewhere on the ship, Gorilla is (hopefully) buckling into a set of wall-mounted straps.
+    </echo>
+  }
+</script>
+
+"Initiating hyperdrive sequence." You can feel and hear the main thrusters quickly coming to life, propelling the ship forward. Hyperdrives need the ship to be accellerating forward so they can warp its speed by several magnitudes. That's what is going to come next.
+
+"Energy accumulated." While accelerating by traditional means, the hyperdrive builds up an extremely high energy charge. That energy will be discharged through the hyperdrive, creating a controlled space-time distortion around the ship. Moving through and within the bubble allows the ship to effectively cheat uncle Einstein. "Discharging," the Bodega says.
+
+A couple of things happen at the same time. A violent glitch in the artificial gravity almost makes you vomit as it feels like the whole ship does a completely unnecessary barrel roll. The straps keep you in place, but the freestanding bottles fly in a swarm accross the bridge and fall crashing to the ground near the entrance to Corridor Right. A few red lights blink all over the bridge as other systems experience temporary glitches. And, finally, the main window goes blue and bright. Then violet and white. And finally, the visual feed is replaced by a computer visualization (during faster-than-light travel, external cameras aren't very useful – they are overwhelmed by the bright disc of light in front of the ship).
+
+<script>
+  jumpedToUnity = true;
+  currentlyInJump = true;
+</script>
+
+You are now on your way to Space Station Unity and you expect to warp through the XXX light years in XXX hours. There could still be some gravity glitches along the way, so the official guidelines are to stay put during the jump, but most spacemen just ignore those and hope for the best. The slight chance that you'll get slammed on the ceiling are more than balanced by not having to sit or stand strapped for hours on end.
+
+<script>
+  int timeOfUnityArrival = zil.timeline.time + JUMP_TIME_TO_UNITY;
+  exploration.reschedule(b.unityArrivalEvent, timeOfUnityArrival);
+</script>
+
+- [Explore: Bridge]
+
+---
+Unity: Arrival
+
+The main window is filled with white and red and blue. You're looking at Unity, one of the 6 largest space stations in all of the known universe.
+
+[IMG]
+
+<init>
+  addFootnote("unityAquarium", """ The aquarium is the food source from which the whole station's population could survive indefinitely, if needed. It contains a full ecosystem of creatures – from plankton to clams to predatory fish – that have been genetically modified from the sea habitats of Earth (but still look pretty much the same). At the center of the aquarium there is a three dimensional maze of (partly artificial) corals, accessible by long tubes from the outside. This is where most of the fishing takes place. It's also where the tourists sometimes go 'diving'. """);
+</init>
+
+It's a hollow disc around a huge spherical aquarium. The aquarium is the food source,${fn("unityAquarium")} while the disc is where the population lives and (more importantly for you) where the docks are.
+
+Unity is very old, and it shows. Although the outside paint is bright, even around the docks (where stations are normally dark with burn marks), the symetry of the disc is corrupted by numerous attachments, growths and outbuildings all over the place. As with anything else in space, the initial design of the station just couldn't cope with all the new and unpredicted things that interstellar travel was yet to bring.
+
+The misfortune of Unity is that while most other man-made objects in space are ugly and indented from the very start, this station was obviously once elegant and _clean_. So now, all the additional construction looks like tumors on a ballerina's leg.
+
+- [Preview: End]
+
+// - [Unity: Approach]
+
+---
+Unity: Approach
+[[ visitOnce ]]
+
+"Open the communications link with tower," you tell Bodega as you sit down at the captain's seat again. The comms monitor comes alive and after a few seconds, an operator's face appears. He looks tired, but tries to smile.
+
+"Zis is Space stationion Unity dock tower." He's German, with the dark blond hair, the straight nose, the accent and everything. "Please provide callsign and intention." There's the tired smile again.
+
+"Callsign Bodega, freighter," the Bodega answers. "Request expedite docking."
+
+The operator's eyebrows go up. "Expedite? What is the emergency?"
+
+"I am dying," you say plainly. "The rest of the crew is dead already."
+
+The Bodega displays the crew roster for the operator to see. There are thirteen body outlines on the monitor. Some of them you immediately recognize as anatomy of one of the crew. All of them are red, except for the outline labeled as '$name (CONTAMINATED)', which is orange. "We have reasons to believe it's a contagion."
+
+"Okay, umm, Bodega, we will need to quarantine ze arrival..." The operator stops and frowns. "Wait. Can you confirm your full id?"
+
+"Complete ID is CH/C/740-22K," the Bodega answers.
+
+The operator freezes, looking at something at his side. This takes several seconds. He then straightens, bites his lip and looks directly into the camera.
+
+"Bodega, I'm afraid I cannot let you dock." He waits for you to react.
+
+- "Can you clarify?" [
+    "That is exactly what I cannot do, I'm afraid," he says. "According to this." He points outside the camera's view, presumably at one of his monitors.
+  {unityOperatorAttitude += 1;}]
+- "What do you mean 'I cannot let you dock'?" [
+    "I, umm, totally understand your frustration," he says. "But I have my orders." He glances to his side again, then returns his empathetic gaze back at you.
+  {}]
+- "Yes you can, and you _will_." [
+     "You are angry, and I understand that," he says. "I do. But orders are orders. And you cannot really dock with us unless we open a hatch for you, can you?"
+  {unityOperatorAttitude -= 1;}]
+
+"But look," he says after biting his lip some more. "You really shouldn't be around here. If I am understanding this correctly, you are on the Active Threat blacklist. I don't know how that's possible, for a cargo freighter I mean, and especially when you only have one soul on board, but the fact is you are listed. And that means, since I identified you just now, your position is broadcasted to anyone interested through the station's beacon. So that means that the organization that blacklisted you – and I assume you know who that is – is probably jumping a ship or two to this location right now."
+
+- [UnityQuestion: Choice]
+
+---
+UnityQuestion: Choice
+
+<declare>
+  // Initial set of topics available to player.
+  List<String> unityTopics = [
+      "Organization",
+      "ActiveThreatBlacklist",
+      "AskToDock",
+      "AskToTrade",
+      "WhereToGo"
+  ];
+</declare>
+
+<script>
+  if (unityTopics.isEmpty) {
+    <echo>
+      There are no more questions to ask right now. You motion towards the console and the connection terminates.
+    </echo>
+    goto("Unity: DisconnectFromTower");
+  }
+</script>
+
+<script>
+  // A Map of topic questions to show as a choice.
+  var unityQuestions = {
+    "Organization": "\"What organization?\"",
+    "ActiveThreatBlacklist": "\"What's the Active Threat blacklist?\"",
+    "AskToDock": "\"What would need to happen for us to dock?\"",
+    "AskToTrade": "\"Can I at least trade with you?\"",
+    "WhereToGo": "\"Where can we go?\""
+    // TODO: "Operator": "Get to known the operator"
+  };
+
+  unityTopics.forEach((String pageName) {
+    choice(unityQuestions[pageName], goto: pageName);
+  });
+  
+  choice("Disconnect", script: () {
+    <echo>
+      You motion towards the console and the connection terminates.
+    </echo>
+    goto("Unity: DisconnectFromTower");
+  });
+</script>
+
+
+---
+UnityQuestion: Organization
+
+"I told you," the operator says.
+
+
+
+// Let player use mental points to get the operator to blunder and reveal some information (Pruitt? Sentaco?)
+
+<script>
+  unityTopics.remove("Organization");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+---
+UnityQuestion: ActiveThreatBlacklist
+
+TBD
+
+<script>
+  unityTopics.remove("ActiveThreatBlacklist");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+---
+UnityQuestion: AskToDock
+
+TBD
+
+<script>
+  unityTopics.remove("AskToDock");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+---
+UnityQuestion: WhereToGo
+
+TBD
+
+<script>
+  unityTopics.remove("WhereToGo");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+
+---
+Unity: DisconnectFromTower
+
+You examine the radar view. There's the Space Station, the Bodega, and a few of other ships (mostly traders, but also two UNSA defensive force gunships) that are either in the process of docking or on their way to a jump point. None of them seem to be interested in you, much less approaching you.
+
+- [MainChoice]
+
+---
+Unity: MainChoice
+
+<declare>
+  // TODO: add a chance to hire a mercenary spaceship who will assist in defending the Bodega in space combat (in exchange for credits). Later, at the pirate station / factory cluster, offer similar choice, but more expensive (because last minute).
+</declare>
+
+What do you do?
+- Use the Unity's beacon [UseUnityBeacon]
+- Open fire at Space Station Unity to force them to let you dock [OpenFire]
+- Try to negotiate with the operator, offering something on board [Negotiate]
+- Wait [Wait]
+- Jump to safety [JumpToSafety]
+
+---
+Unity: UseUnityBeacon
+[[ visitOnce ]]
+
+The close proximity to Space Station Unity allows you to use their beacon, which in turn makes it possible for you to make realtime calls to anyone who is close to any other beacon, even if they are light years away.
+
+<script>
+  if (knowsAboutEleanor) {
+    afterEleanorFirstChatGoto = "Unity: SentacoShipArrival";
+    goto("Eleanor: FirstCall");
+  } else {
+    <echo>
+      But there is currently no single person to try and reach.
+    </echo>
+  }
+</script>
+
+
+- [MainChoice]
+
+---
+Unity: OpenFire
+[[ visitOnce ]]
+
+// TODO: if bodegaShip weapon isAliveAndActive
+
+// TODO: Either full-blown SpaceshipCombat (Unity is a special ship that doesn't have maneuvres, but has lots of weapons) or a simplified version.
+
+
+- [MainChoice]
+
+
+---
+Unity: SentacoShipArrival
+[[ visitOnce ]]
+
+// TODO: sentaco mercenary ship jumps into system => fight with opportunity to jump away
+
+
+
+
+
+---
+Eleanor: FirstCall
+
+// TODO: jump back to afterEleanorFirstChatGoto
+// 
+// TODO: create two calls - first one is more questions than answers (only needs knowsAboutEleanor), second is encrypted and comes from her (during this player 'dies')
+
+You tell Bodega to call Eleanor Wells and the monitor starts filling with information about the connection being established. The handle 'ewells' shows up. It's hers.
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+A chime sounds and Dr. Eleanor Wells is on the main screen. She looks tired and angry. The room she's sitting in is dim.
+
+"Look, it's 4am and I wake up in 2 hours from now. I'm too old for this." She pauses for a moment. "Who the hell are you?"
+
+- Tell her your name [{points.add(1, "honesty")}]
+- Tell her a made up name []
+- "It doesn't matter." []
+
+Before you can reply, another seizure strikes.
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+Dr. Wells eyes are now wide open. She looks around herself, checking that no one else is present, then she comes closer to her comms panel.
+
+"Are you... have you taken Rescin?"
+
+- "I haven't 'taken' anything. There was an accident." [ItWasAccident]
+- "What the fuck is Rescin?" [WtfIsRescin]
+
+---
+End: WtfIsRescin
+
+"You don't _know?_ But how... You're obviously in the last stage. Someone had to contaminate you. Was it Pruitt?"
+
+You say: "I have no idea who it was, if anyone. There was an explosion on the ship."
+
+- [ItWasAccident]
+
+---
+End: ItWasAccident
+
+"What happened?"
+
+"A container exploded in the cargo bay. It damaged some research equipment from Ithaka, among other things. Then people started dying."
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+Dr. Wells watches you in horror. "Dying? People started _dying?_ How many?"
+
+"Eleven."
+
+All color leaves Dr. Wells' face. "Eleven," she repeats. Her face is torn in a terrified grimace. "How. How did they die?"
+
+"Like I'm dying now. They got sicker and sicker, and then they just stopped breathing."
+
+"And then?"
+
+"What do you mean, 'then'?" Every word you say, every breath you take, hurts. "They. Fucking. Died!" // TODO: choice
+
+"But what did you do with the bodies? Where are they now?"
+
+"Don't worry," you lower your voice. "We're not that stupid. We airlock'd them. But even without the bodies, others got sick."
+
+"Airlock'd?"
+
+"We let them out. To outer space."
+
+"Jesus Christ," Dr. Wells says. Her mouth stays open, her eyes absently roam over her room. "Jesus Christ." She thinks for a minute, then suddenly springs into action and starts writing something on a keyboard that's out of view. 
+
+"I am sending you some of the research we did on Rescin. You'll need it later. Now, listen," she looks back at the camera. "Do not fight it. I know it hurts, but do _not_ fight it. Is there anyone else on the ship?"
+
+"No."
+
+"Good."
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+"This is normal," Dr. Wells says. "We were not able to make these side effects disappear. That's why the research was scrapped. We knew we would never be able to pass the regulations for human testing, and without that, we could never hope for Rescin to help people."
+
+- "How does it help?"
+- "You call this help? Are you retarded? I'm _dying_."
+
+"We developed Rescin "
+
+
+- How does Rescin work?
+- Why does it hurt so bad?
+
+// TODO: do NOT let the player know that he will be ressurected - only disclose about the nanobots
+
+
+
+---
+End: GoToBridge
+
+# Death
+
+You leave the captain's cabin and head to the bridge, when suddenly you fall to your knees. At first, it's just like your legs temporarily gave out, but then comes the pain. Immense, excruciating pain, coming from the marrow to the skin. You fall on the side and open your mouth to scream, but only a squawk comes out.
+
+- Wait if it fades // doesn't work [WaitIfItFades]
+- Try to call Gorilla [CallGorilla]
+- Try to crawl towards the bridge // works [CrawlTowardsTheBridge]
+- Crawl to the right (away from bridge, towards the engine room) // cures for a while
+
+---
+End: WaitIfItFades
+
+// TODO
+
+
+---
+End: CallGorilla
+[[ visitOnce ]]
+
+You crawl to the nearest intercom handset and, sorely, you reach up to it and set it to broadcast. You take a few seconds to subdue the pain, then speak.
+
+"Gorilla." You cringe. "Go. To. Master."
+
+// gorilla tries to help, but falls with similar seizure
+
+---
+End: CrawlTowardsTheBridge
+
+You crawl along Corridor Left. Every single movement is pure pain, and your whole body perspires with cold sweat. The bright white light and the buzzing of the lamps is unbearable. You squint as much as is possible without losing sight.
+
+After what feels like hours of hell itself, you look back, and the captain's cabin is just there, a couple of strides behind your feet. You're not even in one tenth of the way.
+
+
+// player needs to crawl to engine room, get 'cured', then go to bridge
+// player manages to get to bridge
+
+---
+End: ArriveBridge
+
+// TODO: start a new timeline with last symptoms
+
+Still a bit shaken, you arrive at the bridge. The view of outside /* TODO: what is outside? */ is nauseating, so you try to keep it out of your field of vision by bowing your head.
+
+"I need to make a call," you say. "I need to get to a comms beacon."
+
+The Bodega puts up a map on the main monitor, but you can't bear to look at it, it makes you retch. It's too bright and it moves constantly.
+
+"The closest FTL beacon is Station Unity. There's also one farther away, at the Belt III Shipyard. We should be able to get there, but it will take at least twenty more minutes."
+
+"Is there nothing else around here?"
+
+"Well, there's the abandoned Station Shannon. They obviously had FTL comms, but that doesn't mean the beacon is still there. I mean, it's still in the directory, but it doesn't seem anyone has made any calls from there lately."
+
+- Jump to Station Unity
+- Jump to Station Shannon // not working, probably plundered, chance to describe this place
+- Jump to Belt III Shipyard
+
+
+
+
+<declare>
+  Timeline lastSymptoms = new Timeline();
+  // TODO: pain in marrow
+</declare>
+
+---
+End: MakingTheCall
+
+The Bodega starts linking itself to the comms beacon. It takes ages.
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+Finally, the comms panel goes green. You can make your call.
+
+- Call Dr. ___ Pruitt
+- Call Dr. Eleanor Wells
+
+---
+End: NiceDeath
+
+This time, it's different. Your are losing your peripheral vision. The only thing you see now is the blindingly bright face of Dr. Eleanor Wells. She's saying something to you, but you don't hear it. The only thing you hear is something you've never heard before in your life – your body. Not just the blood in your veins, but everything. The complex, moist, organic machine that is your physical body. It is slowing down.
+
+// TODO: make it frightful experience when attitude is too strong (?) (or some other player driven thing)
+
+All the pain, all the weight is gone. It's beautiful. There's just you, your body, and the shining eyes of Eleanor Wells, who is now also your mother, and she's still talking to you, and you still don't hear, but that doesn't matter, it's so pleasant and charming you just want to snug in the warmth and bathe in the light.
+
+- Snug in the warmth and bathe in the light
+- Try to stay up
+
+---
+End: Snug
+
+You let the wave of warmth and light that was your mother's eyes just a moment ago come to you and cuddle you and, finally, merge with you. You are the light now.
+
+And then, peacefully, you fade out.
+
+- [Death]
+
+---
+End: Death
+
+
+This is the end.
+
+You die.
+
+..
+
+..
+
+..
+
+Cold floor.
+
+No other sensation.
+
+Then, once again, you hear the blood humming in your veins. 
+
+The pain is back, too, but this time, it's not entirely unpleasant. It's like the pain is driving the death away, so you welcome it.
+
+- Open eyes [Ressurection: OpenEyes]
+- TODO: something else, like Try to move, Get more rest
+
+---
+Ressurection: OpenEyes
+
+Your eyes open, shakily. 
+
+You are on the same spot – haven't moved since you ... died. You lie on the floor, next to the communications panel, and your eyes are still fixed on the main monitor. 
+
+Dr. Eleanor Wells is there. She's no longer in a dim lit room, it's day at wherever she is right now. She raises her eyebrows${attitude > -1 ? " and smiles" : ""}.
+
+"You're back," she says. "Good. We don't have much time."
+
+- "Why?"
+- Stand up
+// both fail
+// TODO: monitor "inquisitive" - the more inquisitive, the more Eleanor will like player
+
+"You're still weak ${attitude > -1 ? "–" : "– at least I'll be spared of your brash language for once –"} but that will pass soon enough. You are through the rebuild phase now."
+
+- Raise eyebrows []
+
+Dr. Wells detects your question. "What the nanobots do – after they've gathered data about your body – is they pretty much rebuild it all, cell by cell. Some of the nanos will merge with a cell, effectively making a cyborg microorganism. Most will use your body's own mechanisms and resources to augment its function. Striking the right balance between the two approaches – it was pure alchemy. Well, it was all alchemy, mostly." 
+
+- Raise eyebrows [{echo(""" "We had no data that would be indicative of what would happen. Nobody attempted anything close to this before. There were experiments with single cells or primitive organisms, but never with something as complex as a mouse, let alone a human. We spent almost a year trying to create a working model with some predictive accuracy. We never got there. Not even close. In the end, we had to get to the results experimentally. We were like the alchemists in the middle ages, but instead of the philosopher's stone, we were searching for something much more important." """)}]
+- Do nothing []
+
+Dr. Wells draws closer to the camera. "Are you familiar with the Verge?"
+
+- Nod [NoNeedToExplainVerge]
+- Shake head [ExplainVerge]
+
+---
+Ressurection: ExplainVerge
+[[ visitOnce ]]
+
+// TODO painful to shake
+
+
+
+---
+Ressurection: NoNeedToExplainVerge
+
+"Of course, you're pretty much in it right now. But let me tell you, life on a starship in the Verge is _nothing_ like life on the moons and the planets of the Verge."
+
+- [ReminiscingVerge]
+
+---
+Ressurection: ReminiscingVerge
+
+Dr. Wells leans back and narrows her eyes. "I was raised on one of the Verge's poorer star systems, Avesta. We lived on a hot, seizmic power-plant of a planet, Avesta II. See, nobody even cared enough to give it a proper name." She scoffs. "The population was fifty thousand. Together, they provided the 'colonization effort' with more energy than the _whole_ Sol system combined." 
+
+She scoffs again. "And for those fifty thousand people – who worked twelve hour shifts in artificially lit, hell-hot underground tunnels on a volcanic planet – there was just one real doctor. My father. And so I lived among broken people. No matter how hard my father tried, there was always screaming and people with dripping burns and with missing limbs."
+
+- "Who cares?" [{echo("""Something akin to "huh hrrrs" comes from inside of your throat. Dr. Wells waits for a second to see if you're going to continue, then she gets back to speaking.""")}]
+- Listen []
+
+"I eventually got out of Avesta, out of the Verge, to study medicine with some of the most intelligent people I will ever know. Most of them from central systems, of course. And, see, I learnt that these people – coming from where they do – these people think it's 'not natural' to help people who are beyond some 'level of damage'. When a worker somewhere in the Verge gets his legs caught in machinery, they say it's 'natural' that he loses the whole lower part of his body, because that would have happened a hundred years ago. Is it possible to help him now? Maybe, but they think it would be crossing a line. Of course, most of them have never even _seen_ anyone lose their legs."
+
+"Fortunately, not everyone was so arrogant. We put together a working group and started looking into technologies that were 'beyond the line'. The most promising one turned out to be nanorobotics. We got funded by Sentaco and set up the lab on Ithaka."
+
+The Bodega jumps in. "There's a new signal on the radar. A medium sized ship. I just thought you two might want to know."
+
+"I'm sure you'll learn that the ship was sent by Pruitt. I told you we don't have much time. How do you feel?"
+
+You don't feel so great, but definitely better than a minute ago.
+
+- "Not so great."
+- "Better."
+- "I almost died, that's how I feel." // "No, you actually died."
+- "Why do you care?" 
+
+// TODO: I can see your vocal cords are getting better.
+
+"Look – Pruitt's men are coming for you. I'm not entirely sure if this all is an accident or not, but even if it was, Pruitt will definitely want to have you for research. You're the only human in the universe with Rescin treatment. And unless I am mistaken, you'll be the only one for some time to come."
+
+- Try to get up [TryToGetUp]
+
+---
+Ressurection: TryToGetUp
+
+You try hard to rise up, but even just moving your arms underneath the body, so that you can push up, turns out to be impossible. You give up and immediately, a tingling sensation overcomes all the muscles you just stressed.
+
+Dr. Wells nods. "You're not ready yet, but don't worry, you'll be in a few minutes."
+
+- [Questions]
+
+---
+Ressurection: Questions
+
+- "What exactly happened to me?" // Rescin works to counter any breakages - - "Why 'Rescin'?"
+- "Why did no one else survive?" // outer space
+- "Why are you helping me?" // Pruitt will make a project out of you. I feel responsible
+- Try to stand up again [StandUpAgain]
+
+---
+Ressurection: StandUpAgain
+
+// TODO: first 2 attempts in vain (unless all questions have been answered)
+// TODO: one of the attempts: Bodega says how far the incoming ship is
+
+This time, it works. You push your hands towards the floor and your upper body lifts as easily as if the gravity was turned down. The tingling sensation is all but gone. You stand up and look around. The bridge is as empty as when you got here a few hours back. You notice the radar screen and the highlighted ship that is slowly moving towards the center of it. Amazingly, you can read the distance measurement, although the characters are small and the screen is a few meters away. The ship is 11 kilometers away and approaching the Bodega with an ETA of 5 minutes.
+
+- "The ship's here in 5 minutes. All energy to shields and weapons."
+- "Give me a reading of the ship."
+
+TODO: reading of the ship
+TODO: Dr. Wells disapproves
+
+---
+Ressurection: EleanorAdvice
+
+"I'm pretty sure the Bodega is no match for that ship."
+
+"Excuse me?" the Bodega says. 
+
+"Look, ship, I know about the Messenger. Good job. But they won't make the same mistake again. That incoming ship is military class. She's smaller than you, I'm sure, but you have absolutely zero chance of beating her in your current setup. You're better off playing dead."
+
+The Bodega runs through some schematics on the scanner panel for a fraction of a second, then says: "I'm afraid she's right. That ship appears to be a military-grade vessel. A gunship."
+
+"Play to your strengths," Dr. Wells says. "They want you alive."
+
+- "So?" [{echo(""" "They'll board the Bodega. They'll expect trouble, but I don't think they fully appreciate the effects  Rescin can have on a healthy body." """)}]
+- "Whatever." []
+
+The ship is now 4 minutes away.
+
+"Look, I need to disconnect. They traced our call. It's best for me to move and stay hidden now. After this litter encounter is over, you do the same. I'll contact you later." Dr. Wells smiles. "I think I'll have something the Bodega will enjoy. Until then, good luck." Dr. Wells nods and the main screen goes blank.
+
+What do you do?
+- Contact the ship and surrender to them // end
+- Raise shields and prepare for battle // very short battle, incapacitates bodega's weapons, continues with boarding
+- Let the ship approach
+
+---
+Boarding: Start
+
+The gunship slowly approaches, all weapons scanning the surface of the Bodega. It seems to be aiming for the right side of the ship, where the airlock ${pulledLever ? "is" : "was"}. Meanwhile, the Bodega is completely still. 
+
+// TODO: again possible to go around the whole ship
+// TODO: lose most of strength around the engine
+// take weapons 
+// find gorilla, still stiff, possibility to move out of the corridor
+// make noise ?
+// hide (some places better than others)
+// mercenaries with masks
+// they go in 2 pairs, clockwise and ccw
+// player can hear them in adjanced rooms
+// walking in to room where they are = even fight
+// hiding in place where they're going = can wait various amounts of time, with more time = more chance of being detected, but also better advantage if not detected and possibility to let them through
+
+// fight itself is primitive, as they are much weaker - problem would be near engine room or with all 4 of them at once
+// the better the setup, the quicker fight, the better points
+
+---
+Boarding: Fight2Men
+
+
+
+---
+Boarding: AllMenDown
+
+The four men are down. You carefully go through the breach and explore the inside of the gunship. There is no one else there, but you find some food and some energy cells. 
+
+Your current supplies are: TODO.
+
+- Take everything (15 energy cells, food for 70 days)
+- Leave just enough for them to survive, take the rest (14 energy cells, food for 65 days)
+- Leave everything [GetRidOfTheMen]
+
+You bring the supplies over to the Bodega. The extremely heavy fuel cells don't seem that way anymore. 
+
+There are now TODO energy cells and food for TODO days on the Bodega. You also scavenge some turret ammunition (TODO?).
+
+- [GetRidOfTheMen]
+
+---
+Boarding: GetRidOfTheMen
+
+You carry all the four men over to the gunship and come back to the bridge. The Bodega then pushes the gunship off while sealing the breach. In twenty minutes, the hull is sealed again, and the gunship slowly drifts away a few hundred meters to the right of the Bodega.
+
+---
+Finale: Start
+
+"We probably shouldn't stay here too much longer," the Bodega says. "The good news is, since you don't need to chat with your doctor girlfriend anymore, we can go pretty much anywhere. Places without comms beacons and outside main official routes seem like a great idea to me right now. We have a few options. Just note that we only have TODO fuel cells right now."
+
+The Bodega highlights the options on a map on the main screen.
+
+- A (distance, fuel cells)
+- Outer space just outside effective radar ranges
+- C
+- D
+
+The Bodega puts in the coordinates for TODO and immediately starts rotating and charging the warp at the same time.
+
+- Watch
+- Go find Gorilla
+
+---
+Finale: FindGorilla
+
+You go looking for Gorilla to where you last saw him, in TODO, but when you arrive, he's not there. The rebuild phase took longer in his case, for whatever reason (you can assume it's because of the proximity to the engine room and also the sheer mass of his body), but it has clearly passed.
+
+- Look for him in ___
+- Look for him in ___
+- Look for him in ___
+
+---
+Finale: GorillaInCaptainsCabin
+
+You enter the captain's cabin and lay your eyes on the most amazing thing you've seen since TODO.
+
+Gorilla – the massive monument of muscle and fur – is slouching on a chair in front of captain's computer. He's not just sitting there, though. He _actively uses the computer_, apparently reading some long article. When he sees you, he turns around and smiles.
+
+"I went ahead and read most of what Dr. Wells sent to us," Gorilla says with perfect pronounciation and in a pleasant voice. "It's fascinating."
+
+- "How?" [How?]
+
+
+---
+Finale: How?
+[[ visitOnce ]]
+
+"Oh, in many ways," says Gorilla. ""
+
+- [QuestionsForGorilla]
+
+
+---
+Finale: QuestionsForGorilla
+
+- "No, I mean, how are you able to talk this well?" TODO change when not shown for the first time
+- "How did you get the password?" // saw captain put in the password countless times.
+
+
+
+
+---
+Finale: End
+
+Your jaw is still down in amazement when the Bodega starts talking through the PA. She doesn't bother to use the intercom anymore. 
+
+"We just left the detection range of TODO and are on our way to TODO. In other words, you and your pet monkey are safe. You are welcome."
+
+Gorilla raises his browridge. "Actually, I am not a monkey. I am an ape. If I was a macaque, or similar, you could refer to me as a monkey. Am I a macaque, though? No. I am a gorilla."
+
+At that moment, you realize: _this is how it's going to be here from now on._ TODO longer
+
+And the Bodega says: "Great, thanks for the lecture." And then, after a couple of seconds, she says with a different voice: "I suggest both of you apes come to the bridge. You might want to see this."
+
+
+---
+Preview: End
+
+<p class="meta">This is the end of the preview. Thank you for playing.</p>
+
