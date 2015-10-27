@@ -63,7 +63,7 @@ library zil;
 
 import 'package:egamebook/scripter.dart'
     show
-        EgbScripter,
+        Scripter,
         Saveable,
         choice,
         echo,
@@ -90,7 +90,7 @@ part 'zil_exception.dart';
 part 'zil_saveable.dart';
 
 class Zil implements Saveable {
-  EgbScripter _scripter;
+  Scripter _scripter;
 
   /**
    * The global instance of [RoomNetwork]. Most games will only utilize one
