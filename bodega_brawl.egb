@@ -1,0 +1,50 @@
+---
+Brawl: Start
+
+<declare>
+  BarBrawl barbrawl;
+</declare>
+
+<init>
+  barbrawl = new BarBrawl(echo, choice);
+  barbrawl.init();
+  barbrawl.onFinishedGoto = "Brawl: Finished";
+</init>
+
+## The Brawl
+
+Out of nowhere, a short but muscular zero-g farmer hit you in the face.
+
+- [Loop]
+
+---
+Brawl: Loop
+
+<script>
+  barbrawl.run();
+</script>
+
+- [Brawl: Loop]
+
+---
+Brawl: Finished
+
+<script>
+  if (barbrawl.wasSuccessful) {
+    goto("Win");
+  } else {
+    goto("Lose");
+  }
+</script>
+
+---
+Brawl: Win
+
+- [Start: RecollectionsContinued]
+
+---
+Brawl: Lose
+
+That ended the story before it even started. You survived, of course, but you didn't get to meet Captain Kay and you didn't get to board the Bodega. Still an interesting life story, I'm sure, but not the one we want to tell here.
+
+<p class="meta">Reload by scrolling up and clicking on one of the past choices. Some of them allow you to go back.</p>

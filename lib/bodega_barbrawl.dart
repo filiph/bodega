@@ -51,12 +51,10 @@ class BarBrawl extends LoopedEvent {
         getAvailability: () =>
             timeline.currentlyAtTime(whyDoThat.timeLastFired),
         onSuccessOrFailure: () {
-
-//          XXX START HERE = MAKE EVERYTHING INTO NON-FATAL, gather points
-
       echo("Another punch in the face. This time it landed so hard it knocked "
-          "you off.");
-      finished = true;
+          "you down to the floor.");
+      echo("After what seemed like ages, you managed to pick yourself up "
+          "again. The farmer was ready, smirk on face.");
     });
     var stopIt = new BarBrawlOption("\"Stop it!\"",
         getAvailability: () => !timeline
@@ -166,10 +164,11 @@ class BarBrawl extends LoopedEvent {
           "alternately looking at you and at the farmer who was now lying on "
           "his side, both hands in the lap, unconsciouss.\n\n");
       echo("You hadn't known about the no-groin-attack rule but that wasn't "
-          "going to absolve you. There are very few rules in bar fight, but "
+          "going to absolve you. There are very few rules in bar fights, but "
           "those that exist are enforced with violent fervor. After a "
           "thunderous scream, at least four "
-          "guys (you didn't really have the time to count them) jumped you and beat you into unconsciousness.");
+          "guys (you didn't really have the time to count them) jumped you and "
+          "beat you into unconsciousness.");
       // Make sure it's unsuccessful.
       wasSuccessful = false;
       finished = true;
