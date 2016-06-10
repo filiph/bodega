@@ -320,9 +320,12 @@ z.a="Start: Pull"
 z=new O.l(["You withdraw your hand from the lever.",new N.zp(this),[null,P.i(["goto","Recollections"])]],0,null,!1,!1)
 y.h(0,"Start: LeaveBody",z)
 z.a="Start: LeaveBody"
-z=new O.l([new N.zA(),new N.zB(this),"So you sat alone. And so did the captain, a few tables away \u2013 just another bar patron in a dirty jacket and a glass of German zero-G-hops beer on the table.",new N.zD(this),"That's when you really noticed the captain for the first time.","He wasn't fighting. He was standing in the middle of the whole mess, laughing his head off. (You would later learn that this was not at all unusual for him \u2013 he would laugh maniacally at the least opportune of times, even if he was in danger. Especially if he was in danger.) You were ready to go on but then you heard, \"What's so funny, shitface,\" and you noticed a huge, furious warehouseman running straight at the captain with a chair above his head. The chair had a mock-wood finish, like almost everything in the bar, but you knew it was actually metal.","The captain laughed on, standing with his back to the quickly approaching warehouseman.","For some reason, in spite of all the good reasons not to, you decided to run towards the captain to defend him against the warehouseman and his crippling blow. You knew full well you'd regret this.",'"This is bullshit," you said to yourself when you broke into a sprint across the room.',[null,P.i(["string",new N.zE(),"script",new N.zF(this)]),P.i(["string",new N.zG(),"script",new N.zH(this)])],"In shock and still oblivious to the scope of your injury, you watched the captain receive blow after brutal blow from the looming warehouseman (at least it was fists and not a metal chair) and you tried to stand up \u2013 almost managed to pull it off, too \u2013 but then everything went dark and you just plain fainted.","The next thing you knew, the bar was empty and captain Kay was helping you on your feet. There was blood in his hair. He was laughing again.",'"What\'s your name, kid?" He grinned.',new N.zI(this),new N.zJ(this),"You kept looking at him but didn't say anything.",new N.zK(this),"You nodded.",new N.zL(this),"\"Broken, I think. It's fine if I don't move it but\u2013\" You screamed when you touched it. The pain was horrific.",new N.zM(this),new N.zO(this),new N.zP(this),new N.zQ(this),new N.zR(this),new N.zS(),"[IMG of intercom]",'The intercom on the wall starts ringing loudly and blinking with a red light. The ringtone and the color-coding means "to all crew" \u2013 in other words: "everyone in their ability should pick this up".',"The intercom, in this case, is an old school handset wired to the wall with a spiral cable. It's easier to maintain, less faulty, and it only picks up one person's voice, so it's easier to understand the other end. It also makes it possible to have conversations that are meant for a limited audience, as opposed to everyone in the room. Sometimes, it's needed to break news that are not intended for the whole crew.","The cable is there mostly so that the handset stays put where it belongs (but it does conduct the audio signal to and from the handset).",[null,P.i(["string",new N.zT(),"goto","Ignore"]),P.i(["string",new N.zU(),"goto","PickItUp"])]],0,null,!1,!1)
+z=new O.l([new N.zA(),new N.zB(this),"So you sat alone. And so did the captain, a few tables away \u2013 just another bar patron in a dirty jacket and a glass of German zero-G-hops beer on the table.",new N.zD(this),[null,P.i(["goto","Brawl: Start"])]],0,null,!1,!1)
 y.h(0,"Start: Recollections",z)
 z.a="Start: Recollections"
+z=new O.l(["With that out of the way, you looked around, and that's when you really noticed the captain for the first time.","He wasn't fighting. He was standing in the middle of the whole mess, laughing his head off. (You would later learn that this was not at all unusual for him \u2013 he would laugh maniacally at the least opportune of times, even if he was in danger. Especially if he was in danger.) You were ready to go on but then you heard, \"What's so funny, shitface,\" and you noticed a huge, furious warehouseman running straight at the captain with a chair above his head. The chair had a mock-wood finish, like almost everything in the bar, but you knew it was actually metal.","The captain laughed on, standing with his back to the quickly approaching warehouseman.","For some reason, in spite of all the good reasons not to, you decided to run towards the captain to defend him against the warehouseman and his crippling blow. You knew full well you'd regret this.",'"This is bullshit," you said to yourself when you broke into a sprint across the room.',[null,P.i(["string",new N.zE(),"script",new N.zF(this)]),P.i(["string",new N.zG(),"script",new N.zH(this)])],"In shock and still oblivious to the scope of your injury, you watched the captain receive blow after brutal blow from the looming warehouseman (at least it was fists and not a metal chair) and you tried to stand up \u2013 almost managed to pull it off, too \u2013 but then everything went dark and you just plain fainted.","The next thing you knew, the bar was empty and captain Kay was helping you on your feet. There was blood in his hair. He was laughing again.",'"What\'s your name, kid?" He grinned.',new N.zI(this),new N.zJ(this),"You kept looking at him but didn't say anything.",new N.zK(this),"You nodded.",new N.zL(this),"\"Broken, I think. It's fine if I don't move it but\u2013\" You screamed when you touched it. The pain was horrific.",new N.zM(this),new N.zO(this),new N.zP(this),new N.zQ(this),new N.zR(this),new N.zS(),"[IMG of intercom]",'The intercom on the wall starts ringing loudly and blinking with a red light. The ringtone and the color-coding means "to all crew" \u2013 in other words: "everyone in their ability should pick this up".',"The intercom, in this case, is an old school handset wired to the wall with a spiral cable. It's easier to maintain, less faulty, and it only picks up one person's voice, so it's easier to understand the other end. It also makes it possible to have conversations that are meant for a limited audience, as opposed to everyone in the room. Sometimes, it's needed to break news that are not intended for the whole crew.","The cable is there mostly so that the handset stays put where it belongs (but it does conduct the audio signal to and from the handset).",[null,P.i(["string",new N.zT(),"goto","Ignore"]),P.i(["string",new N.zU(),"goto","PickItUp"])]],0,null,!1,!1)
+y.h(0,"Start: RecollectionsContinued",z)
+z.a="Start: RecollectionsContinued"
 z=new O.l([new N.zV(this),"After a while, the intercom goes silent. Instead, PA speakers along the corridor turn on with a crackle. It's the ship computer. She sounds irritated.",[null,P.i(["goto","ShipSays"])]],0,null,!1,!1)
 y.h(0,"Start: Ignore",z)
 z.a="Start: Ignore"
@@ -722,7 +725,7 @@ z.a="Finale: End"
 z=new O.l(['<p class="meta">This is the end of the preview. Thank you for playing.</p>'],0,null,!1,!1)
 y.h(0,"Preview: End",z)
 z.a="Preview: End"
-z=new O.l(["## The Brawl","Ok. Let's start in the middle of it: a bar fight at Space Station Clara, two years ago. A short but muscular zero-g farmer just hit you in the face.",[null,P.i(["goto","Loop"])]],0,null,!1,!1)
+z=new O.l(["## The Brawl","Out of nowhere, a short but muscular zero-g farmer hit you in the face.",[null,P.i(["goto","Loop"])]],0,null,!1,!1)
 y.h(0,"Brawl: Start",z)
 z.a="Brawl: Start"
 z=new O.l([new N.zm(this),[null,P.i(["goto","Brawl: Loop"])]],0,null,!1,!1)
@@ -731,10 +734,10 @@ z.a="Brawl: Loop"
 z=new O.l([new N.zn(this)],0,null,!1,!1)
 y.h(0,"Brawl: Finished",z)
 z.a="Brawl: Finished"
-z=new O.l(["With that out of the way, you looked around. The bar was a mess \u2014 everyone fighting, ... XXX START HERE","// You don't need this. You start making your way to the exit. Then you see ..... Captain Kay!",[null,P.i(["goto","Start: Funeral"])]],0,null,!1,!1)
+z=new O.l([[null,P.i(["goto","Start: RecollectionsContinued"])]],0,null,!1,!1)
 y.h(0,"Brawl: Win",z)
 z.a="Brawl: Win"
-z=new O.l(["That ended the story before it even started. You survived, of course, but you didn't get to meet Captain Kay and you didn't get to board the Bodega. Still an interesting life story, I'm sure, but not the one we want to tell here.",'<p class="meta">Restart and keep trying. The key to winning a fist fight is ferocity.</p>'],0,null,!1,!1)
+z=new O.l(["That ended the story before it even started. You survived, of course, but you didn't get to meet Captain Kay and you didn't get to board the Bodega. Still an interesting life story, I'm sure, but not the one we want to tell here.",'<p class="meta">Reload by scrolling up and clicking on one of the past choices. Some of them allow you to go back.</p>'],0,null,!1,!1)
 y.h(0,"Brawl: Lose",z)
 z.a="Brawl: Lose"
 z=new O.l(["You lean on one of the chairs and think about questions to ask. The ship computer listens (as always).",[null,P.i(["goto","Choice"])]],0,null,!1,!1)
@@ -1421,8 +1424,8 @@ z.I("He hit you again. From the other side. Before you managed to turn your head
 z.e=[this.a.a]}},nX:{"^":"a:0;a,b",
 $0:function(){return J.f(this.b.y,this.a.r.a)}},o7:{"^":"a:0;a",
 $0:function(){var z=this.a
-z.I("Another punch in the face. This time it landed so hard it knocked you off.")
-z.a=!0}},oi:{"^":"a:0;a,b",
+z.I("Another punch in the face. This time it landed so hard it knocked you down to the floor.")
+z.I("After what seemed like ages, you managed to pick yourself up again. The farmer was ready, smirk on face.")}},oi:{"^":"a:0;a,b",
 $0:function(){var z=this.a.r
 return!J.f(this.b.y,z.a)&&J.a_(z.a,0)}},ok:{"^":"a:0;a",
 $0:function(){var z=this.a
@@ -1459,7 +1462,7 @@ $0:function(){this.a.I("You quickly looked behind and grabbed the bottle, but wh
 $0:function(){var z=this.a
 z.I("He didn't expect that. Your knee landed squarely in the groin and the farmer keeled over.\n\n")
 z.I("The fights closest to you were now stopping. People started alternately looking at you and at the farmer who was now lying on his side, both hands in the lap, unconsciouss.\n\n")
-z.I("You hadn't known about the no-groin-attack rule but that wasn't going to absolve you. There are very few rules in bar fight, but those that exist are enforced with violent fervor. After a thunderous scream, at least four guys (you didn't really have the time to count them) jumped you and beat you into unconsciousness.")
+z.I("You hadn't known about the no-groin-attack rule but that wasn't going to absolve you. There are very few rules in bar fights, but those that exist are enforced with violent fervor. After a thunderous scream, at least four guys (you didn't really have the time to count them) jumped you and beat you into unconsciousness.")
 z.z=!1
 z.a=!0}},oh:{"^":"a:0;a",
 $0:function(){this.a.I("He tried to kick you but lost balance while doing so and aborted.")}},oj:{"^":"a:0;a",
@@ -3929,4 +3932,4 @@ var x=a[z++]
 var w=a[z++]
 var v=a[z++]
 I.$lazy(y,x,w,null,v)}})(["mM","$get$mM",function(){return new M.kj(null,0,!1,"player",H.b([],[P.j]),!0,1,!0,!0,C.w)},$,"jG","$get$jG",function(){return P.ku(null)},$,"b0","$get$b0",function(){return H.hh(P.j,P.j)},$,"eZ","$get$eZ",function(){return P.ku(null)},$,"ak","$get$ak",function(){return new Y.Cp(P.kR(""),H.b([],[Y.bw]),0)},$,"kP","$get$kP",function(){return P.aj("(\\w)([\\.\\?\\!])([\"'])\\.(?=$|\\s)",!0,!1)},$,"dO","$get$dO",function(){return new Y.b8(!1,"__NOTHING__",H.b([],[P.j]),!0,0,!0,!1,C.c)},$])}
-$dart_deferred_initializers$["hsceKtjyQAXIZD+6i2rYDGDjGoo="]=$dart_deferred_initializers$.current
+$dart_deferred_initializers$["jU/G2NJA0tIaMhKNUc3e0M5/lhs="]=$dart_deferred_initializers$.current
