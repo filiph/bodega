@@ -65,6 +65,10 @@ $bottom-fixed-height: 6rem;
   position: fixed;
 }
 
+body.title-open {
+  overflow: hidden;
+}
+
 .bottom-fixed {
   position: fixed;
   z-index: 9999;
