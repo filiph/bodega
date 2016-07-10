@@ -1,0 +1,230 @@
+---
+End: FirstCall
+
+// TODO: jump back to afterEleanorFirstChatGoto
+//
+// TODO: create two calls - first one is more questions than answers (only needs knowsAboutEleanor), second is encrypted and comes from her (during this player 'dies')
+
+You tell Bodega to call Eleanor Wells and the monitor starts filling with information about the connection being established. The handle 'ewells' shows up. It's hers.
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+A chime sounds and Dr. Eleanor Wells is on the main screen. She looks tired and angry. The room she's sitting in is dim.
+
+"Look, it's 4am and I wake up in 2 hours from now. I'm too old for this." She pauses for a moment. "Who the hell are you?"
+
+- Tell her your name [{points.add(1, "honesty")}]
+- Tell her a made up name []
+- "It doesn't matter." []
+
+Before you can reply, another seizure strikes.
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+Dr. Wells eyes are now wide open. She looks around herself, checking that no one else is present, then she comes closer to her comms panel.
+
+"Are you... have you taken Rescin?"
+
+- "I haven't 'taken' anything. There was an accident." [ItWasAccident]
+- "What the fuck is Rescin?" [WtfIsRescin]
+
+
+
+---
+End: WtfIsRescin
+
+"You don't _know?_ But how... You're obviously in the last stage. Someone had to contaminate you. Was it Pruitt?"
+
+You say: "I have no idea who it was, if anyone. There was an explosion on the ship."
+
+- [ItWasAccident]
+
+---
+End: ItWasAccident
+
+"What happened?"
+
+"A container exploded in the cargo bay. It damaged some research equipment from Ithaka, among other things. Then people started dying."
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+Dr. Wells watches you in horror. "Dying? People started _dying?_ How many?"
+
+"Eleven."
+
+All color leaves Dr. Wells' face. "Eleven," she repeats. Her face is torn in a terrified grimace. "How. How did they die?"
+
+"Like I'm dying now. They got sicker and sicker, and then they just stopped breathing."
+
+"And then?"
+
+"What do you mean, 'then'?" Every word you say, every breath you take, hurts. "They. Fucking. Died!" // TODO: choice
+
+"But what did you do with the bodies? Where are they now?"
+
+"Don't worry," you lower your voice. "We're not that stupid. We airlock'd them. But even without the bodies, others got sick."
+
+"Airlock'd?"
+
+"We let them out. To outer space."
+
+"Jesus Christ," Dr. Wells says. Her mouth stays open, her eyes absently roam over her room. "Jesus Christ." She thinks for a minute, then suddenly springs into action and starts writing something on a keyboard that's out of view.
+
+"I am sending you some of the research we did on Rescin. You'll need it later. Now, listen," she looks back at the camera. "Do not fight it. I know it hurts, but do _not_ fight it. Is there anyone else on the ship?"
+
+"No."
+
+"Good."
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+"This is normal," Dr. Wells says. "We were not able to make these side effects disappear. That's why the research was scrapped. We knew we would never be able to pass the regulations for human testing, and without that, we could never hope for Rescin to help people."
+
+- "How does it help?"
+- "You call this help? Are you retarded? I'm _dying_."
+
+"We developed Rescin "
+
+
+- How does Rescin work?
+- Why does it hurt so bad?
+
+// TODO: do NOT let the player know that he will be ressurected - only disclose about the nanobots
+
+
+
+---
+End: GoToBridge
+
+# Death
+
+You leave the captain's cabin and head to the bridge, when suddenly you fall to your knees. At first, it's just like your legs temporarily gave out, but then comes the pain. Immense, excruciating pain, coming from the marrow to the skin. You fall on the side and open your mouth to scream, but only a squawk comes out.
+
+- Wait if it fades // doesn't work [WaitIfItFades]
+- Try to call Gorilla [CallGorilla]
+- Try to crawl towards the bridge // works [CrawlTowardsTheBridge]
+- Crawl to the right (away from bridge, towards the engine room) // cures for a while
+
+---
+End: WaitIfItFades
+
+// TODO
+
+
+---
+End: CallGorilla
+[[ visitOnce ]]
+
+You crawl to the nearest intercom handset and, sorely, you reach up to it and set it to broadcast. You take a few seconds to subdue the pain, then speak.
+
+"Gorilla." You cringe. "Go. To. Master."
+
+// gorilla tries to help, but falls with similar seizure
+
+---
+End: CrawlTowardsTheBridge
+
+You crawl along Corridor Left. Every single movement is pure pain, and your whole body perspires with cold sweat. The bright white light and the buzzing of the lamps is unbearable. You squint as much as is possible without losing sight.
+
+After what feels like hours of hell itself, you look back, and the captain's cabin is just there, a couple of strides behind your feet. You're not even in one tenth of the way.
+
+
+// player needs to crawl to engine room, get 'cured', then go to bridge
+// player manages to get to bridge
+
+---
+End: ArriveBridge
+
+// TODO: start a new timeline with last symptoms
+
+Still a bit shaken, you arrive at the bridge. The view of outside /* TODO: what is outside? */ is nauseating, so you try to keep it out of your field of vision by bowing your head.
+
+"I need to make a call," you say. "I need to get to a comms beacon."
+
+The Bodega puts up a map on the main monitor, but you can't bear to look at it, it makes you retch. It's too bright and it moves constantly.
+
+"The closest FTL beacon is Station Unity. There's also one farther away, at the Belt III Shipyard. We should be able to get there, but it will take at least twenty more minutes."
+
+"Is there nothing else around here?"
+
+"Well, there's the abandoned Station Shannon. They obviously had FTL comms, but that doesn't mean the beacon is still there. I mean, it's still in the directory, but it doesn't seem anyone has made any calls from there lately."
+
+- Jump to Station Unity
+- Jump to Station Shannon // not working, probably plundered, chance to describe this place
+- Jump to Belt III Shipyard
+
+
+
+
+<declare>
+  Timeline lastSymptoms = new Timeline();
+  // TODO: pain in marrow
+</declare>
+
+---
+End: MakingTheCall
+
+The Bodega starts linking itself to the comms beacon. It takes ages.
+
+<script>
+  lastSymptoms.time++;
+</script>
+
+Finally, the comms panel goes green. You can make your call.
+
+- Call Dr. ___ Pruitt
+- Call Dr. Eleanor Wells
+
+---
+End: NiceDeath
+
+This time, it's different. Your are losing your peripheral vision. The only thing you see now is the blindingly bright face of Dr. Eleanor Wells. She's saying something to you, but you don't hear it. The only thing you hear is something you've never heard before in your life – your body. Not just the blood in your veins, but everything. The complex, moist, organic machine that is your physical body. It is slowing down.
+
+// TODO: make it frightful experience when attitude is too strong (?) (or some other player driven thing)
+
+All the pain, all the weight is gone. It's beautiful. There's just you, your body, and the shining eyes of Eleanor Wells, who is now also your mother, and she's still talking to you, and you still don't hear, but that doesn't matter, it's so pleasant and charming you just want to snug in the warmth and bathe in the light.
+
+- Snug in the warmth and bathe in the light
+- Try to stay up
+
+---
+End: Snug
+
+You let the wave of warmth and light that was your mother's eyes just a moment ago come to you and cuddle you and, finally, merge with you. You are the light now.
+
+And then, peacefully, you fade out.
+
+- [Death]
+
+---
+End: Death
+
+
+This is the end.
+
+You die.
+
+..
+
+..
+
+..
+
+Cold floor.
+
+No other sensation.
+
+Then, once again, you hear the blood humming in your veins.
+
+The pain is back, too, but this time, it's not entirely unpleasant. It's like the pain is driving the death away, so you welcome it.
+
+- Open eyes [Ressurection: OpenEyes]
+- TODO: something else, like Try to move, Get more rest

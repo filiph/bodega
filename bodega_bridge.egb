@@ -1,0 +1,197 @@
+
+---
+Bridge: GorillaIncident
+
+## The Gorilla
+
+There really is a gorilla on the ship's bridge. But it isn't touching any of the electronics, let alone the control panel. It just sits there on the floor, full of melancholy, looking out the window at the distant stars. When you enter, it slowly turns to you and pushes out its huge lower lip.
+
+![Gorilla](img/gorilla.jpg)
+
+<init>
+  addFootnote("gorillaCargoMove", """Everything in the cargo bay is in containers, but often, parts from containers further from the bay doors need to be offloaded before those closer to the bay doors. And so instead of offloading the whole lot and then re-loading it again, it's more efficient to swap the cargo between containers during the flight. That's where strong – but sensitive – arms like those of a gorilla come in handy.""");
+</init>
+
+It's the ship's Enhanced Gorilla. These species are used throughout the universe for hard manual labor: in construction, in the military, and on big tankers and cargo ships like the Bodega. Their intelligence is somewhat improved over what nature has given them -- they can understand basic spoken commands and they have the ability to communicate back via sign language. The vocabulary is very limited, and even then they use mostly just the words "food", "sleep" and "want". But people don't need Enhanced Gorillas to be eloquent or nuanced or poetic. They need them to lift and push and sometimes smash. _This_ gorilla mostly manipulates with heavy objects in the cargo bay.${fn("gorillaCargoMove")}
+
+The gorilla doesn't have a name. The crew just calls him 'Gorilla', which is a common name for these creatures on most ships. Nobody wants to get too attached to them. They die a lot.
+
+Right now, Gorilla raises his arms to sign. First, he makes the sign for "me" and then he makes the sign for "sleep". _Is he trying to say he wants to go to sleep?_ Probably not (although he does look tired). More likely, he's trying to use his limited vocabulary to communicate that he is sad. But you can never be sure.
+
+What do you say to him?
+- "It's okay." [ItsOkay]
+- "What the hell do you think you are doing here, Gorilla?" [WhatTheHellGorilla]
+
+---
+Bridge: ItsOkay
+
+"It's okay."
+
+Gorilla slowly turns his head back to the stars, visibly alleviated. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational – Gorilla could squash you or any other human any time – but the animal can't help it. The fear is in his DNA.
+
+The fact that you didn't scold him means the world to him. You know he will remember this.
+
+"The ${isStuttering() ? 'g-g-' : ''}gorilla stays," you say to the ship computer. "He just sits there. And he definitely won't touch anything while I'm here." The Gorilla nods solemnly.
+
+<script>
+  gorillaAttitude += 1;
+  points.add(1, "being kind to animals");
+</script>
+
+- [HateToUnnerveYou]
+
+---
+Bridge: WhatTheHellGorilla
+
+"What the hell ${isStuttering() ? 'd-' : ''}do you think you are ${isStuttering() ? 'd-' : ''}doing here, Gorilla?"
+
+Gorilla doesn't answer, he only looks at you in sudden terror. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational – Gorilla could squash you or any other human any time – but the animals can't help it. It's in their DNA.
+
+After a while, Gorilla leaves the bridge with pure horror in its eyes. He goes through the door to Corridor Left, probably heading way back to the cargo bay. You know he will remember this.
+
+<script>
+  gorillaAttitude -= 1;
+  snappedAtGorilla = true;
+  points.add(1, "setting boundaries");
+  gorilla.location = Randomly.choose([b.cargoBayLeft,b.gorillasDen]);
+</script>
+
+- [HateToUnnerveYou]
+
+---
+Bridge: HateToUnnerveYou
+
+The ship is silent for a while.
+
+"I would just _hate_ to unnerve you," she finally says, "but considering that there is no reason to believe you are _not_ contaminated with the same illness as everyone else, and that we have no reliable data on the incubation period, I propose we make the jump to Space Station Unity as soon as possible.
+
+<init>
+  addFootnote("oathFirstExpl", """Under the so-called 'Oath Law' – which has been adopted by all space-faring nations – no artificial intelligence beyond a certain level can exist without a human superior. In other words, as a safeguard against a machine rebellion (an entirely plausible scenario), there cannot be a completely autonomous artificial intelligence, and all machines must have a human master, to which they are – by design – utterly loyal. The Oath can be transfered, like in this case, but never dropped entirely.""");
+</init>
+
+"You are the acting captain of the ship now," the Bodega continues matter-of-factly. "Probably not for long, of course. But to follow the protocol, I will henceforth call you Captain $name. It is understood that my Oath${fn("oathFirstExpl")} now transfers to you."
+
+<declare>
+  String title = "Captain";
+  int conceitedness = 0;  // The more conceited the player is, the less Bodega respects him. It may also modify his choices later in the game.
+</declare>
+
+- "Yes, call me Captain $name." [{title = "Acting Captain"; conceitedness += 1;} CrewOfOne]
+- "Just call me $name, no need for formalities." [{title = ""} CrewOfOne]
+
+---
+Bridge: CrewOfOne
+
+## The crew of one
+
+You are dog-tired. You spent the last couple of days slaving away – together with Gorilla and the late Captain Kay – to finish the repairs of the hyperdrive. It had broken down in the middle of nowhere after one of the containers in the cargo bay exploded. (Apparently, the explosion was due to some inapt handling by none other than – Gorilla.) It wasn't a particularly big blast, but the shockwave rippled through the whole ship, and -- among other things -- put the hyperdrive into an invalid state. As it turned out, though, the malfunctioning drive was to be the lesser of your worries.
+
+While the captain${isEngineer ? ", the senior engineer and you" : " and the engineers"} were starting to patch up the drive, the rest of the crew were busy getting sick. One by one. The ship's medic${isMedic ? ", your boss," : ""} was one of the first to go. (${isMedic ? "Although he was much more experienced than you were, he also" : "Although he was an experienced medic, he"} didn't appear to have any idea about what was going on anyway. He was as scared and angry and clueless as anyone else.)
+
+"It's not like I _wasn't_ expecting to die out in space one day," he said to you from behind glass (back then, the crew still tried to mantain some kind of quarantine). "It kind of goes with the occupation. But I sure as hell didn't expect it to come _this_ soon." He was forty-five, one of the oldest. He died the next day.
+
+[IMG of a sick, sad medic behind a glass]
+
+The only thing that has kept you from worrying about your own death so far was work. Anything else leaves too much brain capacity to imagination. Going to sleep has been particularly difficult because of the strange dreams, because of the ambiguous feelings about the whole thing, and because there is always the possibility you'd never. Wake. Up.
+
+This time, though, you are so unbelievably tired you will probably fall asleep the minute you close your eyes.
+
+<script>
+  physicalPoints.value = maxPhysicalPoints - 2;
+  physicalPoints.show = true;
+  mentalPoints.value = maxMentalPoints - 2;
+  mentalPoints.show = true;
+</script>
+
+<p class="meta">You still have <em>some</em> spare energy in you, represented by your <strong>physical pool</strong> (currently <em>${physicalPoints.string}</em>) and your <strong>mental pool</strong> (currently <em>${mentalPoints.string}</em>). Spending these points will let you put in an extra effort to increase your chances at different tasks. Both points are normally replenished by sleep and their maximum value varies based on your role.</p>
+
+The thing is: you have a feeling that the disease – and the consequent high probability that you will die alone, in space, and in horrible pain – is not your only worry. There is something else. Something bigger. One of Captain Kay's favorite phrases was: "When misery rains, it pours." Also: "We're in _space_, idiots, what did you expect?"
+
+You can't help but fear that space isn't done with you just yet, and that what is happening right now is just the beginning.
+
+- [TimeZero]
+
+---
+Bridge: TimeZero
+
+[IMG watch with 0:00]
+
+<init>
+  addFootnote("computeUnityJump", """ Every hyperjump needs to be precisely computed, which is no small task. (Even military ships with dedicated computing nodes take hours to prepare.) Fortunately for interstellar travel, though, parameters for jumps between known points in space do not change, and so ships normally work with precomputed data. The problem here is that Bodega is now at a point in deep space for which the data simply doesn't exist. The only option is to compute it. """);
+</init>
+
+The captain was able to finish the repairs of the hyperdrive (with your ${isEngineer ? "" : "modest"} help) a few hours before he died, but now that it's back online, Bodega needs to compute the jump.${fn("computeUnityJump")} Before that's done, you, Gorilla and the whole ship are sitting ducks.
+
+You reset your watch to 0:00. In space, with the absence of meaningful days, it's common practice to pick memorable events as milestones and then count hours and days from these. The death of the captain strikes you as one such memorable event.
+
+<declare>
+  Stat<int> clock = new Stat<int>("Time", (value) {
+      int hours = (value/60).floor();
+      int minutes = value % 60;
+      return "$hours:${minutes < 10 ? '0' : ''}$minutes";
+    }, description: "Time since captain's funeral", show: false);
+</declare>
+
+<script>
+  clock.show = true;
+</script>
+
+It's up to you what you do with the time at hand. You look around the bridge.
+
+- [Explore: Bridge]
+
+---
+Bridge: OvercomeBySleepiness
+
+You come back to the bridge, determined to do some more work, but at that exact time, your body just refuses to continue. You can't imagine _walking_ somewhere, let alone trying to _work_.
+
+- [Nap]
+
+---
+Bridge: WaitForJump
+[[ visitOnce ]]
+
+There's only ${getHoursToHyperdrive()} before the hyperjump parameters are ready, so you decide to wait on the bridge. You sit down and contemplate trying to sleep but soon realize the adrenaline from the Messenger encounter won't let you.
+
+You spend the time gazing blankly at the distant stars.
+
+<script>
+  zil.update(MAX_TIME_BEFORE_HYPERDRIVE_READY - zil.timeline.time, describe: false,
+    whileString: "you are gazing");
+</script>
+
+You stand up excitedly.
+
+- [Explore: Bridge]
+
+---
+Bridge: Nap
+
+You slouch into the captain's seat and check the time. You should be ready for the jump in ${getHoursToHyperdrive()}. Your eye lids get heavy and you realize that – by now – there is no way you can fight this. Soon, the captain's seat feels like the most comfortable bed ever. You drift off to sleep.
+
+<script>
+  // TODO: dream from the parent's
+</script>
+
+
+You have that strange dream again. You are planetside, standing in a _forest_, no less, on the edge of a meadow at night. This is Earth, somehow you know it, and you breathe in slowly and deeply, smelling the moist air as if it was something familiar to you. (You have never been planetside in your entire life. Not on Earth, not anywhere else.) You try to watch the meadow for as long as you can. This is the good part of the dream.
+
+You hear a twig crack quietly just behind you, and you turn around. It's the worst sight you can imagine. Your parents.
+
+<init>
+  addFootnote("vitamin", """ 'Vitamin' is an addictive, easy to manufacture drug that makes you feel invincible. It also makes you crave blood and violence. Users engage in gory rituals, sadistic orgies and murders.""");
+</init>
+
+Father, with blood on his hands and upper torso, and a huge grin. Mother, with crazy eyes and lipstick all over her face. Her expression a horrid struggle between paternal love and the effects of Vitamin.${fn("vitamin")}
+
+But of course the drug wins. Vitamin always wins. Father has ${isMedic ? "a scalpel" : isEngineer ? "an electrical wire" : "a wire cutter"} in hand. Mother holds a knife. A strange rhytmic sound resonates throughout the forest. That's new. Bwang. Father eyes your neck. Bwang. Mother's hand is shaking. Bwang. They burst forth.
+
+<script>
+  bool wentToSleepBeforeForcedNap = zil.timeline.time < MAX_TIME_BEFORE_NAP;
+  physicalPoints.value = maxPhysicalPoints + (wentToSleepBeforeForcedNap ? 1 : 0);
+  mentalPoints.value = maxMentalPoints + (wentToSleepBeforeForcedNap ? 1 : 0);
+
+  // OLD VERSION: dream about how you wake up and you're already on Station Unity and a person in a white lab coat tells you that you're just fine – _fine_ – healthier than ever, actually – and now that same person is a captain of a very nice ship and he is on the bridge – in that lab coat, but for some reason it's not weird at all – and he still says it's _fine_, and you have a job on this new ship, too, and it's clear that you're comfortable and happy, and you're actually _laughing_, laughing while working, because the feeling of not needing to worry about stuff is just so uplifting and downright _euphoric_ right now. It's a very nice dream and when you feel you're starting to wake up from it, you genuinely don't want to.
+</script>
+
+- [Dogfight: Start]

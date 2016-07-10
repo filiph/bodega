@@ -1,0 +1,1061 @@
+
+---
+Explore: ONLY_VARIABLES (PAGE NOT USED)
+
+<declare>
+  BodegaZil b;
+
+  var zil;
+  var exploration;
+  var gorilla;
+
+  Function printSleepiness;
+  Function getHoursToHyperdrive;
+</declare>
+
+<init>
+  // Create the Bodega Zil (everything _inside_ ship), initialize values, setup.
+  b = new BodegaZil(goto, echo, choice, showForm, this);
+
+  // Assign the variables used throughout .egb to top level functions (for save to work, too).
+  zil = b.zil;
+  exploration = b.exploration;
+  gorilla = b.gorilla;
+
+  printSleepiness = b.printSleepiness;
+  getHoursToHyperdrive = b.getHoursToHyperdrive;
+</init>
+
+---
+Explore: Bridge
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Bridge.description
+
+The bridge is a large room at the front of the ship with two rows of computer terminals and controls – and a big window in the front. The window is, of course, fake. Having such a big window on a spaceship would not only be expensive, but also extremely dangerous. What you're actually looking at is a big monitor which is nevertheless _designed_ to look exactly like a window, and which usually shows what you would see if there _was_ a window. Even depth is simulated. It makes navigating the ship a little more intuitive, and prevents claustrophobia. And since it looks so much like a window, most people just call it 'the main window' instead of the more accurate 'the main monitor'.
+
+[IMG bridge]
+
+The bridge is where the captain spent most of his days, which is evidenced by the fact that there are several rows of empty bottles laid down below one of the walls. There is still an half empty bottle of Ishtar Nook vodka sitting next to the captain's seat. To be fair, though, the captain wasn't the only one drinking here: three other crew members had their posts on the bridge, and they were drinking with him.
+
+The bridge is connected with the rest of the ship via two main corridors: Corridor Left and Corridor Right (which ${isSpaceman ? "you were used to call" : "some of the more pretentious crewmembers called"} 'Port Corridor' and 'Starboard Corridor', respectivelly, but ${isSpaceman ? "most crewmembers on the Bodega didn't, so you gave up and started using 'Left' and 'Right', too" : "that fortunately never caught on"}). Both corridors lead along their respective side of the ship all the way to the cargo area in the back. There is also a short and very narrow utility corridor leading from under the main window to the nose of the ship.
+
+- [Bridge]
+
+---
+Explore: LookAtHullBreachFromBridge
+
+The object from the Messenger crashed into the right side of the cargo bay. It seems it managed to drill through the hull, sealing the breach behind itself – there is almost no drop of air pressure in the cargo bay. This device, whatever it is, was clearly designed to get into a ship while keeping its atmosphere more or less intact.
+
+One of the automatic hull-repair bots is already crawling on the outside of the cargo bay to reinforce the device's seal. You let it do its job because there is no way of telling how strong or permanent the device's own seal is made to be.
+
+<script>
+  zil.update(1, describe: false);
+</script>
+
+- [Bridge]
+
+---
+Explore: Nose
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Nose.description
+
+The utility corridor is so narrow and low that you have to walk crouched and a little bit sideways. The walls and the ceiling are packed with cables, pipes, gauges, valves. There are little nooks here and there that allow physical maintenance of some of the subsystems present in this part of the ship.
+
+- [Nose]
+
+---
+Explore: Nose.ScannerLook
+
+The scanner has been shaky for several weeks now, but nobody gave it much attention. A cargo ship such as the Bodega doesn't have much use of it most of the time – it travels between known space stations via relatively safe routes. Nothing needs to be scanned when everything is business as usual. And when the scanner went completely down after the explosion in the cargo bay, there were much more pressing issues than that.
+
+<script>
+  if (isEngineer) {
+    <echo>
+      As an engineer, you have some idea what could be wrong. You estimate the time needed to repair the scanner to about one hour.
+    </echo>
+  } else {
+    <echo>
+      You're not an expert, so it'll take you some time (maybe 1-2 hours), but you expect you'll be able to fix the scanner yourself.
+    </echo>
+  }
+
+  b.scannerRepair.isActive = true;
+</script>
+
+- [Nose]
+
+---
+Explore: Nose.ScannerRepair
+
+<script>
+if (isEngineer) {
+    <echo>
+      Even as you set out to repair the scanner, you can already guess the problem will have something to do with energy input. You remember the captain telling you something in that vein a few weeks ago – the feed from the scanner was up and down, intermittently.
+
+      Your knowledge of power networks (you're a machinist after all) should allow you to find the culprit sooner or later. But maybe there's a shortcut that could save you some time.
+    </echo>
+  } else {
+    <echo>
+      After a little bit of poking around and looking at the feed from the scanner, you realize  the scanner itself probably works fine, but it doesn't get enough energy from the network. Or it does, but only intermittently.
+
+      What probably follows is a lot of trial and error. But maybe there's a shortcut that could save you some time.
+    </echo>
+  }
+
+  b.createExtraEffortChoiceList(
+    "Try things one after another (slow but proven way)",
+    () {
+      zil.update(b.computeTimeRequired(92, isEngineer), describe: false, interactive: false, whileString: "you are trying out one thing after another");
+      <echo>
+        It takes time, but you find the culprit: it's the transformer. It's completely finished.
+      </echo>
+    },
+    "Think hard first", 0, 1,
+    () {
+      <echo>
+        You decide you could find the faulty component by the amount of ozone you can smell in different parts of the system. If there's an electrical arc somewhere (and, judging by the intermittent power, there is), it should be relatively easy to find it by smell.
+      </echo>
+      zil.update(b.computeTimeRequired(32, isEngineer), describe: false, interactive: false, whileString: "you are carefully putting your nose to different parts of the system");
+      <echo>
+        The approach bears fruit quickly. A faulty transformer is given away by the pungent smell of ozone.
+      </echo>
+
+    }
+  );
+</script>
+
+After you find a spare transformer in the engine room and install it, the scanner comes back online, fully operational.
+
+<script>
+  scannerRepaired = true;
+  points.add(2, "expecting the worst");
+</script>
+
+<script>
+  b.printSleepiness();
+</script>
+- [Nose]
+
+---
+Explore: CorridorLeftNextToCaptainsCabin
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftNextToCaptainsCabin.description
+
+Not so long ago, you were dragging the captain's body through here. You had found him dead inside, in front of his computer.
+
+- [CorridorLeftNextToCaptainsCabin]
+
+---
+Explore: CaptainsCabin
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CaptainsCabin.description
+
+[IMG captain's cabin]
+
+It's quite spacious – for a cabin on a spaceship, that is. It's not luxurious, but the bunks everyone else is living in definitely don't compare to this. The walls are paneled with faux wood and the room's light source is – instead of the ubiquitous fluroscent lamps – a round, dimmed chandelier.
+
+The bed doubles as a sofa, with a little coffee table that opens from one of the walls. On the other end of the room, there is the workstation. The computer screen is still on.
+
+Of course, this wouldn't be captain Kay's room if there wasn't alcohol around. Bottles are all over the place – empty ones on the floor and half empty ones everywhere else. The places that aren't covered with bottles are covered with crumpled clothes, empty cardboard boxes, and general garbage.
+
+It's not that the captain was more of a pig than everyone else on board. It's just that there was nobody who would yell at him to clean up. It was _his_ ship, after all.
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsCabinLookAround
+
+You start sifting through all the garbage in the room. The plastiglass bottles clank as you accidentaly kick them around, and you move, methodically, from the bed-sofa to the door. Apart from the alcohol, there are tossed clothes, lowbrow magazines, memory sticks, cardboard boxes, used handkerchiefs, and lots of cheap entertainment gadgets. Mostly game consoles and video players. Anything that can keep a person's mind occupied. During the long hauls, boredom is the biggest enemy.
+
+<script>
+  // TODO: createExtraEffortChoiceList + say isHawkeyed
+
+  zil.update(b.computeTimeRequired(15, isHawkeyed), describe: false, interactive: false, whileString: "you are searching");
+  b.secondLookAround.isActive = true;
+</script>
+
+You take a break after some fifteen minutes of searching. You haven't found anything interesting. You've covered about one third of the room, but you've also become quite efficient in making your way through the garbage now.
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsCabinLookAroundContinue
+
+You get back to work. The items get familiar. Issues of Space Slam magazine. Cheap plastic game controllers of different kinds. Dirty sweatshirts of the same cut and color. You're throwing everything towards one corner of the room so you don't need to go through one thing twice.
+
+<script>
+  zil.update(b.computeTimeRequired(15, isHawkeyed), describe: false, interactive: false, whileString: "you are searching");
+</script>
+
+Then, you pick up yet another plastic device from under a pair of trousers, and as you are ready to throw it, you realize it's much heavier than the others, and that it's not plastic at all. It's black steel and it's a gun.
+
+[IMG of gun laid in hand]
+
+The captain had a gun? Why? You stand there for a while, looking at the weapon in your hand.
+
+<script>
+  b.captainsGun.isActive = true;
+  b.thirdLookAround.isActive = true;
+</script>
+
+You realize another 15 minutes passed and there is still around a quarter of the room left. You lay the gun back on the ground.
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsCabinLookAroundTheRest
+
+You search the rest of the room, but there's nothing interesting left, nor nothing that would explain the gun.
+
+<script>
+  zil.update(b.computeTimeRequired(3, isHawkeyed), describe: false, interactive: false, whileString: "you are searching");
+</script>
+
+- [CaptainsCabin]
+
+---
+Explore: CaptainsComputerFirst
+
+"There's no doubt this is the best thing that has ever happened to me – death." The computer screen is filled with text, and this is the sentence at the top. You realize you are reading the last paragraph of a log record that is dated a couple of hours ago.
+
+It continues: "I want to be dying forever. It makes me happy. Happier than anything. It hurts like hell, yes, but I am hooked. Truly. I never had any idea! It's ecstatic. So focused and discrete and full of memories and _hope_ it makes me laugh. I loathe my recent stupid, stupid fear of death and my clinging on something as worthless and _selfish_ as life. I was living a lie – and now I am dying the truth. Why did I never allow myself to see this before? What the hell was I afraid of?"
+
+That's the end of the log entry. You can see there are some paragraphs before this one, but you know that touching the computer – after such a long time of inactivity – would cause it to ask for the captain's password. Which you don't know and have no way of guessing.
+
+<script>
+  zil.update(1, describe: false);
+</script>
+
+- [CaptainsCabin]
+
+---
+Explore: CorridorLeftNextToAirlock
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftNextToAirlock.description
+
+There is a door on each side of the corridor here. The bulkier one is the Airlock Left. It's identical to the airlock ${pulledLever ? "from where you let the captain's body out" : "where you left the captain's body"}, except this one is facing the other way, out the left side of the ship.
+
+The second door, oposite the airlock, leads to the staff room.
+
+Corridor Left stretches to the distance in both directions.
+
+- [CorridorLeftNextToAirlock]
+
+---
+Explore: LeftAirlock.Look
+
+This is the airlock that is always used when the Bodega is moored at a space station or when another ship is docked with the Bodega. All personnel come and go through it. This is probably why the captain chose the other, Corridor Right, airlock for funerals. That one is less worn out, less _everyday_. It seemed more proper for a memorial service.
+
+It would appear that this airlock is for the living, and the other one is for the dead.
+
+There is a little rack next to the airlock with little information flyers. These are standard and mandatory on every bigger ship – for the police, for rescue workers, and for visitors. They contain the basic data about the ship as well as a schematic plan. But the police almost never take them, as they have their own maps that are projected right onto their visors; rescue workers almost always know exactly where to go in advance; and visitors are rare and mostly content with being shown around. This is why the topmost flyer on the rack is covered in dust.
+
+<script>
+  b.infoFlyer.isActive = true;
+</script>
+
+- [CorridorLeftNextToAirlock]
+
+---
+Explore: StaffRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: StaffRoom.description
+
+This is where the architects of the ship imagined the crew would spend most of their free time.
+
+The staff room is painted white and green. There's a kitchenette, a white oval table, and a large video screen. The usual plumbing and electric wiring that protrudes from the walls everywhere else on the ship is notably missing here. Everything is smooth and secure, and there is almost no wear and tear here. It's like a room from another ship.
+
+The crew almost never came here, except to pick up instant food, to get coffee, or to fill a bottle from the drinking fountain. Nobody felt comfortable here. The one room on the ship _designed_ for social interactions – was usually as empty as it is now. And whenever someone seeked solitude from the others, they went to the staff room. That's what _you_ did, anyway (this was one of your two favorite hiding places). The others didn't seem to mind each other's company that much.
+
+Just opposite the entrance, there's a little door that you know leads to the medical bay (and through it, to the opposite side of the ship, to Corridor Right).
+
+- [StaffRoom]
+
+---
+Explore: StaffRoom.findFood
+
+The kitchenette has a cabinet with foodstuff. Most of its contents are packs of long-life gingerbread and cups of instant noodles. A freezer next to the cabinet contains heaps of fish fillets (fish being the only generally available meat source in deep space - there are zero gravity fish-farms on every bigger space station). None of this whets your appetite.
+
+Then you remember the officers' locker. There's a small refridgerated box above the freezer that contains high quality food for officers and for special occasions. It isn't locked, but it's also understood that when you're not one of the officers, you don't touch its contents.
+
+You open it. There's a half-eaten turkey sandwitch on the lowest rack, and a single banana on the highest one.
+
+<script>
+  b.banana.isActive = true;
+</script>
+
+- [StaffRoom]
+
+---
+Explore: CorridorLeftNextToBunks
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftNextToBunks.description
+
+This is one of those places where you can really appreciate the true length of the corridor. On both directions, the passageway subtly fades in mist.
+
+The entrance to the bunks (or "Living Quarters" as they are labeled here) is to the side.
+
+- [CorridorLeftNextToBunks]
+
+---
+Explore: Bunks
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Bunks.description
+
+The bunks is a large, smelly, dark room with many bunk beds scattered around and not much else. Each bunk bed comes with tall personal lockers on each side. The only crewmember not housed here was the captain (and of course Gorilla, who has his den in the cargo bay).
+
+In the last few days – after it was clear it's too late for quarantine – at least three or four crewmembers died here on their beds. ${isMedic ? "As the assistant medic, you personally moved each one from here to the airlock." : "You remember helping the medic move one of them from here to the airlock."}
+
+- [Bunks]
+
+---
+Explore: Bunks.SiftThroughLockers
+
+You come up to the first of the personal lockers on your left. It's open. (Several of them are – there is little need to lock up your stuff on a long-haul freighter like this, especially when you don't _have_ that much stuff, and even less so when everybody on the ship faces imminent death.)
+
+It's Mwenye's locker. He was an ablebodied spaceman${isSpaceman ? " like you" : ""} and spent most of his time in the cargo bay. There was always a lot of work in the cargo bay.
+
+<init>
+  addFootnote("creditsRing", """ The credits rings are worn by their owners on the little finger or the ring finger. They are the standard means of payment on spaceports and almost anywhere else in the universe. Most credit rings are set up with a security measure that prevents anyone other than the original owner from using them. This freeze can usually be lifted on space stations through the financial institution that issued the ring.""");
+</init>
+
+The whole inside of Mwenye's locker's door is covered with the African League flag. He was born on Ejeta, an African League space station, and was an avid citizen until his death. This shows even from his abandoned locker – there are African League pins, an ornamental League calendar with important dates and holidays, some clothes in national colors, and on the top shelf, his passport is propped against the locker's back wall, on display. You sift through the rest of late Mwenye's belongings, and there is nothing of immediate value. You find Mwenye's credits ring,${fn("creditsRing")} but there's no way of getting the money out of it without contacting the issuing bank about his death. So you just make a mental note of its existence and move on.
+
+XXX actually give money
+
+<script>
+  zil.update(b.computeTimeRequired(15, false), describe: false, whileString: "you are searching for another locker to open");
+</script>
+
+Next, you open Cooper's locker. Cooper was another ablebodied spaceman – the most experienced of all. His clothes are neatly stacked and there are dozens of tools and a couple of dumbbells here. In contrast to Mwenye's locker, Cooper's doesn't show any sign of his origin or citizenship. (Which is not surprising because most people on independent trading ships such as the Bodega are not very attached to their origins. If they were, they probably wouldn't be living a life on the constant move.) You find Cooper's credits ring and place it on top of a stack of clothes so it'll be easier for you to find it later.
+
+You move on. You skip two bigger lockers belonging to Michael Irwin (senior medic) and Par Nabiyeva (senior engineer) – they are locked. You have better luck with a couple of other lockers, and again you mostly find clothes and little of value, save for the occassional credits ring. You don't expect any of them to be loaded with lots of money. But it's good to know they're there – on the off chance you survive all this.
+
+<script>
+  zil.update(b.computeTimeRequired(15, false), describe: false, interactive: false, whileString: "you are checking the few remaining lockers");
+</script>
+
+The last locker you open is Mitsuyo's. As the first officer, she had a double-sized locker but despite the extra space it seems to have _less_ stuff in it than the others. It's strange. Yes, there are the very neatly stacked clothes, sorted by color, on one of the shelves. The neatness seems typical to the methodical Mitsuyo – if the whole locker was like this, you wouldn't be surprised. But then there are the other shelves. They are full of junk and empty booze bottles. Many of the shelves are damaged, as if Mitsuyo had been hitting them. A rotten piece of food is decaying on the top shelf.
+
+This is where you also find her Japanese passport. It's damp from the mush it's been sitting in, so you wipe it on the clothes and open it. It says there that she was born on Shitsuteki station. You have to check twice, but it really does say Shitsuteki, and the date of birth is 35 years ago (which is 10 years more than you would say from Mitsuyo's face). This means she must have been 7 years old when the drugged and delirious spacemen of the San Lorenzo Martir came and razed the station in one of the most brutal mass murders in the history of space exploration. Mitsuyo had either moved to another station by then or she was one of the very few Japanese survivors.
+
+<init>
+  addFootnote("shabu", """ Shabu is a Japanese variant of thinned methamphetamine – an old, potent and relatively cheap psychostimulant used all over the universe. It enhances mood, alertness, awareness, wakefulness, endurance, productivity, and motivation, increases arousal, locomotion, heart rate, and blood pressure, and it gives the perception of a diminished requirement for food and sleep. It is also neurotoxic, damaging both dopamine and serotonin neurons, causes brain damage after long-term use, and can induce psychosis and cerebral hemorrhage. Shabu is distributed in bullet-shaped vials and snorted directly from them. The vials are completely sealed before use, which makes them hard to detect by trace sensors. """);
+</init>
+
+On the bottom-most shelf, you find 2 vials of white crystal powder, hidden under a piece of textile. The bullet-like shape of the vials is unmistakable – this is shabu.${fn("shabu")} Mitsuyo is _the_ last person on the ship that anyone would suspect of using drugs. But, looking back, this might  explain the merciless pace of work that she was known for, and the occasional episodes of being completely withdrawn. You always thought she's just recharging by being alone – which you could completely understand – but it turns out it most probably was withdrawal symptom. This also explains why you have never seen Mitsuyo drunk, although her personal locker is full of empty bottles.
+
+The rest of the personal lockers are locked.
+
+<script>
+  b.shabuVials.isActive = true;
+  points.add(5, "getting to know your assets");
+  siftedThroughLockers = true;
+</script>
+
+- [Bunks]
+
+---
+Explore: Bunks.BreakIntoLockedBoxes
+
+// TODO: needed?
+
+- [Bunks]
+
+---
+Explore: CorridorLeftJunction
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorLeftJunction.description
+
+<script>
+  if (!junctionExplained) {
+    <echo>
+      The corridor curves here, and at the point of the bend there are two doors. The smaller one leads to the 'guts' of the ship – a noisy maze of passageways and ducts winding between many of the ship's smaller internal systems. The bigger one leads to the engine room, and, through that, also the hyperdrive.
+
+      This is the final stretch of Corridor Left – you can almost see the door to the cargo bay from here.
+
+      Because of the two doors to important parts of the ship, and the proximity to the cargo bay, this place has been called 'left junction' by the crew.
+    </echo>
+    junctionExplained = true;  // junction can be explained only once (it's the same on both sides)
+  } else {
+    <echo>
+      The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here – the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.
+    </echo>
+  }
+</script>
+
+- [CorridorLeftJunction]
+
+---
+Explore: Guts
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: Guts.description
+
+The guts is an intricate maze of little passageways between most of the ship's internal systems. When everything works, there is no reason for anyone to come here, and so the area is not particularly comfortable or even well lit. Many passageways are too narrow even for a body as thin as yours, and most are too low for any person to stand straight.
+
+After the explosion, this place is even less welcoming. The negative effects of the shockwave are more visible here than anywhere else – each few steps you can see a loosened cable, a leaking pipe or an awry rack. You hear the crackle and smell the pungent scent of the occasional electrical discharge. It's amazing that the Bodega is still mostly functional even with all those little malfunctions.
+
+[IMG]
+
+You quickly make your way to what the crew had called 'the heart' of the guts. A hub of several passageways with lots of gauges, valves and pipes, it sits more or less in the center of the habitable part of the ship.
+
+There's a simple sitting bench here on which you have spent quite some time. Not that you have had any practical reason to be here, but as someone who prefers being alone to the awkwardness of social interactions, this was your best bet when you wanted to keep out of everyone's way and out of sight. Not even Bodega sees here.
+
+From this place, you can easily make your way to both corridors and to the different systems housed in the guts.
+
+- [Guts]
+
+---
+Explore: Guts.TurretLook
+
+Climbing up the ladder from the 'heart', you get to the base of the defensive turret. It's the oldest weapon system the Bodega has, and it most probably dates the few decades to when the ship left the docks for the first time. (In contrast, the front utility laser was installed quite recently, and mostly for the occasional asteroid mining – not so much for self-defense.)
+
+But despite its age and limited firepower, the turret is still the best insurance against small-time gangsters and opportunist criminals. It's fully automatic – it will track a given target and shoot at it until told otherwise – so it doesn't require a trained weapons man to be effective.
+
+What it requires now, though, is repair. The turret itself was obviously made quite resilient, but its age combined with the recent shockwave (and the fact it happened during a hyper jump) have done considerable damage. One of the components is buzzing so loudly you could hear it back from the 'heart'. There's a flicker of sparks coming from the inside and a red pilot light is blinking on the wall nearby.
+
+You can't see the turret from the outside, but you don't expect any damage there.
+
+<script>
+  zil.update(1, describe: false, interactive: false);
+  b.repairTurret.isActive = true;
+</script>
+
+- [Guts]
+
+---
+Explore: Guts.TurretRepair
+
+You cautiously open the turret's panel: the inside is a mess. A pair of loose, sparkling cables has burned through a few others and they now seem to be short-circuiting into ${isEngineer ? "the control unit" : "one of the components"}. This will be fun.
+
+You ${isEngineer ? "" : "manage to "}kill the power and start going methodically through the inside of the turret's base, system by system, component by component. The turret was unlucky – almost everything has been dealt _some_ damage. Fortunately, though, the weapon was made with maintainability in mind: the components are either easy to repair or standard enough that you are able to find spare ones on the ship.
+
+
+
+<script>
+  b.createExtraEffortChoiceList(
+    "Work in a normal pace and walk for spare parts",
+    () {
+      zil.update(b.computeTimeRequired(47, isEngineer),
+          describe: false, interactive: false, whileString: "you are repairing");
+    },
+    "Work hard and run for spare parts", 1, 0,
+    () {
+      zil.update(b.computeTimeRequired(27, isEngineer),
+          describe: false, interactive: false, whileString: "you are frantically repairing");
+    }
+  );
+
+
+</script>
+
+After a tiring and seemingly never-ending stretch of work, you look at the electronics and realize all the faulty components have been repaired or replaced. You link them together with new cables and turn the turret's power input back on, half-expecting another failure. But the turret just whirls to life, performing a quick self-test and switching on a green pilot light afterwards.
+
+The turret is back online.
+
+<script>
+  bodegaShip.turret.isActive = false;
+</script>
+
+- [Guts]
+
+---
+Explore: EngineRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: EngineRoom.description
+
+[IMG of room and big window to the machine area]
+
+No matter how filthy the rest of the ship could get, this room was always perfectly clean. That's because officer Par Nabiyeva, the Senior Engineer${isEngineer ? " and your boss" : ""}, insisted on it. She would force ${isEngineer ? "you" : "her assistant"} and Gorilla to brush the whole room, _including the ceiling_, almost every single day.
+
+Even apart from the cleanliness, the engine room is a remarkable sight. Clusters of glistening, color-coded cables and pipes are running everywhere. There are four sturdy, functional terminals in different parts of the room. And at the head of the room, there is a huge window through which you can see both the generators and the hyperdrive in one spacious machine room. It's where you spent the last few days ${isEngineer ? "finalizing repairs to the hyperdrive with Captain Kay" : "helping Captain Kay finalize repairs to the hyperdrive"}.
+
+[IMG]
+
+<declare>
+  int powerCellsTotal = 8;
+  Stat<int> energyReserve = new Stat<int>("Energy reserve", (value) => "$value E", description: "The number of charged power cells", show: false, initialValue: 8);
+</declare>
+
+The generators take up the left part of the machine room. They are where the power cells (or, 'the fuel' as ${isEngineer ? "you engineers call it" : "the engineers call it"}) are consumed. It's a long line of 8 half-spheres, each of them as tall as a man. The power cells are inserted into them from above by enormous robotic arms, and when their capacity has been depleted, and their energy transfered to different parts of the ship, the robotic arms remove them again and put them into a receptacle at the center of the machine room. There are $powerCellsTotal power cells available, and it looks like ${energyReserve.value == powerCellsTotal ? "all" : energyReserve.value} of them are currently charged.
+
+<script>
+  energyReserve.show = true;
+</script>
+
+The whole area is pulsating and strobing with lights and diodes.
+
+The right part of the room is a lot less busy. In the center of an almost empty space, there is a large cigar-shaped device: the hyperdrive. From this far, the only indication that it's doing something is a few blinking status lights.
+
+<script>
+  // TODO: describe what's currently happening with the hyperdrive and the status of the subsystem
+
+  if (isEngineer) {
+    // TODO: reminisce the 'good old times' (as in Pixar's "Every day he ____")
+  }
+</script>
+
+- [EngineRoom]
+
+
+---
+Explore: EngineRoom.RepairEngine
+
+The engine is your domain, so even though there is nothing apparently wrong with the engine, you are quite confident you'll be able to bring it to 100% in a couple of hours. After working so long on the hyperdrive, you are actually somewhat looking forward to it.
+
+<script>
+  if (zil.timeline.time ~/ 60 > 3 && zil.timeline.time <= MAX_TIME_BEFORE_NAP) {
+    <echo>
+      You start going through the usual output optimization routines, but you can't focus on any of it. After trying for a couple of minutes, you realize you could do more damage than good, and return back to the bridge.
+    </echo>
+    goto("Bridge: Nap");
+  }
+</script>
+
+You go through the usual output optimization routines. The shockwave from the explosion hit this part of the ship quite strongly. Some of the fission cores went off axis and shut down automatically. You start going through them, one by one, resetting them, making sure they're stable and manually turning them on again.
+
+<script>
+  zil.update(b.computeTimeRequired(3*60, true), describe: false, interactive: false,
+    whileString: "you are checking the third core");
+</script>
+
+Two of the cores are considerably harder to set right, but you succeed in the end. By all this, you bring the engine output to 96%. The last 4% turns out to be a matter of precisely syncing the cores' output phases.
+
+The engine is now 100% operational and working like clockwork.
+
+<script>
+  bodegaShip.engine.hp.setMax();
+  points.add(2, "doing what you know best");
+  if (zil.timeline.time <= MAX_TIME_BEFORE_NAP) {
+    printSleepiness();
+  }
+</script>
+
+- [Explore: EngineRoom]
+
+---
+Explore: CorridorRightNextToComputerRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightNextToComputerRoom.description
+
+On the side, a modest door is labeled "Computer Room". It's where the Bodega's hardware is. The fact that it is placed on the exact same place as the captain's cabin, only on the opposite corridor, is very probably not a coincidence. Captain is the human brain of the ship. The machine brain is behind this door.
+
+- [CorridorRightNextToComputerRoom]
+
+---
+Explore: ComputerRoom
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: ComputerRoom.description
+
+The Computer Room is a grid of narrow alleys between 25 black, humming cuboids. Pipes of coolant are running from the ceiling to the floor, intertwining with the electronics like veins in muscles.
+
+The 25 blocks are the different modules of Bodega's brain, almost each of which is inspired by a part of the human brain. The big difference is that these are neatly organized by function and imbedded in separate blocks. The one closest to the door is labeled 'Visual Perception'. Another one has 'Sensors Perception' written on it. From previous visits to this room, you remember a couple of 'Speech' modules, something called 'Hierarchy', and the 'Mother', sitting in the center of the room, perfectly surrounded by all the other modules.
+
+One of the outer walls is studded with rade drawers – the memory modules. Some of them are blinking red, indicating the inevitable data corruption. It is the honorary, almost ceremonial role of the captain to swap these with new modules, and when this is being done, the officers, and sometimes the whole crew, is watching. A long time ago, you saw captain Kay do this – and it was one of the few times he was sober and solemn.
+
+The rade drawers ceremony is said to be a symbolic way for thanking the ship for its service (while also hinting on the power the human crew has over it). It's something like scratching a pet on its belly. Apparently, from the point of view of the pet, this is supposed to feel both pleasant and dangerous at the same time.
+
+Next to the rade drawer wall, there's a large locker with spare parts. Only the captain and the first officer have the key to that one.
+
+- [ComputerRoom]
+
+---
+Explore: CorridorRightNextToAirlock
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightNextToAirlock.description
+
+You are at Airlock Right, which has been serving as the place of funerals lately. ${pulledLever ? "Not long ago, you ejected captain's body from here to outers space." : "This is where you left the captain's body."}
+
+Directly opposite the airlock, there is also a second door which leads to the Medical Bay.
+
+Corridor Right stretches to the distance in both directions.
+
+- [CorridorRightNextToAirlock]
+
+---
+Explore: CorridorRightNextToAirlock.Look
+
+You approach the airlock and look through the porthole window.
+
+<script>
+  if (pulledLever) {
+    if (currentlyInJump) {
+      <echo>
+        The weird visual effect of the hyperjump makes it look like it's blindingly bright outside, but you know these are photons from stars light years ahead. The space around the ship is completely empty, looking almost sinister. As if it's waiting for you to fill it.
+      </echo>
+    } else {
+      <echo>
+        The space around the ship is completely empty, looking almost sinister. As if it's waiting for you to fill it.
+      </echo>
+    }
+  } else {
+    <echo>
+      The captain's body is still lying there on a blanket. It looks like the weird red rash is continuing to spread across the naked skin.
+    </echo>
+    b.pullLever.isActive = true;
+  }
+
+  // TODO: recollections of past funerals
+</script>
+
+The outer door is sealed shut.
+
+- [CorridorRightNextToAirlock]
+
+---
+Explore: CorridorRightNextToAirlock.PullLever
+
+You pull the lever, and as the outer door opens, all the air in the airlock shoots out – with a loud hiss – into the vacuum of space. The body is now moving in that direction, too, though much slower. It's no longer pulled towards the floor with artificial gravity – that was automatically turned off when you pulled that lever – so the body kind of tumbles towards the door.
+
+<script>
+  if (Randomly.tossCoin()) {
+    <echo>
+      It hits the doorsill on its way out, goes through the door, and starts receding into space while slowly rotating.
+    </echo>
+  } else {
+    <echo>
+      It hits the doorsill on its way out and almost stops, hanging midway between the inside and outside. For a while, it almost looks like you'll have to close that outside door and reopen it again, which would cut the captain's body in half. But fortunately, the movement never stops completely, and the body goes through the door and starts slowly receding into space.
+    </echo>
+  }
+</script>
+
+<script>
+  pulledLever = true;
+</script>
+
+You close the outside door again by putting the lever back into the original position.
+
+- [CorridorRightNextToAirlock]
+
+---
+Explore: MedicalBay
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: MedicalBay.description
+
+${isMedic ? "This is the place where you had been spending most of your waking hours on this ship. " : ""}The room is white and green. There are mobile beds in the middle with an infusion stand next to each of them. A third bed is behind glass in a small quarantine cell in the corner. That is where the first few crewmembers died, including ${isMedic ? "your boss, " : ""}the Senior Medic. After that it was clear the the quarantine doesn't do any good, and that everyone is already sick anyway.
+
+One of the walls is lined with cabinets, drawers and a long counter with equipment. There are surgical tools, forceps, needles, weaves, flasks, pillboxes, petri dishes, various measuring instruments and a microscope.
+
+<init>
+  addFootnote("planetborn", """ Planetborns are people who were born and raised on planets. They are a rare sight in space. Mostly welcome sight, too, since they bring money, although some spacers can't stand them for their snobbery and self-importance. """);
+</init>
+
+You remember a visitor – some kind of a rich planetborn${fn("planetborn")} who was apparently interested in buying the Bodega from captain Kay – wondering about the size of the med bay. "Seems so me that a medical establishment of this size," he said, "is a little bit of a, hmm, overkill? For a ship with a crew of a dozen, I mean." His name was Trukhin. Roman Trukhin. He was a Russian with large eyebrows and very traditional clothing. His blue tie was a subject of jokes for weeks to come.
+
+"What Mr. Trukhin might not realize," ${isMedic ? "your boss" : "the Senior Medic"} answered with as much politeness as he could muster, "is that space is a dangerous place, and that humans aren't particularly well-adapted to live in it. Especially not for long periods of time. There are many illnesses that space dwellers suffer that people on planets don't." And he wasn't talking only about physical illnesses, neither. A ship's medic needs to be also trained in psychology. "The medbay is exactly as big as most nations' regulations require it to be," he added.
+
+With an amused smile on his face, Trukhin nodded and carried on with his tour of the ship.
+
+- [MedicalBay]
+
+---
+Explore: MedicalBay.LookAtCounter
+
+
+
+- [MedicalBay]
+
+---
+Explore: CorridorRightNextToBunks
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightNextToBunks.description
+
+On the side here, you see the entrance to the bunks.
+
+- [CorridorRightNextToBunks]
+
+---
+Explore: CorridorRightJunction
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CorridorRightJunction.description
+
+<script>
+  if (!junctionExplained) {
+    <echo>
+      The corridor curves here, and at the point of the bend there are two doors. The smaller one leads to the 'guts' of the ship – a noisy maze of passageways and ducts winding between many of the ship's smaller internal systems. The bigger one leads to the engine room, and, through that, also the hyperdrive.
+
+      This is the final stretch of Corridor Right – you can almost see the door to the cargo bay from here.
+
+      Because of the two doors to important parts of the ship, and the proximity to the cargo bay, this place has been called 'right junction' by the crew.
+    </echo>
+    junctionExplained = true;  // junction can be explained only once (it's the same on both sides)
+  } else {
+    <echo>
+      The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here – the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.
+    </echo>
+  }
+</script>
+
+- [CorridorRightJunction]
+
+---
+Explore: CargoBayLeft
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+
+---
+Explore: CargoBayLeft.description
+
+<script>
+  if (!cargoBayExplained) {
+    <echo>
+      You are standing in a corner of a huge, _huge_ space filled with hundreds of freight containers. Each of them is exactly the same size (6 meters long, 2½ meters high and 2½ meters wide), but they do differ greatly in color, signage, age – and contents. They are stacked inside long parallel racks that go all the way to the backside of the cargo bay, and all the way down to the bottom of the space.
+
+      There are long, narrow corridors between the racks – so that the crew can access each container to help with unloading, check on a container's status, contain leaks. The corridors' floors are nothing more than sheets of perforated steel fixed in between the racks. They are sturdy, replacable, and see-through.
+
+      [IMG of cargo bay]
+
+      Two things hit you every time you enter the cargo bay. First, the cold and damp air. The cargo bay is heated _just_ enough so that people can work here for hours – but not even a degree more. Second, and more profoundly, the artificial gravity here is set to a very low value: only 20% of the standard. The moment you pass the threshold of the cargo bay door, you feel your stomach jump and you have to fight a brief sensation of falling. It's like the whole ship went into an instant dive. Luckily, your brain has learnt to deal with this and in a few seconds, you feel okay. The next step is to start walking and moving in a way that doesn't launch you to the ceiling, but again - you've had enough experience that it comes naturally now.
+
+      You remember a brief stint a few years back at a cargo ship called the Bleeding Edge. Her captain insisted on having _no_ artificial gravity in the cargo bay at all. So the ship saved a little more energy, but the work in the cargo bay was hell. Nothing stayed in place, and every simple thing required much more planning and energy. The spacemen that served on the Bleeding Edge's cargo bay for more than a few years were going mad and sickly. They couldn't even stand straight in normal gravity, and their bones broke too easily. It was evil – not to mention against regulations. Luckily, you left the Bleeding Edge a few months after joining.
+
+      Having that experience makes the 20% gravity here feel almost like a luxury, especially since anyone working in the cargo bay could directly change the gravity setting himself – on the console right here in the bay. On the other hand, almost nobody ever took advantage of that. They knew how expensive – energy wise – it can get, and they were mostly used to the idea of low gravity by the time they joined the Bodega.
+    </echo>
+    cargoBayExplained = true;  // cargo bay only needs to be explained once
+  } else {
+    <echo>
+      You are on the left side of the cargo bay, near the door to Corridor Left.
+    </echo>
+  }
+
+  /// TODO: If Jet not repaired then "the malfunctioning jet is accessible from here"
+
+</script>
+
+- [CargoBayLeft]
+
+---
+Explore: ExplodedContainer
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: ExplodedContainer.description
+
+// TODO XXX START HERE
+
+- [ExplodedContainer]
+
+---
+Explore: ExplodedContainer.search
+
+// TODO
+
+<script>
+  zil.update(30, describe: false, interactive: false,
+    whileString: "you are searching");
+</script>
+
+// ...
+
+- [ExplodedContainer]
+
+---
+Explore: CargoCenter
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: CargoCenter.description
+
+It's a sturdy computer interface with huge buttons and a reinforced screen. It's designed to be used by big hulks${isSpaceman ? " like you" : ""} with clumsy, gloved fingers, or even by enhanced gorillas.
+
+The console is located exactly half way between the two entrances to the cargo bay.
+
+- [CargoCenter]
+
+---
+Explore: CargoCenter.console
+
+<script>
+  if (!currentPage.visited) {
+    <echo>
+      Although theoretically, the console allows the user to access any function of the Bodega's internal network, its main focus is on the operation of the cargo bay. There are big buttons for changing the artificial gravity of the whole space. There's a master-lock that fixes all the containers in the racks once they're in place. And there's a guarded switch that opens the cargo bay's outside doors which is only supposed to be used when everyone is either outside the bay or in a space suit.
+    </echo>
+  }
+</script>
+
+<declare>
+  int cargoBayGravity = 20;
+</declare>
+
+The gravity is currently at $cargoBayGravity%.
+
+<script>
+  if (cargoBayGravity != 0) {
+    choice("Switch off artificial gravity", script:() {
+      cargoBayGravity = 0;
+      // TODO describe
+      zil.update(1);
+    });
+  }
+  if (cargoBayGravity != 20) {
+    choice("""Set artificial gravity to the ordinary (20%)""", script:() {
+      cargoBayGravity = 20;
+      zil.update(1);
+    });
+  }
+  if (cargoBayGravity != 60) {
+    choice("""Set artificial gravity to the max (60%)""", script:() {
+      cargoBayGravity = 60;
+      zil.update(1);
+    });
+  }
+  // TODO: open, master-lock
+  choice("Leave it be.", script:() {
+    <echo>
+      You back away from the console.
+    </echo>
+  });
+</script>
+
+- [CargoCenter]
+
+---
+Explore: CargoBayRight
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+
+---
+Explore: CargoBayRight.description
+
+<script>
+  if (!cargoBayExplained) {
+    <echo>
+      You are standing in a corner of a huge, _huge_ space filled with hundreds of freight containers. Each of them is exactly the same size (6 meters long, 2½ meters high and 2½ meters wide), but they do differ greatly in color, signage, age – and contents. They are stacked inside long parallel racks that go all the way to the backside of the cargo bay, and all the way down to the bottom of the space.
+
+      There are long, narrow corridors between the racks – so that the crew can access each container to help with unloading, check on a container's status, contain leaks. The corridors' floors are nothing more than sheets of perforated steel fixed in between the racks. They are sturdy, replacable, and see-through.
+
+      [IMG of cargo bay]
+
+      Two things hit you every time you enter the cargo bay. First, the cold and damp air. The cargo bay is heated _just_ enough so that people can work here for hours. Second, and more profoundly, the artificial gravity here is set to a very low value: only 20% of the standard. The moment you pass the threshold of the cargo bay door, you feel your stomach jump and you have to fight a brief sensation of falling. It's like the whole ship went into an instant dive. Luckily, your brain has learnt to deal with this and in a few seconds, you feel okay. The next step is to start walking and moving in a way that doesn't launch you to the ceiling, but again - you've had enough experience that it comes naturally now.
+
+      You remember a brief stint a few years back at a cargo ship called the Bleeding Edge. Her captain insisted on having _no_ artificial gravity in the cargo bay at all. So the ship saved a little more energy, but the work in the cargo bay was hell. Nothing stayed in place, and every simple thing required much more planning and energy. The spacemen that served on the Bleeding Edge's cargo bay for more than a few years were going mad and sickly. They couldn't even stand straight in normal gravity, and their bones broke too easily. It was evil – not to mention against regulations. You left the Bleeding Edge a few months after joining.
+
+      Having that experience makes the 20% gravity here feel almost like a luxury, especially since anyone working in the cargo bay could directly change the gravity setting himself – on the console right here in the bay. On the other hand, almost nobody ever took advantage of that. They knew how expensive – energy wise – it can get, and they were mostly used to the idea of low gravity by the time they joined the Bodega.
+    </echo>
+    // TODO: mention graviception? http://www.springerreference.com/docs/html/chapterdbid/115631.html
+    cargoBayExplained = true;  // cargo bay only needs to be explained once
+  } else {
+    <echo>
+      You are on the right side of the cargo bay, near the door to Corridor Right.
+    </echo>
+  }
+</script>
+
+- [CargoBayRight]
+
+---
+Explore: PlaceOfBreach
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: PlaceOfBreach.description
+
+// TODO
+
+- [PlaceOfBreach]
+
+---
+Explore: GorillasDen
+
+<script>
+  zil.update(1);
+</script>
+
+<script>
+  zil.createChoices();
+</script>
+
+---
+Explore: GorillasDen.description
+
+TODO
+
+- [GorillasDen]

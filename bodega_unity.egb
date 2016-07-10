@@ -1,0 +1,274 @@
+
+---
+Unity: Jump
+
+You take the captain's seat and buckle up. With hyperdrive jumps, there's a slight chance of glitches in the ship's artificial gravity (among other things) – so buckling up is standard procedure.
+
+"Is our course set for Space Station Unity?" you ask.
+
+"Affirmative. We are ready to initiate the sequence." The ship computer draws a circle in the middle of the main window. Unity is somewhere that way.
+
+- "Initiate jump sequence." [{conceitedness += 1;}]
+- "Do it." []
+
+<init>
+  addFootnote("superchargeHyperdrive", """ """);
+</init>
+
+"I assume we want to supercharge${fn("superchargeHyperdrive")} the jump," the Bodega continues. "We do have the excess energy cells to spare, and we _are_ in a hurry, aren't we?"
+
+"Yes." There really is no reason to conserve energy at this point. A few more reserve energy cells will not do you any good if you're dead by the time you reach Unity. Supercharging saves 36% of the jump time (and takes twice the energy). "Yes, let's supercharge."
+
+<script>
+  <echo>
+    The alert signal goes off throughout the ship.
+  </echo>
+  if (gorilla.isIn(b.bridge)) {
+    <echo>
+      Gorilla quickly runs up to a pair of straps on the wall behind you. You hear a metallic click and a whoosh as he fastens it.
+    </echo>
+  } else {
+    <echo>
+      Somewhere on the ship, Gorilla is (hopefully) buckling into a set of wall-mounted straps.
+    </echo>
+  }
+</script>
+
+"Initiating hyperdrive sequence." You can feel and hear the main thrusters quickly coming to life, propelling the ship forward. Hyperdrives need the ship to be accellerating forward so they can warp its speed by several magnitudes. That's what is going to come next.
+
+"Energy accumulated." While accelerating by traditional means, the hyperdrive builds up an extremely high energy charge. That energy will be discharged through the hyperdrive, creating a controlled space-time distortion around the ship. Moving through and within the bubble allows the ship to effectively cheat uncle Einstein. "Discharging," the Bodega says.
+
+A couple of things happen at the same time. A violent glitch in the artificial gravity almost makes you vomit as it feels like the whole ship does a completely unnecessary barrel roll. The straps keep you in place, but the freestanding bottles fly in a swarm accross the bridge and fall crashing to the ground near the entrance to Corridor Right. A few red lights blink all over the bridge as other systems experience temporary glitches. And, finally, the main window goes blue and bright. Then violet and white. And finally, the visual feed is replaced by a computer visualization (during faster-than-light travel, external cameras aren't very useful – they are overwhelmed by the bright disc of light in front of the ship).
+
+<script>
+  jumpedToUnity = true;
+  currentlyInJump = true;
+</script>
+
+You are now on your way to Space Station Unity and you expect to warp through the XXX light years in XXX hours. There could still be some gravity glitches along the way, so the official guidelines are to stay put during the jump, but most spacemen just ignore those and hope for the best. The slight chance that you'll get slammed on the ceiling are more than balanced by not having to sit or stand strapped for hours on end.
+
+<script>
+  int timeOfUnityArrival = zil.timeline.time + JUMP_TIME_TO_UNITY;
+  exploration.reschedule(b.unityArrivalEvent, timeOfUnityArrival);
+</script>
+
+- [Explore: Bridge]
+
+---
+Unity: Arrival
+
+The main window is filled with white and red and blue. You're looking at Unity, one of the 6 largest space stations in all of the known universe.
+
+[IMG]
+
+<init>
+  addFootnote("unityAquarium", """ The aquarium is the food source from which the whole station's population could survive indefinitely, if needed. It contains a full ecosystem of creatures – from plankton to clams to predatory fish – that have been genetically modified from the sea habitats of Earth (but still look pretty much the same). At the center of the aquarium there is a three dimensional maze of (partly artificial) corals, accessible by long tubes from the outside. This is where most of the fishing takes place. It's also where the tourists sometimes go 'diving'. """);
+</init>
+
+It's a hollow disc around a huge spherical aquarium. The aquarium is the food source,${fn("unityAquarium")} while the disc is where the population lives and (more importantly for you) where the docks are.
+
+Unity is very old, and it shows. Although the outside paint is bright, even around the docks (where stations are normally dark with burn marks), the symetry of the disc is corrupted by numerous attachments, growths and outbuildings all over the place. As with anything else in space, the initial design of the station just couldn't cope with all the new and unpredicted things that interstellar travel was yet to bring.
+
+The misfortune of Unity is that while most other man-made objects in space are ugly and indented from the very start, this station was obviously once elegant and _clean_. So now, all the additional construction looks like tumors on a ballerina's leg.
+
+- [Preview: End]
+
+// - [Unity: Approach]
+
+---
+Unity: Approach
+[[ visitOnce ]]
+
+"Open the communications link with tower," you tell Bodega as you sit down at the captain's seat again. The comms monitor comes alive and after a few seconds, an operator's face appears. He looks tired, but tries to smile.
+
+"Zis is Space stationion Unity dock tower." He's German, with the dark blond hair, the straight nose, the accent and everything. "Please provide callsign and intention." There's the tired smile again.
+
+"Callsign Bodega, freighter," the Bodega answers. "Request expedite docking."
+
+The operator's eyebrows go up. "Expedite? What is the emergency?"
+
+"I am dying," you say plainly. "The rest of the crew is dead already."
+
+The Bodega displays the crew roster for the operator to see. There are thirteen body outlines on the monitor. Some of them you immediately recognize as anatomy of one of the crew. All of them are red, except for the outline labeled as '$name (CONTAMINATED)', which is orange. "We have reasons to believe it's a contagion."
+
+"Okay, umm, Bodega, we will need to quarantine ze arrival..." The operator stops and frowns. "Wait. Can you confirm your full id?"
+
+"Complete ID is CH/C/740-22K," the Bodega answers.
+
+The operator freezes, looking at something at his side. This takes several seconds. He then straightens, bites his lip and looks directly into the camera.
+
+"Bodega, I'm afraid I cannot let you dock." He waits for you to react.
+
+- "Can you clarify?" [
+    "That is exactly what I cannot do, I'm afraid," he says. "According to this." He points outside the camera's view, presumably at one of his monitors.
+  {unityOperatorAttitude += 1;}]
+- "What do you mean 'I cannot let you dock'?" [
+    "I, umm, totally understand your frustration," he says. "But I have my orders." He glances to his side again, then returns his empathetic gaze back at you.
+  {}]
+- "Yes you can, and you _will_." [
+     "You are angry, and I understand that," he says. "I do. But orders are orders. And you cannot really dock with us unless we open a hatch for you, can you?"
+  {unityOperatorAttitude -= 1;}]
+
+"But look," he says after biting his lip some more. "You really shouldn't be around here. If I am understanding this correctly, you are on the Active Threat blacklist. I don't know how that's possible, for a cargo freighter I mean, and especially when you only have one soul on board, but the fact is you are listed. And that means, since I identified you just now, your position is broadcasted to anyone interested through the station's beacon. So that means that the organization that blacklisted you – and I assume you know who that is – is probably jumping a ship or two to this location right now."
+
+- [UnityQuestion: Choice]
+
+---
+UnityQuestion: Choice
+
+<declare>
+  // Initial set of topics available to player.
+  List<String> unityTopics = [
+      "Organization",
+      "ActiveThreatBlacklist",
+      "AskToDock",
+      "AskToTrade",
+      "WhereToGo"
+  ];
+</declare>
+
+<script>
+  if (unityTopics.isEmpty) {
+    <echo>
+      There are no more questions to ask right now. You motion towards the console and the connection terminates.
+    </echo>
+    goto("Unity: DisconnectFromTower");
+  }
+</script>
+
+<script>
+  // A Map of topic questions to show as a choice.
+  var unityQuestions = {
+    "Organization": "\"What organization?\"",
+    "ActiveThreatBlacklist": "\"What's the Active Threat blacklist?\"",
+    "AskToDock": "\"What would need to happen for us to dock?\"",
+    "AskToTrade": "\"Can I at least trade with you?\"",
+    "WhereToGo": "\"Where can we go?\""
+    // TODO: "Operator": "Get to known the operator"
+  };
+
+  unityTopics.forEach((String pageName) {
+    choice(unityQuestions[pageName], goto: pageName);
+  });
+
+  choice("Disconnect", script: () {
+    <echo>
+      You motion towards the console and the connection terminates.
+    </echo>
+    goto("Unity: DisconnectFromTower");
+  });
+</script>
+
+
+---
+UnityQuestion: Organization
+
+"I told you," the operator says.
+
+
+
+// Let player use mental points to get the operator to blunder and reveal some information (Pruitt? Sentaco?)
+
+<script>
+  unityTopics.remove("Organization");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+---
+UnityQuestion: ActiveThreatBlacklist
+
+TBD
+
+<script>
+  unityTopics.remove("ActiveThreatBlacklist");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+---
+UnityQuestion: AskToDock
+
+TBD
+
+<script>
+  unityTopics.remove("AskToDock");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+---
+UnityQuestion: WhereToGo
+
+TBD
+
+<script>
+  unityTopics.remove("WhereToGo");
+  zil.update(1, describe: false);
+</script>
+
+- [Choice]
+
+
+---
+Unity: DisconnectFromTower
+
+You examine the radar view. There's the Space Station, the Bodega, and a few of other ships (mostly traders, but also two UNSA defensive force gunships) that are either in the process of docking or on their way to a jump point. None of them seem to be interested in you, much less approaching you.
+
+- [MainChoice]
+
+---
+Unity: MainChoice
+
+<declare>
+  // TODO: add a chance to hire a mercenary spaceship who will assist in defending the Bodega in space combat (in exchange for credits). Later, at the pirate station / factory cluster, offer similar choice, but more expensive (because last minute).
+</declare>
+
+What do you do?
+- Use the Unity's beacon [UseUnityBeacon]
+- Open fire at Space Station Unity to force them to let you dock [OpenFire]
+- Try to negotiate with the operator, offering something on board [Negotiate]
+- Wait [Wait]
+- Jump to safety [JumpToSafety]
+
+---
+Unity: UseUnityBeacon
+[[ visitOnce ]]
+
+The close proximity to Space Station Unity allows you to use their beacon, which in turn makes it possible for you to make realtime calls to anyone who is close to any other beacon, even if they are light years away.
+
+<script>
+  if (knowsAboutEleanor) {
+    afterEleanorFirstChatGoto = "Unity: SentacoShipArrival";
+    goto("End: FirstCall");
+  } else {
+    <echo>
+      But there is currently no single person to try and reach.
+    </echo>
+  }
+</script>
+
+
+- [MainChoice]
+
+---
+Unity: OpenFire
+[[ visitOnce ]]
+
+// TODO: if bodegaShip weapon isAliveAndActive
+
+// TODO: Either full-blown SpaceshipCombat (Unity is a special ship that doesn't have maneuvres, but has lots of weapons) or a simplified version.
+
+
+- [MainChoice]
+
+
+---
+Unity: SentacoShipArrival
+[[ visitOnce ]]
+
+// TODO: sentaco mercenary ship jumps into system => fight with opportunity to jump away
+

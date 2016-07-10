@@ -1,0 +1,132 @@
+
+---
+Ressurection: OpenEyes
+
+Your eyes open, shakily.
+
+You are on the same spot – haven't moved since you ... died. You lie on the floor, next to the communications panel, and your eyes are still fixed on the main monitor.
+
+Dr. Eleanor Wells is there. She's no longer in a dim lit room, it's day at wherever she is right now. She raises her eyebrows${attitude > -1 ? " and smiles" : ""}.
+
+"You're back," she says. "Good. We don't have much time."
+
+- "Why?"
+- Stand up
+// both fail
+// TODO: monitor "inquisitive" - the more inquisitive, the more Eleanor will like player
+
+"You're still weak ${attitude > -1 ? "–" : "– at least I'll be spared of your brash language for once –"} but that will pass soon enough. You are through the rebuild phase now."
+
+- Raise eyebrows []
+
+Dr. Wells detects your question. "What the nanobots do – after they've gathered data about your body – is they pretty much rebuild it all, cell by cell. Some of the nanos will merge with a cell, effectively making a cyborg microorganism. Most will use your body's own mechanisms and resources to augment its function. Striking the right balance between the two approaches – it was pure alchemy. Well, it was all alchemy, mostly."
+
+- Raise eyebrows [{echo(""" "We had no data that would be indicative of what would happen. Nobody attempted anything close to this before. There were experiments with single cells or primitive organisms, but never with something as complex as a mouse, let alone a human. We spent almost a year trying to create a working model with some predictive accuracy. We never got there. Not even close. In the end, we had to get to the results experimentally. We were like the alchemists in the middle ages, but instead of the philosopher's stone, we were searching for something much more important." """)}]
+- Do nothing []
+
+Dr. Wells draws closer to the camera. "Are you familiar with the Verge?"
+
+- Nod [NoNeedToExplainVerge]
+- Shake head [ExplainVerge]
+
+---
+Ressurection: ExplainVerge
+[[ visitOnce ]]
+
+// TODO painful to shake
+
+
+
+---
+Ressurection: NoNeedToExplainVerge
+
+"Of course, you're pretty much in it right now. But let me tell you, life on a starship in the Verge is _nothing_ like life on the moons and the planets of the Verge."
+
+- [ReminiscingVerge]
+
+---
+Ressurection: ReminiscingVerge
+
+Dr. Wells leans back and narrows her eyes. "I was raised on one of the Verge's poorer star systems, Avesta. We lived on a hot, seizmic power-plant of a planet, Avesta II. See, nobody even cared enough to give it a proper name." She scoffs. "The population was fifty thousand. Together, they provided the 'colonization effort' with more energy than the _whole_ Sol system combined."
+
+She scoffs again. "And for those fifty thousand people – who worked twelve hour shifts in artificially lit, hell-hot underground tunnels on a volcanic planet – there was just one real doctor. My father. And so I lived among broken people. No matter how hard my father tried, there was always screaming and people with dripping burns and with missing limbs."
+
+- "Who cares?" [{echo("""Something akin to "huh hrrrs" comes from inside of your throat. Dr. Wells waits for a second to see if you're going to continue, then she gets back to speaking.""")}]
+- Listen []
+
+"I eventually got out of Avesta, out of the Verge, to study medicine with some of the most intelligent people I will ever know. Most of them from central systems, of course. And, see, I learnt that these people – coming from where they do – these people think it's 'not natural' to help people who are beyond some 'level of damage'. When a worker somewhere in the Verge gets his legs caught in machinery, they say it's 'natural' that he loses the whole lower part of his body, because that would have happened a hundred years ago. Is it possible to help him now? Maybe, but they think it would be crossing a line. Of course, most of them have never even _seen_ anyone lose their legs."
+
+"Fortunately, not everyone was so arrogant. We put together a working group and started looking into technologies that were 'beyond the line'. The most promising one turned out to be nanorobotics. We got funded by Sentaco and set up the lab on Ithaka."
+
+The Bodega jumps in. "There's a new signal on the radar. A medium sized ship. I just thought you two might want to know."
+
+"I'm sure you'll learn that the ship was sent by Pruitt. I told you we don't have much time. How do you feel?"
+
+You don't feel so great, but definitely better than a minute ago.
+
+- "Not so great."
+- "Better."
+- "I almost died, that's how I feel." // "No, you actually died."
+- "Why do you care?"
+
+// TODO: I can see your vocal cords are getting better.
+
+"Look – Pruitt's men are coming for you. I'm not entirely sure if this all is an accident or not, but even if it was, Pruitt will definitely want to have you for research. You're the only human in the universe with Rescin treatment. And unless I am mistaken, you'll be the only one for some time to come."
+
+- Try to get up [TryToGetUp]
+
+---
+Ressurection: TryToGetUp
+
+You try hard to rise up, but even just moving your arms underneath the body, so that you can push up, turns out to be impossible. You give up and immediately, a tingling sensation overcomes all the muscles you just stressed.
+
+Dr. Wells nods. "You're not ready yet, but don't worry, you'll be in a few minutes."
+
+- [Questions]
+
+---
+Ressurection: Questions
+
+- "What exactly happened to me?" // Rescin works to counter any breakages - - "Why 'Rescin'?"
+- "Why did no one else survive?" // outer space
+- "Why are you helping me?" // Pruitt will make a project out of you. I feel responsible
+- Try to stand up again [StandUpAgain]
+
+---
+Ressurection: StandUpAgain
+
+// TODO: first 2 attempts in vain (unless all questions have been answered)
+// TODO: one of the attempts: Bodega says how far the incoming ship is
+
+This time, it works. You push your hands towards the floor and your upper body lifts as easily as if the gravity was turned down. The tingling sensation is all but gone. You stand up and look around. The bridge is as empty as when you got here a few hours back. You notice the radar screen and the highlighted ship that is slowly moving towards the center of it. Amazingly, you can read the distance measurement, although the characters are small and the screen is a few meters away. The ship is 11 kilometers away and approaching the Bodega with an ETA of 5 minutes.
+
+- "The ship's here in 5 minutes. All energy to shields and weapons."
+- "Give me a reading of the ship."
+
+TODO: reading of the ship
+TODO: Dr. Wells disapproves
+
+---
+Ressurection: EleanorAdvice
+
+"I'm pretty sure the Bodega is no match for that ship."
+
+"Excuse me?" the Bodega says.
+
+"Look, ship, I know about the Messenger. Good job. But they won't make the same mistake again. That incoming ship is military class. She's smaller than you, I'm sure, but you have absolutely zero chance of beating her in your current setup. You're better off playing dead."
+
+The Bodega runs through some schematics on the scanner panel for a fraction of a second, then says: "I'm afraid she's right. That ship appears to be a military-grade vessel. A gunship."
+
+"Play to your strengths," Dr. Wells says. "They want you alive."
+
+- "So?" [{echo(""" "They'll board the Bodega. They'll expect trouble, but I don't think they fully appreciate the effects  Rescin can have on a healthy body." """)}]
+- "Whatever." []
+
+The ship is now 4 minutes away.
+
+"Look, I need to disconnect. They traced our call. It's best for me to move and stay hidden now. After this litter encounter is over, you do the same. I'll contact you later." Dr. Wells smiles. "I think I'll have something the Bodega will enjoy. Until then, good luck." Dr. Wells nods and the main screen goes blank.
+
+What do you do?
+- Contact the ship and surrender to them // end
+- Raise shields and prepare for battle // very short battle, incapacitates bodega's weapons, continues with boarding
+- Let the ship approach

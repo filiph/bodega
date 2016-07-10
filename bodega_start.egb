@@ -1,0 +1,448 @@
+---
+Start: Funeral
+
+<script>
+  /*
+
+A "Star Wars" intro?
+
+//In the year 2593,
+
+// The first child born and raised in space, Tara Ahluwalia, died 150 years ago. As most spaceborn that came after her, she has never been on the surface of any planet.
+
+  */
+</script>
+
+## The Funeral
+
+This story both begins and ends with a death, on a spaceship.
+
+<script>
+// TODO(put somewhere else): Death. Isn't it strange how when you're trying to get away from something, you inevitably only get more of it?
+</script>
+
+The first death is that of the captain, whose body you just finished dragging through the empty ship and laid down in the airlock. When he died a couple of minutes ago, he left you as the last survivor on board of the Bodega.
+
+<declare>
+  // When he died a couple of minutes ago, he left you as the last survivor on board of the _Bodega_, the 25 thousand ton cargo ship that is currently stuck helpless in the middle of nowhere.
+  // It's strange how quickly things change. Two weeks ago, the Bodega and its crew were doing just fine. The ship was midflight between the Russian space station _Golitsyn_ and the Indian factory cluster at _Groombridge 12_. It was business as usual.
+  // TODO: make footnotes for Sentaco-5 and Groombridge 12.
+  // TODO: dialog? less exposition, more conflict?
+</declare>
+
+<declare>
+  Function getInformalRole;
+  Function getRoleAdjective;
+</declare>
+
+<init>
+  getInformalRole = (String article) {
+    var str;
+    if (isEngineer) str = "machinist";
+    if (isMedic) str = "medic";
+    if (isSpaceman) str = "{spaceman|sailor}";
+    return Randomly.parse("$article $str");
+  };
+
+  getRoleAdjective = () {
+    if (isEngineer) return "engineering";
+    if (isMedic) return "medical";
+    if (isSpaceman) return "maintenance";
+    throw new Exception("Role not defined for getRoleAdjective.");
+  };
+</init>
+
+You are the ship's:
+- Assistant Engineer, skilled in electronics and machines [{isEngineer = true; maxPhysicalPoints = 3; maxMentalPoints = 3;}]
+- Assistant Medic, skilled in biology and health [{maxMentalPoints = 4; isMedic = true;}]
+- Ablebodied Spaceman, skilled in space travel and spaceship maintenance [{isSpaceman = true; maxPhysicalPoints = 4;}]
+
+Before the incident changed everything, you were nearing two years in your ${getRoleAdjective()} service on the Bodega. Everything had become familiar. The smell of polyplastics, human sweat and detergent. The bleak dimness of the interiors. The color-coded ducts and cables on every wall. The way sound carries in a huge, 25 thousand ton cargo ship. Conversations, laughter, and swearing were echoing through the corridors almost constantly.
+
+Now, the ship is silent and the whole crew is dead. Since the explosion in the cargo bay, the men and women had been taking turns in screaming in pain, then getting uncanilly stiff, then dying. The captain held a memorial service for every one of them, each funeral – of course – a little shorter and simpler than the previous. Now it's your turn to be the master of ceremony.
+
+<declare>
+  //strength = 2;
+  //charisma = 2;
+  //knowledge = 2;
+  String manOrWoman = "man";
+
+  Function isMan;
+  Function isWoman;
+
+  // TODO: revert back to defining normally when resolved: https://code.google.com/p/dart/issues/detail?id=19191
+  //badToTerrible = (int i) => i <= 2;
+  //badToAverage = (int i) => i >= 2 && i <= 3;
+  //decentToGood = (int i) => i >= 4 && i <= 5;
+
+  var isStuttering = () => false;// charisma < 3;
+  // isLimping = () => true;// charisma < 3;
+  //isLimping = () => strength < 3;
+  //isNoob = () => knowledge < 3;
+</declare>
+
+<init>
+  isMan = () => manOrWoman == "man";
+  isWoman = () => manOrWoman == "woman";
+</init>
+
+Two weeks ago, you were little more than a lowly ${getInformalRole("")}. Now, you're the acting captain. The last one standing. (Well, almost. But we'll get to that later.)
+
+<declare>
+  // addFootnote("strength", "Strength is the physical strength and agility of your character. Stronger characters can do more with their body. They are faster, they can move heavier objects, and they can endure more pain.");
+  // addFootnote("charisma", "Charisma is the ability of your character to communicate clearly and effectively. More charismatic characters are better at making a good impression on others and at persuasion. They are better talkers, and liars.");
+  // addFootnote("knowledge", "Knowledge is the amount of exprience and information your character has managed to accumulate during his or her life. Knowledgeable characters can draw on what they already know from the past. The know more about how things work, who is who and where is what.");
+</declare>
+
+<script>
+//  KEEPING THIS FOR FURTHER REFERENCE
+//
+//   final int maxPointsToDistribute = 8;
+//   pointsToDistribute = maxPointsToDistribute;
+//   var remainingPoints = new TextOutput();
+//
+//   var stringify = (int value) {
+//     String evaluation;
+//     switch (value) {
+//       case 1: evaluation = "terrible"; break;
+//       case 2: evaluation = "bad"; break;
+//       case 3: evaluation = "average"; break;
+//       case 4: evaluation = "decent"; break;
+//       case 5: evaluation = "good"; break;
+//       default: evaluation = "excellent"; break;
+//     }
+//     return "$value ($evaluation)";
+//   };
+//
+//   var strengthRange = new RangeInput("Strength ${fn('strength')}", (int value) => // strength = value, value: strength, min: 1, max: 5, stringifyFunction: stringify);
+//   var charismaRange = new RangeInput("Charisma ${fn('charisma')}", (int value) => // charisma = value, value: charisma, min: 1, max: 5, stringifyFunction: stringify)// ;
+//   var knowledgeRange = new RangeInput("Knowledge ${fn('knowledge')}", (int value) =// > knowledge = value, value: knowledge, min: 1, max: 5, stringifyFunction: // stringify);
+//
+//   var form = new Form();
+//   form.children.add(remainingPoints);
+//   form.children.add(strengthRange);
+//   form.children.add(charismaRange);
+//   form.children.add(knowledgeRange);
+//
+//   var updateForm = (_) {
+//     pointsToDistribute = maxPointsToDistribute - strength - charisma - knowledge;
+//     remainingPoints.html = """<p>You can personalize your initial talents here (i.e. // what your character focused on up until now). You have <strong>$// pointsToDistribute</strong> point${pointsToDistribute != 1 ? 's' : ''} to // assign to ${pointsToDistribute != 1 ? 'the different attributes below' : 'one // of the attributes below'}. You can also take away points from talents to // distribute them to other talents.</p>""";
+//     /*
+//     strengthRange.minEnabled = isSpaceman ? 2 : 1;
+//     charismaRange.minEnabled = isMedic ? 2 : 1;
+//     knowledgeRange.minEnabled = isEngineer ? 2 : 1;
+//     */
+//     strengthRange.maxEnabled = strength + pointsToDistribute;
+//     charismaRange.maxEnabled = charisma + pointsToDistribute;
+//     knowledgeRange.maxEnabled = knowledge + pointsToDistribute;
+//   };
+//   form.onInput = updateForm;
+//   updateForm(null);  // Initial recalculation update.
+//
+//   manOrWoman = "man"; // TODO: choice
+//
+//   showForm(form);
+</script>
+
+<script>
+  b.createTraitsForm();
+</script>
+
+<declare>
+  int pointsToDistribute = 0;
+</declare>
+
+<script>
+  b.echoTraits();
+
+  if (pointsToDistribute > 0) {
+    points.add(pointsToDistribute * 10, "not using all the talent points");
+  }
+</script>
+
+The funeral looks like this: You are standing in front of one of the ship's two airlocks. Through the porthole window, you can see the captain's body lying on the floor, naked and reddish and stiff. Just like all the others before him. When you had put him down there a minute ago, you made sure he's lying reasonably straight, like one would do in a coffin. You even put a blanket under him so he doesn't lie on the cold steel of the airlock.
+
+Not that the dead care much about cold. But that's what you did.
+
+![Dead captain Kay](img/airlock.jpg)
+
+<init>
+  addFootnote("funeralInSpace", """This is common practice when a spaceship is stranded and there are casaulties on board. Unless there's a good chance that the bodies can be preserved until a rescue ship comes, bodies are ejected into space. This minimizes the risk of infection and allows the crew to focus on their own survival instead of on ways to preserve bodies.""");
+</init>
+
+Your hand is on the lever that will open the airlock's outside door. Through that door, once open, the captain's body will be sucked out into outer space. This is how funerals work here on the Bodega.${fn("funeralInSpace")}
+
+The inner door, through which you're watching, is safely closed and sealed. The only thing that remains is to pull the lever.
+
+- [Start: Funeral.choice]
+
+---
+Start: Funeral.choice
+
+- Say a few words first [SaySomethingNice]
+- Pull the lever [Pull]
+- Leave the body in the airlock [LeaveBody]
+
+---
+Start: SaySomethingNice
+[[ visitOnce ]]
+
+You clear your throat.
+
+"C${isStuttering() ? '-c' : ''}aptain Kay." Your voice sounds awkward in the silence of the empty corridor${isStuttering() ? ", and your stutter doesn't help" : ""}.
+
+For some reason, the only things that come to mind right now are _far_ from nice. Your head is full of images of the captain being drunk to the point he couldn't stand up.
+
+<declare>
+  bool madeFunOfDrunkednessOnFuneral = false;
+</declare>
+
+- "Let's just say this is not the first time I see you lying on the floor, naked and reddish and stiff." [
+    It might not be the best topic for anyone's funeral — but it's true. You are the kind of person who says it how it is.
+  {madeFunOfDrunkednessOnFuneral = true; points.add(1, "honesty");}]
+- Let it go. [
+    You decide this is probably not the best topic for anyone's funeral.
+  {points.add(1, "sensitivity");}]
+
+<p class="meta">Note: Decisions like these help define your character.</p>
+
+You are silent for a few moments, and then you end up saying: "Captain Kay, you were a great captain." And that is definitely true.
+
+- [Funeral.choice]
+
+---
+Start: Pull
+
+${isStrong ? 'You' : 'With great effort, you'} pull the lever, and as the outer door opens, all the air in the airlock shoots out – with a loud hiss – into the vacuum of space. The body is now moving in that direction, too, though much slower. It's no longer pulled towards the floor with artificial gravity – that was automatically turned off when you pulled that lever – so the body kind of tumbles towards the door.
+
+<script>
+  if (Randomly.tossCoin()) {
+    <echo>
+      It hits the doorsill on its way out, goes through the door, and starts receding into space while slowly rotating.
+    </echo>
+  } else {
+    <echo>
+      It hits the doorsill on its way out and almost stops, hanging midway between the inside and outside. For a while, it almost looks like you'll have to close that outside door and reopen it again, which would cut the captain's body in half. But fortunately, the movement never stops completely, and the body goes through the door and starts slowly receding into space.
+    </echo>
+  }
+</script>
+
+<script>
+  points.add(5, "observing the protocol");
+  pulledLever = true;
+</script>
+
+- [Recollections]
+
+---
+Start: LeaveBody
+
+You withdraw your hand from the lever.
+
+<script>
+  points.add(2, "respect to the dead");
+</script>
+
+- [Recollections]
+
+---
+Start: Recollections
+
+<init>
+  addFootnote("stationClara", """Clara is a German station orbiting the Epaphus red dwarf. The port is well known for high-quality industrial products and a good shipyard. Once in about 200 earth days (the station's orbital period) they also hold the 'Oktoberfest' – a beer drinking festival. (This was not the time, though.)""");
+</init>
+
+You remember the first time you saw the captain – in a bar on Space Station Clara.${fn("stationClara")} Both of you were drunk beyond belief, both for different reasons. Come to think of it, _everybody_ in that bar was drunk beyond belief, and probably for different reasons, too. It was like a group therapy session.
+
+You sat alone. Not because of shyness or anything. No, you have just always found it tiring to talk about things that don't matter. And when you talk about things that _do_ matter to you, it's kind of a pain for everyone involved. "Nobody wants to talk about that, $name," your psychiatrist had always said. "The only reason we two talk about it is that I get paid for it." (He wasn't a very good psychiatrist.)
+
+So you sat alone. And so did the captain, a few tables away – just another bar patron in a dirty jacket and a glass of German zero-G-hops beer on the table.
+
+Of course, it didn't take long before someone started a fight that night. You don't really remember who it was but it wasn't captain Kay, and it definitely wasn't you. You stood up and started making your way out, avoiding the epicenters of the brawl. You ${isStrong ? "decided a long time ago that using your pretty decent fighting skills in bar fights is a waste of time and perfectly good teeth" : "were never a good fighter and had no intention of getting the hell beaten out of you for no reason whatsoever"}. After a few steps, you had to dodge a ginger guy who was thrown by two others across the room and right into another part of the melee. What followed was a surge of yells and roars and a loud clamor of furniture.
+
+- [Brawl: Start]
+
+---
+Start: RecollectionsContinued
+
+With that out of the way, you looked around, and that's when you really noticed the captain for the first time.
+
+He wasn't fighting. He was standing in the middle of the whole mess, laughing his head off. (You would later learn that this was not at all unusual for him – he would laugh maniacally at the least opportune of times, even if he was in danger. Especially if he was in danger.) You were ready to go on but then you heard, "What's so funny, shitface," and you noticed a huge, furious warehouseman running straight at the captain with a chair above his head. The chair had a mock-wood finish, like almost everything in the bar, but you knew it was actually metal.
+
+The captain laughed on, standing with his back to the quickly approaching warehouseman.
+
+For some reason, in spite of all the good reasons not to, you decided to run towards the captain to defend him against the warehouseman and his crippling blow. You knew full well you'd regret this.
+
+"This is bullshit," you said to yourself when you broke into a sprint across the room.
+
+- You ran at the warehouseman trying to kick him off balance, exposing your leg [
+    A few paces away from the captain, you jumped, putting both your legs forward in a kind of an improvized jump kick. The warehouseman saw you coming, though, and he brought the chair down and on your right leg. You heard the muffled scrunch of breaking bone and you flew past the guy into some furniture.
+  {isLimping = true}]
+- You tried to parry the chair with your arm [
+    You made it to where the captain was standing just in time to try to block the warehouseman's blow. The chair landed with full force on your left hand and you heard the muffled scrunch of breaking bone. The impact sent you sliding under a table nearby.
+  {hasLameHand = true}]
+
+In shock and still oblivious to the scope of your injury, you watched the captain receive blow after brutal blow from the looming warehouseman (at least it was fists and not a metal chair) and you tried to stand up – almost managed to pull it off, too – but then everything went dark and you just plain fainted.
+
+<declare>
+  // You remember trying to slip through the crowd to get out, as you ${isStrong ? "decided a long time ago that using your fighting skills in bar fights is a waste of time and perfectly good teeth" : "are not a good fighter and had no intention of getting the hell beaten out of you for no reason whatsoever"}, and when you were next to the laughing captain, a huge furry with arms the size of your thighs leaped in front of you two, said (to the captain): "What's so funny, shitface?",${isWoman() ? ' then (to you): "Sorry, lady.", and finally ' : ""} grabbed both of your heads, and smashed them together.
+
+</declare>
+
+The next thing you knew, the bar was empty and captain Kay was helping you on your feet. There was blood in his hair. He was laughing again.
+
+"What's your name, kid?" He grinned.
+
+<declare>
+  String name = "Slim";  // Unisex name: http://www.behindthename.com/names/gender/unisex
+
+  // We are not asking for the name here because we want to create a memorable name (such as Harry Potter or Ash or Master Chief).
+</declare>
+
+"$name," you said.
+
+"So, uh, $name, that was really stupid of you. You know that, right?"
+
+You kept looking at him but didn't say anything.
+
+"Idiotic, really. I mean, ${isLimping ? 'jumping' : 'running'} right into the path of a _steel chair_ like that?" He looked you into the eyes, still smiling. Still dripping with blood. "But thanks, anyway. You probably saved my life or whatever."
+
+You nodded.
+
+He stood there for a while. "How's your ${isLimping ? 'leg' : 'arm'}?"
+
+"Broken, I think. It's fine if I don't move it but–" You screamed when you touched it. The pain was horrific.
+
+"Alright." He stopped grinning. "$name, right? Let me do one thing. I have a ship with a medbay, docked at D-14. I'll take you there and my doc will treat that for you. For free."
+
+You nodded, carefully got up,${isLimping ? ' grabbed his shoulder for support,' : ''} and let him lead the way. Later in the day, on board of the Bodega, he offered you the ${getRoleAdjective()} job that you kept for the past 2 years.
+
+Now, you watch his dead body ${pulledLever ? "recede into darkness" : "lie on the floor in front of you"}.
+
+<script>
+  if (isStrong) {
+    <echo>
+      You think about it again. There really is no reason why you should outlive the captain. You are a strong $manOrWoman, but your tenacity is nothing compared to the captain's. The contagion, or whatever it is, should have killed you long before him. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthiest, most vigorous crewmember – Cooper – died second.
+    </echo>
+  } else {
+    <echo>
+      You think about it again. There is no reason why _you_ should outlive the captain. Or why you should outlive _any other_ crew member, for that matter. You were one of the weakest, least hardened individuals on board. The contagion, or whatever it is, should have killed you long before everyone else. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthies, most vigorous crewmember – Cooper – died second.
+    </echo>
+  }
+</script>
+
+
+<script>
+  if (isMedic) {
+    <echo>
+      You don't remember ever treating Cooper or seeing him in the medbay. Not even with the common cold.
+    </echo>
+  } else {
+    <echo>
+      That guy had never even _sneezed_ before.
+    </echo>
+  }
+</script>
+
+<script>
+  // TODO: frame ("you have that strange feeling again") move to a separate event
+
+  // In the last few days, you couldn't help wondering whether all this is, maybe, _somehow_, your fault. You've always preferred being alone, there is no question about that. It's been the only time you don't feel out of place. But being alone is a luxury in the confined inner space of freighter ships and space stations. There's always someone just around the corner or in the next room. Unless, of course, everybody else is dead.
+
+  // Rationally you know this can't be true. You don't remember doing anything to the others, and twelve people won't die by themselves just because the thirteenth wants to be alone. But with each death, you felt this strange and repulsive _relief_, like there is one less _thing_ to worry about, like there is more space to breathe, and that has been the scariest feeling you have ever had in your life.
+</script>
+
+[IMG of intercom]
+
+The intercom on the wall starts ringing loudly and blinking with a red light. The ringtone and the color-coding means "to all crew" – in other words: "everyone in their ability should pick this up".
+
+The intercom, in this case, is an old school handset wired to the wall with a spiral cable. It's easier to maintain, less faulty, and it only picks up one person's voice, so it's easier to understand the other end. It also makes it possible to have conversations that are meant for a limited audience, as opposed to everyone in the room. Sometimes, it's needed to break news that are not intended for the whole crew.
+
+The cable is there mostly so that the handset stays put where it belongs (but it does conduct the audio signal to and from the handset).
+
+- Ignore it [Ignore]
+- Pick it up [PickItUp]
+
+<declare>
+  int bodegaAttitude = 0;  // TODO: the bodega has 'zaujala' a dismissive/angry/... tone towards you
+</declare>
+
+---
+Start: Ignore
+
+<script>
+  pickedUpIntercom = false;
+  bodegaAttitude -= 1;
+</script>
+
+After a while, the intercom goes silent. Instead, PA speakers along the corridor turn on with a crackle. It's the ship computer. She sounds irritated.
+
+- [ShipSays]
+
+---
+Start: PickItUp
+
+<script>
+  pickedUpIntercom = true;
+  bodegaAttitude += 0;
+</script>
+
+You pick the handset up. It's the ship computer.
+
+- [ShipSays]
+
+---
+Start: ShipSays
+
+"To all whom it may concern," she says, although she knows there's only you. "There is a gorilla on the bridge. I repeat, a gorilla. _On the bridge._"
+
+- "I'm coming." [Coming]
+- "The funeral hasn't ended yet." [CantThisWait]
+
+---
+Start: CantThisWait
+
+"Oh, I'm sorry," the ship says. "I didn't want to ruin the moment by, you know, _trying to stop yet another disaster from happening!_ The bridge, you might recall, is a place with lots of electronics and, interestingly, also the control panels to _the whole goddamned ship._ In summary, this is no place for a stupid gorilla."
+
+<script>
+  /*
+- "Okay, okay, I'm coming." []
+- Continue with the funeral [
+    You ignore the ship and look through the porthole window again at the captain's body. You try to reminisce some more, but soon, the ship speaks again. "What exactly are you doing?" she asks. "Did you not hear what I just said? About the gorilla?"
+
+    There is no way you can focus after this. A few moments pass before you give up and agree to come to the bridge.
+  {}]
+  */
+</script>
+
+
+<script>
+  if (!pickedUpIntercom) {
+    <echo>
+      The speakers turn off, then turn on again.
+
+      "And by the way," the ship adds, "I know you're not very bright and all, but by now you should be familiar with the intercom system. A hint: when the red light goes blink, you pick it up." The speakers turn off again.
+    </echo>
+  }
+</script>
+
+- [Coming]
+
+---
+Start: Coming
+
+You give captain Kay's ${pulledLever ? "receding" : ""} body the last glance${pulledLever ? ", put the airlock lever back to the close position" : ""}, and set off in the direction of the bridge.
+
+<script>
+  if (isLimping) {
+    <echo>
+      The pain in your right leg is back almost immediately, and you automatically start limping so that it doesn't come back in full force. The leg has been a problem since the incident on Space Station Clara, but – once in a while – you still have the capacity to forget about how much it hurts to stand on it. The funeral provided one such distraction.
+    </echo>
+  }
+</script>
+
+You follow Corridor Right – a badly lit tube of dusty cables and fluorescent lamps running along the right side of the Bodega, from the huge cargo bay at the back of the ship all the way to the bridge in the front. The stark white light of the lamps is supplemented by the red bulbs of the ship alarm which have been pulsating since the beginning of the disease 14 days ago.
+
+In a few moments, you pass the door to the computer room on your right, and shortly after, you are at your destination.
+
+- [Bridge: GorillaIncident]

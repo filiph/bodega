@@ -1,0 +1,70 @@
+
+---
+Finale: Start
+
+"We probably shouldn't stay here too much longer," the Bodega says. "The good news is, since you don't need to chat with your doctor girlfriend anymore, we can go pretty much anywhere. Places without comms beacons and outside main official routes seem like a great idea to me right now. We have a few options. Just note that we only have TODO fuel cells right now."
+
+The Bodega highlights the options on a map on the main screen.
+
+- A (distance, fuel cells)
+- Outer space just outside effective radar ranges
+- C
+- D
+
+The Bodega puts in the coordinates for TODO and immediately starts rotating and charging the warp at the same time.
+
+- Watch
+- Go find Gorilla
+
+---
+Finale: FindGorilla
+
+You go looking for Gorilla to where you last saw him, in TODO, but when you arrive, he's not there. The rebuild phase took longer in his case, for whatever reason (you can assume it's because of the proximity to the engine room and also the sheer mass of his body), but it has clearly passed.
+
+- Look for him in ___
+- Look for him in ___
+- Look for him in ___
+
+---
+Finale: GorillaInCaptainsCabin
+
+You enter the captain's cabin and lay your eyes on the most amazing thing you've seen since TODO.
+
+Gorilla – the massive monument of muscle and fur – is slouching on a chair in front of captain's computer. He's not just sitting there, though. He _actively uses the computer_, apparently reading some long article. When he sees you, he turns around and smiles.
+
+"I went ahead and read most of what Dr. Wells sent to us," Gorilla says with perfect pronounciation and in a pleasant voice. "It's fascinating."
+
+- "How?" [How?]
+
+
+---
+Finale: How?
+[[ visitOnce ]]
+
+"Oh, in many ways," says Gorilla. ""
+
+- [QuestionsForGorilla]
+
+
+---
+Finale: QuestionsForGorilla
+
+- "No, I mean, how are you able to talk this well?" TODO change when not shown for the first time
+- "How did you get the password?" // saw captain put in the password countless times.
+
+
+
+
+---
+Finale: End
+
+Your jaw is still down in amazement when the Bodega starts talking through the PA. She doesn't bother to use the intercom anymore.
+
+"We just left the detection range of TODO and are on our way to TODO. In other words, you and your pet monkey are safe. You are welcome."
+
+Gorilla raises his browridge. "Actually, I am not a monkey. I am an ape. If I was a macaque, or similar, you could refer to me as a monkey. Am I a macaque, though? No. I am a gorilla."
+
+At that moment, you realize: _this is how it's going to be here from now on._ TODO longer
+
+And the Bodega says: "Great, thanks for the lecture." And then, after a couple of seconds, she says with a different voice: "I suggest both of you apes come to the bridge. You might want to see this."
+

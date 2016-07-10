@@ -1,0 +1,238 @@
+
+---------------
+Dogfight: Start
+
+## The Encounter
+
+<script>
+  exploration.time = MESSENGER_CONTACT_TIME;  // TODO: use something like .jump() to be explicit
+  clock.value = exploration.time;
+</script>
+
+You wake up to regular bleeps of the radar. That's what the rhytmic sound in the dream was.
+
+"I repeat," the ship says, quite urgently. "We have a radar contact."
+
+You look at the radar screen. It seems some smaller vessel is nearing rapidly. It doesn't seem like a pirate (those tend to be bigger or more numerous), but the behaviour is highly unusual. Who would want to get this close to another ship in deep space, without any previous communication? How did they even find you here?
+
+Shortly afterwards, the vessel is in visual range. It's a Messenger class ship, a fast clipper about tenth of the size of the Bodega. If it's hostile, it could still pose a serious threat, but would probably run a big risk itself.
+
+[IMG: Bodega and Messenger face-to-face]
+
+The ship glides to a halt in front of the bridge, face to face with The Bodega. After a while, the communications panel lights up. There is an incoming call from the Messenger.
+
+- [Encounter]
+
+---
+Dogfight: Encounter
+
+The main screen fills with a large, bored face of a pilot with a large jaw and short hair. He's not even looking at the console, being busy with some controls to his lower left.
+
+"Calling the crew of the Bodega," he starts reciting, absently. "This is..."
+
+Then he looks up, sees you on the screen, and stops abruptly.
+
+"Oh!" he says. "Oh _fuck!_"
+
+<script>
+  if (gorilla.isIn(b.bridge)) {
+    <echo>
+      Gorilla, which has been silently sitting on the ground to your left until now, starts hissing through clenched teeth, eyes wide open. It rocks back and forth, visibly disturbed.
+    </echo>
+  }
+</script>
+
+The pilot begins to frantically push some buttons on the panel in front of him. "Oh fuck oh fuck oh _fuck!_" he keeps repeating.
+
+<script>
+  choice("\"What are you doing? What is happening here?\"")
+    .then(() => echo("He doesn't respond."));
+  choice("Watch what he's doing with the controls")
+    .then(() => echo("It takes a while, but you realize he's probably putting his ship into combat mode."));
+  if (scannerRepaired) {
+      choice("Use the repaired scanner")
+      .then(() => echo("You perform a quick scan of the Messenger. Its energy output is increasing rapidly and a variety of systems are coming alive. Chief among those are the two nose-mounted laser guns. It's beyond doubt that the Messenger is going into full combat mode."));
+    }
+  if (!bodega.shield.isCharged) {
+    choice("Shields up")
+    .then(() {
+      bodega.shield.charge.percentage = 0.78;
+    });
+  }
+  if (true /* let player charge beforehand? */) {
+    choice("Fire")
+    .then(() {
+      <echo>
+        You take the laser controls, quickly aim at the Messanger and fire.
+      </echo>
+      if (Randomly.saveAgainst(0.6)) {
+        messengerShip.hull.hp.percentage = 0.5;
+        <echo>
+          Boom! It's a hit! The stream of energy hits the Messenger, right in the middle of its belly, and leaves a sizeable hole there. It looks like some serious damage has been dealt.
+        </echo>
+        points.add(7, "hitting early and hard");
+      } else {
+        <echo>
+          The stream of energy misses the Messenger by a couple of meters. That was unlucky.
+        </echo>
+        points.add(5, "not wasting any time");
+      }
+    });
+  }
+
+</script>
+
+The communications panel goes blank as the pilot closes the connection. The Messenger starts moving to the side. He knows that his best bet is to be moving all over the place.
+
+You try to remember something about spaceship combat, but there's not much you ever knew about the topic in the first place. You never had any ambition to go the the military, not even as a teenager, and you spent the last ten years of your life on cargo ships like the Bodega. Those normally don't get into combat, and if they do, it tends to be over quickly, and not in the cargo ship's favor. Plus, only those on the bridge get involved, whereas you practically live in ${isEngineer ? "the engine room" : (isMedic ? "the medbay" : "the cargo bay")}.
+
+It's not _all_ bad, though. The Messenger is clearly not a combat vessel. You can only see 2 guns in the front, and those seem pretty weak. The hull is slender. Moreover, according to the markings on the side, the ship is a Sentaco corporate runner. Sentaco – although one of the biggest corporations out there – is not one of the militarized ones. It deals in food and consumer goods.
+
+The frail Messenger clearly wasn't sent here to fight the huge pile of steel that is the Bodega. But it _is_ fighting it now, for whatever reason, and it's bound to be ugly for both sides.
+
+- [FirstCombatStart]
+
+---
+Dogfight: FirstCombatStart
+
+<p class="meta"><strong>Note:</strong> HERE BE DRAGONS. As much as the previous part of the gamebook is rough, the next parts are <em>plain work-in-progress</em>. You will likely encounter errors and will most definitely run into a dead end. <strong>Continue at your own peril.</strong></p>
+
+<declare>
+  // setup ships
+  BodegaShip bodegaShip = new BodegaShip();
+  MessengerShip messengerShip = new MessengerShip();
+
+  // setup combat
+  FirstCombat firstCombat;
+</declare>
+
+<init>
+  firstCombat = new FirstCombat(bodegaShip, messengerShip, "Dogfight: Resolution");
+</init>
+
+<script>
+  firstCombat.setup();
+</script>
+
+- Fight [Dogfight: CombatLoop]
+- Win [Win]
+
+---
+Dogfight: CombatLoop
+
+<script>
+  firstCombat.run();
+</script>
+
+- [Dogfight: CombatLoop]
+
+---
+Dogfight: Resolution
+
+<script>
+  if (bodegaShip.isAlive) {
+    goto("Win");
+  } else {
+    goto("Lose");
+  }
+</script>
+
+
+---
+Dogfight: Lose
+
+The Bodega goes completely silent in the dead of space. Then there's an extremely loud, metalic noise, as the Bodega gets torn apart. There are explosion on different parts of the ship, loud white noise of inner atmosphere shooting out into space. The computer screams. You know you are going to die soon, but maybe that's for the better. You glance at the Messenger for the last time, and then there's nothing.
+
+---
+Dogfight: Win
+
+This time, the beam must have drilled through to the core, because there is a violent explosion on the Messenger. Only the skeleton of the ship stays put, the rest is blown away from the inside, in all directions.
+
+[IMG of messenger exploding]
+
+<script>
+  points.add(10, "winning your first spaceship battle");
+
+  zil.update(1, describe: false, interactive: false);
+</script>
+
+<script>
+  if (!firstCombat.spybotManagedToCrashIntoBodega) {
+    if (!firstCombat.messengerManagedToLaunchSpyBot) {
+      <echo>
+        You suddenly realize that one of those pieces of debris is not like the others. It seems to quickly change directions. At first, those vector changes are negligible, but then the object comes around in a neat arch and plunges right into the Bodega's right side hull. Somewhere in the cargo bay.
+
+        "Hull breach," the Bodega says.
+      </echo>
+    } else {
+      // Messenger launched, but was destroyed before spybot was able to hit.
+      <echo>
+        The Messenger's unidentified object goes straight for the Bodega's hull and crashes itself somewhere into the right side of the cargo bay.
+
+        "Hull breach," the Bodega says.
+      </echo>
+    }
+  }
+  b.lookAtHullBreachFromBridge.isActive = true;
+</script>
+
+You look at the readings around you. The hull is at ${(bodegaShip.hull.hp.percentage * 100).round()}% structural integrity. The Bodega is holding together, but it did take _some_ damage.
+
+On the plus side, though, you _are_ still alive.
+
+- [Why?]
+
+---
+Dogfight: Why?
+
+You try to imagine why the Messenger came here and why the pilot acted the way he acted. Was he just so stupid to try to pick a fight with a much sturdier ship? Was he expecting to find something else here? Or someone else? Did he know about the disease? Was he acting on his own, or was this an official Sentaco run? Is Sentaco a pirate company now? Why would it be interested in the Bodega, of all the ships?
+
+- [AfterMessengerDogfight]
+
+---
+Dogfight: AfterMessengerDogfight
+
+## Enemies
+
+The Bodega is now running a full system check, all the monitors flicker with information so fast only a computer could make anything of it. "What the _hell_ is happening?" the ship says, her voice glitching. "How does one go from a fully manned, well-preserved, licensed cargo ship to a _ghost_ ship piloted by an untrained ${getInformalRole("")} _while_ being attacked by a corporate runner for no apparent reason whatsoever – all of that in just two weeks!?"
+
+- "We survived, didn't we?" [
+    "Well," she replies. "That's rich coming from someone who is probably going to die in a couple of hours." You wish you had something to reply to that, but you don't.
+  {}]
+- "When misery rains, it pours." [{miseryPoursPhrase = true}]
+- "Shut up." [{firstShutUp = true}]
+
+<init>
+  addFootnote("khwarizmi", """The al-Khwārizmī is an African League star system beyond Groombridge 12 (Bodega's destination before the incident). Its largest station, the KHW-1, is an important interstellar trading hub.""");
+</init>
+
+"Okay, this is all so totally outside the protocol," the Bodega continues. "We'd be full speed somewhere long past al-Khwārizmī${fn("khwarizmi")} if it wasn't for the idiot Gorilla in the cargo bay. Nobody would be dead. The disease would be someone else's problem. And there would be someone _actually capable_ on the bridge."
+
+The flow of information on the monitors stop, and they all go to their default view. "Umm, look, ${b.getInformalSalutation()}, I have to say you managed the situation very well, given that you don't have any bridge experience whatsoever."
+
+<init>
+  addFootnote("shipGraveyard", """The Ship Graveyard is a place in the otherwise uninhabited Theta Cru star system, where decomissioned ships are left for salvage. Sometimes, as a way of punishment, the ship AI is left alive, but all its means of communication and movement are taken a way from it. Such an AI is effectively excommunicated for as long as its power input lasts, which can be hundreds or thousands of years.""");
+</init>
+
+"That doesn't change the fact that we are even more screwed than before," she continues. "We attacked a Sentaco corporate ship, for crying out loud. You are dying anyway, but what about me? If I'm lucky, I get wiped. If not, I am about to spend the next few hundred years in the Graveyard.${fn("shipGraveyard")} And I know what I'm talking about when I say that's _worse_ than dying."
+
+- "It attacked us first!" [{}]
+- "Shut up." [{secondShutUp = true}]
+
+<script>
+  if (secondShutUp) {
+    echo(""" "You know what? You shut up.""");
+    if (firstShutUp) {
+      echo(""" Can you say anything else?" """);
+      bodegaAttitude -= 1;
+    } else {
+      echo('" ');
+    }
+  } else {
+    echo(""" "I know that. But I don't think anyone will care. It's Sentaco." """);
+  }
+</script>
+
+It looks like the Bodega stopped talking, at least for a while. You still have ${getHoursToHyperdrive()} before the parameters for the jump to Station Unity are ready, and – although you're still tired – at least now you can stand on your feet.
+
+- [Explore: Bridge]

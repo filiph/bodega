@@ -1,0 +1,47 @@
+
+---
+Boarding: Start
+
+The gunship slowly approaches, all weapons scanning the surface of the Bodega. It seems to be aiming for the right side of the ship, where the airlock ${pulledLever ? "is" : "was"}. Meanwhile, the Bodega is completely still.
+
+// TODO: again possible to go around the whole ship
+// TODO: lose most of strength around the engine
+// take weapons
+// find gorilla, still stiff, possibility to move out of the corridor
+// make noise ?
+// hide (some places better than others)
+// mercenaries with masks
+// they go in 2 pairs, clockwise and ccw
+// player can hear them in adjanced rooms
+// walking in to room where they are = even fight
+// hiding in place where they're going = can wait various amounts of time, with more time = more chance of being detected, but also better advantage if not detected and possibility to let them through
+
+// fight itself is primitive, as they are much weaker - problem would be near engine room or with all 4 of them at once
+// the better the setup, the quicker fight, the better points
+
+---
+Boarding: Fight2Men
+
+
+
+---
+Boarding: AllMenDown
+
+The four men are down. You carefully go through the breach and explore the inside of the gunship. There is no one else there, but you find some food and some energy cells.
+
+Your current supplies are: TODO.
+
+- Take everything (15 energy cells, food for 70 days)
+- Leave just enough for them to survive, take the rest (14 energy cells, food for 65 days)
+- Leave everything [GetRidOfTheMen]
+
+You bring the supplies over to the Bodega. The extremely heavy fuel cells don't seem that way anymore.
+
+There are now TODO energy cells and food for TODO days on the Bodega. You also scavenge some turret ammunition (TODO?).
+
+- [GetRidOfTheMen]
+
+---
+Boarding: GetRidOfTheMen
+
+You carry all the four men over to the gunship and come back to the bridge. The Bodega then pushes the gunship off while sealing the breach. In twenty minutes, the hull is sealed again, and the gunship slowly drifts away a few hundred meters to the right of the Bodega.
