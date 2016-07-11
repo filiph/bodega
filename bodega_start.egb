@@ -38,7 +38,10 @@ The first death is that of the captain, whose body you just finished dragging th
 <init>
   getInformalRole = (String article) {
     var str;
-    if (isEngineer) str = "machinist";
+    if (isEngineer) {
+      str = "engineer";
+      if (article == 'a') article = 'an';
+    }
     if (isMedic) str = "medic";
     if (isSpaceman) str = "{spaceman|sailor}";
     return Randomly.parse("$article $str");
@@ -58,6 +61,8 @@ You are the ship's:
 - Ablebodied Spaceman, skilled in space travel and spaceship maintenance [{isSpaceman = true; maxPhysicalPoints = 4;}]
 
 Before the incident changed everything, you were nearing two years in your ${getRoleAdjective()} service on the Bodega. Everything had become familiar. The smell of polyplastics, human sweat and detergent. The bleak dimness of the interiors. The color-coded ducts and cables on every wall. The way sound carries in a huge, 25 thousand ton cargo ship. Conversations, laughter, and swearing were echoing through the corridors almost constantly.
+
+<p class="meta">Note: All choices have consequences. This particular choice (being ${getInformalRole('a')}) won't have a dramatic effect, though, because you haven't played long enough to make an informed decision. The book won't penalize you just because you took an unlucky pick.</p>
 
 Now, the ship is silent and the whole crew is dead. Since the explosion in the cargo bay, the men and women had been taking turns in screaming in pain, then getting uncanilly stiff, then dying. The captain held a memorial service for every one of them, each funeral – of course – a little shorter and simpler than the previous. Now it's your turn to be the master of ceremony.
 
@@ -254,7 +259,7 @@ Start: Recollections
 
 You remember the first time you saw the captain – in a bar on Space Station Clara.${fn("stationClara")} Both of you were drunk beyond belief, both for different reasons. Come to think of it, _everybody_ in that bar was drunk beyond belief, and probably for different reasons, too. It was like a group therapy session.
 
-You sat alone. Not because of shyness or anything. No, you have just always found it tiring to talk about things that don't matter. And when you talk about things that _do_ matter to you, it's kind of a pain for everyone involved. "Nobody wants to talk about that, $name," your psychiatrist had always said. "The only reason we two talk about it is that I get paid for it." (He wasn't a very good psychiatrist.)
+You sat alone. Not because you were shy. No, you have just always found it tiring to talk about things that don't matter. And nobody here would talk about anything that _does_ matter.
 
 So you sat alone. And so did the captain, a few tables away – just another bar patron in a dirty jacket and a glass of German zero-G-hops beer on the table.
 
