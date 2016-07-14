@@ -27,7 +27,7 @@ var Z=$globals$.Z
 var init=$globals$.init
 var setupProgram=$globals$.setupProgram
 var I=$globals$.I
-var dart=[["","",,N,{"^":"",xI:{"^":"xG;ch,cx,cy,db,dx,dy,fr,fx,fy,go,id,k1,k2,k3,k4,r1,r2,rx,ry,x1,x2,y1,y2,bL,bq,en,eo,f5,f6,jC,du,dv,jD,dw,ep,f7,hB,hC,hD,hE,cn,dz,hF,dA,d7:eq>,dB,dC,cS,f8,dD,cT,a9,E,dE,dF,f9,fa,fb,er,c1,c2,fc,fd,es,hG,hH,hI,eu,hJ,k:bM*,bN,co,b,c,d,e,f,r,x,y,z,Q,a",
+var dart=[["","",,N,{"^":"",xJ:{"^":"xH;ch,cx,cy,db,dx,dy,fr,fx,fy,go,id,k1,k2,k3,k4,r1,r2,rx,ry,x1,x2,y1,y2,bL,bq,en,eo,f5,f6,jC,du,dv,jD,dw,ep,f7,hA,hB,hC,hD,cn,dz,hE,dA,d7:eq>,dB,dC,cS,f8,dD,cT,a9,E,dE,dF,f9,fa,fb,er,c1,c2,fc,fd,es,hF,hG,hH,eu,hI,k:bM*,bN,co,b,c,d,e,f,r,x,y,z,Q,a",
 nh:function(){var z=$.$get$e2()
 z.h(0,"bodega",this.cx)
 z.h(0,"isEngineer",this.cy)
@@ -64,13 +64,13 @@ z.h(0,"hasSteelRod",this.jD)
 z.h(0,"currentlyInJump",this.dw)
 z.h(0,"jumpedToUnity",this.ep)
 z.h(0,"justArrivedAtUnity",this.f7)
-z.h(0,"knowsAboutEleanor",this.hB)
-z.h(0,"siftedThroughLockers",this.hC)
-z.h(0,"currentlyHighOnShabu",this.hD)
-z.h(0,"roomBeforeOvercameBySleepiness",this.hE)
+z.h(0,"knowsAboutEleanor",this.hA)
+z.h(0,"siftedThroughLockers",this.hB)
+z.h(0,"currentlyHighOnShabu",this.hC)
+z.h(0,"roomBeforeOvercameBySleepiness",this.hD)
 z.h(0,"gorillaAttitude",this.cn)
 z.h(0,"unityOperatorAttitude",this.dz)
-z.h(0,"afterEleanorFirstChatGoto",this.hF)
+z.h(0,"afterEleanorFirstChatGoto",this.hE)
 z.h(0,"barbrawl",this.dA)
 z.h(0,"title",this.eq)
 z.h(0,"conceitedness",this.dB)
@@ -92,11 +92,11 @@ z.h(0,"bodegaTopics",this.c2)
 z.h(0,"getInformalRole",this.fc)
 z.h(0,"getRoleAdjective",this.fd)
 z.h(0,"manOrWoman",this.es)
-z.h(0,"isMan",this.hG)
-z.h(0,"isWoman",this.hH)
-z.h(0,"isStuttering",this.hI)
+z.h(0,"isMan",this.hF)
+z.h(0,"isWoman",this.hG)
+z.h(0,"isStuttering",this.hH)
 z.h(0,"pointsToDistribute",this.eu)
-z.h(0,"madeFunOfDrunkednessOnFuneral",this.hJ)
+z.h(0,"madeFunOfDrunkednessOnFuneral",this.hI)
 z.h(0,"name",this.bM)
 z.h(0,"bodegaAttitude",this.bN)
 z.h(0,"unityTopics",this.co)},
@@ -136,13 +136,13 @@ this.jD=H.ah(z.i(0,"hasSteelRod"))
 this.dw=H.ah(z.i(0,"currentlyInJump"))
 this.ep=H.ah(z.i(0,"jumpedToUnity"))
 this.f7=H.ah(z.i(0,"justArrivedAtUnity"))
-this.hB=H.ah(z.i(0,"knowsAboutEleanor"))
-this.hC=H.ah(z.i(0,"siftedThroughLockers"))
-this.hD=H.ah(z.i(0,"currentlyHighOnShabu"))
-this.hE=H.eR(z.i(0,"roomBeforeOvercameBySleepiness"))
+this.hA=H.ah(z.i(0,"knowsAboutEleanor"))
+this.hB=H.ah(z.i(0,"siftedThroughLockers"))
+this.hC=H.ah(z.i(0,"currentlyHighOnShabu"))
+this.hD=H.eR(z.i(0,"roomBeforeOvercameBySleepiness"))
 this.cn=H.cu(z.i(0,"gorillaAttitude"))
 this.dz=H.cu(z.i(0,"unityOperatorAttitude"))
-this.hF=H.eR(z.i(0,"afterEleanorFirstChatGoto"))
+this.hE=H.eR(z.i(0,"afterEleanorFirstChatGoto"))
 this.dA=H.R(z.i(0,"barbrawl"),"$isjy")
 this.eq=H.eR(z.i(0,"title"))
 this.dB=H.cu(z.i(0,"conceitedness"))
@@ -164,11 +164,11 @@ this.c2=H.j2(z.i(0,"bodegaTopics"))
 this.fc=H.R(z.i(0,"getInformalRole"),"$isbU")
 this.fd=H.R(z.i(0,"getRoleAdjective"),"$isbU")
 this.es=H.eR(z.i(0,"manOrWoman"))
-this.hG=H.R(z.i(0,"isMan"),"$isbU")
-this.hH=H.R(z.i(0,"isWoman"),"$isbU")
-this.hI=z.i(0,"isStuttering")
+this.hF=H.R(z.i(0,"isMan"),"$isbU")
+this.hG=H.R(z.i(0,"isWoman"),"$isbU")
+this.hH=z.i(0,"isStuttering")
 this.eu=H.cu(z.i(0,"pointsToDistribute"))
-this.hJ=H.ah(z.i(0,"madeFunOfDrunkednessOnFuneral"))
+this.hI=H.ah(z.i(0,"madeFunOfDrunkednessOnFuneral"))
 this.bM=H.eR(z.i(0,"name"))
 this.bN=H.cu(z.i(0,"bodegaAttitude"))
 this.co=H.j2(z.i(0,"unityTopics"))},
@@ -208,13 +208,13 @@ this.jD=!1
 this.dw=!1
 this.ep=!1
 this.f7=!1
+this.hA=!1
 this.hB=!1
 this.hC=!1
-this.hD=!1
-this.hE=null
+this.hD=null
 this.cn=0
 this.dz=0
-this.hF=null
+this.hE=null
 this.dA=null
 this.eq="Captain"
 this.dB=0
@@ -239,11 +239,11 @@ this.c2=["Unity","Explosion"]
 this.fc=null
 this.fd=null
 this.es="man"
+this.hF=null
 this.hG=null
-this.hH=null
-this.hI=new N.Cx()
+this.hH=new N.Cx()
 this.eu=0
-this.hJ=!1
+this.hI=!1
 this.bM="Slim"
 this.bN=0
 this.co=["Organization","ActiveThreatBlacklist","AskToDock","AskToTrade","WhereToGo"]
@@ -260,12 +260,12 @@ $.$get$bb().h(0,"gorillaCargoMove","Everything in the cargo bay is in containers
 $.$get$bb().h(0,"oathFirstExpl","Under the so-called 'Oath Law' \u2013 which has been adopted by all space-faring nations \u2013 no artificial intelligence beyond a certain level can exist without a human superior. In other words, as a safeguard against a machine rebellion (an entirely plausible scenario), there cannot be a completely autonomous artificial intelligence, and all machines must have a human master, to which they are \u2013 by design \u2013 utterly loyal. The Oath can be transfered, like in this case, but never dropped entirely.")
 $.$get$bb().h(0,"computeUnityJump"," Every hyperjump needs to be precisely computed, which is no small task. (Even military ships with dedicated computing nodes take hours to prepare.) Fortunately for interstellar travel, though, parameters for jumps between known points in space do not change, and so ships normally work with precomputed data. The problem here is that Bodega is now at a point in deep space for which the data simply doesn't exist. The only option is to compute it. ")
 $.$get$bb().h(0,"vitamin"," 'Vitamin' is an addictive, easy to manufacture drug that makes you feel invincible. It also makes you crave blood and violence. Users engage in gory rituals, sadistic orgies and murders.")
-this.dD=E.rm(this.cS,this.f8,"Dogfight: Resolution")
+this.dD=E.rn(this.cS,this.f8,"Dogfight: Resolution")
 $.$get$bb().h(0,"khwarizmi","The al-Khw\u0101rizm\u012b is an African League star system beyond Groombridge 12 (Bodega's destination before the incident). Its largest station, the KHW-1, is an important interstellar trading hub.")
 $.$get$bb().h(0,"shipGraveyard","The Ship Graveyard is a place in the otherwise uninhabited Theta Cru star system, where decomissioned ships are left for salvage. Sometimes, as a way of punishment, the ship AI is left alive, but all its means of communication and movement are taken a way from it. Such an AI is effectively excommunicated for as long as its power input lasts, which can be hundreds or thousands of years.")
 z=new K.FP(this,null,null,null,null,null)
-z.e=new K.vi(z,H.b([],[K.fc]))
-z.b=new K.xh(z,H.b(new H.Z(0,null,null,null,null,null,0),[P.j,K.fs]),null,!1)
+z.e=new K.vj(z,H.b([],[K.fc]))
+z.b=new K.xi(z,H.b(new H.Z(0,null,null,null,null,null,0),[P.j,K.fs]),null,!1)
 z.d=new K.ov(z,H.b([],[K.dk]),null,null)
 y=new K.mc(null,!0,z,null,C.d,!1,"player",H.b([],[P.j]),!0,1,!0,!0,C.B)
 y.l3(z,"player",C.d,!0,C.d,!1,C.B,1)
@@ -288,8 +288,8 @@ $.$get$bb().h(0,"shabu"," Shabu is a Japanese variant of thinned methamphetamine
 $.$get$bb().h(0,"planetborn"," Planetborns are people who were born and raised on planets. They are a rare sight in space. Mostly welcome sight, too, since they bring money, although some spacers can't stand them for their snobbery and self-importance. ")
 this.fc=new N.Cy(this)
 this.fd=new N.Cz(this)
-this.hG=new N.CA(this)
-this.hH=new N.CB(this)
+this.hF=new N.CA(this)
+this.hG=new N.CB(this)
 $.$get$bb().h(0,"funeralInSpace","This is common practice when a spaceship is stranded and there are casaulties on board. Unless there's a good chance that the bodies can be preserved until a rescue ship comes, bodies are ejected into space. This minimizes the risk of infection and allows the crew to focus on their own survival instead of on ways to preserve bodies.")
 $.$get$bb().h(0,"stationClara","Clara is a German station orbiting the Epaphus red dwarf. The port is well known for high-quality industrial products and a good shipyard. Once in about 200 earth days (the station's orbital period) they also hold the 'Oktoberfest' \u2013 a beer drinking festival. (This was not the time, though.)")
 $.$get$bb().h(0,"superchargeHyperdrive"," ")
@@ -299,19 +299,19 @@ z=new O.o(['<p class="meta">This egamebook isn\'t finished. The first about 15 m
 y=this.b.a
 y.h(0,"start",z)
 z.a="start"
-z=new O.o(['<p class="meta">This lets you skip some parts of the story.</p>',[null,P.i(["string",new N.y0(),"goto","Start: Funeral"]),P.i(["string",new N.y1(),"goto","Dogfight: FirstCombatStart"])],"// Preview: End is currently called from Unity: Arrival"],0,null,!1,!1)
+z=new O.o(['<p class="meta">This lets you skip some parts of the story.</p>',[null,P.i(["string",new N.y1(),"goto","Start: Funeral"]),P.i(["string",new N.y2(),"goto","Dogfight: FirstCombatStart"])],"// Preview: End is currently called from Unity: Arrival"],0,null,!1,!1)
 y.h(0,"DEBUG: Start",z)
 z.a="DEBUG: Start"
 z=new O.o(['<p class="meta">This is the end of the preview. Thank you for playing.</p>'],0,null,!1,!1)
 y.h(0,"Preview: End",z)
 z.a="Preview: End"
-z=new O.o([new N.y2(this),"// TODO: again possible to go around the whole ship\n// TODO: lose most of strength around the engine\n// take weapons\n// find gorilla, still stiff, possibility to move out of the corridor\n// make noise ?\n// hide (some places better than others)\n// mercenaries with masks\n// they go in 2 pairs, clockwise and ccw\n// player can hear them in adjanced rooms\n// walking in to room where they are = even fight\n// hiding in place where they're going = can wait various amounts of time, with more time = more chance of being detected, but also better advantage if not detected and possibility to let them through","// fight itself is primitive, as they are much weaker - problem would be near engine room or with all 4 of them at once\n// the better the setup, the quicker fight, the better points"],0,null,!1,!1)
+z=new O.o([new N.y3(this),"// TODO: again possible to go around the whole ship\n// TODO: lose most of strength around the engine\n// take weapons\n// find gorilla, still stiff, possibility to move out of the corridor\n// make noise ?\n// hide (some places better than others)\n// mercenaries with masks\n// they go in 2 pairs, clockwise and ccw\n// player can hear them in adjanced rooms\n// walking in to room where they are = even fight\n// hiding in place where they're going = can wait various amounts of time, with more time = more chance of being detected, but also better advantage if not detected and possibility to let them through","// fight itself is primitive, as they are much weaker - problem would be near engine room or with all 4 of them at once\n// the better the setup, the quicker fight, the better points"],0,null,!1,!1)
 y.h(0,"Boarding: Start",z)
 z.a="Boarding: Start"
 z=new O.o([],0,null,!1,!1)
 y.h(0,"Boarding: Fight2Men",z)
 z.a="Boarding: Fight2Men"
-z=new O.o(["The four men are down. You carefully go through the breach and explore the inside of the gunship. There is no one else there, but you find some food and some energy cells.","Your current supplies are: TODO.",[new N.zO(),P.i(["string",new N.Bf(),"goto","GetRidOfTheMen"])],"You bring the supplies over to the Bodega. The extremely heavy fuel cells don't seem that way anymore.","There are now TODO energy cells and food for TODO days on the Bodega. You also scavenge some turret ammunition (TODO?).",[null,P.i(["goto","GetRidOfTheMen"])]],0,null,!1,!1)
+z=new O.o(["The four men are down. You carefully go through the breach and explore the inside of the gunship. There is no one else there, but you find some food and some energy cells.","Your current supplies are: TODO.",[new N.zP(),P.i(["string",new N.Bf(),"goto","GetRidOfTheMen"])],"You bring the supplies over to the Bodega. The extremely heavy fuel cells don't seem that way anymore.","There are now TODO energy cells and food for TODO days on the Bodega. You also scavenge some turret ammunition (TODO?).",[null,P.i(["goto","GetRidOfTheMen"])]],0,null,!1,!1)
 y.h(0,"Boarding: AllMenDown",z)
 z.a="Boarding: AllMenDown"
 z=new O.o(["You carry all the four men over to the gunship and come back to the bridge. The Bodega then pushes the gunship off while sealing the breach. In twenty minutes, the hull is sealed again, and the gunship slowly drifts away a few hundred meters to the right of the Bodega."],0,null,!1,!1)
@@ -335,28 +335,28 @@ z.a="Brawl: Lose"
 z=new O.o(["## The Gorilla","There really is a gorilla on the ship's bridge. But it isn't touching any of the electronics, let alone the control panel. It just sits there on the floor, full of melancholy, looking out the window at the distant stars. When you enter, it slowly turns to you and pushes out its huge lower lip.","![Gorilla](img/gorilla.jpg)",new N.BM(),"The gorilla doesn't have a name. The crew just calls him 'Gorilla', which is a common name for these creatures on most ships. Nobody wants to get too attached to them. They die a lot.",'Right now, Gorilla raises his arms to sign. First, he makes the sign for "me" and then he makes the sign for "sleep". _Is he trying to say he wants to go to sleep?_ Probably not (although he does look tired). More likely, he\'s trying to use his limited vocabulary to communicate that he is sad. But you can never be sure.',[new N.BX(),P.i(["string",new N.C7(),"goto","ItsOkay"]),P.i(["string",new N.Ci(),"goto","WhatTheHellGorilla"])]],0,null,!1,!1)
 y.h(0,"Bridge: GorillaIncident",z)
 z.a="Bridge: GorillaIncident"
-z=new O.o(['"It\'s okay." ',"Gorilla slowly turns his head back to the stars, visibly alleviated. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational \u2013 Gorilla could squash you or any other human any time \u2013 but the animal can't help it. The fear is in his DNA.","The fact that you didn't scold him means the world to him. You know he will remember this.",new N.y3(this),new N.ye(this),[null,P.i(["goto","HateToUnnerveYou"])]],0,null,!1,!1)
+z=new O.o(['"It\'s okay." ',"Gorilla slowly turns his head back to the stars, visibly alleviated. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational \u2013 Gorilla could squash you or any other human any time \u2013 but the animal can't help it. The fear is in his DNA.","The fact that you didn't scold him means the world to him. You know he will remember this.",new N.y4(this),new N.yf(this),[null,P.i(["goto","HateToUnnerveYou"])]],0,null,!1,!1)
 y.h(0,"Bridge: ItsOkay",z)
 z.a="Bridge: ItsOkay"
-z=new O.o([new N.yp(this),"Gorilla doesn't answer, he only looks at you in sudden terror. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational \u2013 Gorilla could squash you or any other human any time \u2013 but the animals can't help it. It's in their DNA.","After a while, Gorilla leaves the bridge with pure horror in its eyes. He goes through the door to Corridor Left, probably heading way back to the cargo bay. You know he will remember this.",new N.yA(this),[null,P.i(["goto","HateToUnnerveYou"])]],0,null,!1,!1)
+z=new O.o([new N.yq(this),"Gorilla doesn't answer, he only looks at you in sudden terror. One of the enhancements they did on the Enhanced Gorillas is a deeply rooted fear of people. Of course, it's completely irrational \u2013 Gorilla could squash you or any other human any time \u2013 but the animals can't help it. It's in their DNA.","After a while, Gorilla leaves the bridge with pure horror in its eyes. He goes through the door to Corridor Left, probably heading way back to the cargo bay. You know he will remember this.",new N.yB(this),[null,P.i(["goto","HateToUnnerveYou"])]],0,null,!1,!1)
 y.h(0,"Bridge: WhatTheHellGorilla",z)
 z.a="Bridge: WhatTheHellGorilla"
-z=new O.o(["The ship is silent for a while.",'"I would just _hate_ to unnerve you," she finally says, "but considering that there is no reason to believe you are _not_ contaminated with the same illness as everyone else, and that we have no reliable data on the incubation period, I propose we make the jump to Space Station Unity as soon as possible.',new N.yL(this),[null,P.i(["string",new N.yW(this),"goto","CrewOfOne","script",new N.z6(this)]),P.i(["string",new N.zh(this),"goto","CrewOfOne","script",new N.zs(this)])]],0,null,!1,!1)
+z=new O.o(["The ship is silent for a while.",'"I would just _hate_ to unnerve you," she finally says, "but considering that there is no reason to believe you are _not_ contaminated with the same illness as everyone else, and that we have no reliable data on the incubation period, I propose we make the jump to Space Station Unity as soon as possible.',new N.yM(this),[null,P.i(["string",new N.yX(this),"goto","CrewOfOne","script",new N.z7(this)]),P.i(["string",new N.zi(this),"goto","CrewOfOne","script",new N.zt(this)])]],0,null,!1,!1)
 y.h(0,"Bridge: HateToUnnerveYou",z)
 z.a="Bridge: HateToUnnerveYou"
-z=new O.o(["## The crew of one","You are dog-tired. You spent the last couple of days slaving away \u2013 together with Gorilla and the late Captain Kay \u2013 to finish the repairs of the hyperdrive. It had broken down in the middle of nowhere after one of the containers in the cargo bay exploded. (Apparently, the explosion was due to some inapt handling by none other than \u2013 Gorilla.) It wasn't a particularly big blast, but the shockwave rippled through the whole ship, and -- among other things -- put the hyperdrive into an invalid state. As it turned out, though, the malfunctioning drive was to be the lesser of your worries.",new N.zD(this),'"It\'s not like I _wasn\'t_ expecting to die out in space one day," he said to you from behind glass (back then, the crew still tried to mantain some kind of quarantine). "It kind of goes with the occupation. But I sure as hell didn\'t expect it to come _this_ soon." He was forty-five, one of the oldest. He died the next day.',"[IMG of a sick, sad medic behind a glass]","The only thing that has kept you from worrying about your own death so far was work. Anything else leaves too much brain capacity to imagination. Going to sleep has been particularly difficult because of the strange dreams, because of the ambiguous feelings about the whole thing, and because there is always the possibility you'd never. Wake. Up.","This time, though, you are so unbelievably tired you will probably fall asleep the minute you close your eyes.",new N.zP(this),new N.A_(this),'The thing is: you have a feeling that the disease \u2013 and the consequent high probability that you will die alone, in space, and in horrible pain \u2013 is not your only worry. There is something else. Something bigger. One of Captain Kay\'s favorite phrases was: "When misery rains, it pours." Also: "We\'re in _space_, idiots, what did you expect?" ',"You can't help but fear that space isn't done with you just yet, and that what is happening right now is just the beginning.",[null,P.i(["goto","TimeZero"])]],0,null,!1,!1)
+z=new O.o(["## The crew of one","You are dog-tired. You spent the last couple of days slaving away \u2013 together with Gorilla and the late Captain Kay \u2013 to finish the repairs of the hyperdrive. It had broken down in the middle of nowhere after one of the containers in the cargo bay exploded. (Apparently, the explosion was due to some inapt handling by none other than \u2013 Gorilla.) It wasn't a particularly big blast, but the shockwave rippled through the whole ship, and -- among other things -- put the hyperdrive into an invalid state. As it turned out, though, the malfunctioning drive was to be the lesser of your worries.",new N.zE(this),'"It\'s not like I _wasn\'t_ expecting to die out in space one day," he said to you from behind glass (back then, the crew still tried to mantain some kind of quarantine). "It kind of goes with the occupation. But I sure as hell didn\'t expect it to come _this_ soon." He was forty-five, one of the oldest. He died the next day.',"[IMG of a sick, sad medic behind a glass]","The only thing that has kept you from worrying about your own death so far was work. Anything else leaves too much brain capacity to imagination. Going to sleep has been particularly difficult because of the strange dreams, because of the ambiguous feelings about the whole thing, and because there is always the possibility you'd never. Wake. Up.","This time, though, you are so unbelievably tired you will probably fall asleep the minute you close your eyes.",new N.zQ(this),new N.A0(this),'The thing is: you have a feeling that the disease \u2013 and the consequent high probability that you will die alone, in space, and in horrible pain \u2013 is not your only worry. There is something else. Something bigger. One of Captain Kay\'s favorite phrases was: "When misery rains, it pours." Also: "We\'re in _space_, idiots, what did you expect?" ',"You can't help but fear that space isn't done with you just yet, and that what is happening right now is just the beginning.",[null,P.i(["goto","TimeZero"])]],0,null,!1,!1)
 y.h(0,"Bridge: CrewOfOne",z)
 z.a="Bridge: CrewOfOne"
-z=new O.o(["[IMG watch with 0:00]",new N.Aa(this),"You reset your watch to 0:00. In space, with the absence of meaningful days, it's common practice to pick memorable events as milestones and then count hours and days from these. The death of the captain strikes you as one such memorable event.",new N.Al(this),"It's up to you what you do with the time at hand. You look around the bridge.",[null,P.i(["goto","Explore: Bridge"])]],0,null,!1,!1)
+z=new O.o(["[IMG watch with 0:00]",new N.Ab(this),"You reset your watch to 0:00. In space, with the absence of meaningful days, it's common practice to pick memorable events as milestones and then count hours and days from these. The death of the captain strikes you as one such memorable event.",new N.Am(this),"It's up to you what you do with the time at hand. You look around the bridge.",[null,P.i(["goto","Explore: Bridge"])]],0,null,!1,!1)
 y.h(0,"Bridge: TimeZero",z)
 z.a="Bridge: TimeZero"
 z=new O.o(["You come back to the bridge, determined to do some more work, but at that exact time, your body just refuses to continue. You can't imagine _walking_ somewhere, let alone trying to _work_.",[null,P.i(["goto","Nap"])]],0,null,!1,!1)
 y.h(0,"Bridge: OvercomeBySleepiness",z)
 z.a="Bridge: OvercomeBySleepiness"
-z=new O.o([new N.Aw(this),"You spend the time gazing blankly at the distant stars.",new N.AH(this),"You stand up excitedly.",[null,P.i(["goto","Explore: Bridge"])]],0,null,!0,!1)
+z=new O.o([new N.Ax(this),"You spend the time gazing blankly at the distant stars.",new N.AI(this),"You stand up excitedly.",[null,P.i(["goto","Explore: Bridge"])]],0,null,!0,!1)
 y.h(0,"Bridge: WaitForJump",z)
 z.a="Bridge: WaitForJump"
-z=new O.o([new N.AS(this),new N.B2(),"You have that strange dream again. You are planetside, standing in a _forest_, no less, on the edge of a meadow at night. This is Earth, somehow you know it, and you breathe in slowly and deeply, smelling the moist air as if it was something familiar to you. (You have never been planetside in your entire life. Not on Earth, not anywhere else.) You try to watch the meadow for as long as you can. This is the good part of the dream.","You hear a twig crack quietly just behind you, and you turn around. It's the worst sight you can imagine. Your parents.",new N.Bd(),new N.Be(this),new N.Bg(this),[null,P.i(["goto","Dogfight: Start"])]],0,null,!1,!1)
+z=new O.o([new N.AT(this),new N.B3(),"You have that strange dream again. You are planetside, standing in a _forest_, no less, on the edge of a meadow at night. This is Earth, somehow you know it, and you breathe in slowly and deeply, smelling the moist air as if it was something familiar to you. (You have never been planetside in your entire life. Not on Earth, not anywhere else.) You try to watch the meadow for as long as you can. This is the good part of the dream.","You hear a twig crack quietly just behind you, and you turn around. It's the worst sight you can imagine. Your parents.",new N.Bd(),new N.Be(this),new N.Bg(this),[null,P.i(["goto","Dogfight: Start"])]],0,null,!1,!1)
 y.h(0,"Bridge: Nap",z)
 z.a="Bridge: Nap"
 z=new O.o(["## The Encounter",new N.Bh(this),"You wake up to regular bleeps of the radar. That's what the rhytmic sound in the dream was.",'"I repeat," the ship says, quite urgently. "We have a radar contact." ',"You look at the radar screen. It seems some smaller vessel is nearing rapidly. It doesn't seem like a pirate (those tend to be bigger or more numerous), but the behaviour is highly unusual. Who would want to get this close to another ship in deep space, without any previous communication? How did they even find you here?","Shortly afterwards, the vessel is in visual range. It's a Messenger class ship, a fast clipper about tenth of the size of the Bodega. If it's hostile, it could still pose a serious threat, but would probably run a big risk itself.","[IMG: Bodega and Messenger face-to-face]","The ship glides to a halt in front of the bridge, face to face with The Bodega. After a while, the communications panel lights up. There is an incoming call from the Messenger.",[null,P.i(["goto","Encounter"])]],0,null,!1,!1)
@@ -488,133 +488,133 @@ z.a="Explore: StaffRoom.description"
 z=new O.o(["The kitchenette has a cabinet with foodstuff. Most of its contents are packs of long-life gingerbread and cups of instant noodles. A freezer next to the cabinet contains heaps of fish fillets (fish being the only generally available meat source in deep space - there are zero gravity fish-farms on every bigger space station). None of this whets your appetite.","Then you remember the officers' locker. There's a small refridgerated box above the freezer that contains high quality food for officers and for special occasions. It isn't locked, but it's also understood that when you're not one of the officers, you don't touch its contents.","You open it. There's a half-eaten turkey sandwitch on the lowest rack, and a single banana on the highest one.",new N.Cr(this),[null,P.i(["goto","StaffRoom"])]],0,null,!1,!1)
 y.h(0,"Explore: StaffRoom.findFood",z)
 z.a="Explore: StaffRoom.findFood"
-z=new O.o([new N.Cs(this),new N.y4(this)],0,null,!1,!1)
+z=new O.o([new N.Cs(this),new N.y5(this)],0,null,!1,!1)
 y.h(0,"Explore: CorridorLeftNextToBunks",z)
 z.a="Explore: CorridorLeftNextToBunks"
 z=new O.o(["This is one of those places where you can really appreciate the true length of the corridor. On both directions, the passageway subtly fades in mist.",'The entrance to the bunks (or "Living Quarters" as they are labeled here) is to the side.',[null,P.i(["goto","CorridorLeftNextToBunks"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorLeftNextToBunks.description",z)
 z.a="Explore: CorridorLeftNextToBunks.description"
-z=new O.o([new N.y5(this),new N.y6(this)],0,null,!1,!1)
+z=new O.o([new N.y6(this),new N.y7(this)],0,null,!1,!1)
 y.h(0,"Explore: Bunks",z)
 z.a="Explore: Bunks"
-z=new O.o(["The bunks is a large, smelly, dark room with many bunk beds scattered around and not much else. Each bunk bed comes with tall personal lockers on each side. The only crewmember not housed here was the captain (and of course Gorilla, who has his den in the cargo bay).",new N.y7(this),[null,P.i(["goto","Bunks"])]],0,null,!1,!1)
+z=new O.o(["The bunks is a large, smelly, dark room with many bunk beds scattered around and not much else. Each bunk bed comes with tall personal lockers on each side. The only crewmember not housed here was the captain (and of course Gorilla, who has his den in the cargo bay).",new N.y8(this),[null,P.i(["goto","Bunks"])]],0,null,!1,!1)
 y.h(0,"Explore: Bunks.description",z)
 z.a="Explore: Bunks.description"
-z=new O.o(["You come up to the first of the personal lockers on your left. It's open. (Several of them are \u2013 there is little need to lock up your stuff on a long-haul freighter like this, especially when you don't _have_ that much stuff, and even less so when everybody on the ship faces imminent death.)",new N.y8(this),new N.y9(),"XXX actually give money",new N.ya(this),"Next, you open Cooper's locker. Cooper was another ablebodied spaceman \u2013 the most experienced of all. His clothes are neatly stacked and there are dozens of tools and a couple of dumbbells here. In contrast to Mwenye's locker, Cooper's doesn't show any sign of his origin or citizenship. (Which is not surprising because most people on independent trading ships such as the Bodega are not very attached to their origins. If they were, they probably wouldn't be living a life on the constant move.) You find Cooper's credits ring and place it on top of a stack of clothes so it'll be easier for you to find it later.","You move on. You skip two bigger lockers belonging to Michael Irwin (senior medic) and Par Nabiyeva (senior engineer) \u2013 they are locked. You have better luck with a couple of other lockers, and again you mostly find clothes and little of value, save for the occassional credits ring. You don't expect any of them to be loaded with lots of money. But it's good to know they're there \u2013 on the off chance you survive all this.",new N.yb(this),"The last locker you open is Mitsuyo's. As the first officer, she had a double-sized locker but despite the extra space it seems to have _less_ stuff in it than the others. It's strange. Yes, there are the very neatly stacked clothes, sorted by color, on one of the shelves. The neatness seems typical to the methodical Mitsuyo \u2013 if the whole locker was like this, you wouldn't be surprised. But then there are the other shelves. They are full of junk and empty booze bottles. Many of the shelves are damaged, as if Mitsuyo had been hitting them. A rotten piece of food is decaying on the top shelf.","This is where you also find her Japanese passport. It's damp from the mush it's been sitting in, so you wipe it on the clothes and open it. It says there that she was born on Shitsuteki station. You have to check twice, but it really does say Shitsuteki, and the date of birth is 35 years ago (which is 10 years more than you would say from Mitsuyo's face). This means she must have been 7 years old when the drugged and delirious spacemen of the San Lorenzo Martir came and razed the station in one of the most brutal mass murders in the history of space exploration. Mitsuyo had either moved to another station by then or she was one of the very few Japanese survivors.",new N.yc(),"The rest of the personal lockers are locked.",new N.yd(this),[null,P.i(["goto","Bunks"])]],0,null,!1,!1)
+z=new O.o(["You come up to the first of the personal lockers on your left. It's open. (Several of them are \u2013 there is little need to lock up your stuff on a long-haul freighter like this, especially when you don't _have_ that much stuff, and even less so when everybody on the ship faces imminent death.)",new N.y9(this),new N.ya(),"XXX actually give money",new N.yb(this),"Next, you open Cooper's locker. Cooper was another ablebodied spaceman \u2013 the most experienced of all. His clothes are neatly stacked and there are dozens of tools and a couple of dumbbells here. In contrast to Mwenye's locker, Cooper's doesn't show any sign of his origin or citizenship. (Which is not surprising because most people on independent trading ships such as the Bodega are not very attached to their origins. If they were, they probably wouldn't be living a life on the constant move.) You find Cooper's credits ring and place it on top of a stack of clothes so it'll be easier for you to find it later.","You move on. You skip two bigger lockers belonging to Michael Irwin (senior medic) and Par Nabiyeva (senior engineer) \u2013 they are locked. You have better luck with a couple of other lockers, and again you mostly find clothes and little of value, save for the occassional credits ring. You don't expect any of them to be loaded with lots of money. But it's good to know they're there \u2013 on the off chance you survive all this.",new N.yc(this),"The last locker you open is Mitsuyo's. As the first officer, she had a double-sized locker but despite the extra space it seems to have _less_ stuff in it than the others. It's strange. Yes, there are the very neatly stacked clothes, sorted by color, on one of the shelves. The neatness seems typical to the methodical Mitsuyo \u2013 if the whole locker was like this, you wouldn't be surprised. But then there are the other shelves. They are full of junk and empty booze bottles. Many of the shelves are damaged, as if Mitsuyo had been hitting them. A rotten piece of food is decaying on the top shelf.","This is where you also find her Japanese passport. It's damp from the mush it's been sitting in, so you wipe it on the clothes and open it. It says there that she was born on Shitsuteki station. You have to check twice, but it really does say Shitsuteki, and the date of birth is 35 years ago (which is 10 years more than you would say from Mitsuyo's face). This means she must have been 7 years old when the drugged and delirious spacemen of the San Lorenzo Martir came and razed the station in one of the most brutal mass murders in the history of space exploration. Mitsuyo had either moved to another station by then or she was one of the very few Japanese survivors.",new N.yd(),"The rest of the personal lockers are locked.",new N.ye(this),[null,P.i(["goto","Bunks"])]],0,null,!1,!1)
 y.h(0,"Explore: Bunks.SiftThroughLockers",z)
 z.a="Explore: Bunks.SiftThroughLockers"
 z=new O.o(["// TODO: needed?",[null,P.i(["goto","Bunks"])]],0,null,!1,!1)
 y.h(0,"Explore: Bunks.BreakIntoLockedBoxes",z)
 z.a="Explore: Bunks.BreakIntoLockedBoxes"
-z=new O.o([new N.yf(this),new N.yg(this)],0,null,!1,!1)
+z=new O.o([new N.yg(this),new N.yh(this)],0,null,!1,!1)
 y.h(0,"Explore: CorridorLeftJunction",z)
 z.a="Explore: CorridorLeftJunction"
-z=new O.o([new N.yh(this),[null,P.i(["goto","CorridorLeftJunction"])]],0,null,!1,!1)
+z=new O.o([new N.yi(this),[null,P.i(["goto","CorridorLeftJunction"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorLeftJunction.description",z)
 z.a="Explore: CorridorLeftJunction.description"
-z=new O.o([new N.yi(this),new N.yj(this)],0,null,!1,!1)
+z=new O.o([new N.yj(this),new N.yk(this)],0,null,!1,!1)
 y.h(0,"Explore: Guts",z)
 z.a="Explore: Guts"
 z=new O.o(["The guts is an intricate maze of little passageways between most of the ship's internal systems. When everything works, there is no reason for anyone to come here, and so the area is not particularly comfortable or even well lit. Many passageways are too narrow even for a body as thin as yours, and most are too low for any person to stand straight.","After the explosion, this place is even less welcoming. The negative effects of the shockwave are more visible here than anywhere else \u2013 each few steps you can see a loosened cable, a leaking pipe or an awry rack. You hear the crackle and smell the pungent scent of the occasional electrical discharge. It's amazing that the Bodega is still mostly functional even with all those little malfunctions.","[IMG]","You quickly make your way to what the crew had called 'the heart' of the guts. A hub of several passageways with lots of gauges, valves and pipes, it sits more or less in the center of the habitable part of the ship.","There's a simple sitting bench here on which you have spent quite some time. Not that you have had any practical reason to be here, but as someone who prefers being alone to the awkwardness of social interactions, this was your best bet when you wanted to keep out of everyone's way and out of sight. Not even Bodega sees here.","From this place, you can easily make your way to both corridors and to the different systems housed in the guts.",[null,P.i(["goto","Guts"])]],0,null,!1,!1)
 y.h(0,"Explore: Guts.description",z)
 z.a="Explore: Guts.description"
-z=new O.o(["Climbing up the ladder from the 'heart', you get to the base of the defensive turret. It's the oldest weapon system the Bodega has, and it most probably dates the few decades to when the ship left the docks for the first time. (In contrast, the front utility laser was installed quite recently, and mostly for the occasional asteroid mining \u2013 not so much for self-defense.)","But despite its age and limited firepower, the turret is still the best insurance against small-time gangsters and opportunist criminals. It's fully automatic \u2013 it will track a given target and shoot at it until told otherwise \u2013 so it doesn't require a trained weapons man to be effective.","What it requires now, though, is repair. The turret itself was obviously made quite resilient, but its age combined with the recent shockwave (and the fact it happened during a hyper jump) have done considerable damage. One of the components is buzzing so loudly you could hear it back from the 'heart'. There's a flicker of sparks coming from the inside and a red pilot light is blinking on the wall nearby.","You can't see the turret from the outside, but you don't expect any damage there.",new N.yk(this),[null,P.i(["goto","Guts"])]],0,null,!1,!1)
+z=new O.o(["Climbing up the ladder from the 'heart', you get to the base of the defensive turret. It's the oldest weapon system the Bodega has, and it most probably dates the few decades to when the ship left the docks for the first time. (In contrast, the front utility laser was installed quite recently, and mostly for the occasional asteroid mining \u2013 not so much for self-defense.)","But despite its age and limited firepower, the turret is still the best insurance against small-time gangsters and opportunist criminals. It's fully automatic \u2013 it will track a given target and shoot at it until told otherwise \u2013 so it doesn't require a trained weapons man to be effective.","What it requires now, though, is repair. The turret itself was obviously made quite resilient, but its age combined with the recent shockwave (and the fact it happened during a hyper jump) have done considerable damage. One of the components is buzzing so loudly you could hear it back from the 'heart'. There's a flicker of sparks coming from the inside and a red pilot light is blinking on the wall nearby.","You can't see the turret from the outside, but you don't expect any damage there.",new N.yl(this),[null,P.i(["goto","Guts"])]],0,null,!1,!1)
 y.h(0,"Explore: Guts.TurretLook",z)
 z.a="Explore: Guts.TurretLook"
-z=new O.o([new N.yl(this),new N.ym(this),new N.yn(this),"After a tiring and seemingly never-ending stretch of work, you look at the electronics and realize all the faulty components have been repaired or replaced. You link them together with new cables and turn the turret's power input back on, half-expecting another failure. But the turret just whirls to life, performing a quick self-test and switching on a green pilot light afterwards.","The turret is back online.",new N.yo(this),[null,P.i(["goto","Guts"])]],0,null,!1,!1)
+z=new O.o([new N.ym(this),new N.yn(this),new N.yo(this),"After a tiring and seemingly never-ending stretch of work, you look at the electronics and realize all the faulty components have been repaired or replaced. You link them together with new cables and turn the turret's power input back on, half-expecting another failure. But the turret just whirls to life, performing a quick self-test and switching on a green pilot light afterwards.","The turret is back online.",new N.yp(this),[null,P.i(["goto","Guts"])]],0,null,!1,!1)
 y.h(0,"Explore: Guts.TurretRepair",z)
 z.a="Explore: Guts.TurretRepair"
-z=new O.o([new N.yq(this),new N.yr(this)],0,null,!1,!1)
+z=new O.o([new N.yr(this),new N.ys(this)],0,null,!1,!1)
 y.h(0,"Explore: EngineRoom",z)
 z.a="Explore: EngineRoom"
-z=new O.o(["[IMG of room and big window to the machine area]",new N.ys(this),new N.yt(this),"[IMG]",new N.yu(this),new N.yv(this),"The whole area is pulsating and strobing with lights and diodes.","The right part of the room is a lot less busy. In the center of an almost empty space, there is a large cigar-shaped device: the hyperdrive. From this far, the only indication that it's doing something is a few blinking status lights.",new N.yw(this),[null,P.i(["goto","EngineRoom"])]],0,null,!1,!1)
+z=new O.o(["[IMG of room and big window to the machine area]",new N.yt(this),new N.yu(this),"[IMG]",new N.yv(this),new N.yw(this),"The whole area is pulsating and strobing with lights and diodes.","The right part of the room is a lot less busy. In the center of an almost empty space, there is a large cigar-shaped device: the hyperdrive. From this far, the only indication that it's doing something is a few blinking status lights.",new N.yx(this),[null,P.i(["goto","EngineRoom"])]],0,null,!1,!1)
 y.h(0,"Explore: EngineRoom.description",z)
 z.a="Explore: EngineRoom.description"
-z=new O.o(["The engine is your domain, so even though there is nothing apparently wrong with the engine, you are quite confident you'll be able to bring it to 100% in a couple of hours. After working so long on the hyperdrive, you are actually somewhat looking forward to it.",new N.yx(this),"You go through the usual output optimization routines. The shockwave from the explosion hit this part of the ship quite strongly. Some of the fission cores went off axis and shut down automatically. You start going through them, one by one, resetting them, making sure they're stable and manually turning them on again.",new N.yy(this),"Two of the cores are considerably harder to set right, but you succeed in the end. By all this, you bring the engine output to 96%. The last 4% turns out to be a matter of precisely syncing the cores' output phases.","The engine is now 100% operational and working like clockwork.",new N.yz(this),[null,P.i(["goto","Explore: EngineRoom"])]],0,null,!1,!1)
+z=new O.o(["The engine is your domain, so even though there is nothing apparently wrong with the engine, you are quite confident you'll be able to bring it to 100% in a couple of hours. After working so long on the hyperdrive, you are actually somewhat looking forward to it.",new N.yy(this),"You go through the usual output optimization routines. The shockwave from the explosion hit this part of the ship quite strongly. Some of the fission cores went off axis and shut down automatically. You start going through them, one by one, resetting them, making sure they're stable and manually turning them on again.",new N.yz(this),"Two of the cores are considerably harder to set right, but you succeed in the end. By all this, you bring the engine output to 96%. The last 4% turns out to be a matter of precisely syncing the cores' output phases.","The engine is now 100% operational and working like clockwork.",new N.yA(this),[null,P.i(["goto","Explore: EngineRoom"])]],0,null,!1,!1)
 y.h(0,"Explore: EngineRoom.RepairEngine",z)
 z.a="Explore: EngineRoom.RepairEngine"
-z=new O.o([new N.yB(this),new N.yC(this)],0,null,!1,!1)
+z=new O.o([new N.yC(this),new N.yD(this)],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToComputerRoom",z)
 z.a="Explore: CorridorRightNextToComputerRoom"
 z=new O.o(["On the side, a modest door is labeled \"Computer Room\". It's where the Bodega's hardware is. The fact that it is placed on the exact same place as the captain's cabin, only on the opposite corridor, is very probably not a coincidence. Captain is the human brain of the ship. The machine brain is behind this door.",[null,P.i(["goto","CorridorRightNextToComputerRoom"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToComputerRoom.description",z)
 z.a="Explore: CorridorRightNextToComputerRoom.description"
-z=new O.o([new N.yD(this),new N.yE(this)],0,null,!1,!1)
+z=new O.o([new N.yE(this),new N.yF(this)],0,null,!1,!1)
 y.h(0,"Explore: ComputerRoom",z)
 z.a="Explore: ComputerRoom"
 z=new O.o(["The Computer Room is a grid of narrow alleys between 25 black, humming cuboids. Pipes of coolant are running from the ceiling to the floor, intertwining with the electronics like veins in muscles.","The 25 blocks are the different modules of Bodega's brain, almost each of which is inspired by a part of the human brain. The big difference is that these are neatly organized by function and imbedded in separate blocks. The one closest to the door is labeled 'Visual Perception'. Another one has 'Sensors Perception' written on it. From previous visits to this room, you remember a couple of 'Speech' modules, something called 'Hierarchy', and the 'Mother', sitting in the center of the room, perfectly surrounded by all the other modules.","One of the outer walls is studded with rade drawers \u2013 the memory modules. Some of them are blinking red, indicating the inevitable data corruption. It is the honorary, almost ceremonial role of the captain to swap these with new modules, and when this is being done, the officers, and sometimes the whole crew, is watching. A long time ago, you saw captain Kay do this \u2013 and it was one of the few times he was sober and solemn.","The rade drawers ceremony is said to be a symbolic way for thanking the ship for its service (while also hinting on the power the human crew has over it). It's something like scratching a pet on its belly. Apparently, from the point of view of the pet, this is supposed to feel both pleasant and dangerous at the same time.","Next to the rade drawer wall, there's a large locker with spare parts. Only the captain and the first officer have the key to that one.",[null,P.i(["goto","ComputerRoom"])]],0,null,!1,!1)
 y.h(0,"Explore: ComputerRoom.description",z)
 z.a="Explore: ComputerRoom.description"
-z=new O.o([new N.yF(this),new N.yG(this)],0,null,!1,!1)
+z=new O.o([new N.yG(this),new N.yH(this)],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToAirlock",z)
 z.a="Explore: CorridorRightNextToAirlock"
-z=new O.o([new N.yH(this),"Directly opposite the airlock, there is also a second door which leads to the Medical Bay.","Corridor Right stretches to the distance in both directions.",[null,P.i(["goto","CorridorRightNextToAirlock"])]],0,null,!1,!1)
+z=new O.o([new N.yI(this),"Directly opposite the airlock, there is also a second door which leads to the Medical Bay.","Corridor Right stretches to the distance in both directions.",[null,P.i(["goto","CorridorRightNextToAirlock"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToAirlock.description",z)
 z.a="Explore: CorridorRightNextToAirlock.description"
-z=new O.o(["You approach the airlock and look through the porthole window.",new N.yI(this),"The outer door is sealed shut.",[null,P.i(["goto","CorridorRightNextToAirlock"])]],0,null,!1,!1)
+z=new O.o(["You approach the airlock and look through the porthole window.",new N.yJ(this),"The outer door is sealed shut.",[null,P.i(["goto","CorridorRightNextToAirlock"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToAirlock.Look",z)
 z.a="Explore: CorridorRightNextToAirlock.Look"
-z=new O.o(["You pull the lever, and as the outer door opens, all the air in the airlock shoots out \u2013 with a loud hiss \u2013 into the vacuum of space. The body is now moving in that direction, too, though much slower. It's no longer pulled towards the floor with artificial gravity \u2013 that was automatically turned off when you pulled that lever \u2013 so the body kind of tumbles towards the door.",new N.yJ(),new N.yK(this),"You close the outside door again by putting the lever back into the original position.",[null,P.i(["goto","CorridorRightNextToAirlock"])]],0,null,!1,!1)
+z=new O.o(["You pull the lever, and as the outer door opens, all the air in the airlock shoots out \u2013 with a loud hiss \u2013 into the vacuum of space. The body is now moving in that direction, too, though much slower. It's no longer pulled towards the floor with artificial gravity \u2013 that was automatically turned off when you pulled that lever \u2013 so the body kind of tumbles towards the door.",new N.yK(),new N.yL(this),"You close the outside door again by putting the lever back into the original position.",[null,P.i(["goto","CorridorRightNextToAirlock"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToAirlock.PullLever",z)
 z.a="Explore: CorridorRightNextToAirlock.PullLever"
-z=new O.o([new N.yM(this),new N.yN(this)],0,null,!1,!1)
+z=new O.o([new N.yN(this),new N.yO(this)],0,null,!1,!1)
 y.h(0,"Explore: MedicalBay",z)
 z.a="Explore: MedicalBay"
-z=new O.o([new N.yO(this),"One of the walls is lined with cabinets, drawers and a long counter with equipment. There are surgical tools, forceps, needles, weaves, flasks, pillboxes, petri dishes, various measuring instruments and a microscope.",new N.yP(),new N.yQ(this),"With an amused smile on his face, Trukhin nodded and carried on with his tour of the ship.",[null,P.i(["goto","MedicalBay"])]],0,null,!1,!1)
+z=new O.o([new N.yP(this),"One of the walls is lined with cabinets, drawers and a long counter with equipment. There are surgical tools, forceps, needles, weaves, flasks, pillboxes, petri dishes, various measuring instruments and a microscope.",new N.yQ(),new N.yR(this),"With an amused smile on his face, Trukhin nodded and carried on with his tour of the ship.",[null,P.i(["goto","MedicalBay"])]],0,null,!1,!1)
 y.h(0,"Explore: MedicalBay.description",z)
 z.a="Explore: MedicalBay.description"
 z=new O.o([[null,P.i(["goto","MedicalBay"])]],0,null,!1,!1)
 y.h(0,"Explore: MedicalBay.LookAtCounter",z)
 z.a="Explore: MedicalBay.LookAtCounter"
-z=new O.o([new N.yR(this),new N.yS(this)],0,null,!1,!1)
+z=new O.o([new N.yS(this),new N.yT(this)],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToBunks",z)
 z.a="Explore: CorridorRightNextToBunks"
 z=new O.o(["On the side here, you see the entrance to the bunks.",[null,P.i(["goto","CorridorRightNextToBunks"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightNextToBunks.description",z)
 z.a="Explore: CorridorRightNextToBunks.description"
-z=new O.o([new N.yT(this),new N.yU(this)],0,null,!1,!1)
+z=new O.o([new N.yU(this),new N.yV(this)],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightJunction",z)
 z.a="Explore: CorridorRightJunction"
-z=new O.o([new N.yV(this),[null,P.i(["goto","CorridorRightJunction"])]],0,null,!1,!1)
+z=new O.o([new N.yW(this),[null,P.i(["goto","CorridorRightJunction"])]],0,null,!1,!1)
 y.h(0,"Explore: CorridorRightJunction.description",z)
 z.a="Explore: CorridorRightJunction.description"
-z=new O.o([new N.yX(this),new N.yY(this)],0,null,!1,!1)
+z=new O.o([new N.yY(this),new N.yZ(this)],0,null,!1,!1)
 y.h(0,"Explore: CargoBayLeft",z)
 z.a="Explore: CargoBayLeft"
-z=new O.o([new N.yZ(this),[null,P.i(["goto","CargoBayLeft"])]],0,null,!1,!1)
+z=new O.o([new N.z_(this),[null,P.i(["goto","CargoBayLeft"])]],0,null,!1,!1)
 y.h(0,"Explore: CargoBayLeft.description",z)
 z.a="Explore: CargoBayLeft.description"
-z=new O.o([new N.z_(this),new N.z0(this)],0,null,!1,!1)
+z=new O.o([new N.z0(this),new N.z1(this)],0,null,!1,!1)
 y.h(0,"Explore: ExplodedContainer",z)
 z.a="Explore: ExplodedContainer"
 z=new O.o(["// TODO XXX START HERE",[null,P.i(["goto","ExplodedContainer"])]],0,null,!1,!1)
 y.h(0,"Explore: ExplodedContainer.description",z)
 z.a="Explore: ExplodedContainer.description"
-z=new O.o(["// TODO",new N.z1(this),"// ...",[null,P.i(["goto","ExplodedContainer"])]],0,null,!1,!1)
+z=new O.o(["// TODO",new N.z2(this),"// ...",[null,P.i(["goto","ExplodedContainer"])]],0,null,!1,!1)
 y.h(0,"Explore: ExplodedContainer.search",z)
 z.a="Explore: ExplodedContainer.search"
-z=new O.o([new N.z2(this),new N.z3(this)],0,null,!1,!1)
+z=new O.o([new N.z3(this),new N.z4(this)],0,null,!1,!1)
 y.h(0,"Explore: CargoCenter",z)
 z.a="Explore: CargoCenter"
-z=new O.o([new N.z4(this),"The console is located exactly half way between the two entrances to the cargo bay.",[null,P.i(["goto","CargoCenter"])]],0,null,!1,!1)
+z=new O.o([new N.z5(this),"The console is located exactly half way between the two entrances to the cargo bay.",[null,P.i(["goto","CargoCenter"])]],0,null,!1,!1)
 y.h(0,"Explore: CargoCenter.description",z)
 z.a="Explore: CargoCenter.description"
-z=new O.o([new N.z5(this),new N.z7(this),new N.z8(this),[null,P.i(["goto","CargoCenter"])]],0,null,!1,!1)
+z=new O.o([new N.z6(this),new N.z8(this),new N.z9(this),[null,P.i(["goto","CargoCenter"])]],0,null,!1,!1)
 y.h(0,"Explore: CargoCenter.console",z)
 z.a="Explore: CargoCenter.console"
-z=new O.o([new N.z9(this),new N.za(this)],0,null,!1,!1)
+z=new O.o([new N.za(this),new N.zb(this)],0,null,!1,!1)
 y.h(0,"Explore: CargoBayRight",z)
 z.a="Explore: CargoBayRight"
-z=new O.o([new N.zb(this),[null,P.i(["goto","CargoBayRight"])]],0,null,!1,!1)
+z=new O.o([new N.zc(this),[null,P.i(["goto","CargoBayRight"])]],0,null,!1,!1)
 y.h(0,"Explore: CargoBayRight.description",z)
 z.a="Explore: CargoBayRight.description"
-z=new O.o([new N.zc(this),new N.zd(this)],0,null,!1,!1)
+z=new O.o([new N.zd(this),new N.ze(this)],0,null,!1,!1)
 y.h(0,"Explore: PlaceOfBreach",z)
 z.a="Explore: PlaceOfBreach"
 z=new O.o(["// TODO",[null,P.i(["goto","PlaceOfBreach"])]],0,null,!1,!1)
 y.h(0,"Explore: PlaceOfBreach.description",z)
 z.a="Explore: PlaceOfBreach.description"
-z=new O.o([new N.ze(this),new N.zf(this)],0,null,!1,!1)
+z=new O.o([new N.zf(this),new N.zg(this)],0,null,!1,!1)
 y.h(0,"Explore: GorillasDen",z)
 z.a="Explore: GorillasDen"
 z=new O.o(["TODO",[null,P.i(["goto","GorillasDen"])]],0,null,!1,!1)
@@ -626,7 +626,7 @@ z.a="Finale: Start"
 z=new O.o(["You go looking for Gorilla to where you last saw him, in TODO, but when you arrive, he's not there. The rebuild phase took longer in his case, for whatever reason (you can assume it's because of the proximity to the engine room and also the sheer mass of his body), but it has clearly passed.","- Look for him in ___\n- Look for him in ___\n- Look for him in ___"],0,null,!1,!1)
 y.h(0,"Finale: FindGorilla",z)
 z.a="Finale: FindGorilla"
-z=new O.o(["You enter the captain's cabin and lay your eyes on the most amazing thing you've seen since TODO.","Gorilla \u2013 the massive monument of muscle and fur \u2013 is slouching on a chair in front of captain's computer. He's not just sitting there, though. He _actively uses the computer_, apparently reading some long article. When he sees you, he turns around and smiles.",'"I went ahead and read most of what Dr. Wells sent to us," Gorilla says with perfect pronounciation and in a pleasant voice. "It\'s fascinating." ',[null,P.i(["string",new N.zg(),"goto","How?"])]],0,null,!1,!1)
+z=new O.o(["You enter the captain's cabin and lay your eyes on the most amazing thing you've seen since TODO.","Gorilla \u2013 the massive monument of muscle and fur \u2013 is slouching on a chair in front of captain's computer. He's not just sitting there, though. He _actively uses the computer_, apparently reading some long article. When he sees you, he turns around and smiles.",'"I went ahead and read most of what Dr. Wells sent to us," Gorilla says with perfect pronounciation and in a pleasant voice. "It\'s fascinating." ',[null,P.i(["string",new N.zh(),"goto","How?"])]],0,null,!1,!1)
 y.h(0,"Finale: GorillaInCaptainsCabin",z)
 z.a="Finale: GorillaInCaptainsCabin"
 z=new O.o(['"Oh, in many ways," says Gorilla. "" ',[null,P.i(["goto","QuestionsForGorilla"])]],0,null,!0,!1)
@@ -641,19 +641,19 @@ z.a="Finale: End"
 z=new O.o(["You lean on one of the chairs and think about questions to ask. The ship computer listens (as always).",[null,P.i(["goto","Choice"])]],0,null,!1,!1)
 y.h(0,"BodegaQuestions: Start",z)
 z.a="BodegaQuestions: Start"
-z=new O.o([new N.zi(this),new N.zj(this)],0,null,!1,!1)
+z=new O.o([new N.zj(this),new N.zk(this)],0,null,!1,!1)
 y.h(0,"BodegaQuestions: Choice",z)
 z.a="BodegaQuestions: Choice"
-z=new O.o([new N.zk(this),"You were familiar with the name Unity, and you do remember the captain talking about _'Nitty_ the last few days, but that wasn't something you'd try to process. You focused solely on your own work and on not thinking too much about anything else.","The station's 3D model appears on the main window and starts slowly rotating. You've never been to Unity, but you can tell from the visualization that it is huge. There's a giant spherical fishery \u2013 an aquarium with fish that serves as a renewable source of high quality food \u2013 at its center. The station itself is a thick band slowly rotating around it.",'In a condescending monotone, the Bodega starts explaining: "Space Station Unity was established by UNSA 74 years ago, in deep space, 0.21 lightyears away from the Groombridge star system. It serves as a trading and international administration hub for the surrounding sector, notably for the Japanese Shisuteki station (Gl 83.1, _ light years away), the German stations Bollwerk and Struve (Kruger 60, 24Eta Cas, _ and _ light years away, respectively) and the Russian station Golitsyn (Gl 873, _ light years away)." ','"It currently houses a population of about 60,000. Facilities include a cargo port, four different warehouses, a dry dock, a medical center, an arboretum, and a communication beacon. A task force of about 20 UNSA ships is stationed at Space Station Unity." ','Bodega pauses. "I hope that clears things up." The visualization disappears.',new N.zl(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
+z=new O.o([new N.zl(this),"You were familiar with the name Unity, and you do remember the captain talking about _'Nitty_ the last few days, but that wasn't something you'd try to process. You focused solely on your own work and on not thinking too much about anything else.","The station's 3D model appears on the main window and starts slowly rotating. You've never been to Unity, but you can tell from the visualization that it is huge. There's a giant spherical fishery \u2013 an aquarium with fish that serves as a renewable source of high quality food \u2013 at its center. The station itself is a thick band slowly rotating around it.",'In a condescending monotone, the Bodega starts explaining: "Space Station Unity was established by UNSA 74 years ago, in deep space, 0.21 lightyears away from the Groombridge star system. It serves as a trading and international administration hub for the surrounding sector, notably for the Japanese Shisuteki station (Gl 83.1, _ light years away), the German stations Bollwerk and Struve (Kruger 60, 24Eta Cas, _ and _ light years away, respectively) and the Russian station Golitsyn (Gl 873, _ light years away)." ','"It currently houses a population of about 60,000. Facilities include a cargo port, four different warehouses, a dry dock, a medical center, an arboretum, and a communication beacon. A task force of about 20 UNSA ships is stationed at Space Station Unity." ','Bodega pauses. "I hope that clears things up." The visualization disappears.',new N.zm(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
 y.h(0,"BodegaQuestions: Unity",z)
 z.a="BodegaQuestions: Unity"
-z=new O.o(['You stop yourself from asking \u2013 you realize that what Bodega pronounces as "oonzah" is in fact U.N.S.A. The actronym stands for _United Nations Space Administration_.',"U.N.S.A. is the ancient intergovernmental organization that was behind much of the early interstellar space exploration, and still holds quite some influence in deep space. With the recent expansion-fed rebirth of nationalism, its role is both more needed and less accepted by the governments of space.","U.N.S.A. means neutrality, and \u2013 more often than not \u2013 relative safety. It also means lower taxes and a little more corporate influence than what is usual on government worlds and stations.",new N.zm(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
+z=new O.o(['You stop yourself from asking \u2013 you realize that what Bodega pronounces as "oonzah" is in fact U.N.S.A. The actronym stands for _United Nations Space Administration_.',"U.N.S.A. is the ancient intergovernmental organization that was behind much of the early interstellar space exploration, and still holds quite some influence in deep space. With the recent expansion-fed rebirth of nationalism, its role is both more needed and less accepted by the governments of space.","U.N.S.A. means neutrality, and \u2013 more often than not \u2013 relative safety. It also means lower taxes and a little more corporate influence than what is usual on government worlds and stations.",new N.zn(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
 y.h(0,"BodegaQuestions: UNSA",z)
 z.a="BodegaQuestions: UNSA"
-z=new O.o([new N.zn(this),"A visualization of the cargo bay appears on the monitor. \"There is no camera coverage of the location. We know Gorilla was in the general area at that time, but since he wasn't injured, he couldn't have been very close when the explosion happened. The blast was not big, but sizeable. It nearly destroyed the container of its origin and damaged several others around it.\" ",'"Yes, I know all this." ','"So, why are you asking, I wonder?" ','"The investigation. I know Mitsuyo was running around getting information. He made notes and everything." ','"Officer Mitsuyo _and_ the captain. _And_ me. We worked as a team on this. I provided the necessary contextual data and I analyzed\u2013" ',[null,P.i(["string",new N.zo(),"script",new N.zp(this)]),P.i(["string",new N.zq(),"script",new N.zr(this)])],"The Bodega lists some tabular data on the main window. ",'"Before we could arrive at a final conclusion, the first symptoms of the contagion arrived, and repairing the hyperdrive became the top priority. The consensus between captain Kay and officer Mitsuyo seemed to be that this wasn\'t any of the usual suspects. No badly secured gas tank, no illicit mining explosives, no chemical batteries. It was something else." ',"\"So, a sabotage? A terrorist attack? In a freighter's _cargo bay?_ That doesn't make sense.\" ",'"As I already said, the investigation was inconclusive. I can display the whole report, including the chemistry drill-down of the collected samples, but I doubt you will understand any of that." ',new N.zt(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
+z=new O.o([new N.zo(this),"A visualization of the cargo bay appears on the monitor. \"There is no camera coverage of the location. We know Gorilla was in the general area at that time, but since he wasn't injured, he couldn't have been very close when the explosion happened. The blast was not big, but sizeable. It nearly destroyed the container of its origin and damaged several others around it.\" ",'"Yes, I know all this." ','"So, why are you asking, I wonder?" ','"The investigation. I know Mitsuyo was running around getting information. He made notes and everything." ','"Officer Mitsuyo _and_ the captain. _And_ me. We worked as a team on this. I provided the necessary contextual data and I analyzed\u2013" ',[null,P.i(["string",new N.zp(),"script",new N.zq(this)]),P.i(["string",new N.zr(),"script",new N.zs(this)])],"The Bodega lists some tabular data on the main window. ",'"Before we could arrive at a final conclusion, the first symptoms of the contagion arrived, and repairing the hyperdrive became the top priority. The consensus between captain Kay and officer Mitsuyo seemed to be that this wasn\'t any of the usual suspects. No badly secured gas tank, no illicit mining explosives, no chemical batteries. It was something else." ',"\"So, a sabotage? A terrorist attack? In a freighter's _cargo bay?_ That doesn't make sense.\" ",'"As I already said, the investigation was inconclusive. I can display the whole report, including the chemistry drill-down of the collected samples, but I doubt you will understand any of that." ',new N.zu(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
 y.h(0,"BodegaQuestions: Explosion",z)
 z.a="BodegaQuestions: Explosion"
-z=new O.o(["Your eyes open, shakily.","You are on the same spot \u2013 haven't moved since you ... died. You lie on the floor, next to the communications panel, and your eyes are still fixed on the main monitor.",new N.zu(this),'"You\'re back," she says. "Good. We don\'t have much time." ','- "Why?"\n- Stand up\n// both fail\n// TODO: monitor "inquisitive" - the more inquisitive, the more Eleanor will like player',new N.zv(this),[null,P.i(["string",new N.zw()])],"Dr. Wells detects your question. \"What the nanobots do \u2013 after they've gathered data about your body \u2013 is they pretty much rebuild it all, cell by cell. Some of the nanos will merge with a cell, effectively making a cyborg microorganism. Most will use your body's own mechanisms and resources to augment its function. Striking the right balance between the two approaches \u2013 it was pure alchemy. Well, it was all alchemy, mostly.\" ",[null,P.i(["string",new N.zx(),"script",new N.zy()]),P.i(["string",new N.zz()])],'Dr. Wells draws closer to the camera. "Are you familiar with the Verge?" ',[null,P.i(["string",new N.zA(),"goto","NoNeedToExplainVerge"]),P.i(["string",new N.zB(),"goto","ExplainVerge"])]],0,null,!1,!1)
+z=new O.o(["Your eyes open, shakily.","You are on the same spot \u2013 haven't moved since you ... died. You lie on the floor, next to the communications panel, and your eyes are still fixed on the main monitor.",new N.zv(this),'"You\'re back," she says. "Good. We don\'t have much time." ','- "Why?"\n- Stand up\n// both fail\n// TODO: monitor "inquisitive" - the more inquisitive, the more Eleanor will like player',new N.zw(this),[null,P.i(["string",new N.zx()])],"Dr. Wells detects your question. \"What the nanobots do \u2013 after they've gathered data about your body \u2013 is they pretty much rebuild it all, cell by cell. Some of the nanos will merge with a cell, effectively making a cyborg microorganism. Most will use your body's own mechanisms and resources to augment its function. Striking the right balance between the two approaches \u2013 it was pure alchemy. Well, it was all alchemy, mostly.\" ",[null,P.i(["string",new N.zy(),"script",new N.zz()]),P.i(["string",new N.zA()])],'Dr. Wells draws closer to the camera. "Are you familiar with the Verge?" ',[null,P.i(["string",new N.zB(),"goto","NoNeedToExplainVerge"]),P.i(["string",new N.zC(),"goto","ExplainVerge"])]],0,null,!1,!1)
 y.h(0,"Ressurection: OpenEyes",z)
 z.a="Ressurection: OpenEyes"
 z=new O.o(["// TODO painful to shake"],0,null,!0,!1)
@@ -662,28 +662,28 @@ z.a="Ressurection: ExplainVerge"
 z=new O.o(['"Of course, you\'re pretty much in it right now. But let me tell you, life on a starship in the Verge is _nothing_ like life on the moons and the planets of the Verge." ',[null,P.i(["goto","ReminiscingVerge"])]],0,null,!1,!1)
 y.h(0,"Ressurection: NoNeedToExplainVerge",z)
 z.a="Ressurection: NoNeedToExplainVerge"
-z=new O.o(['Dr. Wells leans back and narrows her eyes. "I was raised on one of the Verge\'s poorer star systems, Avesta. We lived on a hot, seizmic power-plant of a planet, Avesta II. See, nobody even cared enough to give it a proper name." She scoffs. "The population was fifty thousand. Together, they provided the \'colonization effort\' with more energy than the _whole_ Sol system combined." ','She scoffs again. "And for those fifty thousand people \u2013 who worked twelve hour shifts in artificially lit, hell-hot underground tunnels on a volcanic planet \u2013 there was just one real doctor. My father. And so I lived among broken people. No matter how hard my father tried, there was always screaming and people with dripping burns and with missing limbs." ',[null,P.i(["string",new N.zC(),"script",new N.zE()]),P.i(["string",new N.zF()])],"\"I eventually got out of Avesta, out of the Verge, to study medicine with some of the most intelligent people I will ever know. Most of them from central systems, of course. And, see, I learnt that these people \u2013 coming from where they do \u2013 these people think it's 'not natural' to help people who are beyond some 'level of damage'. When a worker somewhere in the Verge gets his legs caught in machinery, they say it's 'natural' that he loses the whole lower part of his body, because that would have happened a hundred years ago. Is it possible to help him now? Maybe, but they think it would be crossing a line. Of course, most of them have never even _seen_ anyone lose their legs.\" ","\"Fortunately, not everyone was so arrogant. We put together a working group and started looking into technologies that were 'beyond the line'. The most promising one turned out to be nanorobotics. We got funded by Sentaco and set up the lab on Ithaka.\" ",'The Bodega jumps in. "There\'s a new signal on the radar. A medium sized ship. I just thought you two might want to know." ',"\"I'm sure you'll learn that the ship was sent by Pruitt. I told you we don't have much time. How do you feel?\" ","You don't feel so great, but definitely better than a minute ago.",'- "Not so great."\n- "Better."\n- "I almost died, that\'s how I feel." // "No, you actually died."\n- "Why do you care?" ',"// TODO: I can see your vocal cords are getting better.","\"Look \u2013 Pruitt's men are coming for you. I'm not entirely sure if this all is an accident or not, but even if it was, Pruitt will definitely want to have you for research. You're the only human in the universe with Rescin treatment. And unless I am mistaken, you'll be the only one for some time to come.\" ",[null,P.i(["string",new N.zG(),"goto","TryToGetUp"])]],0,null,!1,!1)
+z=new O.o(['Dr. Wells leans back and narrows her eyes. "I was raised on one of the Verge\'s poorer star systems, Avesta. We lived on a hot, seizmic power-plant of a planet, Avesta II. See, nobody even cared enough to give it a proper name." She scoffs. "The population was fifty thousand. Together, they provided the \'colonization effort\' with more energy than the _whole_ Sol system combined." ','She scoffs again. "And for those fifty thousand people \u2013 who worked twelve hour shifts in artificially lit, hell-hot underground tunnels on a volcanic planet \u2013 there was just one real doctor. My father. And so I lived among broken people. No matter how hard my father tried, there was always screaming and people with dripping burns and with missing limbs." ',[null,P.i(["string",new N.zD(),"script",new N.zF()]),P.i(["string",new N.zG()])],"\"I eventually got out of Avesta, out of the Verge, to study medicine with some of the most intelligent people I will ever know. Most of them from central systems, of course. And, see, I learnt that these people \u2013 coming from where they do \u2013 these people think it's 'not natural' to help people who are beyond some 'level of damage'. When a worker somewhere in the Verge gets his legs caught in machinery, they say it's 'natural' that he loses the whole lower part of his body, because that would have happened a hundred years ago. Is it possible to help him now? Maybe, but they think it would be crossing a line. Of course, most of them have never even _seen_ anyone lose their legs.\" ","\"Fortunately, not everyone was so arrogant. We put together a working group and started looking into technologies that were 'beyond the line'. The most promising one turned out to be nanorobotics. We got funded by Sentaco and set up the lab on Ithaka.\" ",'The Bodega jumps in. "There\'s a new signal on the radar. A medium sized ship. I just thought you two might want to know." ',"\"I'm sure you'll learn that the ship was sent by Pruitt. I told you we don't have much time. How do you feel?\" ","You don't feel so great, but definitely better than a minute ago.",'- "Not so great."\n- "Better."\n- "I almost died, that\'s how I feel." // "No, you actually died."\n- "Why do you care?" ',"// TODO: I can see your vocal cords are getting better.","\"Look \u2013 Pruitt's men are coming for you. I'm not entirely sure if this all is an accident or not, but even if it was, Pruitt will definitely want to have you for research. You're the only human in the universe with Rescin treatment. And unless I am mistaken, you'll be the only one for some time to come.\" ",[null,P.i(["string",new N.zH(),"goto","TryToGetUp"])]],0,null,!1,!1)
 y.h(0,"Ressurection: ReminiscingVerge",z)
 z.a="Ressurection: ReminiscingVerge"
 z=new O.o(["You try hard to rise up, but even just moving your arms underneath the body, so that you can push up, turns out to be impossible. You give up and immediately, a tingling sensation overcomes all the muscles you just stressed.","Dr. Wells nods. \"You're not ready yet, but don't worry, you'll be in a few minutes.\" ",[null,P.i(["goto","Questions"])]],0,null,!1,!1)
 y.h(0,"Ressurection: TryToGetUp",z)
 z.a="Ressurection: TryToGetUp"
-z=new O.o([[new N.zH(),P.i(["string",new N.zI(),"goto","StandUpAgain"])]],0,null,!1,!1)
+z=new O.o([[new N.zI(),P.i(["string",new N.zJ(),"goto","StandUpAgain"])]],0,null,!1,!1)
 y.h(0,"Ressurection: Questions",z)
 z.a="Ressurection: Questions"
 z=new O.o(["// TODO: first 2 attempts in vain (unless all questions have been answered)\n// TODO: one of the attempts: Bodega says how far the incoming ship is","This time, it works. You push your hands towards the floor and your upper body lifts as easily as if the gravity was turned down. The tingling sensation is all but gone. You stand up and look around. The bridge is as empty as when you got here a few hours back. You notice the radar screen and the highlighted ship that is slowly moving towards the center of it. Amazingly, you can read the distance measurement, although the characters are small and the screen is a few meters away. The ship is 11 kilometers away and approaching the Bodega with an ETA of 5 minutes.",'- "The ship\'s here in 5 minutes. All energy to shields and weapons."\n- "Give me a reading of the ship." ',"TODO: reading of the ship\nTODO: Dr. Wells disapproves"],0,null,!1,!1)
 y.h(0,"Ressurection: StandUpAgain",z)
 z.a="Ressurection: StandUpAgain"
-z=new O.o(['"I\'m pretty sure the Bodega is no match for that ship." ','"Excuse me?" the Bodega says.',"\"Look, ship, I know about the Messenger. Good job. But they won't make the same mistake again. That incoming ship is military class. She's smaller than you, I'm sure, but you have absolutely zero chance of beating her in your current setup. You're better off playing dead.\" ","The Bodega runs through some schematics on the scanner panel for a fraction of a second, then says: \"I'm afraid she's right. That ship appears to be a military-grade vessel. A gunship.\" ",'"Play to your strengths," Dr. Wells says. "They want you alive." ',[null,P.i(["string",new N.zJ(),"script",new N.zK()]),P.i(["string",new N.zL()])],"The ship is now 4 minutes away.",'"Look, I need to disconnect. They traced our call. It\'s best for me to move and stay hidden now. After this litter encounter is over, you do the same. I\'ll contact you later." Dr. Wells smiles. "I think I\'ll have something the Bodega will enjoy. Until then, good luck." Dr. Wells nods and the main screen goes blank.',"What do you do?\n- Contact the ship and surrender to them // end\n- Raise shields and prepare for battle // very short battle, incapacitates bodega's weapons, continues with boarding\n- Let the ship approach"],0,null,!1,!1)
+z=new O.o(['"I\'m pretty sure the Bodega is no match for that ship." ','"Excuse me?" the Bodega says.',"\"Look, ship, I know about the Messenger. Good job. But they won't make the same mistake again. That incoming ship is military class. She's smaller than you, I'm sure, but you have absolutely zero chance of beating her in your current setup. You're better off playing dead.\" ","The Bodega runs through some schematics on the scanner panel for a fraction of a second, then says: \"I'm afraid she's right. That ship appears to be a military-grade vessel. A gunship.\" ",'"Play to your strengths," Dr. Wells says. "They want you alive." ',[null,P.i(["string",new N.zK(),"script",new N.zL()]),P.i(["string",new N.zM()])],"The ship is now 4 minutes away.",'"Look, I need to disconnect. They traced our call. It\'s best for me to move and stay hidden now. After this litter encounter is over, you do the same. I\'ll contact you later." Dr. Wells smiles. "I think I\'ll have something the Bodega will enjoy. Until then, good luck." Dr. Wells nods and the main screen goes blank.',"What do you do?\n- Contact the ship and surrender to them // end\n- Raise shields and prepare for battle // very short battle, incapacitates bodega's weapons, continues with boarding\n- Let the ship approach"],0,null,!1,!1)
 y.h(0,"Ressurection: EleanorAdvice",z)
 z.a="Ressurection: EleanorAdvice"
-z=new O.o([new N.zM(),"## The Funeral","This story both begins and ends with a death, on a spaceship.",new N.zN(),"The first death is that of the captain, whose body you just finished dragging through the empty ship and laid down in the airlock. When he died a couple of minutes ago, he left you as the last survivor on board of the Bodega.",[new N.zQ(),P.i(["string",new N.zR(),"script",new N.zS(this)]),P.i(["string",new N.zT(),"script",new N.zU(this)]),P.i(["string",new N.zV(),"script",new N.zW(this)])],new N.zX(this),new N.zY(this),"Now, the ship is silent and the whole crew is dead. Since the explosion in the cargo bay, the men and women had been taking turns in screaming in pain, then getting uncanilly stiff, then dying. The captain held a memorial service for every one of them, each funeral \u2013 of course \u2013 a little shorter and simpler than the previous. Now it's your turn to be the master of ceremony.",new N.zZ(this),new N.A0(),new N.A1(this),new N.A2(this),"The funeral looks like this: You are standing in front of one of the ship's two airlocks. Through the porthole window, you can see the captain's body lying on the floor, naked and reddish and stiff. Just like all the others before him. When you had put him down there a minute ago, you made sure he's lying reasonably straight, like one would do in a coffin. You even put a blanket under him so he doesn't lie on the cold steel of the airlock.","Not that the dead care much about cold. But that's what you did.","![Dead captain Kay](img/airlock.jpg)",new N.A3(),"The inner door, through which you're watching, is safely closed and sealed. The only thing that remains is to pull the lever.",[null,P.i(["goto","Start: Funeral.choice"])]],0,null,!1,!1)
+z=new O.o([new N.zN(),"## The Funeral","This story both begins and ends with a death, on a spaceship.",new N.zO(),"The first death is that of the captain, whose body you just finished dragging through the empty ship and laid down in the airlock. When he died a couple of minutes ago, he left you as the last survivor on board of the Bodega.",[new N.zR(),P.i(["string",new N.zS(),"script",new N.zT(this)]),P.i(["string",new N.zU(),"script",new N.zV(this)]),P.i(["string",new N.zW(),"script",new N.zX(this)])],new N.zY(this),"Now, the ship is silent and the whole crew is dead. Since the explosion in the cargo bay, the men and women had been taking turns in screaming in pain, then getting uncanilly stiff, then dying. The captain held a memorial service for every one of them, each funeral \u2013 of course \u2013 a little shorter and simpler than the previous. Now it's your turn to be the master of ceremony.",new N.zZ(this),new N.A_(),new N.A1(this),new N.A2(this),"The funeral looks like this: You are standing in front of one of the ship's two airlocks. Through the porthole window, you can see the captain's body lying on the floor, naked and reddish and stiff. Just like all the others before him. When you had put him down there a minute ago, you made sure he's lying reasonably straight, like one would do in a coffin. You even put a blanket under him so he doesn't lie on the cold steel of the airlock.","Not that the dead care much about cold. But that's what you did.","![Dead captain Kay](img/airlock.jpg)",new N.A3(),"The inner door, through which you're watching, is safely closed and sealed. The only thing that remains is to pull the lever.",[null,P.i(["goto","Start: Funeral.choice"])]],0,null,!1,!1)
 y.h(0,"Start: Funeral",z)
 z.a="Start: Funeral"
 z=new O.o([[null,P.i(["string",new N.A4(),"goto","SaySomethingNice"]),P.i(["string",new N.A5(),"goto","Pull"]),P.i(["string",new N.A6(),"goto","LeaveBody"])]],0,null,!1,!1)
 y.h(0,"Start: Funeral.choice",z)
 z.a="Start: Funeral.choice"
-z=new O.o(["You clear your throat.",new N.A7(this),"For some reason, the only things that come to mind right now are _far_ from nice. Your head is full of images of the captain being drunk to the point he couldn't stand up.",[null,P.i(["string",new N.A8(),"script",new N.A9(this)]),P.i(["string",new N.Ab(),"script",new N.Ac(this)])],'<p class="meta">Note: Decisions like these help define your character.</p>','You are silent for a few moments, and then you end up saying: "Captain Kay, you were a great captain." And that is definitely true.',[null,P.i(["goto","Funeral.choice"])]],0,null,!0,!1)
+z=new O.o(["You clear your throat.",new N.A7(this),"For some reason, the only things that come to mind right now are _far_ from nice. Your head is full of images of the captain being drunk to the point he couldn't stand up.",[null,P.i(["string",new N.A8(),"script",new N.A9(this)]),P.i(["string",new N.Aa(),"script",new N.Ac(this)])],'<p class="meta">Note: Decisions like these help define your character.</p>','You are silent for a few moments, and then you end up saying: "Captain Kay, you were a great captain." And that is definitely true.',[null,P.i(["goto","Funeral.choice"])]],0,null,!0,!1)
 y.h(0,"Start: SaySomethingNice",z)
 z.a="Start: SaySomethingNice"
 z=new O.o([new N.Ad(this),new N.Ae(),new N.Af(this),[null,P.i(["goto","Recollections"])]],0,null,!1,!1)
@@ -695,7 +695,7 @@ z.a="Start: LeaveBody"
 z=new O.o([new N.Ah(),"You sat alone. Not because you were shy. No, you have just always found it tiring to talk about things that don't matter. And nobody here would talk about anything that _does_ matter.","So you sat alone. And so did the captain, a few tables away \u2013 just another bar patron in a dirty jacket and a glass of German zero-G-hops beer on the table.",new N.Ai(this),[null,P.i(["goto","Brawl: Start"])]],0,null,!1,!1)
 y.h(0,"Start: Recollections",z)
 z.a="Start: Recollections"
-z=new O.o(["With that out of the way, you looked around, and that's when you really noticed the captain for the first time.","He wasn't fighting. He was standing in the middle of the whole mess, laughing his head off. (You would later learn that this was not at all unusual for him \u2013 he would laugh maniacally at the least opportune of times, even if he was in danger. Especially if he was in danger.) You were ready to go on but then you heard, \"What's so funny, shitface,\" and you noticed a huge, furious warehouseman running straight at the captain with a chair above his head. The chair had a mock-wood finish, like almost everything in the bar, but you knew it was actually metal.","The captain laughed on, standing with his back to the quickly approaching warehouseman.","For some reason, in spite of all the good reasons not to, you decided to run towards the captain to defend him against the warehouseman and his crippling blow. You knew full well you'd regret this.",'"This is bullshit," you said to yourself when you broke into a sprint across the room.',[null,P.i(["string",new N.Aj(),"script",new N.Ak(this)]),P.i(["string",new N.Am(),"script",new N.An(this)])],"In shock and still oblivious to the scope of your injury, you watched the captain receive blow after brutal blow from the looming warehouseman (at least it was fists and not a metal chair) and you tried to stand up \u2013 almost managed to pull it off, too \u2013 but then everything went dark and you just plain fainted.","The next thing you knew, the bar was empty and captain Kay was helping you on your feet. There was blood in his hair. He was laughing again.",'"What\'s your name, kid?" He grinned.',new N.Ao(this),new N.Ap(this),"You kept looking at him but didn't say anything.",new N.Aq(this),"You nodded.",new N.Ar(this),"\"Broken, I think. It's fine if I don't move it but\u2013\" You screamed when you touched it. The pain was horrific.",new N.As(this),new N.At(this),new N.Au(this),new N.Av(this),new N.Ax(this),new N.Ay(),"[IMG of intercom]",'The intercom on the wall starts ringing loudly and blinking with a red light. The ringtone and the color-coding means "to all crew" \u2013 in other words: "everyone in their ability should pick this up".',"The intercom, in this case, is an old school handset wired to the wall with a spiral cable. It's easier to maintain, less faulty, and it only picks up one person's voice, so it's easier to understand the other end. It also makes it possible to have conversations that are meant for a limited audience, as opposed to everyone in the room. Sometimes, it's needed to break news that are not intended for the whole crew.","The cable is there mostly so that the handset stays put where it belongs (but it does conduct the audio signal to and from the handset).",[null,P.i(["string",new N.Az(),"goto","Ignore"]),P.i(["string",new N.AA(),"goto","PickItUp"])]],0,null,!1,!1)
+z=new O.o(["With that out of the way, you looked around, and that's when you really noticed the captain for the first time.","He wasn't fighting. He was standing in the middle of the whole mess, laughing his head off. (You would later learn that this was not at all unusual for him \u2013 he would laugh maniacally at the least opportune of times, even if he was in danger. Especially if he was in danger.) You were ready to go on but then you heard, \"What's so funny, shitface,\" and you noticed a huge, furious warehouseman running straight at the captain with a chair above his head. The chair had a mock-wood finish, like almost everything in the bar, but you knew it was actually metal.","The captain laughed on, standing with his back to the quickly approaching warehouseman.","For some reason, in spite of all the good reasons not to, you decided to run towards the captain to defend him against the warehouseman and his crippling blow. You knew full well you'd regret this.",'"This is bullshit," you said to yourself when you broke into a sprint across the room.',[null,P.i(["string",new N.Aj(),"script",new N.Ak(this)]),P.i(["string",new N.Al(),"script",new N.An(this)])],"In shock and still oblivious to the scope of your injury, you watched the captain receive blow after brutal blow from the looming warehouseman (at least it was fists and not a metal chair) and you tried to stand up \u2013 almost managed to pull it off, too \u2013 but then everything went dark and you just plain fainted.","The next thing you knew, the bar was empty and captain Kay was helping you on your feet. There was blood in his hair. He was laughing again.",'"What\'s your name, kid?" He grinned.',new N.Ao(this),new N.Ap(this),"You kept looking at him but didn't say anything.",new N.Aq(this),"You nodded.",new N.Ar(this),"\"Broken, I think. It's fine if I don't move it but\u2013\" You screamed when you touched it. The pain was horrific.",new N.As(this),new N.At(this),new N.Au(this),new N.Av(this),new N.Aw(this),new N.Ay(),"[IMG of intercom]",'The intercom on the wall starts ringing loudly and blinking with a red light. The ringtone and the color-coding means "to all crew" \u2013 in other words: "everyone in their ability should pick this up".',"The intercom, in this case, is an old school handset wired to the wall with a spiral cable. It's easier to maintain, less faulty, and it only picks up one person's voice, so it's easier to understand the other end. It also makes it possible to have conversations that are meant for a limited audience, as opposed to everyone in the room. Sometimes, it's needed to break news that are not intended for the whole crew.","The cable is there mostly so that the handset stays put where it belongs (but it does conduct the audio signal to and from the handset).",[null,P.i(["string",new N.Az(),"goto","Ignore"]),P.i(["string",new N.AA(),"goto","PickItUp"])]],0,null,!1,!1)
 y.h(0,"Start: RecollectionsContinued",z)
 z.a="Start: RecollectionsContinued"
 z=new O.o([new N.AB(this),"After a while, the intercom goes silent. Instead, PA speakers along the corridor turn on with a crackle. It's the ship computer. She sounds irritated.",[null,P.i(["goto","ShipSays"])]],0,null,!1,!1)
@@ -710,7 +710,7 @@ z.a="Start: ShipSays"
 z=new O.o(['"Oh, I\'m sorry," the ship says. "I didn\'t want to ruin the moment by, you know, _trying to stop yet another disaster from happening!_ The bridge, you might recall, is a place with lots of electronics and, interestingly, also the control panels to _the whole goddamned ship._ In summary, this is no place for a stupid gorilla." ',new N.AF(),new N.AG(this),[null,P.i(["goto","Coming"])]],0,null,!1,!1)
 y.h(0,"Start: CantThisWait",z)
 z.a="Start: CantThisWait"
-z=new O.o([new N.AI(this),new N.AJ(this),"You follow Corridor Right \u2013 a badly lit tube of dusty cables and fluorescent lamps running along the right side of the Bodega, from the huge cargo bay at the back of the ship all the way to the bridge in the front. The stark white light of the lamps is supplemented by the red bulbs of the ship alarm which have been pulsating since the beginning of the disease 14 days ago.","In a few moments, you pass the door to the computer room on your right, and shortly after, you are at your destination.",[null,P.i(["goto","Bridge: GorillaIncident"])]],0,null,!1,!1)
+z=new O.o([new N.AH(this),new N.AJ(this),"You follow Corridor Right \u2013 a badly lit tube of dusty cables and fluorescent lamps running along the right side of the Bodega, from the huge cargo bay at the back of the ship all the way to the bridge in the front. The stark white light of the lamps is supplemented by the red bulbs of the ship alarm which have been pulsating since the beginning of the disease 14 days ago.","In a few moments, you pass the door to the computer room on your right, and shortly after, you are at your destination.",[null,P.i(["goto","Bridge: GorillaIncident"])]],0,null,!1,!1)
 y.h(0,"Start: Coming",z)
 z.a="Start: Coming"
 z=new O.o(["You take the captain's seat and buckle up. With hyperdrive jumps, there's a slight chance of glitches in the ship's artificial gravity (among other things) \u2013 so buckling up is standard procedure.",'"Is our course set for Space Station Unity?" you ask.','"Affirmative. We are ready to initiate the sequence." The ship computer draws a circle in the middle of the main window. Unity is somewhere that way.',[null,P.i(["string",new N.AK(),"script",new N.AL(this)]),P.i(["string",new N.AM()])],new N.AN(),'"Yes." There really is no reason to conserve energy at this point. A few more reserve energy cells will not do you any good if you\'re dead by the time you reach Unity. Supercharging saves 36% of the jump time (and takes twice the energy). "Yes, let\'s supercharge." ',new N.AO(this),'"Initiating hyperdrive sequence." You can feel and hear the main thrusters quickly coming to life, propelling the ship forward. Hyperdrives need the ship to be accellerating forward so they can warp its speed by several magnitudes. That\'s what is going to come next.','"Energy accumulated." While accelerating by traditional means, the hyperdrive builds up an extremely high energy charge. That energy will be discharged through the hyperdrive, creating a controlled space-time distortion around the ship. Moving through and within the bubble allows the ship to effectively cheat uncle Einstein. "Discharging," the Bodega says.',"A couple of things happen at the same time. A violent glitch in the artificial gravity almost makes you vomit as it feels like the whole ship does a completely unnecessary barrel roll. The straps keep you in place, but the freestanding bottles fly in a swarm accross the bridge and fall crashing to the ground near the entrance to Corridor Right. A few red lights blink all over the bridge as other systems experience temporary glitches. And, finally, the main window goes blue and bright. Then violet and white. And finally, the visual feed is replaced by a computer visualization (during faster-than-light travel, external cameras aren't very useful \u2013 they are overwhelmed by the bright disc of light in front of the ship).",new N.AP(this),"You are now on your way to Space Station Unity and you expect to warp through the XXX light years in XXX hours. There could still be some gravity glitches along the way, so the official guidelines are to stay put during the jump, but most spacemen just ignore those and hope for the best. The slight chance that you'll get slammed on the ceiling are more than balanced by not having to sit or stand strapped for hours on end.",new N.AQ(this),[null,P.i(["goto","Explore: Bridge"])]],0,null,!1,!1)
@@ -719,7 +719,7 @@ z.a="Unity: Jump"
 z=new O.o(["The main window is filled with white and red and blue. You're looking at Unity, one of the 6 largest space stations in all of the known universe.","[IMG]",new N.AR(),"Unity is very old, and it shows. Although the outside paint is bright, even around the docks (where stations are normally dark with burn marks), the symetry of the disc is corrupted by numerous attachments, growths and outbuildings all over the place. As with anything else in space, the initial design of the station just couldn't cope with all the new and unpredicted things that interstellar travel was yet to bring.","The misfortune of Unity is that while most other man-made objects in space are ugly and indented from the very start, this station was obviously once elegant and _clean_. So now, all the additional construction looks like tumors on a ballerina's leg.",[null,P.i(["goto","Preview: End"])],"// - [Unity: Approach]"],0,null,!1,!1)
 y.h(0,"Unity: Arrival",z)
 z.a="Unity: Arrival"
-z=new O.o(["\"Open the communications link with tower,\" you tell Bodega as you sit down at the captain's seat again. The comms monitor comes alive and after a few seconds, an operator's face appears. He looks tired, but tries to smile.",'"Zis is Space stationion Unity dock tower." He\'s German, with the dark blond hair, the straight nose, the accent and everything. "Please provide callsign and intention." There\'s the tired smile again.','"Callsign Bodega, freighter," the Bodega answers. "Request expedite docking." ','The operator\'s eyebrows go up. "Expedite? What is the emergency?" ','"I am dying," you say plainly. "The rest of the crew is dead already." ',new N.AT(this),'"Okay, umm, Bodega, we will need to quarantine ze arrival..." The operator stops and frowns. "Wait. Can you confirm your full id?" ','"Complete ID is CH/C/740-22K," the Bodega answers.',"The operator freezes, looking at something at his side. This takes several seconds. He then straightens, bites his lip and looks directly into the camera.",'"Bodega, I\'m afraid I cannot let you dock." He waits for you to react.',[null,P.i(["string",new N.AU(),"script",new N.AV(this)]),P.i(["string",new N.AW(),"script",new N.AX()]),P.i(["string",new N.AY(),"script",new N.AZ(this)])],"\"But look,\" he says after biting his lip some more. \"You really shouldn't be around here. If I am understanding this correctly, you are on the Active Threat blacklist. I don't know how that's possible, for a cargo freighter I mean, and especially when you only have one soul on board, but the fact is you are listed. And that means, since I identified you just now, your position is broadcasted to anyone interested through the station's beacon. So that means that the organization that blacklisted you \u2013 and I assume you know who that is \u2013 is probably jumping a ship or two to this location right now.\" ",[null,P.i(["goto","UnityQuestion: Choice"])]],0,null,!0,!1)
+z=new O.o(["\"Open the communications link with tower,\" you tell Bodega as you sit down at the captain's seat again. The comms monitor comes alive and after a few seconds, an operator's face appears. He looks tired, but tries to smile.",'"Zis is Space stationion Unity dock tower." He\'s German, with the dark blond hair, the straight nose, the accent and everything. "Please provide callsign and intention." There\'s the tired smile again.','"Callsign Bodega, freighter," the Bodega answers. "Request expedite docking." ','The operator\'s eyebrows go up. "Expedite? What is the emergency?" ','"I am dying," you say plainly. "The rest of the crew is dead already." ',new N.AS(this),'"Okay, umm, Bodega, we will need to quarantine ze arrival..." The operator stops and frowns. "Wait. Can you confirm your full id?" ','"Complete ID is CH/C/740-22K," the Bodega answers.',"The operator freezes, looking at something at his side. This takes several seconds. He then straightens, bites his lip and looks directly into the camera.",'"Bodega, I\'m afraid I cannot let you dock." He waits for you to react.',[null,P.i(["string",new N.AU(),"script",new N.AV(this)]),P.i(["string",new N.AW(),"script",new N.AX()]),P.i(["string",new N.AY(),"script",new N.AZ(this)])],"\"But look,\" he says after biting his lip some more. \"You really shouldn't be around here. If I am understanding this correctly, you are on the Active Threat blacklist. I don't know how that's possible, for a cargo freighter I mean, and especially when you only have one soul on board, but the fact is you are listed. And that means, since I identified you just now, your position is broadcasted to anyone interested through the station's beacon. So that means that the organization that blacklisted you \u2013 and I assume you know who that is \u2013 is probably jumping a ship or two to this location right now.\" ",[null,P.i(["goto","UnityQuestion: Choice"])]],0,null,!0,!1)
 y.h(0,"Unity: Approach",z)
 z.a="Unity: Approach"
 z=new O.o([new N.B_(this),new N.B0(this)],0,null,!1,!1)
@@ -728,7 +728,7 @@ z.a="UnityQuestion: Choice"
 z=new O.o(['"I told you," the operator says.',"// Let player use mental points to get the operator to blunder and reveal some information (Pruitt? Sentaco?)",new N.B1(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
 y.h(0,"UnityQuestion: Organization",z)
 z.a="UnityQuestion: Organization"
-z=new O.o(["TBD",new N.B3(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
+z=new O.o(["TBD",new N.B2(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
 y.h(0,"UnityQuestion: ActiveThreatBlacklist",z)
 z.a="UnityQuestion: ActiveThreatBlacklist"
 z=new O.o(["TBD",new N.B4(this),[null,P.i(["goto","Choice"])]],0,null,!1,!1)
@@ -755,11 +755,11 @@ z.a="Unity: SentacoShipArrival"
 this.c=y.i(0,"start")},
 k5:function(){return this.f9.$0()},
 fQ:function(){return this.fa.$0()},
-fR:function(a){return this.fc.$1(a)},
+ia:function(a){return this.fc.$1(a)},
 ks:function(){return this.fd.$0()},
-fo:function(){return this.hI.$0()},
+fo:function(){return this.hH.$0()},
 A:{
-xJ:function(){var z,y,x,w,v,u,t,s,r,q
+xK:function(){var z,y,x,w,v,u,t,s,r,q
 z=F.lk()
 y=Z.cE("Physical pool",new N.IA(),"#CCCCCC","Spare physical energy",0,0,!1,P.r)
 x=Z.cE("Mental pool",new N.IB(),"#CCCCCC","Spare mental energy",0,0,!1,P.r)
@@ -771,7 +771,7 @@ s=H.b(new H.Z(0,null,null,null,null,null,0),[P.r,P.r])
 O.D("")
 r=Z.cE("Energy reserve",new N.ID(),"#CCCCCC","The number of charged power cells",8,0,!1,P.r)
 q=H.b(new H.Z(0,null,null,null,null,null,0),[P.j,O.o])
-q=new N.xI("net.filiph.bodega.1",new F.i4(!0,z,"Spaceship"),!1,!1,!1,2,2,y,x,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,null,0,0,null,null,"Captain",0,w,v,u,null,new L.dQ(-1,null,null,t,s,null,!1,"Timeline",!1),null,null,null,null,null,null,8,r,20,["Unity","Explosion"],null,null,"man",null,null,new N.IF(),0,!1,"Slim",0,["Organization","ActiveThreatBlacklist","AskToDock","AskToTrade","WhereToGo"],new O.CC(q),null,null,null,P.ao(null,null,null,P.j),!1,null,-9999,null,null,null)
+q=new N.xJ("net.filiph.bodega.1",new F.i4(!0,z,"Spaceship"),!1,!1,!1,2,2,y,x,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,!1,null,0,0,null,null,"Captain",0,w,v,u,null,new L.dQ(-1,null,null,t,s,null,!1,"Timeline",!1),null,null,null,null,null,null,8,r,20,["Unity","Explosion"],null,null,"man",null,null,new N.IF(),0,!1,"Slim",0,["Organization","ActiveThreatBlacklist","AskToDock","AskToTrade","WhereToGo"],new O.CC(q),null,null,null,P.ao(null,null,null,P.j),!1,null,-9999,null,null,null)
 q.pu()
 return q}}},IA:{"^":"a:8;",
 $1:function(a){return H.d(a)+" P"}},IB:{"^":"a:8;",
@@ -783,10 +783,10 @@ y=C.e.e1(a,60)
 x=""+z+":"
 return x+(y<10?"0":"")+H.d(y)}},ID:{"^":"a:1;",
 $1:function(a){return H.d(a)+" E"}},IF:{"^":"a:0;",
-$0:function(){return!1}},y0:{"^":"a:0;",
-$0:function(){return"From beginning"}},y1:{"^":"a:0;",
-$0:function(){return"Spaceship combat"}},y2:{"^":"a:0;a",
-$0:function(){O.t("The gunship slowly approaches, all weapons scanning the surface of the Bodega. It seems to be aiming for the right side of the ship, where the airlock "+(this.a.x1===!0?"is":"was")+". Meanwhile, the Bodega is completely still.")}},zO:{"^":"a:0;",
+$0:function(){return!1}},y1:{"^":"a:0;",
+$0:function(){return"From beginning"}},y2:{"^":"a:0;",
+$0:function(){return"Spaceship combat"}},y3:{"^":"a:0;a",
+$0:function(){O.t("The gunship slowly approaches, all weapons scanning the surface of the Bodega. It seems to be aiming for the right side of the ship, where the airlock "+(this.a.x1===!0?"is":"was")+". Meanwhile, the Bodega is completely still.")}},zP:{"^":"a:0;",
 $0:function(){return"- Take everything (15 energy cells, food for 70 days)\n          - Leave just enough for them to survive, take the rest (14 energy cells, food for 65 days)\n          "}},Bf:{"^":"a:0;",
 $0:function(){return"Leave everything"}},Bq:{"^":"a:0;a",
 $0:function(){this.a.dA.ca()}},BB:{"^":"a:0;a",
@@ -795,18 +795,18 @@ else $.aK="Lose"}},BM:{"^":"a:0;",
 $0:function(){O.t('It\'s the ship\'s Enhanced Gorilla. These species are used throughout the universe for hard manual labor: in construction, in the military, and on big tankers and cargo ships like the Bodega. Their intelligence is somewhat improved over what nature has given them -- they can understand basic spoken commands and they have the ability to communicate back via sign language. The vocabulary is very limited, and even then they use mostly just the words "food", "sleep" and "want". But people don\'t need Enhanced Gorillas to be eloquent or nuanced or poetic. They need them to lift and push and sometimes smash. _This_ gorilla mostly manipulates with heavy objects in the cargo bay.'+E.bz("gorillaCargoMove"))}},BX:{"^":"a:0;",
 $0:function(){return"What do you say to him?"}},C7:{"^":"a:0;",
 $0:function(){return'"It\'s okay." '}},Ci:{"^":"a:0;",
-$0:function(){return'"What the hell do you think you are doing here, Gorilla?" '}},y3:{"^":"a:0;a",
-$0:function(){O.t('"The '+(this.a.fo()===!0?"g-g-":"")+'gorilla stays," you say to the ship computer. "He just sits there. And he definitely won\'t touch anything while I\'m here." The Gorilla nods solemnly.')}},ye:{"^":"a:0;a",
+$0:function(){return'"What the hell do you think you are doing here, Gorilla?" '}},y4:{"^":"a:0;a",
+$0:function(){O.t('"The '+(this.a.fo()===!0?"g-g-":"")+'gorilla stays," you say to the ship computer. "He just sits there. And he definitely won\'t touch anything while I\'m here." The Gorilla nods solemnly.')}},yf:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y=z.cn
 if(typeof y!=="number")return y.I()
 z.cn=y+1
-$.$get$b_().aU(0,1,"being kind to animals")}},yp:{"^":"a:0;a",
+$.$get$b_().aU(0,1,"being kind to animals")}},yq:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y='"What the hell '+(z.fo()===!0?"d-":"")+"do you think you are "
-O.t(y+(z.fo()===!0?"d-":"")+'doing here, Gorilla?" ')}},yA:{"^":"a:0;a",
+O.t(y+(z.fo()===!0?"d-":"")+'doing here, Gorilla?" ')}},yB:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y=z.cn
@@ -816,23 +816,23 @@ z.y1=!0
 $.$get$b_().aU(0,1,"setting boundaries")
 y=z.dF
 z=z.a9
-J.eZ(y,S.dF([z.d,z.b]))}},yL:{"^":"a:0;a",
-$0:function(){O.t('"You are the acting captain of the ship now," the Bodega continues matter-of-factly. "Probably not for long, of course. But to follow the protocol, I will henceforth call you Captain '+H.d(this.a.bM)+". It is understood that my Oath"+E.bz("oathFirstExpl")+' now transfers to you." ')}},yW:{"^":"a:0;a",
-$0:function(){return'"Yes, call me Captain '+H.d(this.a.bM)+'." '}},z6:{"^":"a:0;a",
+J.eZ(y,S.dF([z.d,z.b]))}},yM:{"^":"a:0;a",
+$0:function(){O.t('"You are the acting captain of the ship now," the Bodega continues matter-of-factly. "Probably not for long, of course. But to follow the protocol, I will henceforth call you Captain '+H.d(this.a.bM)+". It is understood that my Oath"+E.bz("oathFirstExpl")+' now transfers to you." ')}},yX:{"^":"a:0;a",
+$0:function(){return'"Yes, call me Captain '+H.d(this.a.bM)+'." '}},z7:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 z.eq="Acting Captain"
 y=z.dB
 if(typeof y!=="number")return y.I()
-z.dB=y+1}},zh:{"^":"a:0;a",
-$0:function(){return'"Just call me '+H.d(this.a.bM)+', no need for formalities." '}},zs:{"^":"a:0;a",
-$0:function(){this.a.eq=""}},zD:{"^":"a:0;a",
+z.dB=y+1}},zi:{"^":"a:0;a",
+$0:function(){return'"Just call me '+H.d(this.a.bM)+', no need for formalities." '}},zt:{"^":"a:0;a",
+$0:function(){this.a.eq=""}},zE:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y="While the captain"+(z.cy===!0?", the senior engineer and you":" and the engineers")+" were starting to patch up the drive, the rest of the crew were busy getting sick. One by one. The ship's medic"
 z=z.db===!0
 y=y+(z?", your boss,":"")+" was one of the first to go. ("
-O.t(y+(z?"Although he was much more experienced than you were, he also":"Although he was an experienced medic, he")+" didn't appear to have any idea about what was going on anyway. He was as scared and angry and clueless as anyone else.)")}},zP:{"^":"a:0;a",
+O.t(y+(z?"Although he was much more experienced than you were, he also":"Although he was an experienced medic, he")+" didn't appear to have any idea about what was going on anyway. He was as scared and angry and clueless as anyone else.)")}},zQ:{"^":"a:0;a",
 $0:function(){var z,y,x
 z=this.a
 y=z.fx
@@ -844,23 +844,23 @@ x=z.fy
 y=z.fr
 if(typeof y!=="number")return y.C()
 x.sU(0,y-2)
-z.fy.sbv(0,!0)}},A_:{"^":"a:0;a",
+z.fy.sbv(0,!0)}},A0:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y=z.fx
 y='<p class="meta">You still have <em>some</em> spare energy in you, represented by your <strong>physical pool</strong> (currently <em>'+H.d(y.kk(y.f))+"</em>) and your <strong>mental pool</strong> (currently <em>"
 z=z.fy
-O.t(y+H.d(z.kk(z.f))+"</em>). Spending these points will let you put in an extra effort to increase your chances at different tasks. Both points are normally replenished by sleep and their maximum value varies based on your role.</p>")}},Aa:{"^":"a:0;a",
-$0:function(){O.t("The captain was able to finish the repairs of the hyperdrive (with your "+(this.a.cy===!0?"":"modest")+" help) a few hours before he died, but now that it's back online, Bodega needs to compute the jump."+E.bz("computeUnityJump")+" Before that's done, you, Gorilla and the whole ship are sitting ducks.")}},Al:{"^":"a:0;a",
-$0:function(){this.a.dC.sbv(0,!0)}},Aw:{"^":"a:0;a",
-$0:function(){O.t("There's only "+H.d(this.a.fQ())+" before the hyperjump parameters are ready, so you decide to wait on the bridge. You sit down and contemplate trying to sleep but soon realize the adrenaline from the Messenger encounter won't let you.")}},AH:{"^":"a:0;a",
+O.t(y+H.d(z.kk(z.f))+"</em>). Spending these points will let you put in an extra effort to increase your chances at different tasks. Both points are normally replenished by sleep and their maximum value varies based on your role.</p>")}},Ab:{"^":"a:0;a",
+$0:function(){O.t("The captain was able to finish the repairs of the hyperdrive (with your "+(this.a.cy===!0?"":"modest")+" help) a few hours before he died, but now that it's back online, Bodega needs to compute the jump."+E.bz("computeUnityJump")+" Before that's done, you, Gorilla and the whole ship are sitting ducks.")}},Am:{"^":"a:0;a",
+$0:function(){this.a.dC.sbv(0,!0)}},Ax:{"^":"a:0;a",
+$0:function(){O.t("There's only "+H.d(this.a.fQ())+" before the hyperjump parameters are ready, so you decide to wait on the bridge. You sit down and contemplate trying to sleep but soon realize the adrenaline from the Messenger encounter won't let you.")}},AI:{"^":"a:0;a",
 $0:function(){var z,y,x
 z=this.a.E
 y=J.k(z)
 x=y.geB(z).gb2()
 if(typeof x!=="number")return H.n(x)
-y.i2(z,473-x,!1,"you are gazing")}},AS:{"^":"a:0;a",
-$0:function(){O.t("You slouch into the captain's seat and check the time. You should be ready for the jump in "+H.d(this.a.fQ())+". Your eye lids get heavy and you realize that \u2013 by now \u2013 there is no way you can fight this. Soon, the captain's seat feels like the most comfortable bed ever. You drift off to sleep.")}},B2:{"^":"a:0;",
+y.i1(z,473-x,!1,"you are gazing")}},AT:{"^":"a:0;a",
+$0:function(){O.t("You slouch into the captain's seat and check the time. You should be ready for the jump in "+H.d(this.a.fQ())+". Your eye lids get heavy and you realize that \u2013 by now \u2013 there is no way you can fight this. Soon, the captain's seat feels like the most comfortable bed ever. You drift off to sleep.")}},B3:{"^":"a:0;",
 $0:function(){}},Bd:{"^":"a:0;",
 $0:function(){O.t("Father, with blood on his hands and upper torso, and a huge grin. Mother, with crazy eyes and lipstick all over her face. Her expression a horrid struggle between paternal love and the effects of Vitamin."+E.bz("vitamin"))}},Be:{"^":"a:0;a",
 $0:function(){var z=this.a
@@ -885,19 +885,19 @@ z.dE.sb2(460)
 z.dC.sU(0,z.dE.gb2())}},Bi:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.dF.fm(z.a9.dy))O.t("Gorilla, which has been silently sitting on the ground to your left until now, starts hissing through clenched teeth, eyes wide open. It rocks back and forth, visibly disturbed.\n")}},Bj:{"^":"a:0;a",
-$0:function(){O.b0('"What are you doing? What is happening here?"',!1,!1,null,null,null).f=new N.xO()
-O.b0("Watch what he's doing with the controls",!1,!1,null,null,null).f=new N.xP()
+$0:function(){O.b0('"What are you doing? What is happening here?"',!1,!1,null,null,null).f=new N.xP()
+O.b0("Watch what he's doing with the controls",!1,!1,null,null,null).f=new N.xQ()
 var z=this.a
-if(z.f6===!0)O.b0("Use the repaired scanner",!1,!1,null,null,null).f=new N.xQ()
-if(!z.cx.b.i(0,"shield").gu6())O.b0("Shields up",!1,!1,null,null,null).f=new N.xR(z)
-O.b0("Fire",!1,!1,null,null,null).f=new N.xS(z)}},xO:{"^":"a:0;",
-$0:function(){return O.t("He doesn't respond.")}},xP:{"^":"a:0;",
-$0:function(){return O.t("It takes a while, but you realize he's probably putting his ship into combat mode.")}},xQ:{"^":"a:0;",
-$0:function(){return O.t("You perform a quick scan of the Messenger. Its energy output is increasing rapidly and a variety of systems are coming alive. Chief among those are the two nose-mounted laser guns. It's beyond doubt that the Messenger is going into full combat mode.")}},xR:{"^":"a:0;a",
+if(z.f6===!0)O.b0("Use the repaired scanner",!1,!1,null,null,null).f=new N.xR()
+if(!z.cx.b.i(0,"shield").gu6())O.b0("Shields up",!1,!1,null,null,null).f=new N.xS(z)
+O.b0("Fire",!1,!1,null,null,null).f=new N.xT(z)}},xP:{"^":"a:0;",
+$0:function(){return O.t("He doesn't respond.")}},xQ:{"^":"a:0;",
+$0:function(){return O.t("It takes a while, but you realize he's probably putting his ship into combat mode.")}},xR:{"^":"a:0;",
+$0:function(){return O.t("You perform a quick scan of the Messenger. Its energy output is increasing rapidly and a variety of systems are coming alive. Chief among those are the two nose-mounted laser guns. It's beyond doubt that the Messenger is going into full combat mode.")}},xS:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a.cx.b.i(0,"shield").grR()
 y=z.e
-z.oX(z,C.e.d8(y+0.78*(z.f-y)))}},xS:{"^":"a:0;a",
+z.oX(z,C.e.d8(y+0.78*(z.f-y)))}},xT:{"^":"a:0;a",
 $0:function(){var z,y
 O.t("You take the laser controls, quickly aim at the Messanger and fire.\n")
 if(S.c8(0.6)){z=this.a.f8.cy.Q
@@ -927,7 +927,7 @@ if(!y.z)if(!y.y)O.t('You suddenly realize that one of those pieces of debris is 
 else O.t("The Messenger's unidentified object goes straight for the Bodega's hull and crashes itself somewhere into the right side of the cargo bay.\n\n\"Hull breach,\" the Bodega says.\n")
 z.a9.fr.cy=!0}},Bt:{"^":"a:0;a",
 $0:function(){O.t("You look at the readings around you. The hull is at "+C.e.aL(this.a.cS.cy.Q.gfA()*100)+"% structural integrity. The Bodega is holding together, but it did take _some_ damage.")}},Bu:{"^":"a:0;a",
-$0:function(){O.t('The Bodega is now running a full system check, all the monitors flicker with information so fast only a computer could make anything of it. "What the _hell_ is happening?" the ship says, her voice glitching. "How does one go from a fully manned, well-preserved, licensed cargo ship to a _ghost_ ship piloted by an untrained '+H.d(this.a.fR(""))+' _while_ being attacked by a corporate runner for no apparent reason whatsoever \u2013 all of that in just two weeks!?" ')}},Bv:{"^":"a:0;",
+$0:function(){O.t('The Bodega is now running a full system check, all the monitors flicker with information so fast only a computer could make anything of it. "What the _hell_ is happening?" the ship says, her voice glitching. "How does one go from a fully manned, well-preserved, licensed cargo ship to a _ghost_ ship piloted by an untrained '+H.d(this.a.ia(""))+' _while_ being attacked by a corporate runner for no apparent reason whatsoever \u2013 all of that in just two weeks!?" ')}},Bv:{"^":"a:0;",
 $0:function(){return'"We survived, didn\'t we?" '}},Bw:{"^":"a:0;",
 $0:function(){O.t('"Well," she replies. "That\'s rich coming from someone who is probably going to die in a couple of hours." You wish you had something to reply to that, but you don\'t.\n')}},Bx:{"^":"a:0;",
 $0:function(){return'"When misery rains, it pours." '}},By:{"^":"a:0;a",
@@ -984,10 +984,10 @@ z.a9.k2.cy=!0}},C8:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.cy===!0)O.t("Even as you set out to repair the scanner, you can already guess the problem will have something to do with energy input. You remember the captain telling you something in that vein a few weeks ago \u2013 the feed from the scanner was up and down, intermittently.\n\nYour knowledge of power networks (you're a machinist after all) should allow you to find the culprit sooner or later. But maybe there's a shortcut that could save you some time.\n")
 else O.t("After a little bit of poking around and looking at the feed from the scanner, you realize  the scanner itself probably works fine, but it doesn't get enough energy from the network. Or it does, but only intermittently.\n\nWhat probably follows is a lot of trial and error. But maybe there's a shortcut that could save you some time.\n")
-z.a9.mA("Try things one after another (slow but proven way)",new N.y_(z),"Think hard first",0,1,new N.xN(z))}},y_:{"^":"a:0;a",
+z.a9.mA("Try things one after another (slow but proven way)",new N.y0(z),"Think hard first",0,1,new N.xO(z))}},y0:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.bC(z.E,C.l.aL(92/z.a9.bZ(z.cy)),!1,!1,"you are trying out one thing after another")
-O.t("It takes time, but you find the culprit: it's the transformer. It's completely finished.\n")}},xN:{"^":"a:0;a",
+O.t("It takes time, but you find the culprit: it's the transformer. It's completely finished.\n")}},xO:{"^":"a:0;a",
 $0:function(){O.t("You decide you could find the faulty component by the amount of ozone you can smell in different parts of the system. If there's an electrical arc somewhere (and, judging by the intermittent power, there is), it should be relatively easy to find it by smell.\n")
 var z=this.a
 J.bC(z.E,C.l.aL(32/z.a9.bZ(z.cy)),!1,!1,"you are carefully putting your nose to different parts of the system")
@@ -1017,199 +1017,198 @@ $0:function(){this.a.a9.z.f=!0}},Cp:{"^":"a:0;a",
 $0:function(){J.as(this.a.E,1)}},Cq:{"^":"a:0;a",
 $0:function(){this.a.E.aw()}},Cr:{"^":"a:0;a",
 $0:function(){this.a.a9.y.f=!0}},Cs:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},y4:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},y5:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},y6:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},y7:{"^":"a:0;a",
-$0:function(){O.t("In the last few days \u2013 after it was clear it's too late for quarantine \u2013 at least three or four crewmembers died here on their beds. "+(this.a.db===!0?"As the assistant medic, you personally moved each one from here to the airlock.":"You remember helping the medic move one of them from here to the airlock."))}},y8:{"^":"a:0;a",
-$0:function(){O.t("It's Mwenye's locker. He was an ablebodied spaceman"+(this.a.dx===!0?" like you":"")+" and spent most of his time in the cargo bay. There was always a lot of work in the cargo bay.")}},y9:{"^":"a:0;",
-$0:function(){O.t("The whole inside of Mwenye's locker's door is covered with the African League flag. He was born on Ejeta, an African League space station, and was an avid citizen until his death. This shows even from his abandoned locker \u2013 there are African League pins, an ornamental League calendar with important dates and holidays, some clothes in national colors, and on the top shelf, his passport is propped against the locker's back wall, on display. You sift through the rest of late Mwenye's belongings, and there is nothing of immediate value. You find Mwenye's credits ring,"+E.bz("creditsRing")+" but there's no way of getting the money out of it without contacting the issuing bank about his death. So you just make a mental note of its existence and move on.")}},ya:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},y5:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},y6:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},y7:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},y8:{"^":"a:0;a",
+$0:function(){O.t("In the last few days \u2013 after it was clear it's too late for quarantine \u2013 at least three or four crewmembers died here on their beds. "+(this.a.db===!0?"As the assistant medic, you personally moved each one from here to the airlock.":"You remember helping the medic move one of them from here to the airlock."))}},y9:{"^":"a:0;a",
+$0:function(){O.t("It's Mwenye's locker. He was an ablebodied spaceman"+(this.a.dx===!0?" like you":"")+" and spent most of his time in the cargo bay. There was always a lot of work in the cargo bay.")}},ya:{"^":"a:0;",
+$0:function(){O.t("The whole inside of Mwenye's locker's door is covered with the African League flag. He was born on Ejeta, an African League space station, and was an avid citizen until his death. This shows even from his abandoned locker \u2013 there are African League pins, an ornamental League calendar with important dates and holidays, some clothes in national colors, and on the top shelf, his passport is propped against the locker's back wall, on display. You sift through the rest of late Mwenye's belongings, and there is nothing of immediate value. You find Mwenye's credits ring,"+E.bz("creditsRing")+" but there's no way of getting the money out of it without contacting the issuing bank about his death. So you just make a mental note of its existence and move on.")}},yb:{"^":"a:0;a",
 $0:function(){var z=this.a
-J.om(z.E,C.l.aL(15/z.a9.bZ(!1)),!1,"you are searching for another locker to open")}},yb:{"^":"a:0;a",
+J.om(z.E,C.l.aL(15/z.a9.bZ(!1)),!1,"you are searching for another locker to open")}},yc:{"^":"a:0;a",
 $0:function(){var z=this.a
-J.bC(z.E,C.l.aL(15/z.a9.bZ(!1)),!1,!1,"you are checking the few remaining lockers")}},yc:{"^":"a:0;",
-$0:function(){O.t("On the bottom-most shelf, you find 2 vials of white crystal powder, hidden under a piece of textile. The bullet-like shape of the vials is unmistakable \u2013 this is shabu."+E.bz("shabu")+" Mitsuyo is _the_ last person on the ship that anyone would suspect of using drugs. But, looking back, this might  explain the merciless pace of work that she was known for, and the occasional episodes of being completely withdrawn. You always thought she's just recharging by being alone \u2013 which you could completely understand \u2013 but it turns out it most probably was withdrawal symptom. This also explains why you have never seen Mitsuyo drunk, although her personal locker is full of empty bottles.")}},yd:{"^":"a:0;a",
+J.bC(z.E,C.l.aL(15/z.a9.bZ(!1)),!1,!1,"you are checking the few remaining lockers")}},yd:{"^":"a:0;",
+$0:function(){O.t("On the bottom-most shelf, you find 2 vials of white crystal powder, hidden under a piece of textile. The bullet-like shape of the vials is unmistakable \u2013 this is shabu."+E.bz("shabu")+" Mitsuyo is _the_ last person on the ship that anyone would suspect of using drugs. But, looking back, this might  explain the merciless pace of work that she was known for, and the occasional episodes of being completely withdrawn. You always thought she's just recharging by being alone \u2013 which you could completely understand \u2013 but it turns out it most probably was withdrawal symptom. This also explains why you have never seen Mitsuyo drunk, although her personal locker is full of empty bottles.")}},ye:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.a9.x.f=!0
 $.$get$b_().aU(0,5,"getting to know your assets")
-z.hC=!0}},yf:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yg:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yh:{"^":"a:0;a",
+z.hB=!0}},yg:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yh:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yi:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.du!==!0){O.t("The corridor curves here, and at the point of the bend there are two doors. The smaller one leads to the 'guts' of the ship \u2013 a noisy maze of passageways and ducts winding between many of the ship's smaller internal systems. The bigger one leads to the engine room, and, through that, also the hyperdrive.\n\nThis is the final stretch of Corridor Left \u2013 you can almost see the door to the cargo bay from here.\n\nBecause of the two doors to important parts of the ship, and the proximity to the cargo bay, this place has been called 'left junction' by the crew.\n")
-z.du=!0}else O.t("The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here \u2013 the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.\n")}},yi:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yj:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yk:{"^":"a:0;a",
+z.du=!0}else O.t("The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here \u2013 the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.\n")}},yj:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yk:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yl:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.js(z.E,1,!1,!1)
-z.a9.r.cy=!0}},yl:{"^":"a:0;a",
-$0:function(){O.t("You cautiously open the turret's panel: the inside is a mess. A pair of loose, sparkling cables has burned through a few others and they now seem to be short-circuiting into "+(this.a.cy===!0?"the control unit":"one of the components")+". This will be fun.")}},ym:{"^":"a:0;a",
-$0:function(){O.t("You "+(this.a.cy===!0?"":"manage to ")+"kill the power and start going methodically through the inside of the turret's base, system by system, component by component. The turret was unlucky \u2013 almost everything has been dealt _some_ damage. Fortunately, though, the weapon was made with maintainability in mind: the components are either easy to repair or standard enough that you are able to find spare ones on the ship.")}},yn:{"^":"a:0;a",
+z.a9.r.cy=!0}},ym:{"^":"a:0;a",
+$0:function(){O.t("You cautiously open the turret's panel: the inside is a mess. A pair of loose, sparkling cables has burned through a few others and they now seem to be short-circuiting into "+(this.a.cy===!0?"the control unit":"one of the components")+". This will be fun.")}},yn:{"^":"a:0;a",
+$0:function(){O.t("You "+(this.a.cy===!0?"":"manage to ")+"kill the power and start going methodically through the inside of the turret's base, system by system, component by component. The turret was unlucky \u2013 almost everything has been dealt _some_ damage. Fortunately, though, the weapon was made with maintainability in mind: the components are either easy to repair or standard enough that you are able to find spare ones on the ship.")}},yo:{"^":"a:0;a",
 $0:function(){var z=this.a
-z.a9.mA("Work in a normal pace and walk for spare parts",new N.xY(z),"Work hard and run for spare parts",1,0,new N.xZ(z))}},xY:{"^":"a:0;a",
+z.a9.mA("Work in a normal pace and walk for spare parts",new N.xZ(z),"Work hard and run for spare parts",1,0,new N.y_(z))}},xZ:{"^":"a:0;a",
 $0:function(){var z=this.a
-J.bC(z.E,C.l.aL(47/z.a9.bZ(z.cy)),!1,!1,"you are repairing")}},xZ:{"^":"a:0;a",
+J.bC(z.E,C.l.aL(47/z.a9.bZ(z.cy)),!1,!1,"you are repairing")}},y_:{"^":"a:0;a",
 $0:function(){var z=this.a
-J.bC(z.E,C.l.aL(27/z.a9.bZ(z.cy)),!1,!1,"you are frantically repairing")}},yo:{"^":"a:0;a",
-$0:function(){this.a.cS.id.sc3(!1)}},yq:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yr:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},ys:{"^":"a:0;a",
+J.bC(z.E,C.l.aL(27/z.a9.bZ(z.cy)),!1,!1,"you are frantically repairing")}},yp:{"^":"a:0;a",
+$0:function(){this.a.cS.id.sc3(!1)}},yr:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},ys:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yt:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a.cy===!0
 y="No matter how filthy the rest of the ship could get, this room was always perfectly clean. That's because officer Par Nabiyeva, the Senior Engineer"+(z?" and your boss":"")+", insisted on it. She would force "
-O.t(y+(z?"you":"her assistant")+" and Gorilla to brush the whole room, _including the ceiling_, almost every single day.")}},yt:{"^":"a:0;a",
-$0:function(){O.t("Even apart from the cleanliness, the engine room is a remarkable sight. Clusters of glistening, color-coded cables and pipes are running everywhere. There are four sturdy, functional terminals in different parts of the room. And at the head of the room, there is a huge window through which you can see both the generators and the hyperdrive in one spacious machine room. It's where you spent the last few days "+(this.a.cy===!0?"finalizing repairs to the hyperdrive with Captain Kay":"helping Captain Kay finalize repairs to the hyperdrive")+".")}},yu:{"^":"a:0;a",
+O.t(y+(z?"you":"her assistant")+" and Gorilla to brush the whole room, _including the ceiling_, almost every single day.")}},yu:{"^":"a:0;a",
+$0:function(){O.t("Even apart from the cleanliness, the engine room is a remarkable sight. Clusters of glistening, color-coded cables and pipes are running everywhere. There are four sturdy, functional terminals in different parts of the room. And at the head of the room, there is a huge window through which you can see both the generators and the hyperdrive in one spacious machine room. It's where you spent the last few days "+(this.a.cy===!0?"finalizing repairs to the hyperdrive with Captain Kay":"helping Captain Kay finalize repairs to the hyperdrive")+".")}},yv:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y="The generators take up the left part of the machine room. They are where the power cells (or, 'the fuel' as "+(z.cy===!0?"you engineers call it":"the engineers call it")+") are consumed. It's a long line of 8 half-spheres, each of them as tall as a man. The power cells are inserted into them from above by enormous robotic arms, and when their capacity has been depleted, and their energy transfered to different parts of the ship, the robotic arms remove them again and put them into a receptacle at the center of the machine room. There are "+H.d(z.fb)+" power cells available, and it looks like "
-O.t(y+H.d(J.h(z.er.f,z.fb)?"all":z.er.f)+" of them are currently charged.")}},yv:{"^":"a:0;a",
-$0:function(){this.a.er.sbv(0,!0)}},yw:{"^":"a:0;a",
-$0:function(){if(this.a.cy===!0);}},yx:{"^":"a:0;a",
+O.t(y+H.d(J.h(z.er.f,z.fb)?"all":z.er.f)+" of them are currently charged.")}},yw:{"^":"a:0;a",
+$0:function(){this.a.er.sbv(0,!0)}},yx:{"^":"a:0;a",
+$0:function(){if(this.a.cy===!0);}},yy:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(J.Y(J.e3(J.e5(z.E).gb2(),60),3)&&J.eS(J.e5(z.E).gb2(),96)){O.t("You start going through the usual output optimization routines, but you can't focus on any of it. After trying for a couple of minutes, you realize you could do more damage than good, and return back to the bridge.\n")
-$.aK="Bridge: Nap"}}},yy:{"^":"a:0;a",
+$.aK="Bridge: Nap"}}},yz:{"^":"a:0;a",
 $0:function(){var z=this.a
-J.bC(z.E,C.l.aL(180/z.a9.bZ(!0)),!1,!1,"you are checking the third core")}},yz:{"^":"a:0;a",
+J.bC(z.E,C.l.aL(180/z.a9.bZ(!0)),!1,!1,"you are checking the third core")}},yA:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y=z.cS.dx.Q
 y.sU(0,y.f)
 $.$get$b_().aU(0,2,"doing what you know best")
-if(J.eS(J.e5(z.E).gb2(),96))z.k5()}},yB:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yC:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yD:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yE:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yF:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yG:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yH:{"^":"a:0;a",
-$0:function(){O.t("You are at Airlock Right, which has been serving as the place of funerals lately. "+(this.a.x1===!0?"Not long ago, you ejected captain's body from here to outers space.":"This is where you left the captain's body."))}},yI:{"^":"a:0;a",
+if(J.eS(J.e5(z.E).gb2(),96))z.k5()}},yC:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yD:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yE:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yF:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yG:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yH:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yI:{"^":"a:0;a",
+$0:function(){O.t("You are at Airlock Right, which has been serving as the place of funerals lately. "+(this.a.x1===!0?"Not long ago, you ejected captain's body from here to outers space.":"This is where you left the captain's body."))}},yJ:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.x1===!0)if(z.dw===!0)O.t("The weird visual effect of the hyperjump makes it look like it's blindingly bright outside, but you know these are photons from stars light years ahead. The space around the ship is completely empty, looking almost sinister. As if it's waiting for you to fill it.\n")
 else O.t("The space around the ship is completely empty, looking almost sinister. As if it's waiting for you to fill it.\n")
 else{O.t("The captain's body is still lying there on a blanket. It looks like the weird red rash is continuing to spread across the naked skin.\n")
-z.a9.e.cy=!0}}},yJ:{"^":"a:0;",
+z.a9.e.cy=!0}}},yK:{"^":"a:0;",
 $0:function(){if(S.c8(0.5))O.t("It hits the doorsill on its way out, goes through the door, and starts receding into space while slowly rotating.\n")
-else O.t("It hits the doorsill on its way out and almost stops, hanging midway between the inside and outside. For a while, it almost looks like you'll have to close that outside door and reopen it again, which would cut the captain's body in half. But fortunately, the movement never stops completely, and the body goes through the door and starts slowly receding into space.\n")}},yK:{"^":"a:0;a",
-$0:function(){this.a.x1=!0}},yM:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yN:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yO:{"^":"a:0;a",
+else O.t("It hits the doorsill on its way out and almost stops, hanging midway between the inside and outside. For a while, it almost looks like you'll have to close that outside door and reopen it again, which would cut the captain's body in half. But fortunately, the movement never stops completely, and the body goes through the door and starts slowly receding into space.\n")}},yL:{"^":"a:0;a",
+$0:function(){this.a.x1=!0}},yN:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yO:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yP:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a.db===!0
 y=(z?"This is the place where you had been spending most of your waking hours on this ship. ":"")+"The room is white and green. There are mobile beds in the middle with an infusion stand next to each of them. A third bed is behind glass in a small quarantine cell in the corner. That is where the first few crewmembers died, including "
-O.t(y+(z?"your boss, ":"")+"the Senior Medic. After that it was clear the the quarantine doesn't do any good, and that everyone is already sick anyway.")}},yP:{"^":"a:0;",
-$0:function(){O.t("You remember a visitor \u2013 some kind of a rich planetborn"+E.bz("planetborn")+' who was apparently interested in buying the Bodega from captain Kay \u2013 wondering about the size of the med bay. "Seems so me that a medical establishment of this size," he said, "is a little bit of a, hmm, overkill? For a ship with a crew of a dozen, I mean." His name was Trukhin. Roman Trukhin. He was a Russian with large eyebrows and very traditional clothing. His blue tie was a subject of jokes for weeks to come.')}},yQ:{"^":"a:0;a",
-$0:function(){O.t('"What Mr. Trukhin might not realize," '+(this.a.db===!0?"your boss":"the Senior Medic")+" answered with as much politeness as he could muster, \"is that space is a dangerous place, and that humans aren't particularly well-adapted to live in it. Especially not for long periods of time. There are many illnesses that space dwellers suffer that people on planets don't.\" And he wasn't talking only about physical illnesses, neither. A ship's medic needs to be also trained in psychology. \"The medbay is exactly as big as most nations' regulations require it to be,\" he added.")}},yR:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yS:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yT:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yU:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yV:{"^":"a:0;a",
+O.t(y+(z?"your boss, ":"")+"the Senior Medic. After that it was clear the the quarantine doesn't do any good, and that everyone is already sick anyway.")}},yQ:{"^":"a:0;",
+$0:function(){O.t("You remember a visitor \u2013 some kind of a rich planetborn"+E.bz("planetborn")+' who was apparently interested in buying the Bodega from captain Kay \u2013 wondering about the size of the med bay. "Seems so me that a medical establishment of this size," he said, "is a little bit of a, hmm, overkill? For a ship with a crew of a dozen, I mean." His name was Trukhin. Roman Trukhin. He was a Russian with large eyebrows and very traditional clothing. His blue tie was a subject of jokes for weeks to come.')}},yR:{"^":"a:0;a",
+$0:function(){O.t('"What Mr. Trukhin might not realize," '+(this.a.db===!0?"your boss":"the Senior Medic")+" answered with as much politeness as he could muster, \"is that space is a dangerous place, and that humans aren't particularly well-adapted to live in it. Especially not for long periods of time. There are many illnesses that space dwellers suffer that people on planets don't.\" And he wasn't talking only about physical illnesses, neither. A ship's medic needs to be also trained in psychology. \"The medbay is exactly as big as most nations' regulations require it to be,\" he added.")}},yS:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yT:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yU:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yV:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},yW:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.du!==!0){O.t("The corridor curves here, and at the point of the bend there are two doors. The smaller one leads to the 'guts' of the ship \u2013 a noisy maze of passageways and ducts winding between many of the ship's smaller internal systems. The bigger one leads to the engine room, and, through that, also the hyperdrive.\n\nThis is the final stretch of Corridor Right \u2013 you can almost see the door to the cargo bay from here.\n\nBecause of the two doors to important parts of the ship, and the proximity to the cargo bay, this place has been called 'right junction' by the crew.\n")
-z.du=!0}else O.t("The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here \u2013 the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.\n")}},yX:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},yY:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},yZ:{"^":"a:0;a",
+z.du=!0}else O.t("The corridor curves here in much the same way as it does on the opposite side of the ship. There are two doors here \u2013 the smaller one leads to the 'guts' of the ship, the bigger one leads to the engine room.\n")}},yY:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},yZ:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},z_:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.dv!==!0){O.t("You are standing in a corner of a huge, _huge_ space filled with hundreds of freight containers. Each of them is exactly the same size (6 meters long, 2\xbd meters high and 2\xbd meters wide), but they do differ greatly in color, signage, age \u2013 and contents. They are stacked inside long parallel racks that go all the way to the backside of the cargo bay, and all the way down to the bottom of the space.\n\nThere are long, narrow corridors between the racks \u2013 so that the crew can access each container to help with unloading, check on a container's status, contain leaks. The corridors' floors are nothing more than sheets of perforated steel fixed in between the racks. They are sturdy, replacable, and see-through.\n\n[IMG of cargo bay]\n\nTwo things hit you every time you enter the cargo bay. First, the cold and damp air. The cargo bay is heated _just_ enough so that people can work here for hours \u2013 but not even a degree more. Second, and more profoundly, the artificial gravity here is set to a very low value: only 20% of the standard. The moment you pass the threshold of the cargo bay door, you feel your stomach jump and you have to fight a brief sensation of falling. It's like the whole ship went into an instant dive. Luckily, your brain has learnt to deal with this and in a few seconds, you feel okay. The next step is to start walking and moving in a way that doesn't launch you to the ceiling, but again - you've had enough experience that it comes naturally now.\n\nYou remember a brief stint a few years back at a cargo ship called the Bleeding Edge. Her captain insisted on having _no_ artificial gravity in the cargo bay at all. So the ship saved a little more energy, but the work in the cargo bay was hell. Nothing stayed in place, and every simple thing required much more planning and energy. The spacemen that served on the Bleeding Edge's cargo bay for more than a few years were going mad and sickly. They couldn't even stand straight in normal gravity, and their bones broke too easily. It was evil \u2013 not to mention against regulations. Luckily, you left the Bleeding Edge a few months after joining.\n\nHaving that experience makes the 20% gravity here feel almost like a luxury, especially since anyone working in the cargo bay could directly change the gravity setting himself \u2013 on the console right here in the bay. On the other hand, almost nobody ever took advantage of that. They knew how expensive \u2013 energy wise \u2013 it can get, and they were mostly used to the idea of low gravity by the time they joined the Bodega.\n")
-z.dv=!0}else O.t("You are on the left side of the cargo bay, near the door to Corridor Left.\n")}},z_:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},z0:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},z1:{"^":"a:0;a",
-$0:function(){J.bC(this.a.E,30,!1,!1,"you are searching")}},z2:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},z3:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},z4:{"^":"a:0;a",
-$0:function(){O.t("It's a sturdy computer interface with huge buttons and a reinforced screen. It's designed to be used by big hulks"+(this.a.dx===!0?" like you":"")+" with clumsy, gloved fingers, or even by enhanced gorillas.")}},z5:{"^":"a:0;a",
-$0:function(){if(this.a.e.gi5()!==!0)O.t("Although theoretically, the console allows the user to access any function of the Bodega's internal network, its main focus is on the operation of the cargo bay. There are big buttons for changing the artificial gravity of the whole space. There's a master-lock that fixes all the containers in the racks once they're in place. And there's a guarded switch that opens the cargo bay's outside doors which is only supposed to be used when everyone is either outside the bay or in a space suit.\n")}},z7:{"^":"a:0;a",
-$0:function(){O.t("The gravity is currently at "+H.d(this.a.c1)+"%.")}},z8:{"^":"a:0;a",
+z.dv=!0}else O.t("You are on the left side of the cargo bay, near the door to Corridor Left.\n")}},z0:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},z1:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},z2:{"^":"a:0;a",
+$0:function(){J.bC(this.a.E,30,!1,!1,"you are searching")}},z3:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},z4:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},z5:{"^":"a:0;a",
+$0:function(){O.t("It's a sturdy computer interface with huge buttons and a reinforced screen. It's designed to be used by big hulks"+(this.a.dx===!0?" like you":"")+" with clumsy, gloved fingers, or even by enhanced gorillas.")}},z6:{"^":"a:0;a",
+$0:function(){if(this.a.e.gi4()!==!0)O.t("Although theoretically, the console allows the user to access any function of the Bodega's internal network, its main focus is on the operation of the cargo bay. There are big buttons for changing the artificial gravity of the whole space. There's a master-lock that fixes all the containers in the racks once they're in place. And there's a guarded switch that opens the cargo bay's outside doors which is only supposed to be used when everyone is either outside the bay or in a space suit.\n")}},z8:{"^":"a:0;a",
+$0:function(){O.t("The gravity is currently at "+H.d(this.a.c1)+"%.")}},z9:{"^":"a:0;a",
 $0:function(){var z=this.a
-if(z.c1!==0)O.b0("Switch off artificial gravity",!1,!1,null,new N.xU(z),null)
-if(z.c1!==20)O.b0("Set artificial gravity to the ordinary (20%)",!1,!1,null,new N.xV(z),null)
-if(z.c1!==60)O.b0("Set artificial gravity to the max (60%)",!1,!1,null,new N.xW(z),null)
-O.b0("Leave it be.",!1,!1,null,new N.xX(),null)}},xU:{"^":"a:0;a",
+if(z.c1!==0)O.b0("Switch off artificial gravity",!1,!1,null,new N.xV(z),null)
+if(z.c1!==20)O.b0("Set artificial gravity to the ordinary (20%)",!1,!1,null,new N.xW(z),null)
+if(z.c1!==60)O.b0("Set artificial gravity to the max (60%)",!1,!1,null,new N.xX(z),null)
+O.b0("Leave it be.",!1,!1,null,new N.xY(),null)}},xV:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.c1=0
-J.as(z.E,1)}},xV:{"^":"a:0;a",
-$0:function(){var z=this.a
-z.c1=20
 J.as(z.E,1)}},xW:{"^":"a:0;a",
 $0:function(){var z=this.a
+z.c1=20
+J.as(z.E,1)}},xX:{"^":"a:0;a",
+$0:function(){var z=this.a
 z.c1=60
-J.as(z.E,1)}},xX:{"^":"a:0;",
-$0:function(){O.t("You back away from the console.\n")}},z9:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},za:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},zb:{"^":"a:0;a",
+J.as(z.E,1)}},xY:{"^":"a:0;",
+$0:function(){O.t("You back away from the console.\n")}},za:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},zb:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},zc:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.dv!==!0){O.t("You are standing in a corner of a huge, _huge_ space filled with hundreds of freight containers. Each of them is exactly the same size (6 meters long, 2\xbd meters high and 2\xbd meters wide), but they do differ greatly in color, signage, age \u2013 and contents. They are stacked inside long parallel racks that go all the way to the backside of the cargo bay, and all the way down to the bottom of the space.\n\nThere are long, narrow corridors between the racks \u2013 so that the crew can access each container to help with unloading, check on a container's status, contain leaks. The corridors' floors are nothing more than sheets of perforated steel fixed in between the racks. They are sturdy, replacable, and see-through.\n\n[IMG of cargo bay]\n\nTwo things hit you every time you enter the cargo bay. First, the cold and damp air. The cargo bay is heated _just_ enough so that people can work here for hours. Second, and more profoundly, the artificial gravity here is set to a very low value: only 20% of the standard. The moment you pass the threshold of the cargo bay door, you feel your stomach jump and you have to fight a brief sensation of falling. It's like the whole ship went into an instant dive. Luckily, your brain has learnt to deal with this and in a few seconds, you feel okay. The next step is to start walking and moving in a way that doesn't launch you to the ceiling, but again - you've had enough experience that it comes naturally now.\n\nYou remember a brief stint a few years back at a cargo ship called the Bleeding Edge. Her captain insisted on having _no_ artificial gravity in the cargo bay at all. So the ship saved a little more energy, but the work in the cargo bay was hell. Nothing stayed in place, and every simple thing required much more planning and energy. The spacemen that served on the Bleeding Edge's cargo bay for more than a few years were going mad and sickly. They couldn't even stand straight in normal gravity, and their bones broke too easily. It was evil \u2013 not to mention against regulations. You left the Bleeding Edge a few months after joining.\n\nHaving that experience makes the 20% gravity here feel almost like a luxury, especially since anyone working in the cargo bay could directly change the gravity setting himself \u2013 on the console right here in the bay. On the other hand, almost nobody ever took advantage of that. They knew how expensive \u2013 energy wise \u2013 it can get, and they were mostly used to the idea of low gravity by the time they joined the Bodega.\n")
-z.dv=!0}else O.t("You are on the right side of the cargo bay, near the door to Corridor Right.\n")}},zc:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},zd:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},ze:{"^":"a:0;a",
-$0:function(){J.as(this.a.E,1)}},zf:{"^":"a:0;a",
-$0:function(){this.a.E.aw()}},zg:{"^":"a:0;",
-$0:function(){return'"How?" '}},zi:{"^":"a:0;a",
+z.dv=!0}else O.t("You are on the right side of the cargo bay, near the door to Corridor Right.\n")}},zd:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},ze:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},zf:{"^":"a:0;a",
+$0:function(){J.as(this.a.E,1)}},zg:{"^":"a:0;a",
+$0:function(){this.a.E.aw()}},zh:{"^":"a:0;",
+$0:function(){return'"How?" '}},zj:{"^":"a:0;a",
 $0:function(){if(J.e4(this.a.c2)){O.t("There are no more questions to ask right now.\n")
-$.aK="Explore: Bridge"}}},zj:{"^":"a:0;a",
+$.aK="Explore: Bridge"}}},zk:{"^":"a:0;a",
 $0:function(){var z=P.i(["Unity",'"Tell me about Space Station Unity."',"UNSA",'"What\'s UNSA?"',"Explosion",'"What do you know about the explosion?"'])
-J.b6(this.a.c2,new N.xM(z))
-O.b0("Stop asking",!1,!1,null,new N.xT(),null)}},xM:{"^":"a:9;a",
-$1:function(a){O.b0(this.a.i(0,a),!1,!1,a,null,null)}},xT:{"^":"a:0;",
+J.b6(this.a.c2,new N.xN(z))
+O.b0("Stop asking",!1,!1,null,new N.xU(),null)}},xN:{"^":"a:9;a",
+$1:function(a){O.b0(this.a.i(0,a),!1,!1,a,null,null)}},xU:{"^":"a:0;",
 $0:function(){O.t("There's nothing else you deem worth asking right now.\n")
-$.aK="Explore: Bridge"}},zk:{"^":"a:0;a",
-$0:function(){O.t("The Bodega pulls off the kind of a synthetic-sounding sigh that she likes to do whenever something annoys her. Which is very often. She says: \"Look, I know you're just a "+H.d(this.a.fR(""))+', but this is _basic_ astronomy. Space Station Unity is one of the big five. It also happens to be the closest hub with a major medical facility." ')}},zl:{"^":"a:0;a",
+$.aK="Explore: Bridge"}},zl:{"^":"a:0;a",
+$0:function(){O.t("The Bodega pulls off the kind of a synthetic-sounding sigh that she likes to do whenever something annoys her. Which is very often. She says: \"Look, I know you're just a "+H.d(this.a.ia(""))+', but this is _basic_ astronomy. Space Station Unity is one of the big five. It also happens to be the closest hub with a major medical facility." ')}},zm:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.bO(z.c2,"Unity")
 J.nX(z.c2,0,"UNSA")
-J.as(z.E,2)}},zm:{"^":"a:0;a",
+J.as(z.E,2)}},zn:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.bO(z.c2,"UNSA")
-J.as(z.E,1)}},zn:{"^":"a:0;a",
-$0:function(){O.t('"There\'s not much data about the explosion," the Bodega says. "It happened deep on the left side of the cargo bay during the jump from Space Station Golitsyn, exactly '+H.d(J.a2(this.a.dC.f,20736))+' minutes ago. The jump was immediatelly interrupted because of the shockwave." ')}},zo:{"^":"a:0;",
-$0:function(){return"Let the Bodega tell you all she had done [~5m]"}},zp:{"^":"a:0;a",
+J.as(z.E,1)}},zo:{"^":"a:0;a",
+$0:function(){O.t('"There\'s not much data about the explosion," the Bodega says. "It happened deep on the left side of the cargo bay during the jump from Space Station Golitsyn, exactly '+H.d(J.a2(this.a.dC.f,20736))+' minutes ago. The jump was immediatelly interrupted because of the shockwave." ')}},zp:{"^":"a:0;",
+$0:function(){return"Let the Bodega tell you all she had done [~5m]"}},zq:{"^":"a:0;a",
 $0:function(){O.t("The Bodega goes on for about 5 minutes, describing the different analyses she did for the investigation. You wait patiently until she gets to the results.\n")
-J.bC(this.a.E,5,!1,!1,"she is talking")}},zq:{"^":"a:0;",
-$0:function(){return'"Great. Are you going to tell me what they found out?" '}},zr:{"^":"a:0;a",
+J.bC(this.a.E,5,!1,!1,"she is talking")}},zr:{"^":"a:0;",
+$0:function(){return'"Great. Are you going to tell me what they found out?" '}},zs:{"^":"a:0;a",
 $0:function(){var z,y
 O.t('"Good grief! You _are_ a pain in the ass. No wonder people avoided you."\n\n"It\'s the other way around. I avoided people."\n\n"Whatever you say."\n')
 z=this.a
 y=z.bN
 if(typeof y!=="number")return y.C()
-z.bN=y-1}},zt:{"^":"a:0;a",
+z.bN=y-1}},zu:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.bO(z.c2,"Explosion")
-J.as(z.E,1)}},zu:{"^":"a:0;a",
-$0:function(){O.t("Dr. Eleanor Wells is there. She's no longer in a dim lit room, it's day at wherever she is right now. She raises her eyebrows"+(this.a.grH().as(0,-1)?" and smiles":"")+".")}},zv:{"^":"a:0;a",
-$0:function(){O.t("\"You're still weak "+(this.a.grH().as(0,-1)?"\u2013":"\u2013 at least I'll be spared of your brash language for once \u2013")+' but that will pass soon enough. You are through the rebuild phase now." ')}},zw:{"^":"a:0;",
-$0:function(){return"Raise eyebrows"}},zx:{"^":"a:0;",
+J.as(z.E,1)}},zv:{"^":"a:0;a",
+$0:function(){O.t("Dr. Eleanor Wells is there. She's no longer in a dim lit room, it's day at wherever she is right now. She raises her eyebrows"+(this.a.grH().as(0,-1)?" and smiles":"")+".")}},zw:{"^":"a:0;a",
+$0:function(){O.t("\"You're still weak "+(this.a.grH().as(0,-1)?"\u2013":"\u2013 at least I'll be spared of your brash language for once \u2013")+' but that will pass soon enough. You are through the rebuild phase now." ')}},zx:{"^":"a:0;",
 $0:function(){return"Raise eyebrows"}},zy:{"^":"a:0;",
-$0:function(){O.t(' "We had no data that would be indicative of what would happen. Nobody attempted anything close to this before. There were experiments with single cells or primitive organisms, but never with something as complex as a mouse, let alone a human. We spent almost a year trying to create a working model with some predictive accuracy. We never got there. Not even close. In the end, we had to get to the results experimentally. We were like the alchemists in the middle ages, but instead of the philosopher\'s stone, we were searching for something much more important." ')}},zz:{"^":"a:0;",
-$0:function(){return"Do nothing"}},zA:{"^":"a:0;",
-$0:function(){return"Nod"}},zB:{"^":"a:0;",
-$0:function(){return"Shake head"}},zC:{"^":"a:0;",
-$0:function(){return'"Who cares?" '}},zE:{"^":"a:0;",
-$0:function(){O.t('Something akin to "huh hrrrs" comes from inside of your throat. Dr. Wells waits for a second to see if you\'re going to continue, then she gets back to speaking.')}},zF:{"^":"a:0;",
-$0:function(){return"Listen"}},zG:{"^":"a:0;",
-$0:function(){return"Try to get up"}},zH:{"^":"a:0;",
-$0:function(){return'- "What exactly happened to me?" // Rescin works to counter any breakages - - "Why \'Rescin\'?"\n          - "Why did no one else survive?" // outer space\n          - "Why are you helping me?" // Pruitt will make a project out of you. I feel responsible\n          '}},zI:{"^":"a:0;",
-$0:function(){return"Try to stand up again"}},zJ:{"^":"a:0;",
-$0:function(){return'"So?" '}},zK:{"^":"a:0;",
-$0:function(){O.t(" \"They'll board the Bodega. They'll expect trouble, but I don't think they fully appreciate the effects  Rescin can have on a healthy body.\" ")}},zL:{"^":"a:0;",
-$0:function(){return'"Whatever." '}},zM:{"^":"a:0;",
-$0:function(){}},zN:{"^":"a:0;",
-$0:function(){}},zQ:{"^":"a:0;",
-$0:function(){return"You are the ship's:"}},zR:{"^":"a:0;",
-$0:function(){return"Assistant Engineer, skilled in electronics and machines"}},zS:{"^":"a:0;a",
+$0:function(){return"Raise eyebrows"}},zz:{"^":"a:0;",
+$0:function(){O.t(' "We had no data that would be indicative of what would happen. Nobody attempted anything close to this before. There were experiments with single cells or primitive organisms, but never with something as complex as a mouse, let alone a human. We spent almost a year trying to create a working model with some predictive accuracy. We never got there. Not even close. In the end, we had to get to the results experimentally. We were like the alchemists in the middle ages, but instead of the philosopher\'s stone, we were searching for something much more important." ')}},zA:{"^":"a:0;",
+$0:function(){return"Do nothing"}},zB:{"^":"a:0;",
+$0:function(){return"Nod"}},zC:{"^":"a:0;",
+$0:function(){return"Shake head"}},zD:{"^":"a:0;",
+$0:function(){return'"Who cares?" '}},zF:{"^":"a:0;",
+$0:function(){O.t('Something akin to "huh hrrrs" comes from inside of your throat. Dr. Wells waits for a second to see if you\'re going to continue, then she gets back to speaking.')}},zG:{"^":"a:0;",
+$0:function(){return"Listen"}},zH:{"^":"a:0;",
+$0:function(){return"Try to get up"}},zI:{"^":"a:0;",
+$0:function(){return'- "What exactly happened to me?" // Rescin works to counter any breakages - - "Why \'Rescin\'?"\n          - "Why did no one else survive?" // outer space\n          - "Why are you helping me?" // Pruitt will make a project out of you. I feel responsible\n          '}},zJ:{"^":"a:0;",
+$0:function(){return"Try to stand up again"}},zK:{"^":"a:0;",
+$0:function(){return'"So?" '}},zL:{"^":"a:0;",
+$0:function(){O.t(" \"They'll board the Bodega. They'll expect trouble, but I don't think they fully appreciate the effects  Rescin can have on a healthy body.\" ")}},zM:{"^":"a:0;",
+$0:function(){return'"Whatever." '}},zN:{"^":"a:0;",
+$0:function(){}},zO:{"^":"a:0;",
+$0:function(){}},zR:{"^":"a:0;",
+$0:function(){return"You are the ship's:"}},zS:{"^":"a:0;",
+$0:function(){return"Assistant Engineer, skilled in electronics and machines"}},zT:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.cy=!0
 z.dy=3
-z.fr=3}},zT:{"^":"a:0;",
-$0:function(){return"Assistant Medic, skilled in biology and health"}},zU:{"^":"a:0;a",
+z.fr=3}},zU:{"^":"a:0;",
+$0:function(){return"Assistant Medic, skilled in biology and health"}},zV:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.fr=4
-z.db=!0}},zV:{"^":"a:0;",
-$0:function(){return"Ablebodied Spaceman, skilled in space travel and spaceship maintenance"}},zW:{"^":"a:0;a",
+z.db=!0}},zW:{"^":"a:0;",
+$0:function(){return"Ablebodied Spaceman, skilled in space travel and spaceship maintenance"}},zX:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.dx=!0
-z.dy=4}},zX:{"^":"a:0;a",
-$0:function(){O.t("Before the incident changed everything, you were nearing two years in your "+H.d(this.a.ks())+" service on the Bodega. Everything had become familiar. The smell of polyplastics, human sweat and detergent. The bleak dimness of the interiors. The color-coded ducts and cables on every wall. The way sound carries in a huge, 25 thousand ton cargo ship. Conversations, laughter, and swearing were echoing through the corridors almost constantly.")}},zY:{"^":"a:0;a",
-$0:function(){O.t('<p class="meta">Note: All choices have consequences. This particular choice (being '+H.d(this.a.fR("a"))+") won't have a dramatic effect, though, because you haven't played long enough to make an informed decision. The book won't penalize you just because you took an unlucky pick.</p>")}},zZ:{"^":"a:0;a",
-$0:function(){O.t("Two weeks ago, you were little more than a lowly "+H.d(this.a.fR(""))+". Now, you're the acting captain. The last one standing. (Well, almost. But we'll get to that later.)")}},A0:{"^":"a:0;",
+z.dy=4}},zY:{"^":"a:0;a",
+$0:function(){O.t("Before the incident changed everything, you were nearing two years in your "+H.d(this.a.ks())+" service on the Bodega. Everything had become familiar. The smell of polyplastics, human sweat and detergent. The bleak dimness of the interiors. The color-coded ducts and cables on every wall. The way sound carries in a huge, 25 thousand ton cargo ship. Conversations, laughter, and swearing were echoing through the corridors almost constantly.")}},zZ:{"^":"a:0;a",
+$0:function(){O.t("Two weeks ago, you were little more than a lowly "+H.d(this.a.ia(""))+". Now, you're the acting captain. The last one standing. (Well, almost. But we'll get to that later.)")}},A_:{"^":"a:0;",
 $0:function(){}},A1:{"^":"a:0;a",
 $0:function(){this.a.a9.t5()}},A2:{"^":"a:0;a",
 $0:function(){var z=this.a
@@ -1225,8 +1224,8 @@ y='"C'+(z.fo()===!0?"-c":"")+'aptain Kay." Your voice sounds awkward in the sile
 O.t(y+(z.fo()===!0?", and your stutter doesn't help":"")+".")}},A8:{"^":"a:0;",
 $0:function(){return'"Let\'s just say this is not the first time I see you lying on the floor, naked and reddish and stiff." '}},A9:{"^":"a:0;a",
 $0:function(){O.t("It might not be the best topic for anyone's funeral \u2014 but it's true. You are the kind of person who says it how it is.\n")
-this.a.hJ=!0
-$.$get$b_().aU(0,1,"honesty")}},Ab:{"^":"a:0;",
+this.a.hI=!0
+$.$get$b_().aU(0,1,"honesty")}},Aa:{"^":"a:0;",
 $0:function(){return"Let it go."}},Ac:{"^":"a:0;a",
 $0:function(){O.t("You decide this is probably not the best topic for anyone's funeral.\n")
 $.$get$b_().aU(0,1,"sensitivity")}},Ad:{"^":"a:0;a",
@@ -1240,7 +1239,7 @@ $0:function(){O.t("You remember the first time you saw the captain \u2013 in a b
 $0:function(){O.t("Of course, it didn't take long before someone started a fight that night. You don't really remember who it was but it wasn't captain Kay, and it definitely wasn't you. You stood up and started making your way out, avoiding the epicenters of the brawl. You "+(this.a.id===!0?"decided a long time ago that using your pretty decent fighting skills in bar fights is a waste of time and perfectly good teeth":"were never a good fighter and had no intention of getting the hell beaten out of you for no reason whatsoever")+". After a few steps, you had to dodge a ginger guy who was thrown by two others across the room and right into another part of the melee. What followed was a surge of yells and roars and a loud clamor of furniture.")}},Aj:{"^":"a:0;",
 $0:function(){return"You ran at the warehouseman trying to kick him off balance, exposing your leg"}},Ak:{"^":"a:0;a",
 $0:function(){O.t("A few paces away from the captain, you jumped, putting both your legs forward in a kind of an improvized jump kick. The warehouseman saw you coming, though, and he brought the chair down and on your right leg. You heard the muffled scrunch of breaking bone and you flew past the guy into some furniture.\n")
-this.a.rx=!0}},Am:{"^":"a:0;",
+this.a.rx=!0}},Al:{"^":"a:0;",
 $0:function(){return"You tried to parry the chair with your arm"}},An:{"^":"a:0;a",
 $0:function(){O.t("You made it to where the captain was standing just in time to try to block the warehouseman's blow. The chair landed with full force on your left hand and you heard the muffled scrunch of breaking bone. The impact sent you sliding under a table nearby.\n")
 this.a.ry=!0}},Ao:{"^":"a:0;a",
@@ -1254,7 +1253,7 @@ O.t("You nodded, carefully got up,"+(z.rx===!0?" grabbed his shoulder for suppor
 $0:function(){O.t("Now, you watch his dead body "+(this.a.x1===!0?"recede into darkness":"lie on the floor in front of you")+".")}},Av:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.id===!0)O.t("You think about it again. There really is no reason why you should outlive the captain. You are a strong "+H.d(z.es)+", but your tenacity is nothing compared to the captain's. The contagion, or whatever it is, should have killed you long before him. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthiest, most vigorous crewmember \u2013 Cooper \u2013 died second.\n")
-else O.t("You think about it again. There is no reason why _you_ should outlive the captain. Or why you should outlive _any other_ crew member, for that matter. You were one of the weakest, least hardened individuals on board. The contagion, or whatever it is, should have killed you long before everyone else. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthies, most vigorous crewmember \u2013 Cooper \u2013 died second.\n")}},Ax:{"^":"a:0;a",
+else O.t("You think about it again. There is no reason why _you_ should outlive the captain. Or why you should outlive _any other_ crew member, for that matter. You were one of the weakest, least hardened individuals on board. The contagion, or whatever it is, should have killed you long before everyone else. Then again, there was absolutely no sense in the order in which the crew died. It was random. The healthies, most vigorous crewmember \u2013 Cooper \u2013 died second.\n")}},Aw:{"^":"a:0;a",
 $0:function(){if(this.a.db===!0)O.t("You don't remember ever treating Cooper or seeing him in the medbay. Not even with the common cold.\n")
 else O.t("That guy had never even _sneezed_ before.\n")}},Ay:{"^":"a:0;",
 $0:function(){}},Az:{"^":"a:0;",
@@ -1275,7 +1274,7 @@ z.bN=y}},AD:{"^":"a:0;",
 $0:function(){return'"I\'m coming." '}},AE:{"^":"a:0;",
 $0:function(){return'"The funeral hasn\'t ended yet." '}},AF:{"^":"a:0;",
 $0:function(){}},AG:{"^":"a:0;a",
-$0:function(){if(this.a.x2!==!0)O.t('The speakers turn off, then turn on again.\n\n"And by the way," the ship adds, "I know you\'re not very bright and all, but by now you should be familiar with the intercom system. A hint: when the red light goes blink, you pick it up." The speakers turn off again.\n')}},AI:{"^":"a:0;a",
+$0:function(){if(this.a.x2!==!0)O.t('The speakers turn off, then turn on again.\n\n"And by the way," the ship adds, "I know you\'re not very bright and all, but by now you should be familiar with the intercom system. A hint: when the red light goes blink, you pick it up." The speakers turn off again.\n')}},AH:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a.x1===!0
 y="You give captain Kay's "+(z?"receding":"")+" body the last glance"
@@ -1300,7 +1299,7 @@ $0:function(){var z,y
 z=this.a
 y=J.a2(J.e5(z.E).gb2(),60)
 z.dE.v8(z.a9.a,y)}},AR:{"^":"a:0;",
-$0:function(){O.t("It's a hollow disc around a huge spherical aquarium. The aquarium is the food source,"+E.bz("unityAquarium")+" while the disc is where the population lives and (more importantly for you) where the docks are.")}},AT:{"^":"a:0;a",
+$0:function(){O.t("It's a hollow disc around a huge spherical aquarium. The aquarium is the food source,"+E.bz("unityAquarium")+" while the disc is where the population lives and (more importantly for you) where the docks are.")}},AS:{"^":"a:0;a",
 $0:function(){O.t("The Bodega displays the crew roster for the operator to see. There are thirteen body outlines on the monitor. Some of them you immediately recognize as anatomy of one of the crew. All of them are red, except for the outline labeled as '"+H.d(this.a.bM)+" (CONTAMINATED)', which is orange. \"We have reasons to believe it's a contagion.\" ")}},AU:{"^":"a:0;",
 $0:function(){return'"Can you clarify?" '}},AV:{"^":"a:0;a",
 $0:function(){var z,y
@@ -1321,14 +1320,14 @@ z.dz=y-1}},B_:{"^":"a:0;a",
 $0:function(){if(J.e4(this.a.co)){O.t("There are no more questions to ask right now. You motion towards the console and the connection terminates.\n")
 $.aK="Unity: DisconnectFromTower"}}},B0:{"^":"a:0;a",
 $0:function(){var z=P.i(["Organization",'"What organization?"',"ActiveThreatBlacklist",'"What\'s the Active Threat blacklist?"',"AskToDock",'"What would need to happen for us to dock?"',"AskToTrade",'"Can I at least trade with you?"',"WhereToGo",'"Where can we go?"'])
-J.b6(this.a.co,new N.xK(z))
-O.b0("Disconnect",!1,!1,null,new N.xL(),null)}},xK:{"^":"a:9;a",
-$1:function(a){O.b0(this.a.i(0,a),!1,!1,a,null,null)}},xL:{"^":"a:0;",
+J.b6(this.a.co,new N.xL(z))
+O.b0("Disconnect",!1,!1,null,new N.xM(),null)}},xL:{"^":"a:9;a",
+$1:function(a){O.b0(this.a.i(0,a),!1,!1,a,null,null)}},xM:{"^":"a:0;",
 $0:function(){O.t("You motion towards the console and the connection terminates.\n")
 $.aK="Unity: DisconnectFromTower"}},B1:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.bO(z.co,"Organization")
-J.dj(z.E,1,!1)}},B3:{"^":"a:0;a",
+J.dj(z.E,1,!1)}},B2:{"^":"a:0;a",
 $0:function(){var z=this.a
 J.bO(z.co,"ActiveThreatBlacklist")
 J.dj(z.E,1,!1)}},B4:{"^":"a:0;a",
@@ -1345,7 +1344,7 @@ $0:function(){return"Try to negotiate with the operator, offering something on b
 $0:function(){return"Wait"}},Bb:{"^":"a:0;",
 $0:function(){return"Jump to safety"}},Bc:{"^":"a:0;a",
 $0:function(){var z=this.a
-if(z.hB===!0){z.hF="Unity: SentacoShipArrival"
+if(z.hA===!0){z.hE="Unity: SentacoShipArrival"
 $.aK="End: FirstCall"}else O.t("But there is currently no single person to try and reach.\n")}},Ct:{"^":"a:8;",
 $1:function(a){return H.d(a)+" P"}},Cu:{"^":"a:8;",
 $1:function(a){return H.d(a)+" M"}},Cv:{"^":"a:1;",
@@ -1370,50 +1369,50 @@ if(z.db===!0)return"medical"
 if(z.dx===!0)return"maintenance"
 throw H.c(P.ds("Role not defined for getRoleAdjective."))}},CA:{"^":"a:0;a",
 $0:function(){return this.a.es==="man"}},CB:{"^":"a:0;a",
-$0:function(){return this.a.es==="woman"}}}],["","",,S,{"^":"",w1:{"^":"e;"},oo:{"^":"e;a,b,c"}}],["","",,T,{"^":"",jy:{"^":"kG;e,f,eB:r>,x,y,z,Q,ch,a,b,c,d",
+$0:function(){return this.a.es==="woman"}}}],["","",,S,{"^":"",w2:{"^":"e;"},oo:{"^":"e;a,b,c"}}],["","",,T,{"^":"",jy:{"^":"kG;e,f,eB:r>,x,y,z,Q,ch,a,b,c,d",
 qk:function(){var z,y,x,w,v,u,t,s,r,q,p,o
 z={}
 z.a=null
 y=T.bs('"Why would you do that?"',new T.oK(this),null,null,null,new T.oL(z,this),!1)
 x=T.bs('"\u2014ou do that?"',new T.oM(this,y),null,null,null,new T.oX(this),!1)
 z.a=x
-w=T.bs('"Stop it!"',new T.p7(this,y),null,null,null,new T.p9(this),!1)
-v=T.bs("Hit him back",new T.pa(this),null,null,null,new T.pb(this),!1)
-u=T.bs("Hit him in the face",new T.pc(this),new T.pd(this),null,new T.pe(this),null,!1)
+w=T.bs('"Stop it!"',new T.p7(this,y),null,null,null,new T.pa(this),!1)
+v=T.bs("Hit him back",new T.pb(this),null,null,null,new T.pc(this),!1)
+u=T.bs("Hit him in the face",new T.pd(this),new T.pe(this),null,new T.pf(this),null,!1)
 t=T.bs("Hit him in the stomach",new T.oN(this),new T.oO(this),null,new T.oP(this),null,!1)
-s=T.bs("Raise arms in defense",null,new T.oQ(this),null,new T.oR(this),null,!1)
-r=T.bs("Sidestep",new T.oS(this),new T.oT(this),new T.oU(this),new T.oV(this),null,!1)
+s=T.bs("Raise arms in defense, then hit",null,new T.oQ(this),null,new T.oR(this),null,!1)
+r=T.bs("Sidestep and punch from side",new T.oS(this),new T.oT(this),new T.oU(this),new T.oV(this),null,!1)
 q=T.bs("Put the pilot between you and him",new T.oW(this),new T.oY(this),new T.oZ(this),new T.p_(this),null,!1)
 z.b=null
 p=T.bs("Look around for objects to hit him with",null,null,null,null,new T.p0(z,this),!1)
 o=T.bs("Hit him with the bottle",new T.p1(p),new T.p2(this),null,new T.p3(this),null,!1)
 z.b=o
-this.f.N(0,H.b([y,v,x,w,u,t,s,r,q,p,o,T.bs("Knee him in the crotch",null,null,null,null,new T.p4(this),!1),T.bs("Undercut his legs",null,new T.p5(this),new T.p6(this),new T.p8(this),null,!1)],[T.dm]))
+this.f.N(0,H.b([y,v,x,w,u,t,s,r,q,p,o,T.bs("Knee him in the crotch",null,new T.p4(this),null,new T.p5(this),null,!1),T.bs("Undercut his legs",null,new T.p6(this),new T.p8(this),new T.p9(this),null,!1)],[T.dm]))
 this.e=H.b([y,v],[T.dm])
 this.y=!0},
 ql:function(){var z=this.r
-z.bI(2,new T.pf(this))
+z.bI(2,new T.pg(this))
 z.a=0},
 aB:function(a){var z,y,x,w,v,u,t,s
 z=this.f
-y=H.b(new H.a8(z,new T.pg()),[H.q(z,0)])
+y=H.b(new H.a8(z,new T.ph()),[H.q(z,0)])
 x=this.e
 x=x!=null?x:[]
 this.e=null
 for(;x.length<3;){z=P.cB(y,null).ti(P.cB(x,null))
-z=H.b(new H.a8(z,new T.ph(this)),[H.q(z,0)])
+z=H.b(new H.a8(z,new T.pi(this)),[H.q(z,0)])
 w=P.ba(z,!0,H.F(z,"L",0))
 if(w.length===0)break
 v=S.dF(w)
 x.push(v)
 if(v.gnc()!=null){this.y=!0
 this.J("\n\n")
-v.uy()}}z=new T.pi()
+v.uy()}}z=new T.pj()
 u=x.length-1
 if(u-0<=32)H.i1(x,0,u,z)
 else H.i0(x,0,u,z)
 for(z=x.length,t=0;t<x.length;x.length===z||(0,H.a7)(x),++t){s=x[t]
-this.ek(J.a0(s),new T.pj(this,s))}},
+this.ek(J.a0(s),new T.pk(this,s))}},
 J:function(a){return this.Q.$1(a)},
 ek:function(a,b){return this.ch.$2$script(a,b)}},oK:{"^":"a:0;a",
 $0:function(){return J.h(this.a.r.a,0)}},oL:{"^":"a:0;a,b",
@@ -1426,16 +1425,16 @@ $0:function(){var z=this.a
 z.J("Another punch in the face. This time it landed so hard it knocked you down to the floor.")
 z.J("After what seemed like ages, you managed to pick yourself up again. The farmer was ready, smirk on face.")}},p7:{"^":"a:0;a,b",
 $0:function(){var z=this.a.r
-return!J.h(this.b.y,z.a)&&J.Y(z.a,0)}},p9:{"^":"a:0;a",
+return!J.h(this.b.y,z.a)&&J.Y(z.a,0)}},pa:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J('"Stop it!"\n\n')
 z.J("There was a smirk on his face. He hit you in the stomach. You bent forward, gulping for air.\n\n")
 z.J('"Why should I?" The last thing you saw was his knee flying straight towards your face.')
-z.a=!0}},pa:{"^":"a:0;a",
-$0:function(){return J.h(this.a.r.a,0)}},pb:{"^":"a:0;a",
-$0:function(){this.a.J("You threw a punch in his general direction but missed. He jabbed at your jaw.")}},pc:{"^":"a:0;a",
-$0:function(){return J.Y(this.a.r.a,0)}},pe:{"^":"a:0;a",
-$0:function(){this.a.J("He tried to deflect it but failed miserably. With all your strength, you landed your fist directly in the middle of his face. You felt the shattering power of the impact through your hand. The farmer flew backwards and landed on a table, unconscious.")}},pd:{"^":"a:0;a",
+z.a=!0}},pb:{"^":"a:0;a",
+$0:function(){return J.h(this.a.r.a,0)}},pc:{"^":"a:0;a",
+$0:function(){this.a.J("You threw a punch in his general direction but missed. He jabbed at your jaw.")}},pd:{"^":"a:0;a",
+$0:function(){return J.Y(this.a.r.a,0)}},pf:{"^":"a:0;a",
+$0:function(){this.a.J("He tried to deflect it but failed miserably. With all your strength, you landed your fist directly in the middle of his face. You felt the shattering power of the impact through your hand. The farmer flew backwards and landed on a table, unconscious.")}},pe:{"^":"a:0;a",
 $0:function(){this.a.J("Your right hook was deflected and he headbutted you. You took two steps back and barely regained your balance.")}},oN:{"^":"a:0;a",
 $0:function(){return J.Y(this.a.r.a,0)}},oP:{"^":"a:0;a",
 $0:function(){this.a.J("Your fist lands right in his solar plexus. The farmer lets out a gurgling sound and bends over your arm. You kneel him in the face and he sagged on the floor, unconscious.")}},oO:{"^":"a:0;a",
@@ -1443,7 +1442,7 @@ $0:function(){this.a.J("He dodged your stomach punch and put his right elbow in 
 $0:function(){this.a.J("Your arms deflected a haymaker that would definitely send you to the floor. The farmer's face was now open to your left hand. You hit him hard. Then again in the stomach. And then again, with a powerful haymaker of your own. He flew towards the floor, unconscious.")}},oQ:{"^":"a:0;a",
 $0:function(){this.a.J("Your arms deflected a haymaker that would definitely send you to the floor. But before you could do anything to retaliate, the farmer slipped a painful uppercut punch between your arms.")}},oS:{"^":"a:0;a",
 $0:function(){return J.Y(this.a.r.a,0)}},oU:{"^":"a:0;a",
-$0:function(){this.a.J("You thought you could see how he was going to hit next.")}},oV:{"^":"a:0;a",
+$0:function(){this.a.J("You were pretty sure he would now try a frontal punch.")}},oV:{"^":"a:0;a",
 $0:function(){this.a.J("You guessed well. You dodged the punch and the farmer tried to keep his balance \u2014 his right arm still extended forward. That's when you landed a well placed blow to his flank. He shrieked. An elbow to the face sent him to the ground, unconscious.")}},oT:{"^":"a:0;a",
 $0:function(){this.a.J("You guessed wrong. You sidestepped right into his blow. The impact almost sent you to the ground.")}},oW:{"^":"a:0;a",
 $0:function(){return J.Y(this.a.r.a,0)}},oZ:{"^":"a:0;a",
@@ -1457,25 +1456,23 @@ z.J("From the corner of your eye you saw the bottle of Golitsyn vodka from which
 z.e=[this.a.b]}},p1:{"^":"a:0;a",
 $0:function(){return this.a.x>0}},p3:{"^":"a:0;a",
 $0:function(){this.a.J("You quickly grabbed the bottle and smashed it over the top of the farmer's head. He plummeted to the floor, unconscious.")}},p2:{"^":"a:0;a",
-$0:function(){this.a.J("You quickly looked behind and grabbed the bottle, but when you turned back towards the farmer, you were greeted with a direct punch in the eye. You let go of the bottle and it dropped to the floor, shattering.")}},p4:{"^":"a:0;a",
+$0:function(){this.a.J("You quickly looked behind and grabbed the bottle, but when you turned back towards the farmer, you were greeted with a direct punch in the eye. You let go of the bottle and it dropped to the floor, shattering.")}},p5:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("He didn't expect that. Your knee landed squarely in the groin and the farmer keeled over.\n\n")
-z.J("The fights closest to you were now stopping. People started alternately looking at you and at the farmer who was now lying on his side, both hands in the lap, unconsciouss.\n\n")
-z.J("You hadn't known about the no-groin-attack rule but that wasn't going to absolve you. There are very few rules in bar fights, but those that exist are enforced with violent fervor. After a thunderous scream, at least four guys (you didn't really have the time to count them) jumped you and beat you into unconsciousness.")
-z.z=!1
-z.a=!0}},p6:{"^":"a:0;a",
-$0:function(){this.a.J("He tried to kick you but lost balance while doing so and aborted.")}},p8:{"^":"a:0;a",
-$0:function(){this.a.J("Seeing that he barely stood on one foot, you swept his legs. The farmer wasn't ready, hitting his head hard on the floor while falling. When he weakly started to get up, you punched him from above. That sent him back to the ground, unconscious.")}},p5:{"^":"a:0;a",
-$0:function(){this.a.J("Seeing that he barely stood on one foot, you tried to sweep his legs. But by the time your leg hit his, the farmer had already regained his balance. Your leg just stopped there and you were lucky to withdraw before he was able to stamp on your knee.")}},pf:{"^":"a:0;a",
+z.J("You pushed him away, then you caught him on the side of the head with a powerful haymaker. He twisted and fell to the floor.")}},p4:{"^":"a:0;a",
+$0:function(){this.a.J("Your knee slid on the wrong side of his right thigh. He thrust an elbow to your open side. You grimaced in pain and stepped back.")}},p8:{"^":"a:0;a",
+$0:function(){this.a.J("He tried to kick you but lost balance while doing so and aborted.")}},p9:{"^":"a:0;a",
+$0:function(){this.a.J("Seeing that he barely stood on one foot, you swept his legs. The farmer wasn't ready, hitting his head hard on the floor while falling. When he weakly started to get up, you punched him from above. That sent him back to the ground, unconscious.")}},p6:{"^":"a:0;a",
+$0:function(){this.a.J("Seeing that he barely stood on one foot, you tried to sweep his legs. But by the time your leg hit his, the farmer had already regained his balance. Your leg just stopped there and you were lucky to withdraw before he was able to stamp on your knee.")}},pg:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("\n\nAt the other end of the bar, you heard someone laughing. Laughing! A strange sound to hear during a full scale bar fight. But you didn't exactly have the time to investigate. The farmer was a pressing issue.")
-z.y=!0}},pg:{"^":"a:1;",
+z.y=!0}},ph:{"^":"a:1;",
 $1:function(a){var z
 if(a.gu5())z=a.b==null||a.nJ(0)===!0
 else z=!1
-return z}},ph:{"^":"a:95;a",
-$1:function(a){return!this.a.y||a.gnc()==null}},pi:{"^":"a:4;",
-$2:function(a,b){return J.db(J.a0(a),J.a0(b))}},pj:{"^":"a:0;a,b",
+return z}},pi:{"^":"a:95;a",
+$1:function(a){return!this.a.y||a.gnc()==null}},pj:{"^":"a:4;",
+$2:function(a,b){return J.db(J.a0(a),J.a0(b))}},pk:{"^":"a:0;a,b",
 $0:function(){var z,y,x
 z=this.a
 z.y=!1
@@ -1559,11 +1556,11 @@ return u}}},kd:{"^":"Dw;f,r,x,y,z,e,a,b,c,d",
 pd:function(a,b,c){this.f=a
 this.r=b
 this.b=c
-this.c.bI(20,new E.rn(this,a,b))
-this.c.bI(24,new E.ro(this,a,b))
-this.c.bI(25,new E.rp(this,a))},
+this.c.bI(20,new E.ro(this,a,b))
+this.c.bI(24,new E.rp(this,a,b))
+this.c.bI(25,new E.rq(this,a))},
 A:{
-rm:function(a,b,c){var z,y,x,w
+rn:function(a,b,c){var z,y,x,w
 z=H.b([],[P.j])
 y=H.b([a,b],[M.bH])
 z=new E.kd(null,null,new Y.bj(!1,"object",z,!1,0,!0,!1,C.c),!1,!1,null,!1,null,null,y)
@@ -1573,18 +1570,18 @@ O.D("")
 z.c=new L.dQ(-1,null,null,x,w,null,!1,"Timeline",!1)
 z.px(y,null)
 z.pd(a,b,c)
-return z}}},rn:{"^":"a:0;a,b,c",
+return z}}},ro:{"^":"a:0;a,b,c",
 $0:function(){var z,y,x,w
 z=this.c
 y=this.a
 x=y.x
 z.toString
 w=$.$get$ar()
-w.hm(0,"<subject> launch<es> some kind of an object from <subjectPronoun's> underside",x,z)
+w.hl(0,"<subject> launch<es> some kind of an object from <subjectPronoun's> underside",x,z)
 w.rl(0,"<subject> zip<s> around <object>, but keep<s> <subject's> distance.",this.b,x,!0)
-y.y=!0}},ro:{"^":"a:0;a,b,c",
+y.y=!0}},rp:{"^":"a:0;a,b,c",
 $0:function(){var z=this.b
-return $.$get$ar().rm(0,"<owner's> <subject> suddenly plummet<s> towards <object-owner's> <object>",z.cy,z,this.c,this.a.x)}},rp:{"^":"a:0;a,b",
+return $.$get$ar().rm(0,"<owner's> <subject> suddenly plummet<s> towards <object-owner's> <object>",z.cy,z,this.c,this.a.x)}},rq:{"^":"a:0;a,b",
 $0:function(){var z,y,x
 z=$.$get$ar()
 y=this.a
@@ -1597,16 +1594,16 @@ op:function(){var z=this.k4.f
 this.x2=z
 z.toString
 O.D("")
-z.f=new L.pR(this)
-this.x2.bI(52,new L.pS(this))
-this.x2.ky(96,new L.pT(this),3)
-this.x2.bI(473,new L.pU(this))
-this.a=this.x2.ky(null,new L.pV(this),3)
-this.x2.bI(465,new L.pW(this))
-this.x2.bI(482,new L.pX(this))
-this.x2.bI(508,new L.pY(this))
-this.x2.bI(515,new L.pZ(this))
-this.x2.bI(530,new L.q_(this))},
+z.f=new L.pS(this)
+this.x2.bI(52,new L.pT(this))
+this.x2.ky(96,new L.pU(this),3)
+this.x2.bI(473,new L.pV(this))
+this.a=this.x2.ky(null,new L.pW(this),3)
+this.x2.bI(465,new L.pX(this))
+this.x2.bI(482,new L.pY(this))
+this.x2.bI(508,new L.pZ(this))
+this.x2.bI(515,new L.q_(this))
+this.x2.bI(530,new L.q0(this))},
 oi:function(){var z,y
 z=this.k4
 y=new K.dk(null,!0,z,null,C.d,!1,"Gorilla",H.b([],[P.j]),!0,0,!0,!1,C.N)
@@ -1731,7 +1728,7 @@ w=H.b([],[P.j])
 O.D("")
 this.b=K.aL(z,"Explore: GorillasDen","cargo bay",[new K.U(null,null,null,1,"Explore: CargoBayLeft","go back to entrance to Corridor Left","you arrive at the entrance to Corridor Left",!1,"Exit",w,!0,0,!0,!1,C.c)],C.d,C.d,[-10,-70,0],"GorillasDen.description",C.d,!1,null)},
 om:function(){var z,y
-this.f=K.aR("Take a look at the engine, try to bring output from 89% back to 100% [~3 hours]","EngineRoom.RepairEngine",!0,null,null,!1,!0,null,new L.pN(this),null,null)
+this.f=K.aR("Take a look at the engine, try to bring output from 89% back to 100% [~3 hours]","EngineRoom.RepairEngine",!0,null,null,!1,!0,null,new L.pO(this),null,null)
 z=H.b([],[P.j])
 O.D("")
 y=H.b([],[P.j])
@@ -1741,7 +1738,7 @@ oo:function(){var z,y,x,w
 z=this.k4
 O.D("")
 O.D("")
-this.y=K.eg(z,"banana",[new K.cx("eat the banana",new L.pO(this),null,null,null,null,null,null,null,!0,"\xb7\xb7\xb7",0,1,!0),new K.cx("give the banana to Gorilla",new L.pP(this),null,null,null,null,null,new L.pQ(this),null,!1,"\xb7\xb7\xb7",0,null,!0)],1,null,null,!1,!1,!1,C.c,null,null,!0)
+this.y=K.eg(z,"banana",[new K.cx("eat the banana",new L.pP(this),null,null,null,null,null,null,null,!0,"\xb7\xb7\xb7",0,1,!0),new K.cx("give the banana to Gorilla",new L.pQ(this),null,null,null,null,null,new L.pR(this),null,!1,"\xb7\xb7\xb7",0,null,!0)],1,null,null,!1,!1,!1,C.c,null,null,!0)
 y=H.b([],[P.j])
 O.D("")
 x=H.b([],[P.j])
@@ -1751,7 +1748,7 @@ K.aL(z,"Explore: StaffRoom","staff room",[new K.U(null,null,null,1,"Explore: Med
 ol:function(){var z,y,x,w,v
 z=this.k4
 O.D("")
-this.z=K.eg(z,"info flyer",[new K.cx("look at info flyer",new L.pM(this),null,null,null,null,null,null,null,!0,"\xb7\xb7\xb7",0,null,!0)],1,null,null,!1,!1,!1,C.c,"<subject> take<s> <object>, fold<s> <objectPronoun> and put<s> <objectPronoun> in a pocket",null,!0)
+this.z=K.eg(z,"info flyer",[new K.cx("look at info flyer",new L.pN(this),null,null,null,null,null,null,null,!0,"\xb7\xb7\xb7",0,null,!0)],1,null,null,!1,!1,!1,C.c,"<subject> take<s> <object>, fold<s> <objectPronoun> and put<s> <objectPronoun> in a pocket",null,!0)
 y=H.b([],[P.j])
 O.D("")
 x=H.b([],[P.j])
@@ -1764,7 +1761,7 @@ ok:function(){var z,y,x
 z=this.k4
 O.D("")
 O.D("")
-this.Q=K.eg(z,"captain's gun",[new K.cx("check the gun",new L.pJ(),null,null,null,null,null,null,null,!0,"\xb7\xb7\xb7",0,1,!0),new K.cx("shoot the Gorilla",new L.pK(this),null,null,null,null,null,new L.pL(this),null,!0,"\xb7\xb7\xb7",0,null,!0)],1,null,null,!1,!1,!1,C.c,"<subject> lift<s> the <object> and put<s> it in the pocket",null,!0)
+this.Q=K.eg(z,"captain's gun",[new K.cx("check the gun",new L.pK(),null,null,null,null,null,null,null,!0,"\xb7\xb7\xb7",0,1,!0),new K.cx("shoot the Gorilla",new L.pL(this),null,null,null,null,null,new L.pM(this),null,!0,"\xb7\xb7\xb7",0,null,!0)],1,null,null,!1,!1,!1,C.c,"<subject> lift<s> the <object> and put<s> it in the pocket",null,!0)
 this.ch=K.eg(z,"Gorilla's body",C.d,1,null,null,!1,!1,!1,C.c,null,null,!0)
 this.cx=K.aR("have a look around [~15 minutes]","CaptainsCabinLookAround",!0,null,null,!1,!0,null,null,null,null)
 this.cy=K.aR("continue with the search [~15 minutes]","CaptainsCabinLookAroundContinue",!1,null,null,!1,!0,null,null,null,null)
@@ -1776,10 +1773,10 @@ x=this.Q
 K.aL(z,"Explore: CaptainsCabin","captain's cabin",[new K.U(null,null,null,1,"Explore: CorridorLeftNextToCaptainsCabin","exit the room","<subject> leave<s> into the corridor",!1,"Exit",y,!0,0,!0,!1,C.c)],[this.cx,this.cy,this.db,this.dx],C.d,[-10,-10,0],"CaptainsCabin.description",[x],!1,null)},
 oj:function(){var z,y,x,w
 this.fr=K.aR("put up the hull breach on the screen","LookAtHullBreachFromBridge",!1,null,null,!1,!0,null,null,null,null)
-this.fx=K.aR("ask Bodega some questions","BodegaQuestions: Start",!0,null,null,!1,!1,null,new L.pC(this),null,null)
-this.fy=K.aR("Take a nap","Bridge: Nap",!0,null,null,!1,!0,null,new L.pD(this),null,null)
-this.go=K.aR("Wait until ready to jump to Unity","Bridge: WaitForJump",!0,null,null,!1,!0,null,new L.pE(this),null,null)
-this.id=K.aR("initiate the jump to Space Station Unity","Unity: Jump",!1,null,null,!1,!1,null,new L.pF(this),null,null)
+this.fx=K.aR("ask Bodega some questions","BodegaQuestions: Start",!0,null,null,!1,!1,null,new L.pD(this),null,null)
+this.fy=K.aR("Take a nap","Bridge: Nap",!0,null,null,!1,!0,null,new L.pE(this),null,null)
+this.go=K.aR("Wait until ready to jump to Unity","Bridge: WaitForJump",!0,null,null,!1,!0,null,new L.pF(this),null,null)
+this.id=K.aR("initiate the jump to Space Station Unity","Unity: Jump",!1,null,null,!1,!1,null,new L.pG(this),null,null)
 z=H.b([],[P.j])
 O.D("")
 y=H.b([],[P.j])
@@ -1787,7 +1784,7 @@ O.D("")
 x=H.b([],[P.j])
 O.D("")
 w=this.k3
-this.dy=K.aL(this.k4,"Explore: Bridge","the bridge",[new K.U(null,null,null,1,"Explore: Nose","use the utility corridor to the nose of the ship","<subject> squeeze<s> into the narrow space below the main 'window'",!1,"Exit",z,!0,0,!0,!1,C.c),new K.U(null,null,null,1,"Explore: CorridorLeftNextToCaptainsCabin","leave to Corridor Left","<subject> {go<es>|walk<s>} through the sliding door into Corridor Left and \u2013 after a few more paces \u2013 arrive<s> at the entrance to the captain's cabin",!1,"Exit",y,!0,0,!0,!1,C.c),new K.U(null,null,null,1,"Explore: CorridorRightNextToComputerRoom","leave to Corridor Right","<subject> {go<es>|walk<s>} through the sliding door into Corridor Right and \u2013 after a few more paces \u2013 arrive<s> at the entrance to the computer room",!1,"Exit",x,!0,0,!0,!1,C.c)],[this.go,this.id,this.fx,this.fr,this.fy],[w],[0,0,0],"Bridge.description",C.d,!1,new L.pG(this))},
+this.dy=K.aL(this.k4,"Explore: Bridge","the bridge",[new K.U(null,null,null,1,"Explore: Nose","use the utility corridor to the nose of the ship","<subject> squeeze<s> into the narrow space below the main 'window'",!1,"Exit",z,!0,0,!0,!1,C.c),new K.U(null,null,null,1,"Explore: CorridorLeftNextToCaptainsCabin","leave to Corridor Left","<subject> {go<es>|walk<s>} through the sliding door into Corridor Left and \u2013 after a few more paces \u2013 arrive<s> at the entrance to the captain's cabin",!1,"Exit",y,!0,0,!0,!1,C.c),new K.U(null,null,null,1,"Explore: CorridorRightNextToComputerRoom","leave to Corridor Right","<subject> {go<es>|walk<s>} through the sliding door into Corridor Right and \u2013 after a few more paces \u2013 arrive<s> at the entrance to the computer room",!1,"Exit",x,!0,0,!0,!1,C.c)],[this.go,this.id,this.fx,this.fr,this.fy],[w],[0,0,0],"Bridge.description",C.d,!1,new L.pH(this))},
 fQ:[function(){var z,y,x
 z=this.x2.a
 if(typeof z!=="number")return H.n(z)
@@ -1804,72 +1801,72 @@ this.J("You are feeling "+C.V[z]+".")},"$0","guK",0,0,0],
 ko:function(){var z=this.x1
 if(z.eq==="")return z.bM
 else return"captain"},
-bZ:function(a){var z=this.x1.hD===!0?1.3:1
+bZ:function(a){var z=this.x1.hC===!0?1.3:1
 return a===!0?z+0.3:z},
 t5:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n
 z=G.kf(null)
 J.a3(z.b,"submitText",">>")
 y=P.W(null,null,null,null,null)
 x=new B.a_(null,H.b([],[B.I]))
-w=new G.x9(new G.IG(),3,0,3,1,null,null,"http://www.w3.org/1999/xhtml","RangeOutput",null,null,y,x,null,null,null,null)
+w=new G.xa(new G.IG(),3,0,3,1,null,null,"http://www.w3.org/1999/xhtml","RangeOutput",null,null,y,x,null,null,null,null)
 x.b=w
 w.ps("RangeOutput","Trait points left",3,0,3,1,null,null)
-y=new L.pB(z,w,P.ao(null,null,null,G.c3))
+y=new L.pC(z,w,P.ao(null,null,null,G.c3))
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 u=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=u
 x.h(0,"name","You have good eyesight and spotting abilities")
-u.sao(0,new L.ps(this,y))
+u.sao(0,new L.pt(this,y))
 u.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 t=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=t
 x.h(0,"name","You are physically strong, a good fighter")
-t.sao(0,new L.pt(this,y))
+t.sao(0,new L.pu(this,y))
 t.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 s=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=s
 x.h(0,"name","You can speak basic Japanese")
-s.sao(0,new L.pu(this,y))
+s.sao(0,new L.pv(this,y))
 s.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 r=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=r
 x.h(0,"name","You are good with animals")
-r.sao(0,new L.pv(this,y))
+r.sao(0,new L.pw(this,y))
 r.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 q=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=q
 x.h(0,"name","You have received a psychology training on artificial intelligence")
-q.sao(0,new L.pw(this,y))
+q.sao(0,new L.px(this,y))
 q.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 p=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=p
 x.h(0,"name","You understand electronics well and you are proficient in using and repairing them")
-p.sao(0,new L.px(this,y))
+p.sao(0,new L.py(this,y))
 p.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 o=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=o
 x.h(0,"name","You have science education")
-o.sao(0,new L.py(this,y))
+o.sao(0,new L.pz(this,y))
 o.Q=!1
 x=P.W(null,null,null,null,null)
 v=new B.a_(null,H.b([],[B.I]))
 n=new G.c3(null,null,"http://www.w3.org/1999/xhtml","CheckboxInput",null,null,x,v,null,null,null,null)
 v.b=n
 x.h(0,"name","You know your way around a spaceship")
-n.sao(0,new L.pz(this,y))
+n.sao(0,new L.pA(this,y))
 n.Q=!1
 y=this.x1
 if(y.cy===!0){p.Q=!0
@@ -1888,7 +1885,7 @@ y.m(0,q)
 y.m(0,p)
 y.m(0,o)
 y.m(0,n)
-z.Q=new L.pA(this,w)
+z.Q=new L.pB(this,w)
 this.os(z)},
 tm:function(){var z,y,x,w,v
 z=P.bw(null,P.j)
@@ -1917,7 +1914,7 @@ y+="You've survived this far. There _must_ be a reason you're not dead already."
 v.a=y
 this.J(y.charCodeAt(0)==0?y:y)},
 mA:function(a,b,c,d,e,f){var z,y
-this.ek(a,new L.pq(b))
+this.ek(a,new L.pr(b))
 if(d>0){z=c+(" [-"+d+" P]")
 y=this.x1.fx.f
 if(typeof y!=="number")return H.n(y)
@@ -1925,46 +1922,46 @@ if(d>y)z+=" [DISABLED]"}else z=c
 if(e>0){z+=" [-"+e+" M]"
 y=this.x1.fy.f
 if(typeof y!=="number")return H.n(y)
-if(e>y)z+=" [DISABLED]"}this.ek(z.charCodeAt(0)==0?z:z,new L.pr(this,d,e,f))},
+if(e>y)z+=" [DISABLED]"}this.ek(z.charCodeAt(0)==0?z:z,new L.ps(this,d,e,f))},
 kv:function(a){return this.r1.$1(a)},
 J:function(a){return this.r2.$1(a)},
 ek:function(a,b){return this.rx.$2$script(a,b)},
-os:function(a){return this.ry.$1(a)}},pR:{"^":"a:0;a",
+os:function(a){return this.ry.$1(a)}},pS:{"^":"a:0;a",
 $0:function(){var z=this.a.x1.dC
-z.sU(0,J.a2(z.f,1))}},pS:{"^":"a:0;a",
+z.sU(0,J.a2(z.f,1))}},pT:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("\n\n")
 z.J(z.x2.e_("While <whileString> you have a brief sensation of mild tingling in your nose.","You have a brief sensation of mild tingling in your nose."))
 z.J("You ascribe it to sleep deprivation.")
-z.J("\n\n")}},pT:{"^":"a:0;a",
+z.J("\n\n")}},pU:{"^":"a:0;a",
 $0:function(){var z=this.a
-z.x1.hE=J.a0(z.k4.c.Q)
-z.kv("Bridge: OvercomeBySleepiness")}},pU:{"^":"a:0;a",
+z.x1.hD=J.a0(z.k4.c.Q)
+z.kv("Bridge: OvercomeBySleepiness")}},pV:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.id.cy=!0
 z.J("\n\n")
 z.J(z.x2.e_("While <whileString> the ship's PA system makes a short bleep,","The ship's PA system makes a short bleep,"))
-z.J('then Bodega says: "The hyperdrive is fully operational. I am ready to jump, '+H.d(z.ko())+'." \n\n')}},pV:{"^":"a:0;a",
+z.J('then Bodega says: "The hyperdrive is fully operational. I am ready to jump, '+H.d(z.ko())+'." \n\n')}},pW:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J('The Bodega says: "We have arrived to Space Station Unity." ')
 z=z.x1
 z.f7=!0
-z.dw=!1}},pW:{"^":"a:0;a",
-$0:function(){this.a.J("\n\n Although you're more or less rested after the short nap, something doesn't feel quite right. You are sweating and you have a strange taste in your mouth. Is it just paranoia? \n\n")}},pX:{"^":"a:0;a",
+z.dw=!1}},pX:{"^":"a:0;a",
+$0:function(){this.a.J("\n\n Although you're more or less rested after the short nap, something doesn't feel quite right. You are sweating and you have a strange taste in your mouth. Is it just paranoia? \n\n")}},pY:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("\n\n")
 z.J(z.x2.e_("While <whileString> you have to stop for a moment.",""))
-z.J("You have a brief fit of uncontrollable coughing. You stand there for a while, waiting if it comes back but it doesn't. You tell yourself it's nothing. \n\n")}},pY:{"^":"a:0;a",
+z.J("You have a brief fit of uncontrollable coughing. You stand there for a while, waiting if it comes back but it doesn't. You tell yourself it's nothing. \n\n")}},pZ:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("\n\n")
 z.J(z.x2.e_("While <whileString>, you suddenly feel formidable pressure in your chest.","Suddenly, you feel formidable pressure in your chest."))
 z.J("In a few seconds, the pressure builds into agonising pain. You fall on your knees and wonder if this is it. If this is the end of the line. The time you die. You can't breathe. You can't scream. You can't even bring your hands up to your face to sink your fingernails into it. \n\n")
-z.J("But then, in a few seconds time, the pain is gone and so is the pressure. You carefully try to breathe in, and there's nothing. Not even a cough. This thing \u2014 whatever it was \u2014 has passed. \n\n")}},pZ:{"^":"a:0;a",
+z.J("But then, in a few seconds time, the pain is gone and so is the pressure. You carefully try to breathe in, and there's nothing. Not even a cough. This thing \u2014 whatever it was \u2014 has passed. \n\n")}},q_:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("\n\n")
 z.J(z.x2.e_("While <whileString>, the cough comes back.","The cough is back."))
 z.J("It's stronger and more painful than before, and you have to close your eyes and curl your body to keep on top of it. It feels like your lungs.\n\n")
-z.J("In a few seconds it fades but if the rest of the crew is any indication, this was just a mild beginning.\n\n")}},q_:{"^":"a:0;a",
+z.J("In a few seconds it fades but if the rest of the crew is any indication, this was just a mild beginning.\n\n")}},q0:{"^":"a:0;a",
 $0:function(){var z=this.a
 z.J("\n\n")
 z.J(z.x2.e_("While <whileString>, you suddenly feel your muscles getting stiff.","Suddenly, you feel your muscles getting stiff."))
@@ -1974,13 +1971,13 @@ z.J("Which is about when the whole thing fades away. The waves of pain get milde
 z.J("\n\n ![Hand grabbing a railing IMG] \n\n")
 z.J("And then you notice your hand on the railing and you realize that what was previously a straight steel pipe is now slightly bent at the point where your hand rests. You just deformed a solid metal railing. With your bare hand. \n\n")
 z.J("_What?_ You lift your hand and have a better look at the railing below it. It's the same steel as everywhere else. _Am I getting crazy now?_ You try to bend it some more, but the steel doesn't budge. \n\n")
-z.J("You slowly stand up and shake your head. _I'm definitely getting crazy._ \n\n")}},pN:{"^":"a:0;a",
+z.J("You slowly stand up and shake your head. _I'm definitely getting crazy._ \n\n")}},pO:{"^":"a:0;a",
 $0:function(){var z=this.a.x1
-return z.cy===!0&&z.dw!==!0}},pO:{"^":"a:0;a",
+return z.cy===!0&&z.dw!==!0}},pP:{"^":"a:0;a",
 $0:function(){$.$get$ar().m(0,"You pull the banana out of your pocket, peel it, and eat it. It's delicious. You feel a little bit invigorated.")
 var z=this.a
 z.x1.eo=!0
-z.y.f=!1}},pP:{"^":"a:0;a",
+z.y.f=!1}},pQ:{"^":"a:0;a",
 $0:function(){var z,y,x
 $.$get$ar().m(0,"You hand the banana to Gorilla. He watches it with amazement, than proceeds to peel it eagerly. Before he takes the first bite, though, he gives you a thankful look.\n\nAfter only a few seconds, the banana is no more. But Gorilla seems very happy.")
 z=this.a
@@ -1990,15 +1987,15 @@ if(typeof x!=="number")return x.I()
 y.cn=x+2
 y.eo=!0
 z.y.f=!1
-$.$get$b_().aU(0,5,"making friends")}},pQ:{"^":"a:1;a",
+$.$get$b_().aU(0,5,"making friends")}},pR:{"^":"a:1;a",
 $1:function(a){var z=this.a.k3
-return J.h(a.Q,z.Q)&&a.f===!0&&z.f===!0}},pM:{"^":"a:0;a",
-$0:function(){this.a.J("You pull the flyer out of your pocket and unfold it. \n\n[IMG]\n\nThen you fold it again and put it back.")}},pJ:{"^":"a:0;",
-$0:function(){return $.$get$ar().m(0,"You pull the gun out of your pocket and heft it in your hand. It's heavy, well-built and seems in fine condition. It is loaded.")}},pK:{"^":"a:0;a",
+return J.h(a.Q,z.Q)&&a.f===!0&&z.f===!0}},pN:{"^":"a:0;a",
+$0:function(){this.a.J("You pull the flyer out of your pocket and unfold it. \n\n[IMG]\n\nThen you fold it again and put it back.")}},pK:{"^":"a:0;",
+$0:function(){return $.$get$ar().m(0,"You pull the gun out of your pocket and heft it in your hand. It's heavy, well-built and seems in fine condition. It is loaded.")}},pL:{"^":"a:0;a",
 $0:function(){$.$get$ar().m(0,"You lift the gun and aim at Gorilla. He freezes and looks absolutely horrified.")
 var z=this.a
-z.ek("Pull the trigger",new L.pH(z))
-z.ek("Put the gun down",new L.pI())}},pH:{"^":"a:0;a",
+z.ek("Pull the trigger",new L.pI(z))
+z.ek("Put the gun down",new L.pJ())}},pI:{"^":"a:0;a",
 $0:function(){var z,y,x
 z=$.$get$ar()
 z.m(0,"You shoot.")
@@ -2010,20 +2007,20 @@ y.f=!0
 x=x.Q
 y.fy=null
 y.fx=x
-z.m(0,"Gorilla takes it in the chest and falls to the ground with a loud thump. A puddle of blood starts forming under him almost immediately.")}},pI:{"^":"a:0;",
-$0:function(){$.$get$ar().m(0,"You put the gun down. Gorilla doesn't move. He watches you in terror, frozen in place.")}},pL:{"^":"a:1;a",
+z.m(0,"Gorilla takes it in the chest and falls to the ground with a loud thump. A puddle of blood starts forming under him almost immediately.")}},pJ:{"^":"a:0;",
+$0:function(){$.$get$ar().m(0,"You put the gun down. Gorilla doesn't move. He watches you in terror, frozen in place.")}},pM:{"^":"a:1;a",
 $1:function(a){var z=this.a.k3
-return J.h(a.Q,z.Q)&&a.f===!0&&z.f===!0}},pC:{"^":"a:0;a",
-$0:function(){return J.Y(J.J(this.a.x1.c2),0)}},pD:{"^":"a:0;a",
-$0:function(){return J.aB(this.a.k4.f.a,96)}},pE:{"^":"a:0;a",
+return J.h(a.Q,z.Q)&&a.f===!0&&z.f===!0}},pD:{"^":"a:0;a",
+$0:function(){return J.Y(J.J(this.a.x1.c2),0)}},pE:{"^":"a:0;a",
+$0:function(){return J.aB(this.a.k4.f.a,96)}},pF:{"^":"a:0;a",
 $0:function(){var z,y
 z=this.a
 y=z.k4
-return J.bM(y.f.a,460)&&J.aB(y.f.a,473)&&z.x1.ep!==!0}},pF:{"^":"a:0;a",
-$0:function(){return this.a.x1.ep!==!0}},pG:{"^":"a:0;a",
+return J.bM(y.f.a,460)&&J.aB(y.f.a,473)&&z.x1.ep!==!0}},pG:{"^":"a:0;a",
+$0:function(){return this.a.x1.ep!==!0}},pH:{"^":"a:0;a",
 $0:function(){var z=this.a
 if(z.x1.f7===!0){z.kv("Unity: Arrival")
-return!1}return!0}},pB:{"^":"a:94;a,b,c",
+return!1}return!0}},pC:{"^":"a:94;a,b,c",
 $1:function(a){var z,y,x,w,v,u
 z=this.b
 y=z.gu()
@@ -2032,25 +2029,25 @@ if(J.h(z.gu(),0))for(z=this.a.gjE(),y=z.length,x=this.c,w=0;w<z.length;z.length=
 u=J.u(v)
 if(!!u.$isc3&&J.h(v.Q,!1)){u.sal(v,!0)
 x.m(0,v)}}else{for(z=this.c,y=H.b(new P.bo(z,z.r,null,null),[null]),y.c=y.a.e;y.q();)J.bB(y.d,!1)
-z.a8(0)}}},ps:{"^":"a:7;a,b",
+z.a8(0)}}},pt:{"^":"a:7;a,b",
 $1:function(a){this.a.x1.go=a
-this.b.$1(a)}},pt:{"^":"a:7;a,b",
-$1:function(a){this.a.x1.id=a
 this.b.$1(a)}},pu:{"^":"a:7;a,b",
-$1:function(a){this.a.x1.k1=a
+$1:function(a){this.a.x1.id=a
 this.b.$1(a)}},pv:{"^":"a:7;a,b",
-$1:function(a){this.a.x1.k2=a
+$1:function(a){this.a.x1.k1=a
 this.b.$1(a)}},pw:{"^":"a:7;a,b",
-$1:function(a){this.a.x1.k3=a
+$1:function(a){this.a.x1.k2=a
 this.b.$1(a)}},px:{"^":"a:7;a,b",
-$1:function(a){this.a.x1.r1=a
+$1:function(a){this.a.x1.k3=a
 this.b.$1(a)}},py:{"^":"a:7;a,b",
-$1:function(a){this.a.x1.k4=a
+$1:function(a){this.a.x1.r1=a
 this.b.$1(a)}},pz:{"^":"a:7;a,b",
+$1:function(a){this.a.x1.k4=a
+this.b.$1(a)}},pA:{"^":"a:7;a,b",
 $1:function(a){this.a.x1.r2=a
-this.b.$1(a)}},pA:{"^":"a:0;a,b",
-$0:function(){this.a.x1.eu=this.b.gu()}},pq:{"^":"a:0;a",
-$0:function(){this.a.$0()}},pr:{"^":"a:0;a,b,c,d",
+this.b.$1(a)}},pB:{"^":"a:0;a,b",
+$0:function(){this.a.x1.eu=this.b.gu()}},pr:{"^":"a:0;a",
+$0:function(){this.a.$0()}},ps:{"^":"a:0;a,b,c,d",
 $0:function(){var z,y
 z=this.a.x1
 y=z.fx
@@ -2065,24 +2062,24 @@ return Math.random()*a>>>0},
 uu:function(){return Math.random()}}}],["","",,G,{"^":"",hz:{"^":"fb;Q,ao:ch>,cx,x,y,z,a,b,c,d,e,f,r",
 uY:function(a){var z,y,x,w,v,u,t,s
 z=P.ao(null,null,null,G.aP)
-for(y=this.gci(),y=H.b(new H.a8(y,new G.rH()),[H.q(y,0)]),y=H.b(new H.dT(J.aF(y.a),y.b),[H.q(y,0)]),x=y.a;y.q();){w=x.gu()
+for(y=this.gci(),y=H.b(new H.a8(y,new G.rI()),[H.q(y,0)]),y=H.b(new H.dT(J.aF(y.a),y.b),[H.q(y,0)]),x=y.a;y.q();){w=x.gu()
 v=J.k(w)
-u=a.i9(v.ga5(w))
+u=a.i8(v.ga5(w))
 if(u!=null&&!J.h(u,H.R(w,"$isbv").gu())){H.R(w,"$isbv")
 w.su(u)
 if(!!v.$isaP&&v.gao(w)!=null)v.d0(H.R(w,"$isaP"),u)
 t=w
 do{t=t.gne(t)
 v=J.u(t)
-if(!!v.$isaP&&v.gao(t)!=null)z.m(0,H.R(t,"$isaP"))}while(v.gne(t)!=null)}}z.t(0,new G.rI())
+if(!!v.$isaP&&v.gao(t)!=null)z.m(0,H.R(t,"$isaP"))}while(v.gne(t)!=null)}}z.t(0,new G.rJ())
 y=this.gci()
-H.b(new H.a8(y,new G.rJ()),[H.q(y,0)]).t(0,new G.rK())
-if(a.gkT()===!0){s=J.h(a.a.i(0,"__submitterId__"),this.ga5(this))?this.Q:H.R(this.gci().e5(0,new G.rL(a)),"$iscH").Q
+H.b(new H.a8(y,new G.rK()),[H.q(y,0)]).t(0,new G.rL())
+if(a.gkT()===!0){s=J.h(a.a.i(0,"__submitterId__"),this.ga5(this))?this.Q:H.R(this.gci().e5(0,new G.rM(a)),"$iscH").Q
 if(s!=null)s.$0()
 return}else return this.ll()},
 q8:function(){var z={}
 z.a=0
-this.gci().t(0,new G.rG(z,this))
+this.gci().t(0,new G.rH(z,this))
 this.cx=!0},
 a7:function(){if(!this.cx)this.q8()
 var z=this.e8()
@@ -2091,7 +2088,7 @@ z.h(0,"values",P.dw(this.ll().a,null,null))
 return z},
 ll:function(){var z,y,x,w,v,u,t
 z=H.b(new H.Z(0,null,null,null,null,null,0),[P.j,[P.ap,P.j,P.e]])
-for(y=this.gci(),y=H.b(new H.a8(y,new G.rF()),[H.q(y,0)]),y=H.b(new H.dT(J.aF(y.a),y.b),[H.q(y,0)]),x=y.a;y.q();){w=x.gu()
+for(y=this.gci(),y=H.b(new H.a8(y,new G.rG()),[H.q(y,0)]),y=H.b(new H.dT(J.aF(y.a),y.b),[H.q(y,0)]),x=y.a;y.q();){w=x.gu()
 v=w.a7()
 if(!!J.u(w).$isi6){u=w.Q
 v.h(0,"__string__",w.oM(u))}t=J.A(H.R(w,"$isbc").b,"id")
@@ -2111,37 +2108,37 @@ y=new B.a_(null,H.b([],[B.I]))
 z=new G.hz(null,null,!1,"http://www.w3.org/1999/xhtml","Form",null,null,z,y,null,null,null,null)
 y.b=z
 z.pe(a)
-return z}}},rH:{"^":"a:1;",
+return z}}},rI:{"^":"a:1;",
 $1:function(a){var z=J.u(a)
-return!!z.$isbL&&!!z.$isbv}},rI:{"^":"a:92;",
+return!!z.$isbL&&!!z.$isbv}},rJ:{"^":"a:92;",
 $1:function(a){var z=J.u(a)
-z.d0(a,!!z.$isbv?a.gu():null)}},rJ:{"^":"a:1;",
-$1:function(a){return!!J.u(a).$isbv}},rK:{"^":"a:5;",
-$1:function(a){H.R(a,"$isbv").ig()}},rL:{"^":"a:1;a",
+z.d0(a,!!z.$isbv?a.gu():null)}},rK:{"^":"a:1;",
+$1:function(a){return!!J.u(a).$isbv}},rL:{"^":"a:5;",
+$1:function(a){H.R(a,"$isbv").ig()}},rM:{"^":"a:1;a",
 $1:function(a){var z=J.u(a)
-return!!z.$iscH&&J.h(z.ga5(a),this.a.a.i(0,"__submitterId__"))}},rG:{"^":"a:5;a,b",
+return!!z.$iscH&&J.h(z.ga5(a),this.a.a.i(0,"__submitterId__"))}},rH:{"^":"a:5;a,b",
 $1:function(a){var z=this.b
-J.o9(a,"form"+H.d(z.ga5(z))+"-element"+this.a.a++)}},rF:{"^":"a:1;",
+J.o9(a,"form"+H.d(z.ga5(z))+"-element"+this.a.a++)}},rG:{"^":"a:1;",
 $1:function(a){return!!J.u(a).$isbL}},aP:{"^":"e;ao:f$*",
 d0:function(a,b){return this.f$.$1(b)}},i6:{"^":"e;",
 oM:function(a){return this.r$.$1(a)}},IG:{"^":"a:6;",
 $1:function(a){return H.d(a)}},cH:{"^":"i8;Q,x,y,z,a,b,c,d,e,f,r",
-dP:function(a){return this.Q.$0()}},c3:{"^":"q4;f$,Q,x,y,z,a,b,c,d,e,f,r",$isaP:1,
-$asaP:function(){return[P.a6]}},q4:{"^":"jF+aP;ao:f$*",$isaP:1,
-$asaP:function(){return[P.a6]}},x9:{"^":"xa;r$,Q,ch,cx,cy,db,dx,x,y,z,a,b,c,d,e,f,r"},xa:{"^":"l9+i6;",$isi6:1},ib:{"^":"lC;Q,x,y,z,a,b,c,d,e,f,r"},eo:{"^":"vW;f$,x,y,z,a,b,c,d,e,f,r",$isaP:1,
-$asaP:function(){return[P.r]}},vW:{"^":"kL+aP;ao:f$*",$isaP:1,
-$asaP:function(){return[P.r]}},wk:{"^":"wl;f$,Q,x,y,z,a,b,c,d,e,f,r",
-pq:function(a,b,c,d){this.sao(0,new G.wn(b))},
+dP:function(a){return this.Q.$0()}},c3:{"^":"q5;f$,Q,x,y,z,a,b,c,d,e,f,r",$isaP:1,
+$asaP:function(){return[P.a6]}},q5:{"^":"jF+aP;ao:f$*",$isaP:1,
+$asaP:function(){return[P.a6]}},xa:{"^":"xb;r$,Q,ch,cx,cy,db,dx,x,y,z,a,b,c,d,e,f,r"},xb:{"^":"l9+i6;",$isi6:1},ib:{"^":"lC;Q,x,y,z,a,b,c,d,e,f,r"},eo:{"^":"vX;f$,x,y,z,a,b,c,d,e,f,r",$isaP:1,
+$asaP:function(){return[P.r]}},vX:{"^":"kL+aP;ao:f$*",$isaP:1,
+$asaP:function(){return[P.r]}},wl:{"^":"wm;f$,Q,x,y,z,a,b,c,d,e,f,r",
+pq:function(a,b,c,d){this.sao(0,new G.wo(b))},
 A:{
 fj:function(a,b,c,d){var z,y
 z=P.W(null,null,null,null,null)
 y=new B.a_(null,H.b([],[B.I]))
-z=new G.wk(null,!1,"http://www.w3.org/1999/xhtml","Option",null,null,z,y,null,null,null,null)
+z=new G.wl(null,!1,"http://www.w3.org/1999/xhtml","Option",null,null,z,y,null,null,null,null)
 y.b=z
 z.kZ(a,c,d)
 z.pq(a,b,c,d)
-return z}}},wl:{"^":"kT+aP;ao:f$*",$isaP:1,
-$asaP:function(){return[P.a6]}},wn:{"^":"a:7;a",
+return z}}},wm:{"^":"kT+aP;ao:f$*",$isaP:1,
+$asaP:function(){return[P.a6]}},wo:{"^":"a:7;a",
 $1:function(a){if(a===!0)this.a.$1(a)}}}],["","",,O,{"^":"",
 t:[function(a){var z,y
 z=$.$get$h6()
@@ -2206,8 +2203,8 @@ this.b=b
 z=this.r
 if(z.b>=4)H.S(z.cf())
 z.b5(0,b)
-if(J.aB(this.b,this.a)){y=this.lu(this.c,new R.wf(this))
-if(y.length!==0)this.c.i(0,C.a.gM(y)).$1(this.b)}else{y=this.lu(this.d,new R.wg(this))
+if(J.aB(this.b,this.a)){y=this.lu(this.c,new R.wg(this))
+if(y.length!==0)this.c.i(0,C.a.gM(y)).$1(this.b)}else{y=this.lu(this.d,new R.wh(this))
 if(y.length!==0)this.d.i(0,C.a.gn(y)).$1(this.b)}}],
 lf:function(a){var z,y
 z=this.e
@@ -2229,9 +2226,9 @@ z=J.E(this.b,z)
 if(typeof z!=="number")return z.da()
 return z/y},
 nb:function(){var z=this.x
-return H.b(new P.mG(new R.we(this),z),[H.F(z,"aM",0)])},
+return H.b(new P.mG(new R.wf(this),z),[H.F(z,"aM",0)])},
 grP:function(){var z=this.x
-return H.b(new P.mx(new R.wd(this),z),[H.F(z,"aM",0),null])},
+return H.b(new P.mx(new R.we(this),z),[H.F(z,"aM",0),null])},
 a7:function(){return P.i(["min",this.e,"max",this.f,"value",this.b])},
 ab:function(a){this.b=J.A(a,"value")},
 bz:function(a,b,c,d,e){var z,y,x
@@ -2252,7 +2249,7 @@ $iscl:1,
 A:{
 hV:function(a,b,c,d,e){var z=new R.dB(null,null,a,e,d,c,null,null,"NumScale")
 z.bz(a,b,c,d,e)
-return z}}},wf:{"^":"a:1;a",
+return z}}},wg:{"^":"a:1;a",
 $1:function(a){var z,y,x,w,v
 z=this.a
 y=z.e
@@ -2264,7 +2261,7 @@ if(v.aj(a,x/w)){z=J.E(z.a,y)
 if(typeof z!=="number")return z.da()
 w=v.K(a,z/w)
 z=w}else z=!1
-return z}},wg:{"^":"a:1;a",
+return z}},wh:{"^":"a:1;a",
 $1:function(a){var z,y,x,w,v
 z=this.a
 y=z.e
@@ -2276,8 +2273,8 @@ if(v.as(a,x/w)){z=J.E(z.b,y)
 if(typeof z!=="number")return z.da()
 w=v.aZ(a,z/w)
 z=w}else z=!1
-return z}},we:{"^":"a:1;a",
-$1:function(a){return J.h(a,this.a.e)}},wd:{"^":"a:25;a",
+return z}},wf:{"^":"a:1;a",
+$1:function(a){return J.h(a,this.a.e)}},we:{"^":"a:25;a",
 $1:function(a){return J.E(a,this.a.a)}},bV:{"^":"dB;bB:z>,a,b,c,d,e,f,r,x,y",
 gU:function(a){return R.dB.prototype.gU.call(this,this)}}}],["","",,S,{"^":"",
 c8:function(a){if(a<0||a>1)throw H.c(P.ad("Probability needs to be within <0,1>."))
@@ -2331,7 +2328,7 @@ else return S.dG(m.charCodeAt(0)==0?m:m)}else if(t===J.E(z.gj(a),1))return a
 else{if(typeof t!=="number")return t.I()
 x=t+1
 return z.Z(a,0,x)+H.d(S.dG(C.b.be(a,x)))}}else return a},
-x7:function(a){if(a>=1)return"sure"
+x8:function(a){if(a>=1)return"sure"
 if(a>=0.8)return"almost sure"
 if(a>=0.7)return"very probable"
 if(a>=0.6)return"quite likely"
@@ -2371,7 +2368,7 @@ b.y=a.y
 b.sdJ(a.gdJ())
 a.gdN()
 b.sdN(!0)
-b.shR(a.ghR())
+b.shQ(a.ghQ())
 b.scl(a.gcl())},
 jJ:function(a,b){var z=b instanceof M.du?b.z:b
 if(z==null)z=a
@@ -2391,13 +2388,13 @@ x=this.giq()
 w=this.a
 y.rk(0,x,w,z,w.gah().y.c.a)},
 giq:function(){return"<subject> start<s> programming the "+H.d(J.a0(this.a))+" to "+this.gcO()},
-k9:function(){return this.hg(this.ge7())},
-nt:function(){return this.hg(this.r)},
-hY:function(){return this.hh(this.gcC(),!0)},
+k9:function(){return this.hf(this.ge7())},
+nt:function(){return this.hf(this.r)},
+hX:function(){return this.hg(this.gcC(),!0)},
 dQ:[function(a){},"$0","gd2",0,0,0],
 fG:function(){return this.b6(this.gdg(),!0)},
 fv:[function(){},"$0","gfu",0,0,0],
-ns:function(){return this.hg(this.Q)},
+ns:function(){return this.hf(this.Q)},
 bl:function(a,b,c,d,e,f,g,h,i,j,k){var z,y
 if(a==null||a==="")return
 if(k==null){z=this.gdJ()
@@ -2412,11 +2409,11 @@ if(h==null?z==null:h===z)h=null
 if(g==null?z==null:g===z)g=null
 if(J.h(f,z))f=null
 $.$get$ar().rh(0,a,H.bx(this),b,c,d,e,f,g,h,i,k,this.a.gah().y.c.a)},
-hg:function(a){return this.bl(a,!1,!1,!1,!1,null,null,null,!1,!1,null)},
+hf:function(a){return this.bl(a,!1,!1,!1,!1,null,null,null,!1,!1,null)},
 qQ:function(a,b){return this.bl(a,!1,!1,!1,!1,b,null,null,!1,!1,null)},
 b6:function(a,b){return this.bl(a,!1,!1,!1,b,null,null,null,!1,!1,null)},
 lS:function(a,b,c){return this.bl(a,!1,!1,!1,b,null,null,null,!1,c,null)},
-hh:function(a,b){return this.bl(a,!1,!1,!1,!1,null,null,null,b,!1,null)},
+hg:function(a,b){return this.bl(a,!1,!1,!1,!1,null,null,null,b,!1,null)},
 lU:function(a,b,c){return this.bl(a,!1,!1,!1,!1,null,null,null,b,c,null)},
 lQ:function(a,b,c){return this.bl(a,!1,!1,b,!1,null,null,null,!1,c,null)},
 lP:function(a,b){return this.bl(a,!1,!1,!1,!1,null,null,null,!1,b,null)},
@@ -2436,7 +2433,7 @@ if(this.a.gbP()!==!0)return!1
 z=this.a.gah()
 if(!(z.gbP()&&z.f===!0))return!1
 return!0},function(){return this.fl(null,null)},"jJ",null,null,"gwX",0,5,null,0,0],
-hr:function(a,b,c){return this.gcl()},
+hq:function(a,b,c){return this.gcl()},
 e6:[function(a){this.fr=this.gbn()
 this.go=!1},"$0","gag",0,0,0],
 aB:function(a){var z,y
@@ -2456,12 +2453,12 @@ y=this.gcb()
 if(z==null?y==null:z===y)this.k9()
 if(S.c8(this.a.gjZ().gfA())){z=this.fy
 if(typeof z!=="number")return z.C()
-this.fy=z-1}if(this.fy===0){if(S.c8(this.hr(this.a,this.b,this.c))){this.hY()
+this.fy=z-1}if(this.fy===0){if(S.c8(this.hq(this.a,this.b,this.c))){this.hX()
 this.dQ(0)}else{this.fG()
 this.fv()}this.go=!0
 this.fy=null}},
 A:{"^":"Kn<"}},
-fa:{"^":"ch;dN:id@,hR:k1@,dJ:k2@,bn:k3@,cb:k4@,cC:r1@,jg:r2<,jf:rx<,cl:ry@,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
+fa:{"^":"ch;dN:id@,hQ:k1@,dJ:k2@,bn:k3@,cb:k4@,cC:r1@,jg:r2<,jf:rx<,cl:ry@,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
 b8:function(a,b){var z=new M.fa(!0,!0,!1,1,4,null,0.2,0.2,0.8,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1)
 M.f4(this,z)
 z.a=b
@@ -2476,7 +2473,7 @@ y=$.$get$ar()
 x=this.b
 y.rp(0,"<subject> {start<s> {aiming at|taking aim at|fixing on|zeroing in on}|begin<s> to {{take |}aim at|fix on|zero in on}} <object>",H.bx(this),!0,x,z,this.a.gah().y.c.a)},
 ge7:function(){return},
-hY:function(){var z,y
+hX:function(){var z,y
 if(!this.a.gah().ch.r){z=H.R(this.a,"$isaW")
 y=z.z}else{y=null
 z=null}this.lT("<owner's> <subject> {shoot<s>|fire<s>} at <object-owner's> <object>",y,z)},
@@ -2487,7 +2484,7 @@ y=M.jJ(a.gah(),a)
 if(z===0)return
 x=a.gah().db
 w=x.gbP()&&x.f===!0&&!J.h(x.fy.b,0)
-if(w)if(!S.c8(H.R(this.a,"$isaW").r1)){this.hh("<owner's> <subject> {drill<s> into|hit<s>} <object's> shield",!0)
+if(w)if(!S.c8(H.R(this.a,"$isaW").r1)){this.hg("<owner's> <subject> {drill<s> into|hit<s>} <object's> shield",!0)
 w=x.fy
 v=w.b
 if(typeof v!=="number")return H.n(v)
@@ -2495,7 +2492,7 @@ if(z>v){z-=v
 w.sU(0,0)}else{w.sU(0,v-H.R(this.a,"$isaW").r2)
 z=0}}else{w=$.$get$ar()
 v=H.R(this.a,"$isaW").k3
-w.ro(0,"<subject> goes {right|} through <object's> shield",a.gah(),!0,v,this.a.gah().y.c.a)}if(z>0){u=this.a.gah().fS(a.gah())
+w.ro(0,"<subject> goes {right|} through <object's> shield",a.gah(),!0,v,this.a.gah().y.c.a)}if(z>0){u=this.a.gah().fR(a.gah())
 if(b){w=H.R(this.a,"$isaW").k3
 this.qT("<subject> land<s> on <object-owner's> <object> instead",a,a.gah(),!0,w)}else{w=J.Q(u)
 if(w.aj(u,2)){z*=1.5
@@ -2519,7 +2516,7 @@ this.qR(w,!0,!0,x,H.R(this.a,"$isaW").k3)},
 fv:[function(){var z,y
 if(!(this.c instanceof M.du)){z=this.a
 y=this.b
-y=S.c8(this.hr(z,y,y.gcW())/2)
+y=S.c8(this.hq(z,y,y.gcW())/2)
 z=this.b
 if(y)this.lx(z.gcW(),!0)
 else this.qS("<subject> completely {miss<es>|go<es> wide of} <object>, too",!0,!0,z,H.R(this.a,"$isaW").k3)}if(S.c8(this.gjf()))this.ly()},"$0","gfu",0,0,0],
@@ -2538,7 +2535,7 @@ fl:function(a,b){if(!this.oO(a,b))return!1
 if(!J.h(this.a.gjZ().b,this.a.gjZ().f))return!1
 return!0},
 jJ:function(){return this.fl(null,null)},
-hr:function(a,b,c){var z,y,x,w,v,u
+hq:function(a,b,c){var z,y,x,w,v,u
 H.R(a,"$isaW")
 if(c==null)c=this.c
 if(c==null&&b!=null)c=b.gcW()
@@ -2554,7 +2551,7 @@ if(u<0)return 0
 if(u>1)return 1
 return u},
 A:{"^":"L8<"}},
-x6:{"^":"fa;cO:x1<,bn:x2<,cb:y1<,jg:y2<,jf:bL<,cl:bq<,id,k1,k2,k3,k4,r1,r2,rx,ry,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
+x7:{"^":"fa;cO:x1<,bn:x2<,cb:y1<,jg:y2<,jf:bL<,cl:bq<,id,k1,k2,k3,k4,r1,r2,rx,ry,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
 k8:function(){var z,y,x,w
 z=this.a.gah().ch
 if(z==null||!z.r)throw H.c(new P.p("reportSettingUp should not have been called since this spaceship's pilot is null or is not player"))
@@ -2562,7 +2559,7 @@ y=$.$get$ar()
 x=this.a
 w=this.b
 y.rt(0,"<subject> decide<s> to take a quick shot at <object>",H.bx(this),!0,w,x,z,this.a.gah().y.c.a)}},
-kq:{"^":"ch;bn:id@,cb:k1@,dN:k2@,hR:k3@,iq:k4<,e7:r1<,cl:r2@,cC:rx@,dg:ry@,x1,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
+kq:{"^":"ch;bn:id@,cb:k1@,dN:k2@,hQ:k3@,iq:k4<,e7:r1<,cl:r2@,cC:rx@,dg:ry@,x1,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
 b8:function(a,b){var z=new M.kq(1,3,!0,!0,null,"<subject> {start<s> {aiming at|taking aim at|fixing on|zeroing in on}|begin<s> to {{take |}aim at|fix on|zero in on}} <object>",0.9,"<subject> successfully improve<s> <subject's> aim on <object>","<subject's> aim on <object> doesn't improve",1,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1)
 M.f4(this,z)
 z.a=b
@@ -2570,7 +2567,7 @@ z.x1=this.x1
 return z},
 gcO:function(){return"improve aim"},
 k9:function(){return this.lQ(this.r1,!0,!0)},
-hY:function(){return this.lU(this.rx,!0,!0)},
+hX:function(){return this.lU(this.rx,!0,!0)},
 dQ:[function(a){var z,y,x
 z=H.R(this.a,"$isaW")
 y=this.b
@@ -2578,7 +2575,7 @@ x=J.a2(z.fP(y),this.x1)
 z.fy.h(0,y,x)},"$0","gd2",0,0,0],
 fG:function(){return this.lS(this.ry,!0,!0)}},
 oG:{"^":"fa;dJ:x1<,id,k1,k2,k3,k4,r1,r2,rx,ry,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go"},
-Dx:{"^":"ch;hR:id@",
+Dx:{"^":"ch;hQ:id@",
 gah:function(){return this.a.gah()},
 fl:function(a,b){var z
 if(this.b!=null)a=this.b
@@ -2588,7 +2585,7 @@ if(!(z.gbP()&&z.f===!0))return!1
 return!0},
 jJ:function(){return this.fl(null,null)},
 k9:function(){return this.lQ(this.ge7(),!0,!0)},
-hY:function(){return this.lU(this.gcC(),!0,!0)},
+hX:function(){return this.lU(this.gcC(),!0,!0)},
 nt:function(){return this.lP(this.r,!0)},
 fG:function(){return this.lS(this.gdg(),!0,!0)},
 ns:function(){return this.lP(this.Q,!0)}},
@@ -2602,8 +2599,8 @@ dQ:[function(a){var z,y,x
 z=this.a.gah()
 y=this.b
 x=this.gjH()
-z.kB(y,J.a2(z.fS(y),x))
-y.kB(z,J.E(y.fS(z),x))},"$0","gd2",0,0,0]},
+z.kB(y,J.a2(z.fR(y),x))
+y.kB(z,J.E(y.fR(z),x))},"$0","gd2",0,0,0]},
 lb:{"^":"hB;cO:y1<,cl:y2@,jH:bL<,bq,e7:en<,cC:eo@,dg:f5@,k1,k2,k3,k4,r1,r2,rx,ry,x1,x2,id,a,b,c,d,e,f,r,x,y,z,Q,ch,cx,cy,db,dx,dy,fr,fx,fy,go",
 b8:function(a,b){var z=new M.lb("reversal maneuvre",0.3,3,0.2,"<subject> {start<s>|begin<s>} a {risky|daring} maneuvre to gain positional advantage on <object>","<subject> successfully pull<s> off the maneuvre on <object>","<subject's> maneuvre fails","improve position",1,5,0.9,1,!0,null,"<subject> {start<s>|begin<s>} {trying|an attempt} to {improve|better} <subject's> position on <object>","<subject> successfully improve<s> <subject's> position on <object>","<subject> fail<s> to improve <subject's> position on <object>",!1,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1)
 M.f4(this,z)
@@ -2612,7 +2609,7 @@ z.bL=this.bL
 z.bq=this.bq
 return z},
 fG:function(){return this.qQ(this.f5,$.$get$ea())},
-fv:[function(){if(S.c8(this.bq))this.hg("in fact, <subject's> position on <object> worsens")},"$0","gfu",0,0,0]},
+fv:[function(){if(S.c8(this.bq))this.hf("in fact, <subject's> position on <object> worsens")},"$0","gfu",0,0,0]},
 kX:{"^":"dl;ah:y@,z,a,b,c,d,e,f,r,x",
 aB:function(a){var z,y,x,w,v
 this.gbP()
@@ -2643,7 +2640,7 @@ y="<table class='form-table'>"+("<tr><th></th><th>Hull</th><th>Weapons</th><th>S
 v.a=y
 v.a=y+this.lo(this.y,null)
 y=this.y.y.gkH()
-H.b(new H.a8(y,new M.wB(this)),[H.F(y,"L",0)]).t(0,new M.wC(this,v))
+H.b(new H.a8(y,new M.wC(this)),[H.F(y,"L",0)]).t(0,new M.wD(this,v))
 y=v.a+="</table>"
 w.Q=y.charCodeAt(0)==0?y:y
 x.gav(x).b.m(0,w)
@@ -2654,19 +2651,19 @@ z+="<td>50%</td><td>slow</td>"
 z=(b!=null?z+("<td>"+a.nO(b,!0)+"</td>"):z+"<td>&mdash;</td>")+"</tr>"
 return z.charCodeAt(0)==0?z:z},
 pN:function(a,b){var z=[[a],b]
-z=H.b(new H.c5(z,new M.wz()),[H.q(z,0),null])
-z=H.b(new H.c5(z,new M.wA()),[H.F(z,"L",0),null])
+z=H.b(new H.c5(z,new M.wA()),[H.q(z,0),null])
+z=H.b(new H.c5(z,new M.wB()),[H.F(z,"L",0),null])
 J.o1(S.dF(P.ba(z,!1,H.F(z,"L",0))))}},
-wB:{"^":"a:1;a",
+wC:{"^":"a:1;a",
 $1:function(a){return!J.h(a,this.a.y)}},
-wC:{"^":"a:1;a,b",
+wD:{"^":"a:1;a,b",
 $1:function(a){var z=this.a
 this.b.a+=z.lo(a,z.y)}},
-wz:{"^":"a:1;",
+wA:{"^":"a:1;",
 $1:function(a){return a}},
-wA:{"^":"a:86;",
-$1:function(a){return J.jt(J.dd(a),new M.wy())}},
-wy:{"^":"a:1;",
+wB:{"^":"a:86;",
+$1:function(a){return J.jt(J.dd(a),new M.wz())}},
+wz:{"^":"a:1;",
 $1:function(a){return a instanceof G.cH}},
 bY:{"^":"dl;k:y*,ah:z@,jG:Q<,jZ:ch<,fn:cx<,cy,db,dx,kR:dy<,a,b,c,d,e,f,r,x",
 gbP:function(){return J.Y(this.Q.b,0)},
@@ -2678,7 +2675,7 @@ z=$.$get$ar()
 y=this.z
 z.rr(0,a,b,y,c,this,y.y.c.a)},
 b6:function(a,b){return this.lR(a,b,!1)},
-hh:function(a,b){return this.lR(a,!1,b)},
+hg:function(a,b){return this.lR(a,!1,b)},
 nR:function(){var z,y
 z=this.z
 y=z.ch
@@ -2742,11 +2739,11 @@ e.a=y
 z=y}this.Q=z
 z.d.h(0,1,new M.D5(this))
 e.a.c.h(0,0,new M.D6(this))
-e.a.grP().h5(new M.D7(e,this),null,null,!1)
+e.a.grP().h4(new M.D7(e,this),null,null,!1)
 this.ch=R.hV(null,null,c,0,null)}},
 D5:{"^":"a:1;a",
 $1:function(a){var z=this.a
-z.hh(z.dx,!0)}},
+z.hg(z.dx,!0)}},
 D6:{"^":"a:1;a",
 $1:function(a){var z=this.a
 z.b6(z.gkR(),!0)}},
@@ -2776,7 +2773,7 @@ else w.Q="No target."}}},
 Dq:{"^":"a:4;a,b",
 $2:function(a,b){var z,y
 z=this.a
-y=S.x7(a.hr(this.b,z.a,z.b))
+y=S.x8(a.hq(this.b,z.a,z.b))
 J.jq(b,H.d(Y.cm(a.gcO()))+" ["+y+"]")}},
 Di:{"^":"a:1;",
 $1:function(a){}},
@@ -2881,10 +2878,10 @@ return z.i(0,a)}},
 aW:{"^":"dp;fn:go<,eA:id?,nx:k1?,k2,k3,k4,r1,r2,fr,fx,fy,y,z,Q,ch,cx,cy,db,dx,dy,a,b,c,d,e,f,r,x",
 l2:function(a,b,c,d,e,f,g,h,i){c=new R.bV("IntScale",null,null,null,null,0,e,null,null,"NumScale")
 c.bz(null,null,e,0,null)
-c.nb().h5(new M.FL(this),null,null,!1)
+c.nb().h4(new M.FL(this),null,null,!1)
 this.k3=g
 this.k3.e=this.e
-C.a.N(this.cy,H.b([new M.fa(!0,!0,!1,1,4,null,0.2,0.2,0.8,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1),new M.x6("take a quick shot",1,3,0.1,0,0.6,!0,!0,!1,1,4,null,0.2,0.2,0.8,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1),new M.kq(1,3,!0,!0,null,"<subject> {start<s> {aiming at|taking aim at|fixing on|zeroing in on}|begin<s> to {{take |}aim at|fix on|zero in on}} <object>",0.9,"<subject> successfully improve<s> <subject's> aim on <object>","<subject's> aim on <object> doesn't improve",1,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1)],[M.ch]))},
+C.a.N(this.cy,H.b([new M.fa(!0,!0,!1,1,4,null,0.2,0.2,0.8,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1),new M.x7("take a quick shot",1,3,0.1,0,0.6,!0,!0,!1,1,4,null,0.2,0.2,0.8,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1),new M.kq(1,3,!0,!0,null,"<subject> {start<s> {aiming at|taking aim at|fixing on|zeroing in on}|begin<s> to {{take |}aim at|fix on|zero in on}} <object>",0.9,"<subject> successfully improve<s> <subject's> aim on <object>","<subject's> aim on <object> doesn't improve",1,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1)],[M.ch]))},
 A:{
 ir:function(a,b,c,d,e,f,g,h,i){var z,y,x
 z=H.b([],[P.j])
@@ -2920,10 +2917,10 @@ EH:{"^":"a:1;a",
 $1:function(a){this.a.b6("<owner's> <subject> <is> {now|} {almost {completely|}|nearly|close to} {destroyed|shattered|finished}",!0)}},
 du:{"^":"bY;fn:fr<,kR:fx<,y,z,Q,ch,cx,cy,db,dx,dy,a,b,c,d,e,f,r,x",
 js:function(){return},
-pl:function(a,b){this.Q.c.h(0,0.8,new M.tY(this))
-this.Q.c.h(0,0.6,new M.tZ(this))
-this.Q.c.h(0,0.4,new M.u_(this))
-this.Q.c.h(0,0.2,new M.u0(this))},
+pl:function(a,b){this.Q.c.h(0,0.8,new M.tZ(this))
+this.Q.c.h(0,0.6,new M.u_(this))
+this.Q.c.h(0,0.4,new M.u0(this))
+this.Q.c.h(0,0.2,new M.u1(this))},
 A:{
 kn:function(a,b){var z,y
 z={}
@@ -2932,13 +2929,13 @@ y=new M.du(!1,null,b,null,null,null,!1,[],null,"<owner's> <subject> <is> now {{f
 y.dh(b,a,1,C.c,z)
 y.pl(a,b)
 return y}}},
-tY:{"^":"a:1;a",
-$1:function(a){this.a.b6("there are a number of battle-inflicted scars on <subject's> surface now",!0)}},
 tZ:{"^":"a:1;a",
-$1:function(a){this.a.b6("<owner's> <subject> <is> now torn on many places",!0)}},
+$1:function(a){this.a.b6("there are a number of battle-inflicted scars on <subject's> surface now",!0)}},
 u_:{"^":"a:1;a",
-$1:function(a){this.a.b6("<owner's> <subject> lose<s> <subject's> structural integrity",!0)}},
+$1:function(a){this.a.b6("<owner's> <subject> <is> now torn on many places",!0)}},
 u0:{"^":"a:1;a",
+$1:function(a){this.a.b6("<owner's> <subject> lose<s> <subject's> structural integrity",!0)}},
+u1:{"^":"a:1;a",
 $1:function(a){var z=this.a
 z.b6("<owner's> <subject> <is> now full of gaping holes",!0)
 z.b6("<owner's> <subject> <is> {horribly |}deformed",!0)}},
@@ -2956,20 +2953,20 @@ bH:{"^":"dl;y,z,Q,uH:ch<,cx,cW:cy<,db,dx,dy,fr,fx,fy,go,a,b,c,d,e,f,r,x",
 gbP:function(){return J.Y(this.cy.Q.b,0)},
 seA:function(a){C.a.t(this.fr,new M.DO(a))
 this.cx=a},
-grF:function(){var z=this.gho()
+grF:function(){var z=this.ghn()
 return H.b(new H.a8(z,new M.DE()),[H.F(z,"L",0)])},
-gho:function(){var z=H.b([this.fr,this.dy,this.fx,[this.db,this.dx,this.cy]],[[P.l,M.bY]])
+ghn:function(){var z=H.b([this.fr,this.dy,this.fx,[this.db,this.dx,this.cy]],[[P.l,M.bY]])
 z=H.b(new H.c5(z,new M.DC()),[H.q(z,0),null])
 return H.b(new H.a8(z,new M.DD()),[H.F(z,"L",0)])},
 gjO:function(){return J.hh(C.a.fg(this.dy,0,new M.DN()))},
-fS:function(a){var z=this.fy
+fR:function(a){var z=this.fy
 if(!z.a3(0,a))z.h(0,a,0)
 return z.i(0,a)},
 kB:function(a,b){if(J.aB(b,-2))b=-2
 if(J.Y(b,2))b=2
 this.fy.h(0,a,b)},
 nO:function(a,b){var z,y
-z=this.fS(a)
+z=this.fR(a)
 y=new M.DK(!0)
 switch(z){case-2:return y.$2("very disadvategeous","green")
 case-1:return y.$2("disadvategeous","greenish")
@@ -2979,12 +2976,12 @@ case 2:return y.$2("very advategeous","red")
 default:throw H.c(new P.p("Position "+H.d(z)+" is not a valid value."))}},
 aB:function(a){var z=this.Q
 if(z!=null){z.aB(0)
-if(this.Q.go)this.Q=null}z=this.gho()
+if(this.Q.go)this.Q=null}z=this.ghn()
 H.b(new H.a8(z,new M.DP()),[H.F(z,"L",0)]).t(0,new M.DQ())
 this.ch.aB(0)},
 kt:function(){var z,y
 z=H.b([],[G.cU])
-y=this.gho()
+y=this.ghn()
 H.b(new H.a8(y,new M.DL()),[H.F(y,"L",0)]).t(0,new M.DM(z))
 return z},
 kq:function(){var z,y,x,w,v
@@ -3006,8 +3003,8 @@ l1:function(a,b,c,d,e,f,g,h){var z=this.ch
 if(z==null){z=new M.kX(this,0,!1,"pilot",H.b([],[P.j]),!0,2,!0,!1,C.N)
 this.ch=z}z.y=this
 this.e=z.e
-this.gho().t(0,new M.DF(this))
-this.cy.Q.nb().h5(new M.DG(this),null,null,!1)
+this.ghn().t(0,new M.DF(this))
+this.cy.Q.nb().h4(new M.DG(this),null,null,!1)
 C.a.N(this.z,H.b([new M.hB("improve position",1,5,0.9,1,!0,null,"<subject> {start<s>|begin<s>} {trying|an attempt} to {improve|better} <subject's> position on <object>","<subject> successfully improve<s> <subject's> position on <object>","<subject> fail<s> to improve <subject's> position on <object>",!1,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1),new M.lb("reversal maneuvre",0.3,3,0.2,"<subject> {start<s>|begin<s>} a {risky|daring} maneuvre to gain positional advantage on <object>","<subject> successfully pull<s> off the maneuvre on <object>","<subject's> maneuvre fails","improve position",1,5,0.9,1,!0,null,"<subject> {start<s>|begin<s>} {trying|an attempt} to {improve|better} <subject's> position on <object>","<subject> successfully improve<s> <subject's> position on <object>","<subject> fail<s> to improve <subject's> position on <object>",!1,null,null,null,!0,!1,"<subject> {initiate|start}<s> the undefined move","","<subject> successfully finish<es> undefined move","<subject> successfully finish<es> undefined move","<subject> fail<s> to perform undefined move","",!0,!0,!1,!1,1,null,null,null,null,!1)],[M.ch]))}},
 DF:{"^":"a:1;a",
 $1:function(a){var z=this.a
@@ -3130,7 +3127,7 @@ y=z.a3(0,a)?H.h5(z.i(0,a),"$iscb",[h],"$ascb"):H.b(new Z.cb(a,d,b,c,f,null,null,
 y.f=H.nu(e,h)
 y.r=!1
 z.h(0,a,y)
-return y}}],["","",,Y,{"^":"",bG:{"^":"e;bd:a<,eG:b<,jU:c<,uB:d<,uv:e<,hq:f@,d4:r<,d_:x<,tp:y<,oy:z<,fN:Q<,rf:ch<,ua:cx<,b2:cy<",
+return y}}],["","",,Y,{"^":"",bG:{"^":"e;bd:a<,eG:b<,jU:c<,uB:d<,uv:e<,hp:f@,d4:r<,d_:x<,tp:y<,oy:z<,fN:Q<,rf:ch<,ua:cx<,b2:cy<",
 i:function(a,b){switch(b){case"string":return this.a
 case"subject":return this.b
 case"object":return this.c
@@ -3151,7 +3148,7 @@ m:function(a,b){return this.bh(a,b,null,!1,!1,!1,!1,null,null,null,!1,!1,null,nu
 rj:function(a,b,c,d,e){return this.bh(a,b,null,!1,!1,!1,!1,c,d,null,!1,!1,e,null,!1)},
 j2:function(a,b,c){return this.bh(a,b,null,!1,!1,!1,!1,null,null,null,!1,!1,null,null,c)},
 rm:function(a,b,c,d,e,f){return this.bh(a,b,null,!1,!1,!1,!1,c,d,e,!1,!1,f,null,!1)},
-hm:function(a,b,c,d){return this.bh(a,b,null,!1,!1,!1,!1,c,null,null,!1,!1,d,null,!1)},
+hl:function(a,b,c,d){return this.bh(a,b,null,!1,!1,!1,!1,c,null,null,!1,!1,d,null,!1)},
 rl:function(a,b,c,d,e){return this.bh(a,b,null,!1,!1,!1,!1,c,null,null,!1,!1,d,null,e)},
 rh:function(a,b,c,d,e,f,g,h,i,j,k,l,m){return this.bh(a,b,c,d,e,f,g,h,i,j,k,!1,l,m,!1)},
 rk:function(a,b,c,d,e){return this.bh(a,b,null,!1,!1,!1,!1,c,null,null,!1,!1,d,e,!1)},
@@ -3187,7 +3184,7 @@ r=z.a+=H.d(H.br(a,"<also>","also"))
 z.a=r+" "
 u=0}}},
 m9:function(a,b,c,d){return this.rv(a,b,c,"and",3,null,null,d)},
-h_:[function(a){var z=J.Q(a)
+fZ:[function(a){var z=J.Q(a)
 if(z.K(a,0)||z.aj(a,this.b.length))return
 else{z=this.b
 if(a>>>0!==a||a>=z.length)return H.f(z,a)
@@ -3292,7 +3289,7 @@ if(z[a].gd_()){if(b>=z.length)return H.f(z,b)
 z=z[b].gd4()}else z=!1
 if(z)return!0}return!1},
 qU:function(a,b){if(a==null||b==null)return!1
-return J.h(a.ghZ(),b.ghZ())},
+return J.h(a.ghY(),b.ghY())},
 p:function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i
 z=this.b
 C.a.bA(z,"removeWhere")
@@ -3306,17 +3303,17 @@ for(w=this.a,v=x-1,u=-1,t=!0,s=!1,r=!1,q=0;q<x;++q){p=q===0
 if(!p){o=q-1
 n=this.jB("subject","object",o,q)
 if(q>=z.length)return H.f(z,q)
-if(z[q].ghq()||this.uA(q,o)){if(o<0||o>=z.length)return H.f(z,o)
-r=!z[o].ghq()}else r=!1
+if(z[q].ghp()||this.uA(q,o)){if(o<0||o>=z.length)return H.f(z,o)
+r=!z[o].ghp()}else r=!1
 if(q>=z.length)return H.f(z,q)
-z[q].shq(r)
+z[q].shp(r)
 m=q-u
 if(m<3)if(!s){if(q>=z.length)return H.f(z,q)
 z[q].goy()
 if(o<0||o>=z.length)return H.f(z,o)
 if(!z[o].gtp()){if(q>=z.length)return H.f(z,q)
 if(!z[q].gfN())if(this.e2("subject",q,o)||n)if(!(r&&m>1)){if(r){if(o>=z.length)return H.f(z,o)
-l=z[o].ghq()}else l=!1
+l=z[o].ghp()}else l=!1
 l=l||J.Y(this.ny(q),4)}else l=!0
 else l=!0
 else l=!0}else l=!0
@@ -3331,13 +3328,13 @@ if(r){if(q>=z.length)return H.f(z,q)
 o=!z[q].gfN()}else o=!1
 if(o)w.a+=H.d(S.dF(["But ","But ","However, ","Nonetheless, ","Nevertheless, "]))
 s=!1}else if(r){w.a+=H.d(S.dF([" but "," but "," yet ",", but "]))
-s=!this.nT(q,q+1)&&!0}else if(this.e2("subject",q,o)&&J.cg(this.h_(q),"<subject> ")&&q<v&&m<2&&!J.Y(this.ny(q+1),4)){w.a+=", "
+s=!this.nT(q,q+1)&&!0}else if(this.e2("subject",q,o)&&J.cg(this.fZ(q),"<subject> ")&&q<v&&m<2&&!J.Y(this.ny(q+1),4)){w.a+=", "
 s=!1}else{w.a+=H.d(S.dF([" and "," and ",", and "]))
-s=!0}}k=this.h_(q)
+s=!0}}k=this.fZ(q)
 o=!t
 if(o){m=q-1
-if(this.e2("subject",q,m))if(J.cg(this.h_(m),"<subject> "))if(J.cg(k,"<subject> ")){m=k.length
-k=H.nt(k,"<subject> ","",0)}}j=J.C(k,"<action>",this.h_(q))
+if(this.e2("subject",q,m))if(J.cg(this.fZ(m),"<subject> "))if(J.cg(k,"<subject> ")){m=k.length
+k=H.nt(k,"<subject> ","",0)}}j=J.C(k,"<action>",this.fZ(q))
 if(this.e2("object",q,q-1))m=!(this.bs(q).ga4()===C.c&&this.aC(q).ga4()===C.c)
 else m=!1
 if(m)j=J.C(J.C(J.C(J.C(j,"<object-owner's> <object>",this.bs(q).ga4().b),"<object-ownerPronoun's> <object>",this.bs(q).ga4().b),"<object>",this.bs(q).ga4().b),"<object's>",this.bs(q).ga4().c)
@@ -3406,7 +3403,7 @@ if(z)return a
 c.gut()
 if(c.d)a=J.dg(a,b,"the "+H.d(b))
 else{z=J.aE(a)
-a=J.cg(c.gk(c),new H.ay("[aeiouy]",H.aD("[aeiouy]",!1,!1,!1),null,null))?z.hW(a,b,"an "+H.d(b)):z.hW(a,b,"a "+H.d(b))
+a=J.cg(c.gk(c),new H.ay("[aeiouy]",H.aD("[aeiouy]",!1,!1,!1),null,null))?z.hV(a,b,"an "+H.d(b)):z.hV(a,b,"a "+H.d(b))
 c.d=!0}return a}}},E4:{"^":"a:13;",
 $1:function(a){H.at("")
 return J.cw(J.C(H.br(a,"<also> ",""),"  "," "))}},E5:{"^":"a:1;",
@@ -3423,16 +3420,16 @@ if(x)z.h(a,J.E(z.gj(a),1),b)
 else z.m(a,b)
 return a}},E7:{"^":"a:62;a",
 $1:function(a){return J.c1(this.a,a)}},E8:{"^":"a:57;",
-$1:function(a){return H.d(a.i(0,1))+H.d(a.i(0,2))+H.d(a.i(0,3))}},bj:{"^":"e;ut:a<,k:b>,c,d,hZ:e<,c3:f@,jL:r<,a4:x<",
-jK:function(a){if(J.h(this.e,0)||J.h(a.ghZ(),0))return!1
-return!J.h(this.e,a.ghZ())},
-v6:function(a,b){$.$get$ar().hm(0,a,b,this)},
+$1:function(a){return H.d(a.i(0,1))+H.d(a.i(0,2))+H.d(a.i(0,3))}},bj:{"^":"e;ut:a<,k:b>,c,d,hY:e<,c3:f@,jL:r<,a4:x<",
+jK:function(a){if(J.h(this.e,0)||J.h(a.ghY(),0))return!1
+return!J.h(this.e,a.ghY())},
+v6:function(a,b){$.$get$ar().hl(0,a,b,this)},
 v5:function(a){return this.v6(a,null)}},dl:{"^":"bj;",
 gbP:function(){return!0},
 gdI:function(){return this.gbP()===!0&&this.f===!0}},fo:{"^":"e;a,b,c,d",
 p:function(a){return this.a}}}],["","",,L,{"^":"",cn:{"^":"e;",
 gu7:function(){return this.gaR(this)===3},
-gmZ:function(){return this.gaR(this)===4}},rO:{"^":"cn;aR:a>,b,dR:c<,X:d*",
+gmZ:function(){return this.gaR(this)===4}},rP:{"^":"cn;aR:a>,b,dR:c<,X:d*",
 ca:function(){var z=this.j1(0)
 if(z!=null&&typeof z==="string")return z
 else return},
@@ -3444,7 +3441,7 @@ return H.br(a,"<whileString>",z)},
 kz:function(a,b,c,d){var z,y
 O.D("")
 z=H.cf(H.e1()).bY(b)
-if(z)y=new L.rO(d,b,c,null)
+if(z)y=new L.rP(d,b,c,null)
 else throw H.c(P.ad("Only String or a function can be scheduled. Instead, on object of type "+H.d(J.nN(b))+" was recieved."))
 z=this.d
 z.push(y)
@@ -3533,12 +3530,12 @@ cd:function(a,b,c,d,e){var z,y,x,w
 this.b.ld()
 try{y=this.c
 x=J.a0(y.z.a.e)
-y.Q=y.z.b.ia(x)}catch(w){y=H.X(w)
+y.Q=y.z.b.i9(x)}catch(w){y=H.X(w)
 if(y instanceof K.kU){z=y
 if(this.c.Q==null)throw H.c(z)}else throw w}J.bC(this.c.Q,b,c,d,e)},
 fL:function(a,b){return this.cd(a,b,!0,!0,null)},
 nC:function(a,b,c){return this.cd(a,b,c,!0,null)},
-i2:function(a,b,c,d){return this.cd(a,b,c,!0,d)},
+i1:function(a,b,c,d){return this.cd(a,b,c,!0,d)},
 nD:function(a,b,c,d){return this.cd(a,b,c,d,null)},
 aw:function(){this.b.ld()
 this.c.aw()},
@@ -3617,7 +3614,7 @@ ab:function(a){var z=J.y(a)
 this.f=z.i(a,"isActive")
 this.e=z.i(a,"team")
 this.y=z.i(a,"isAlive")
-if(z.i(a,"location")!=null)this.Q=this.z.b.ia(z.i(a,"location"))
+if(z.i(a,"location")!=null)this.Q=this.z.b.i9(z.i(a,"location"))
 else this.Q=null
 K.hk(z.i(a,"actions"),this.ch)},
 l3:function(a,b,c,d,e,f,g,h){var z
@@ -3631,9 +3628,9 @@ z.b.push(this)}else if(!!this.$ismc)this.z.d.c=this}},FQ:{"^":"a:1;a,b",
 $1:function(a){if(a==null)throw H.c(K.kS("ZilActor",this.b,"actions"))
 a.srg(this.a)}},FR:{"^":"a:1;a,b",
 $1:function(a){if(a==null)throw H.c(K.kS("ZilActor",this.b,"items"))
-a.shu(this.a)}},FT:{"^":"a:1;a",
+a.sht(this.a)}},FT:{"^":"a:1;a",
 $1:function(a){var z=this.a
-return J.h(a.ghu(),z)&&a.f===!0&&z.f===!0}},FS:{"^":"a:17;a",
+return J.h(a.ght(),z)&&a.f===!0&&z.f===!0}},FS:{"^":"a:17;a",
 $1:function(a){a.jp(this.a)}},mc:{"^":"fH;cx,y,z,Q,ch,a,b,c,d,e,f,r,x",
 aw:function(){this.Q.el(this)
 J.b6(this.Q.gcL(),new K.FV(this))
@@ -3662,7 +3659,7 @@ $1:function(a){return J.h(J.a0(a),this.a)}},ox:{"^":"a:1;",
 $1:function(a){return a.a7()}},dk:{"^":"fH;t6:cx<,y,z,Q,ch,a,b,c,d,e,f,r,x",
 nB:function(a,b,c){var z,y
 z=this.cx
-if(z==null||z.a===3||z.ghA())this.cx=new K.ED("",P.bw(null,K.ed),null,0,this)
+if(z==null||z.a===3||z.ghz())this.cx=new K.ED("",P.bw(null,K.ed),null,0,this)
 y=this.cx.lI()
 z=this.z.c
 if(J.h(z.Q,this.Q)&&z.f===!0&&this.f===!0&&c)C.a.N($.$get$ar().b,y)},
@@ -3670,33 +3667,33 @@ aB:function(a){return this.nB(a,null,!0)}},is:{"^":"e;a",
 p:function(a){return"ZIL Exception: "+this.a},
 af:function(a,b,c){return this.a.$2$color(b,c)},
 A:{
-FU:function(a){return new K.is(a)}}},wc:{"^":"is;a",A:{
-kS:function(a,b,c){return new K.wc("Trying to assign a null item to "+a+" object '"+b+"'. Make sure all the variables in the `"+c+": [...]` optional parameter actually exist.")}}},kU:{"^":"is;a"},U:{"^":"bj;tD:y?,z,Q,ch,tf:cx<,cy,db,a,b,c,d,e,f,r,x",
+FU:function(a){return new K.is(a)}}},wd:{"^":"is;a",A:{
+kS:function(a,b,c){return new K.wd("Trying to assign a null item to "+a+" object '"+b+"'. Make sure all the variables in the `"+c+": [...]` optional parameter actually exist.")}}},kU:{"^":"is;a"},U:{"^":"bj;tD:y?,z,Q,ch,tf:cx<,cy,db,a,b,c,d,e,f,r,x",
 u9:function(a){if(this.f!==!0)return!1
 return!0},
-t2:function(a,b){if(this.u9(b)===!0)O.b0(Y.fy(Y.cm(this.cy),this,null,null,b),!1,!1,null,new K.r3(this,a,b),null)},
+t2:function(a,b){if(this.u9(b)===!0)O.b0(Y.fy(Y.cm(this.cy),this,null,null,b),!1,!1,null,new K.r4(this,a,b),null)},
 gm1:function(){return C.b.gad(this.cx+">>"+this.cy+">>"+this.db)},
 A:{
-r4:function(a){var z=H.b(new H.Z(0,null,null,null,null,null,0),[P.j,null])
-a.t(0,new K.r5(z))
+r5:function(a){var z=H.b(new H.Z(0,null,null,null,null,null,0),[P.j,null])
+a.t(0,new K.r6(z))
 return z},
-r6:function(a,b){J.b6(a,new K.r8(b))}}},r3:{"^":"a:0;a,b,c",
+r7:function(a,b){J.b6(a,new K.r9(b))}}},r4:{"^":"a:0;a,b,c",
 $0:function(){var z,y,x
 z=this.a
 y=z.ch
 if(y>1){this.c.Q=null
-this.b.i2(0,y-1,!1,Y.cF("on your way to <object>","<object>",z.z,null))}y=z.z
+this.b.i1(0,y-1,!1,Y.cF("on your way to <object>","<object>",z.z,null))}y=z.z
 x=$.$get$ar()
-x.hm(0,z.db,y,this.c)
+x.hl(0,z.db,y,this.c)
 O.t(x.p(0))
 C.a.sj(x.b,0)
 x.a.a=""
-$.aK=J.a0(z.z)}},r5:{"^":"a:34;a",
-$1:function(a){this.a.h(0,""+a.gm1(),P.i(["isActive",a.f]))}},r8:{"^":"a:30;a",
-$2:function(a,b){this.a.e5(0,new K.r7(a)).sc3(J.A(b,"isActive"))}},r7:{"^":"a:1;a",
+$.aK=J.a0(z.z)}},r6:{"^":"a:34;a",
+$1:function(a){this.a.h(0,""+a.gm1(),P.i(["isActive",a.f]))}},r9:{"^":"a:30;a",
+$2:function(a,b){this.a.e5(0,new K.r8(a)).sc3(J.A(b,"isActive"))}},r8:{"^":"a:1;a",
 $1:function(a){return a.gm1()===H.cY(this.a,null,null)}},ed:{"^":"e;",
-ghA:function(){if(!!this.$ishr){if(this.a===2)return!0
-return this.c.aD(0,new K.rV())}return this.a===2},
+ghz:function(){if(!!this.$ishr){if(this.a===2)return!0
+return this.c.aD(0,new K.rW())}return this.a===2},
 gdr:function(a){return this.a===3},
 sdr:function(a,b){if(this.a===2)return
 this.a=3},
@@ -3704,14 +3701,14 @@ jr:function(){return new Y.bG(this.gmT(),this.b,null,null,null,!1,!1,!1,!1,!1,!1
 lI:function(){var z=H.b([],[Y.bG])
 if(this.a===0){C.a.N(z,this.na())
 this.a=1}if(!!this.$ishr){C.a.N(z,this.qL())
-if(this.ghA())return z}C.a.N(z,this.hS())
-return z}},rV:{"^":"a:48;",
-$1:function(a){return a.ghA()}},oE:{"^":"ed;b2:c<"},EJ:{"^":"oE;",
-hS:function(){var z=this.d
+if(this.ghz())return z}C.a.N(z,this.hR())
+return z}},rW:{"^":"a:48;",
+$1:function(a){return a.ghz()}},oE:{"^":"ed;b2:c<"},EJ:{"^":"oE;",
+hR:function(){var z=this.d
 if(z>=this.c){this.sdr(0,!0)
 return[]}this.d=z+1
 return[]}},hr:{"^":"ed;",
-gb2:function(){return this.c.fg(0,0,new K.qg())},
+gb2:function(){return this.c.fg(0,0,new K.qh())},
 jr:function(){var z=this.e
 if(z===""&&this.d!=null)return this.d.jr()
 return new Y.bG(z,this.b,null,null,null,!1,!1,!1,!1,!1,!1,null,!1,null)},
@@ -3732,11 +3729,11 @@ if(x>=w.length)return H.f(w,x)
 v=w[x]
 C.a.N(z,v.lI())
 if(v.a===3)y.c9()
-else if(v.ghA()){this.a=2
+else if(v.ghz()){this.a=2
 C.a.N(z,this.ux())
 return z}else{this.d=v
 return z}}this.sdr(0,!0)
-return z}},qg:{"^":"a:36;",
+return z}},qh:{"^":"a:36;",
 $2:function(a,b){return J.a2(a,b.gb2())}},FK:{"^":"EJ;mT:e<,d,c,a,b",
 na:function(){return[]}},ED:{"^":"hr;mT:e<,c,d,a,b",
 na:function(){this.sdr(0,!1)
@@ -3744,14 +3741,14 @@ var z=this.c
 z.a8(0)
 z.au(0,new K.FK("<subject> {<is> {just |}waiting|do<es>n't do anything in particular}",0,3,0,this.b))
 return[]},
-hS:function(){return[]},
+hR:function(){return[]},
 ux:function(){return[]}},fc:{"^":"bj;y,z,Q,ch,cx,cy,em:db>,dx,dy,fr,fx,fy,a,b,c,d,e,f,r,x",
 gvf:function(){var z=this.dx
 if(z!=null)return z
 return"<subject> take<s> the "+H.d(this.db)},
 gvg:function(){return"take the "+H.d(this.db)},
-ghu:function(){return this.fy},
-shu:function(a){this.fx=null
+ght:function(){return this.fy},
+sht:function(a){this.fx=null
 this.fy=a},
 gc4:function(a){return this.fx},
 sc4:function(a,b){this.fy=null
@@ -3764,10 +3761,10 @@ if(z)return!0
 return J.h(this.fx,a)},
 fm:function(a){return this.mX(a,!0)},
 el:function(a){var z
-if(this.z===!0)z=!(J.h(this.ghu(),a)&&this.f===!0&&a.f===!0)
+if(this.z===!0)z=!(J.h(this.ght(),a)&&this.f===!0&&a.f===!0)
 else z=!1
-if(z)O.b0(Y.fy(Y.cm(this.gvg()),this,null,null,a),!1,!1,null,new K.vl(this,a),null)
-C.a.t(this.y,new K.vm(a))},
+if(z)O.b0(Y.fy(Y.cm(this.gvg()),this,null,null,a),!1,!1,null,new K.vm(this,a),null)
+C.a.t(this.y,new K.vn(a))},
 a7:function(){var z,y,x,w
 z=this.f
 y=this.e
@@ -3780,7 +3777,7 @@ ab:function(a){var z,y
 z=J.y(a)
 this.f=z.i(a,"isActive")
 this.e=z.i(a,"team")
-if(z.i(a,"location")!=null){y=this.fr.b.ia(z.i(a,"location"))
+if(z.i(a,"location")!=null){y=this.fr.b.i9(z.i(a,"location"))
 this.fy=null
 this.fx=y}else if(z.i(a,"carrier")!=null){y=this.fr.d.tz(z.i(a,"carrier"))
 this.fx=null
@@ -3792,31 +3789,31 @@ this.ch=z.i(a,"count")
 this.cy=z.i(a,"describedForTheFirstTimeAlready")
 K.hk(z.i(a,"actions"),this.y)},
 pn:function(a,b,c,d,e,f,g,h,i,j,k,l,m){O.D("")
-C.a.t(this.y,new K.vk(this))
+C.a.t(this.y,new K.vl(this))
 this.f=!1
 if(this.db==null)this.db=b
 this.fr.e.b.push(this)},
 A:{
 eg:function(a,b,c,d,e,f,g,h,i,j,k,l,m){var z=new K.fc(c,!0,!1,d,f,!1,e,k,l,a,null,null,!1,b,H.b([],[P.j]),!0,0,!0,!1,j)
 z.pn(a,b,c,d,e,f,!1,!1,!1,j,k,l,!0)
-return z}}},vk:{"^":"a:1;a",
+return z}}},vl:{"^":"a:1;a",
 $1:function(a){var z=this.a
 J.oa(a,z)
-return z}},vl:{"^":"a:0;a,b",
+return z}},vm:{"^":"a:0;a,b",
 $0:function(){var z,y
 z=this.a
 y=this.b
-$.$get$ar().hm(0,z.gvf(),z,y)
+$.$get$ar().hl(0,z.gvf(),z,y)
 z.fx=null
 z.fy=y
-$.aK=J.a0(y.Q)}},vm:{"^":"a:17;a",
-$1:function(a){a.jp(this.a)}},vi:{"^":"e;a,dK:b>",
+$.aK=J.a0(y.Q)}},vn:{"^":"a:17;a",
+$1:function(a){a.jp(this.a)}},vj:{"^":"e;a,dK:b>",
 m:function(a,b){this.b.push(b)},
-a7:function(){return P.i(["items",H.b(new H.bd(this.b,new K.vj()),[null,null]).aN(0)])},
+a7:function(){return P.i(["items",H.b(new H.bd(this.b,new K.vk()),[null,null]).aN(0)])},
 ab:function(a){var z,y,x,w
 z=J.A(a,"items")
-for(y=J.y(z),x=0;w=this.b,x<w.length;++x)w[x].ab(y.i(z,x))}},vj:{"^":"a:1;",
-$1:function(a){return a.a7()}},fs:{"^":"qX;y,mL:z<,Q,ch,em:cx>,cy,i5:db<,dx,a$,b$,c$,d$,e$,a,b,c,d,e,f,r,x",
+for(y=J.y(z),x=0;w=this.b,x<w.length;++x)w[x].ab(y.i(z,x))}},vk:{"^":"a:1;",
+$1:function(a){return a.a7()}},fs:{"^":"qY;y,mL:z<,Q,ch,em:cx>,cy,i4:db<,dx,a$,b$,c$,d$,e$,a,b,c,d,e,f,r,x",
 p:function(a){return"Room<"+H.d(this.b)+">"},
 cd:function(a,b,c,d,e){var z,y,x,w
 if(this.db!==!0){z=$.$get$ar()
@@ -3827,7 +3824,7 @@ $.aK=this.cy
 this.db=!0
 this.dx.c.cx=null
 return}this.db=!0
-if(this.ch!=null)if(this.hS()!==!0)return
+if(this.ch!=null)if(this.hR()!==!0)return
 z=this.dx
 if(z.d!=null){z=z.c
 z=!J.h(z.Q,z.cx)}else z=!1
@@ -3844,7 +3841,7 @@ y.a.a=""
 z.c.cx=this},
 fL:function(a,b){return this.cd(a,b,!0,!0,null)},
 nC:function(a,b,c){return this.cd(a,b,c,!0,null)},
-i2:function(a,b,c,d){return this.cd(a,b,c,!0,d)},
+i1:function(a,b,c,d){return this.cd(a,b,c,!0,d)},
 nD:function(a,b,c,d){return this.cd(a,b,c,d,null)},
 oq:function(a){var z
 if(a){z=this.gcL()
@@ -3852,70 +3849,70 @@ if(z.gj(z)>1)$.$get$ar().m9("<subject> {|can }see<s>",this.gcL(),"{|in }here",th
 else{z=this.gcL()
 if(z.gj(z)===1){z=this.gcL()
 z.ga1(z).v5("<subject> is {|in }here")}}z=this.gcL()
-H.b(new H.a8(z,new K.xu()),[H.F(z,"L",0)]).t(0,new K.xv())}},
+H.b(new H.a8(z,new K.xv()),[H.F(z,"L",0)]).t(0,new K.xw())}},
 gcL:function(){var z=this.dx.d.b
-return H.b(new H.a8(z,new K.xm(this)),[H.q(z,0)])},
+return H.b(new H.a8(z,new K.xn(this)),[H.q(z,0)])},
 gdK:function(a){var z=this.dx.e.b
-return H.b(new H.a8(z,new K.xt(this)),[H.q(z,0)])},
-el:function(a){C.a.t(this.Q,new K.xs(a))},
-a7:function(){return P.i(["isActive",this.f,"team",this.e,"visited",this.db,"actions",K.hj(this.Q),"exits",K.r4(this.z)])},
+return H.b(new H.a8(z,new K.xu(this)),[H.q(z,0)])},
+el:function(a){C.a.t(this.Q,new K.xt(a))},
+a7:function(){return P.i(["isActive",this.f,"team",this.e,"visited",this.db,"actions",K.hj(this.Q),"exits",K.r5(this.z)])},
 ab:function(a){var z=J.y(a)
 this.f=z.i(a,"isActive")
 this.e=z.i(a,"team")
 this.db=z.i(a,"visited")
 K.hk(z.i(a,"actions"),this.Q)
-K.r6(z.i(a,"exits"),this.z)},
+K.r7(z.i(a,"exits"),this.z)},
 pt:function(a,b,c,d,e,f,g,h,i,j,k){var z
 O.D("Cannot create room on the fly.")
-this.z.t(0,new K.xn(this))
-C.a.t(i,new K.xo(this))
-C.a.t(this.Q,new K.xp(this))
-C.a.t(i,new K.xq(this))
-C.a.t(f,new K.xr(this))
+this.z.t(0,new K.xo(this))
+C.a.t(i,new K.xp(this))
+C.a.t(this.Q,new K.xq(this))
+C.a.t(i,new K.xr(this))
+C.a.t(f,new K.xs(this))
 z=this.dx.b
 z.toString
 O.D("Author can only set up room network on init.")
 z.b.h(0,this.b,this)},
-hS:function(){return this.ch.$0()},
+hR:function(){return this.ch.$0()},
 A:{
 aL:function(a,b,c,d,e,f,g,h,i,j,k){var z=new K.fs(g,P.cB(d,null),e,k,c,h,!1,a,null,null,null,!1,!1,!1,b,H.b([],[P.j]),!0,0,!0,!1,C.c)
 z.pt(a,b,c,d,e,f,g,h,i,!1,k)
-return z}}},qX:{"^":"bj+w1;"},xn:{"^":"a:1;a",
+return z}}},qY:{"^":"bj+w2;"},xo:{"^":"a:1;a",
 $1:function(a){var z=this.a
 a.stD(z)
-return z}},xo:{"^":"a:15;a",
+return z}},xp:{"^":"a:15;a",
 $1:function(a){var z=this.a
 J.eZ(a,z)
-return z}},xp:{"^":"a:1;a",
+return z}},xq:{"^":"a:1;a",
 $1:function(a){var z=this.a
 a.sv9(z)
-return z}},xq:{"^":"a:1;a",
-$1:function(a){J.eZ(a,this.a)}},xr:{"^":"a:37;a",
-$1:function(a){J.eZ(a,this.a)}},xu:{"^":"a:1;",
-$1:function(a){return a instanceof K.dk&&a.cx!=null}},xv:{"^":"a:37;",
-$1:function(a){$.$get$ar().b.push(a.gt6().jr())}},xm:{"^":"a:19;a",
-$1:function(a){return a.fm(this.a)}},xt:{"^":"a:15;a",
-$1:function(a){return a.mX(this.a,!1)}},xs:{"^":"a:17;a",
-$1:function(a){a.jp(this.a)}},xh:{"^":"e;a,b,c,d",
+return z}},xr:{"^":"a:1;a",
+$1:function(a){J.eZ(a,this.a)}},xs:{"^":"a:37;a",
+$1:function(a){J.eZ(a,this.a)}},xv:{"^":"a:1;",
+$1:function(a){return a instanceof K.dk&&a.cx!=null}},xw:{"^":"a:37;",
+$1:function(a){$.$get$ar().b.push(a.gt6().jr())}},xn:{"^":"a:19;a",
+$1:function(a){return a.fm(this.a)}},xu:{"^":"a:15;a",
+$1:function(a){return a.mX(this.a,!1)}},xt:{"^":"a:17;a",
+$1:function(a){a.jp(this.a)}},xi:{"^":"e;a,b,c,d",
 m:function(a,b){O.D("Author can only set up room network on init.")
 this.b.h(0,J.a0(b),b)},
-ia:function(a){var z=this.b
+i9:function(a){var z=this.b
 if(!z.a3(0,a))throw H.c(new K.kU("Page '"+H.d(a)+"' is not defined in ZIL. Define it in a <variable> block with zil.addRoom(new Room ...)."))
 return z.i(0,a)},
 qY:function(){var z=this.b
-z.geD(z).t(0,new K.xj(this))},
+z.geD(z).t(0,new K.xk(this))},
 ld:function(){if(!this.d){this.qY()
 this.c=H.b(new S.oo(this,!0,P.bw(null,null)),[null])
 this.d=!0}},
 a7:function(){var z=H.b(new H.Z(0,null,null,null,null,null,0),[P.j,null])
-this.b.t(0,new K.xk(z))
+this.b.t(0,new K.xl(z))
 return z},
-ab:function(a){this.b.t(0,new K.xl(a))}},xj:{"^":"a:46;a",
-$1:function(a){a.gmL().t(0,new K.xi(this.a,a))}},xi:{"^":"a:34;a,b",
+ab:function(a){this.b.t(0,new K.xm(a))}},xk:{"^":"a:46;a",
+$1:function(a){a.gmL().t(0,new K.xj(this.a,a))}},xj:{"^":"a:34;a,b",
 $1:function(a){var z=this.a.b
 if(!z.gan(z).B(0,a.gtf()))throw H.c(K.FU("Couldn't find '"+a.cx+"' among the rooms in the RoomNetwork. This is linked from the page '"+H.d(a.y.b)+"'"))
-a.z=z.i(0,a.cx)}},xk:{"^":"a:4;a",
-$2:function(a,b){this.a.h(0,a,b.a7())}},xl:{"^":"a:4;a",
+a.z=z.i(0,a.cx)}},xl:{"^":"a:4;a",
+$2:function(a,b){this.a.h(0,a,b.a7())}},xm:{"^":"a:4;a",
 $2:function(a,b){b.ab(J.A(this.a,a))}}}]]
 setupProgram(dart,init.types.length)
 var deferredTypes=[{func:1,v:true},{func:1,ret:Y.bj,args:[P.r]},{func:1,v:true,args:[P.j]},{func:1,ret:P.j},{func:1,ret:P.j,args:[P.r]},{func:1,ret:L.b7,args:[P.j],named:{deferToChoiceList:P.a6,deferToEndOfPage:P.a6,goto:P.j,script:{func:1,v:true},submenu:P.j}},{func:1,v:true,args:[G.hz]}]
@@ -3931,4 +3928,4 @@ var x=a[z++]
 var w=a[z++]
 var v=a[z++]
 I.$lazy(y,x,w,null,v)}})(["np","$get$np",function(){return new M.kX(null,0,!1,"player",H.b([],[P.j]),!0,1,!0,!0,C.B)},$,"kh","$get$kh",function(){return P.l7(null)},$,"bb","$get$bb",function(){return H.hJ(P.j,P.j)},$,"fp","$get$fp",function(){return P.l7(null)},$,"ar","$get$ar",function(){return new Y.E3(P.lu(""),H.b([],[Y.bG]),0)},$,"ls","$get$ls",function(){return P.aq("(\\w)([\\.\\?\\!])([\"'])\\.(?=$|\\s)",!0,!1)},$,"ea","$get$ea",function(){return new Y.bj(!1,"__NOTHING__",H.b([],[P.j]),!0,0,!0,!1,C.c)},$])}
-$dart_deferred_initializers$["1t8YhNRE/5xCndRi/q6wDyRC19E="]=$dart_deferred_initializers$.current
+$dart_deferred_initializers$["8Nl0L2lISwjLLawzldZeemD5gag="]=$dart_deferred_initializers$.current
