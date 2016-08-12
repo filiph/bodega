@@ -62,8 +62,6 @@ You are the ship's:
 
 Before the incident changed everything, you were nearing two years in your ${getRoleAdjective()} service on the Bodega. Everything had become familiar. The smell of polyplastics, human sweat and detergent. The bleak dimness of the interiors. The color-coded ducts and cables on every wall. The way sound carries in a huge, 25 thousand ton cargo ship. Conversations, laughter, and swearing were echoing through the corridors almost constantly.
 
-<p class="meta">Note: All choices have consequences. This particular choice (being ${getInformalRole('a')}) won't have a dramatic effect, though, because you haven't played long enough to make an informed decision. The book won't penalize you just because you took an unlucky pick.</p>
-
 Now, the ship is silent and the whole crew is dead. Since the explosion in the cargo bay, the men and women had been taking turns in screaming in pain, then getting uncanilly stiff, then dying. The captain held a memorial service for every one of them, each funeral – of course – a little shorter and simpler than the previous. Now it's your turn to be the master of ceremony.
 
 <declare>

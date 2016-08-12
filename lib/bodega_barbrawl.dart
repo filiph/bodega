@@ -20,6 +20,7 @@ class BarBrawl extends LoopedEvent {
   /// Counter for failures. After this hits [MAX_FAILURES_BEFORE_SUCCESS], we
   /// allow a success.
   int failures = 0;
+
   /// Keeps track of additional paragraphs so that there's not more than one.
   /// Many paragraphs make it confusing. There should be only one "special"
   /// per turn. Additional paragraphs are added by onSetup functions and
@@ -57,10 +58,9 @@ class BarBrawl extends LoopedEvent {
           "again. The farmer was ready, smirk on face.");
     });
     var stopIt = new BarBrawlOption("\"Stop it!\"",
-        getAvailability: () => !timeline
-                .currentlyAtTime(whyDoThat.timeLastFired) &&
-            timeline.time > 0,
-        onSuccessOrFailure: () {
+        getAvailability: () =>
+            !timeline.currentlyAtTime(whyDoThat.timeLastFired) &&
+            timeline.time > 0, onSuccessOrFailure: () {
       echo("\"Stop it!\"\n\n");
       echo("There was a smirk on his face. He hit you in the stomach. You bent "
           "forward, gulping for air.\n\n");
@@ -95,7 +95,8 @@ class BarBrawl extends LoopedEvent {
       echo("He dodged your stomach punch and put his right elbow "
           "in your face.");
     });
-    var raiseArms = new BarBrawlOption("Raise arms in defense", onSuccess: () {
+    var raiseArms =
+        new BarBrawlOption("Raise arms in defense, then hit", onSuccess: () {
       echo("Your arms deflected a haymaker that would definitely send you "
           "to the floor. The farmer's face was now open to your left hand. "
           "You hit him hard. Then again in the stomach. And then again, "
@@ -106,9 +107,9 @@ class BarBrawl extends LoopedEvent {
           "to the floor. But before you could do anything to retaliate, the farmer slipped "
           "a painful uppercut punch between your arms.");
     });
-    var sidestep = new BarBrawlOption("Sidestep",
+    var sidestep = new BarBrawlOption("Sidestep and punch from side",
         getAvailability: () => timeline.time > 0, onSetup: () {
-      echo("You thought you could see how he was going to hit next.");
+      echo("You were pretty sure he would now try a frontal punch.");
     }, onSuccess: () {
       echo("You guessed well. You dodged the punch and the farmer tried to "
           "keep his balance — his right arm still extended forward. "
@@ -125,7 +126,8 @@ class BarBrawl extends LoopedEvent {
           "of vision. He had probably got hit by someone and looked a bit disoriented. "
           "The farmer didn't notice. His eyes were laser focused on you.");
     }, onSuccess: () {
-      echo("You sidestepped so that the pilot was now almost between the farmer "
+      echo(
+          "You sidestepped so that the pilot was now almost between the farmer "
           "and you. The farmer was just in the middle of throwing a hook so "
           "he missed you and weakly hit the pilot on the back of the head "
           "instead. The pilot, still desoriented, blindly swung his fist at him "
@@ -134,7 +136,8 @@ class BarBrawl extends LoopedEvent {
           "got and landed a blow first in his chest, then in the face, and "
           "finaly in the stomach. The farmer went to the ground, unconscious.");
     }, onFailure: () {
-      echo("You sidestepped so that the pilot was now almost between the farmer "
+      echo(
+          "You sidestepped so that the pilot was now almost between the farmer "
           "and you. The farmer saw this, though, lunged forward, avoiding "
           "the pilot, then landed an uppercut right in your jaw. ");
     });
@@ -156,23 +159,16 @@ class BarBrawl extends LoopedEvent {
           "in the eye. You let go of the bottle and it dropped to the floor, "
           "shattering.");
     });
-    var kickCrotch = new BarBrawlOption("Knee him in the crotch",
-        onSuccessOrFailure: () {
+    var kickCrotch =
+        new BarBrawlOption("Knee him in the crotch", onSuccess: () {
       echo("He didn't expect that. Your knee landed squarely in the groin and "
           "the farmer keeled over.\n\n");
-      echo("The fights closest to you were now stopping. People started "
-          "alternately looking at you and at the farmer who was now lying on "
-          "his side, both hands in the lap, unconsciouss.\n\n");
-      echo("You hadn't known about the no-groin-attack rule but that wasn't "
-          "going to absolve you. There are very few rules in bar fights, but "
-          "those that exist are enforced with violent fervor. After a "
-          "thunderous scream, at least four "
-          "guys (you didn't really have the time to count them) jumped you and "
-          "beat you into unconsciousness.");
-      // Make sure it's unsuccessful.
-      wasSuccessful = false;
-      finished = true;
-    });
+      echo("You pushed him away, then you caught him on the side of the head "
+          "with a powerful haymaker. He twisted and fell to the floor.");
+    }, onFailure: () {
+      echo("Your knee slid on the wrong side of his right thigh. He thrust "
+          "an elbow to your open side. You grimaced in pain and stepped back.");
+        });
     var undercut = new BarBrawlOption("Undercut his legs", onSetup: () {
       echo("He tried to kick you but lost balance while doing so and aborted.");
     }, onSuccess: () {
@@ -223,9 +219,9 @@ class BarBrawl extends LoopedEvent {
 
   @override
   void update() {
-    Iterable<BarBrawlOption> allAvailable = allOptions.where(
-        (o) => o.isAvailableByDefault &&
-            (o.getAvailability == null || o.getAvailability()));
+    Iterable<BarBrawlOption> allAvailable = allOptions.where((o) =>
+        o.isAvailableByDefault &&
+        (o.getAvailability == null || o.getAvailability()));
     List<BarBrawlOption> current =
         startingOptions != null ? startingOptions : [];
     startingOptions = null;
@@ -277,9 +273,13 @@ class BarBrawl extends LoopedEvent {
 }
 
 class BarBrawlOption {
-  BarBrawlOption(this.name, {this.getAvailability, this.onSetup,
-      OutputOnlyFunction onSuccess, OutputOnlyFunction onFailure,
-      OutputOnlyFunction onSuccessOrFailure, this.repeatable: false})
+  BarBrawlOption(this.name,
+      {this.getAvailability,
+      this.onSetup,
+      OutputOnlyFunction onSuccess,
+      OutputOnlyFunction onFailure,
+      OutputOnlyFunction onSuccessOrFailure,
+      this.repeatable: false})
       : _onSuccess = onSuccess,
         _onFailure = onFailure,
         _onSuccessOrFailure = onSuccessOrFailure {
@@ -292,6 +292,7 @@ class BarBrawlOption {
 
   /// The string that will be presented to player in choicelists.
   final String name;
+
   /// Returns true if the move is available at the moment. If [getAvailability]
   /// is null, then it's the same as if it was [:() => true:].
   final GetAvailabilityFunction getAvailability;
@@ -301,6 +302,7 @@ class BarBrawlOption {
   final OutputOnlyFunction _onSuccessOrFailure;
   OutputOnlyFunction get onSuccess => _wrapWithFiredCounter(_onSuccess);
   OutputOnlyFunction get onFailure => _wrapWithFiredCounter(_onFailure);
+
   /// This runs whether or not it's a success or failure. You shouldn't define
   /// this if [onSuccess] or [onFailure] is defined.
   OutputOnlyFunction get onSuccessOrFailure =>
